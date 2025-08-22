@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+  .text-red-color {
+  color: red;
+}
+
+.bg-red-color {
+  background-color: red;
+}
+
+.navbar {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.headline-big{
+  font-size: 4rem;
+  font-weight: 900;
+}
+.headline-small{
+  font-size: 1.57rem;
+  font-weight: 600;
+}
+</style>
+</head>
+<body>
+      <div class="container-fluid p-0 m-0">
+    <nav class="navbar sticky-top navbar-expand-lg">
+      <div class="container-fluid p-0">
+        <a class="navbar-brand ps-lg-5 p-0 m-0" href="./index.html">
+          <img src="./images/AY logo.jpg" width="80px" class="img-fluid" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-around" id="navbarSupportedContent">
+          <div class="bg-info"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" aria-current="page" href="./index.html">Home </a>
+            </li>
+            <li class="nav-item ps-lg-4">
+              <a class="nav-link fw-semibold" href="./about-us.html">About Us</a>
+            </li>
+
+            <li class="nav-item dropdown ps-lg-4">
+              <a class="nav-link dropdown-toggle fw-semibold" href="#" id="servicesDropdown" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Services
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                <!-- <li><a class="dropdown-item" id="servicesDropdown-menu"
+                                        href="./data-management.html">Data Management Service</a></li>
+                                <li><a class="dropdown-item" id="servicesDropdown-menu"
+                                        href="./sap-implementation-services.html">SAP Implementation Service</a></li>
+                                <li><a class="dropdown-item" id="servicesDropdown-menu"
+                                        href="./application-security-services.html">Application Security Service</a>
+                                </li>
+                                <li><a class="dropdown-item" id="servicesDropdown-menu"
+                                        href="./iam-and-security-services.html">IAM and Security Service</a></li>
+                                <li><a class="dropdown-item" id="servicesDropdown-menu" href="./grc-solutions.html">GRC
+                                        Solution by Elevate IT</a></li>
+                                <li><a class="dropdown-item" id="servicesDropdown-menu"
+                                        href="./sap-core-solutions.html">SAP Functional and Technical Consulting</a>
+                                </li> -->
+              </ul>
+            </li>
+            <li class="nav-item ps-lg-4">
+              <a class="nav-link fw-semibold" href="./cost-estimator.html">Cost - Estimator</a>
+            </li>
+            <li class="nav-item ps-lg-4">
+              <a class="nav-link fw-semibold" href="./contact.html">Contact
+                Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<div class="container my-5">
+
+  <div class="row justify-content-center mt-0"> <!-- mt-0 makes it touch row 1 -->
+    <div class="col-lg-8 col-md-10 col-12">
+
+       <div class="row align-items-center justify-content-center text-start p-0 m-0">
+    <div class="col-md-6">
+      <h1 class="fw-bold text-red-color headline-big lh-1 ps-4">AY INFRA</h1>
+      <h6 class="fw-semibold headline-small lh-1 ps-4">BUILDERS & DEVELOPERS</h6>
+    </div>
+    <div class="col-md-6">
+      <img src="./images/contact-us-img.png" alt="Contact Us"
+           class="img-fluid d-block" style="max-width:350px;">
+    </div>
+  </div>
+
+      <div class="card shadow-lg p-4 border-0">
+        <h3 class="text-center mb-4">Contact Us</h3>
+        <form>
+          <div class="d-flex justify-content-between">
+   <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Your Name" required>
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Your Email" required>
+          </div>
+            <div class="mb-3">
+            <input type="phone-no" class="form-control" placeholder="Phone Number" required>
+          </div>
+          </div>
+       
+
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Subject">
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="px-4 py-2 border-0 bg-red-color text-white rounded-3 fw-semibold">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container py-5">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, adipisci veniam ducimus earum pariatur facilis harum at eius. Facilis temporibus tempore dicta aliquam ducimus aperiam quis ab odio minima nobis?
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sapiente accusantium cum, porro eveniet error suscipit vitae assumenda minus adipisci, at quod exercitationem, ut sint natus! Nisi culpa quia nihil.
+  </p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, adipisci veniam ducimus earum pariatur facilis harum at eius. Facilis temporibus tempore dicta aliquam ducimus aperiam quis ab odio minima nobis?
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sapiente accusantium cum, porro eveniet error suscipit vitae assumenda minus adipisci, at quod exercitationem, ut sint natus! Nisi culpa quia nihil.
+  </p>
+
+
+
+</div>
+
+
+<div class="container">
+  <div class="d-flex">
+     <div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.4371457619586!2d78.41863677382794!3d17.342685604094005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9735c7db0de5%3A0xb616e0dac58b3a20!2sAY%20INFRA%20BUILDERS%20AND%20DEVELOPERS%20-%20construction%20%2C%20real%20estate%20%2C%20interior%20design!5e0!3m2!1sen!2sin!4v1755769734994!5m2!1sen!2sin" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <div class="ps-4">
+    <h4>Office Address</h4>
+    <p>Pillar no. 235, Inner Ring Rd, opposite Fish Building,<br> near NR convention, Rajendra nagar,<br> Hyderabad, Telangana 500052</p>
+  <p></p>
+  
+  </div>
+  </div>
+ 
+
+</div>
+
+  <section class="bg-red-color text-white mt-5">
+    <div class="container py-5">
+      <div class="row row-cols-1 row-cols-lg-3 justify-content-between">
+        <div class="mb-4 mb-md-0">
+          <h4 class="fw-bold pb-2">Services</h4>
+          <ul class="list-unstyled">
+            <li><a href="./about-us.html" class="text-white text-decoration-none d-block mb-1">About Us</a>
+            </li>
+            <li><a href="#" class="text-white text-decoration-none d-block mb-1">Services</a></li>
+            <li><a href="./e-content.html" class="text-white text-decoration-none d-block mb-1">E-content</a></li>
+            <li><a href="./career.html" class="text-white text-decoration-none d-block mb-1">Careers</a>
+            </li>
+            <li><a href="./contact.php" class="text-white text-decoration-none d-block mb-1">Contact</a>
+            </li>
+            <li><a href="./privacy.html" class="text-white text-decoration-none d-block fs-5 fw-bold mt-4"><span
+                  class="border-3 border-end pe-2">Privacy Polices</span> Terms of Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info Column -->
+        <div>
+          <h4 class="fw-bold pb-2">Contact Info</h4>
+          <p class="mb-1">Address:</p>
+          <p class="lh-sm mb-2">
+            Pillar No-123, Wase Arcade,<br>
+            Attapur, Hyderabad,<br>
+            Telangana, 500048
+          </p>
+          <!-- <p class="mb-1">Email: <a href="mailto:elevateit@gmail.com"
+                            class="text-white text-decoration-underline">elevateit@gmail.com</a></p> -->
+          <p class="mb-3">Contact No: +91 123-456-7890</p>
+          <p class="fw-semibold fs-6 mb-2">Follow Us</p>
+          <div class="d-flex gap-2">
+            <!-- <a href="#"
+                            class="bg-white text-decoration-none rounded-3 d-inline-flex align-items-center justify-content-center"
+                            style="width: 32px; height: 32px;">
+                            <i class="fa-brands fa-linkedin-in text-color-blue"></i>
+                        </a> -->
+            <!-- <a href="#"
+                            class="bg-white text-decoration-none rounded-3 d-inline-flex align-items-center justify-content-center"
+                            style="width: 32px; height: 32px;">
+                            <i class="fa-brands fa-twitter text-color-blue"></i>
+                        </a> -->
+            <a href="#"
+              class="bg-white text-decoration-none rounded-3 d-inline-flex align-items-center justify-content-center"
+              style="width: 32px; height: 32px;">
+              <i class="fa-brands fa-facebook-f text-color-blue"></i>
+            </a>
+            <a href="#"
+              class="bg-white text-decoration-none rounded-3 d-inline-flex align-items-center justify-content-center"
+              style="width: 32px; height: 32px;">
+              <i class="fa-brands fa-instagram text-color-blue"></i>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <img src="./images/footer-img.png" height="100%" width="100%">
+        </div>
+
+      </div>
+      <!-- Copyright -->
+      <p class="text-center mt-5 mb-0 medium">© 2025 AY Infra. All Rights Reserved.</p>
+    </div>
+  </section>
+
+
+
+</body>
+</html>
