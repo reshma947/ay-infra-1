@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customized Package Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .form-container {
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      border-radius: 15px;
+    }
+
+
+    .welcome-section {
+      background: #ff0000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      border-top-right-radius: 120px;  
+      border-bottom-right-radius: 120px;
+    }
+
+    .welcome-section h2 {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .form-section {
+      padding: 40px 30px;
+    }
+
+    .form-section h3 {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .form-control,
+    .form-select {
+      margin-bottom: 15px;
+      border-radius: 0px;
+    }
+
+    .btn-custom {
+      background-color: #ff0000;
+      color: #fff;
+      border-radius: 50px;
+      padding: 10px 30px;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .welcome-section {
+        border-radius: 0; 
+        padding: 20px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container py-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10 col-md-12">
+      <div class="row form-container">
+
+
+        <div class="col-md-5 welcome-section">
+          <div>
+            <h2>Welcome</h2>
+            <p class="mt-3">Plan your dream construction<br>with us in just 30 seconds!</p>
+          </div>
+        </div>
+
+        <div class="col-md-7 form-section">
+          <h3>Looking for Customized Package?</h3>
+          <form>
+            <div class="row">
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Site Area *">
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Plot Location *">
+              </div>
+              <div class="col-md-6">
+                <select class="form-select">
+                  <option selected>Select Construction Type</option>
+                  <option>Residential construction</option>
+                  <option>Commercial construction</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <select class="form-select">
+                  <option selected>Select Interiors</option>
+                  <option>Construction + Interiors</option>
+                  <option>Only Construction</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <select class="form-select">
+                  <option selected>Select Design</option>
+                  <option>Design & Execution</option>
+                  <option>Only Design</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <select class="form-select">
+                  <option selected>Select House Type</option>
+                  <option>Ground Floor</option>
+                  <option>Duplex House</option>
+                  <option>Rental House</option>
+                  <option>Duplex + Rental House</option>
+                  <option>Modern Villa</option>
+                  <option>Luxury Homes</option>
+                  <option>House for Self Use</option>
+                  <option>House for Renting Out</option>
+                  <option>Budget Independent House</option>
+                  <option>Bungalow</option>
+                  <option>Commercial Building</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <select class="form-select">
+                  <option selected>Select Floors</option>
+                  <option>Only Ground Floor</option>
+                  <option>G+1 Floor</option>
+                  <option>G+2 Floor</option>
+                  <option>G+3 Floor</option>
+                  <option>G+4 Floor</option>
+                  <option>G+5 Floor</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <select class="form-select">
+                  <option selected>BHK</option>
+                  <option>1 BHK</option>
+                  <option>2 BHK</option>
+                  <option>3 BHK</option>
+                  <option>4 BHK</option>
+                  <option>5 BHK</option>
+                  <option>5+ BHK</option>
+                  <option>Office Space</option>
+                  <option>Shop</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Budget Estimation *">
+              </div>
+              <div class="col-md-6">
+                <select class="form-select">
+                  <option selected>Select Loan</option>
+                  <option>Yes Applied</option>
+                  <option>It’s Approved</option>
+                  <option>Need to Apply</option>
+                  <option>Not Required</option>
+                </select>
+              </div>
+              <div class="col-md-12">
+                <select class="form-select">
+                  <option selected>When are you planning for construction?</option>
+                  <option>Immediate</option>
+                  <option>After One Week</option>
+                  <option>After One Month</option>
+                  <option>After Six Months</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-custom mt-3">Register</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

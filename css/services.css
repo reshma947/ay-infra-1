@@ -146,3 +146,61 @@
     font-weight: 600;
     letter-spacing: 1px;
   }
+
+
+  /* css for footer-section */
+footer {
+      color: black;
+      font-size: 15px;
+    }
+    footer h5 {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+    footer ul li {
+      margin-bottom: 0.5rem;
+    }
+    footer ul li a {
+      text-decoration: none;
+      color: black;
+      transition: 0.3s;
+    }
+    footer ul li a:hover {
+      color: red;
+    }
+    .footer-bottom {
+      background: red;
+      color: #ccc;
+      padding: 20px 0;
+      font-size: 14px;
+    }
+    .social-icons a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      border-radius: 50%;
+      background: #f1f1f1;
+      color: black;
+      margin-right: 8px;
+      transition: 0.3s;
+    }
+    .social-icons a:hover {
+      background: red;
+      color: #fff;
+    }
+    .subscribe-box input {
+      border: 1px solid #ddd;
+      border-radius: 0;
+    }
+    .subscribe-box button {
+      background:red;
+      border: none;
+      color: #fff;
+      border-radius: 0;
+    }
