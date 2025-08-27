@@ -10,13 +10,27 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.box-shadow{
+.box-shadow {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-body{
+body {
   overflow-x: hidden;
 }
+
+/* Hide dark backdrop */
+.custom-popup-form .modal-backdrop {
+  display: none !important;
+}
+
+/* Force modal smaller & centered */
+.modal-sm {
+  max-width: 400px;
+}
+
+/* .modal-content {
+  border-radius: 12px;
+} */
 
 /* .brick-section{
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -500,17 +514,17 @@ body {
 /* css for cost-estimator-section */
 
 .package-row {
-    border-bottom: 1px solid #ddd;
-    padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+  padding: 12px 0;
 }
 
 .package-row:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .city-label {
-    font-weight: bold;
-    color: #e74c3c;
+  font-weight: bold;
+  color: #e74c3c;
 }
 
 /* css for coming-projects-section */
@@ -566,8 +580,8 @@ body {
   justify-content: space-between;
 }
 
-.btn-hover:hover{
- transform: scale(1.1);
+.btn-hover:hover {
+  transform: scale(1.1);
 
 }
 
@@ -629,6 +643,49 @@ body {
 
 
 
+/* ✅ Base button */
+.btn-project {
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* ✅ Button color variants */
+.btn-black {
+  background: #000;
+  color: #fff;
+}
+
+/* .btn-red {
+  background: red; 
+  color: #fff;
+} */
+
+/* ✅ Active state */
+.btn-project.active {
+  transform: scale(1.1);
+  background: red;
+  /* background: linear-gradient(45deg, #ff007a, #007bff); */
+  /* box-shadow: 0 0 15px rgba(255, 0, 0, 0.6), 
+              0 0 20px rgba(10, 13, 17, 0.411); */
+  color: #fff;
+}
+
+/* ✅ Responsive buttons stack on mobile */
+@media (max-width: 768px) {
+  .btn-project {
+    flex: 100%;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+
 /* css for lets talk button */
 .fixed-contact {
   position: fixed;
@@ -660,15 +717,18 @@ body {
 /* css for customer reviews */
 .testimonial-card {
   border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-height: 440px; /* ⬅ smaller height */
+  max-height: 700px;
+  /* ⬅ smaller height */
 }
+
 .testimonial-card:hover {
   /* transform: translateY(-5px); */
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
+
 .testimonial-img {
   position: relative;
   height: 100%;
@@ -677,34 +737,40 @@ body {
   justify-content: center;
   background: #f8f9fa;
 }
+
 .testimonial-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   /* transition: opacity 0.3s ease-in-out; */
 }
+
 .testimonial-img img.fade-out {
   opacity: 0;
 }
+
 .rating-box {
   position: absolute;
   bottom: 40px;
   left: 125px;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   color: #fff;
   padding: 5px 10px;
   border-radius: 8px;
   font-size: 0.9rem;
 }
+
 .fade-up {
   opacity: 0;
   /* transform: translateY(20px); */
   transition: all 0.4s ease-in-out;
 }
+
 .fade-up.active {
   opacity: 1;
   transform: translateY(0);
 }
+
 .thumbs img {
   width: 45px;
   height: 45px;
@@ -713,86 +779,103 @@ body {
   border: 2px solid transparent;
   transition: border 0.3s, transform 0.3s;
 }
+
 .thumbs img.active {
   border: 2px solid skyblue;
   transform: scale(1.1);
 }
 
 /* css for OUR PARTNERS-section */
- .partners-section {
-      padding: 60px 0;
-    }
-    .partners-title {
-      font-weight: 700;
-      font-size: 2rem;
-    }
-    .swiper-slide-icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .swiper-slide-icon i {
-      font-size: 2rem;
-      color: #000;
-      transition: transform 0.3s ease;
-    }
-    .swiper-slide-icon i:hover {
-      transform: scale(1.1);
-      color: red;
-    }
+.partners-section {
+  padding: 60px 0;
+}
+
+.partners-title {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.swiper-slide-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide-icon i {
+  font-size: 2rem;
+  color: #000;
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide-icon i:hover {
+  transform: scale(1.1);
+  color: red;
+}
+
 /* css for footer-section */
 footer {
-      color: black;
-      font-size: 15px;
-    }
-    footer h5 {
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    footer ul {
-      list-style: none;
-      padding: 0;
-    }
-    footer ul li {
-      margin-bottom: 0.5rem;
-    }
-    footer ul li a {
-      text-decoration: none;
-      color: black;
-      transition: 0.3s;
-    }
-    footer ul li a:hover {
-      color: red;
-    }
-    .footer-bottom {
-      background: red;
-      color: #ccc;
-      padding: 20px 0;
-      font-size: 14px;
-    }
-    .social-icons a {
-      display: inline-block;
-      width: 35px;
-      height: 35px;
-      line-height: 35px;
-      text-align: center;
-      border-radius: 50%;
-      background: #f1f1f1;
-      color: black;
-      margin-right: 8px;
-      transition: 0.3s;
-    }
-    .social-icons a:hover {
-      background: red;
-      color: #fff;
-    }
-    .subscribe-box input {
-      border: 1px solid #ddd;
-      border-radius: 0;
-    }
-    .subscribe-box button {
-      background:red;
-      border: none;
-      color: #fff;
-      border-radius: 0;
-    }
+  color: black;
+  font-size: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+footer h5 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
+
+footer ul li a:hover {
+  color: red;
+}
+
+.footer-bottom {
+  background: red;
+  color: #ccc;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  background: #f1f1f1;
+  color: black;
+  margin-right: 8px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: red;
+  color: #fff;
+}
+
+.subscribe-box input {
+  border: 1px solid #ddd;
+  border-radius: 0;
+}
+
+.subscribe-box button {
+  background: red;
+  border: none;
+  color: #fff;
+  border-radius: 0;
+}

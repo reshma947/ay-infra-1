@@ -53,7 +53,7 @@
 <body>
 
   <div class="container-fluid p-0 m-0">
-    <nav class="navbar sticky-top navbar-expand-lg p-0">
+    <nav class="navbar navbar-expand-lg p-0 fixed-top bg-white">
       <div class="container-fluid p-0 m-0">
         <a class="navbar-brand ps-lg-5 p-0 m-0" href="./index.html">
           <img src="./images/AY logo.jpg" width="80px" class="img-fluid" alt="Logo">
@@ -114,6 +114,7 @@
 
         </div>
       </div>
+
     </nav>
   </div>
 
@@ -166,6 +167,9 @@
   </script>
 
 
+
+
+
   <div class="container-fluid position-relative p-0">
     <!-- ✅ Background Image -->
     <div class="position-absolute top-0 start-0 w-100 h-100 bg-img z-n1"></div>
@@ -208,7 +212,7 @@
   </div>
 
 
-  <section class="py-5 bg-light">
+  <section class="pb-5 bg-light">
     <div class="container">
       <div class="mb-5">
         <h2 class="fw-bold section-title">OUR <span>SERVICES</span></h2>
@@ -707,20 +711,17 @@
 
   <section class="py-5 coming-projects-section">
     <div class="container-fluid bg-body-tertiary py-5 box-shadow">
-      <!-- Top Buttons -->
+      <!-- ✅ Top Buttons -->
       <div class="row project-buttons m-0 pb-5">
         <div class="col-lg-6 pricing-project-header">
           <div class="bg-project-text-outline">PROJECTS</div>
           <h2 class="main-project-title">PROJECTS</h2>
         </div>
 
-        <div class="col-lg-6 d-flex justify-content-between align-items-center p-0 m-0">
-          <button class="bg-black text-white border-0 px-4 py-2 rounded-2 me-lg-2 btn-hover"
-            onclick="filterProjects('completed')">Completed Projects</button>
-          <button class="bg-red-color text-white border-0 px-4 py-2 rounded-2 me-lg-2 btn-hover"
-            onclick="filterProjects('ongoing')">Ongoing Projects</button>
-          <button class="bg-black text-white border-0 px-4 py-2 rounded-2 btn-hover"
-            onclick="filterProjects('upcoming')">Upcoming Projects</button>
+        <div class="col-lg-6 d-flex justify-content-between align-items-center p-0 m-0 flex-wrap gap-5">
+          <button class="btn-project btn-black" onclick="filterProjects('completed', this)">Completed Projects</button>
+          <button class="btn-project btn-black" onclick="filterProjects('ongoing', this)">Ongoing Projects</button>
+          <button class="btn-project btn-black" onclick="filterProjects('upcoming', this)">Upcoming Projects</button>
         </div>
       </div>
 
@@ -915,6 +916,29 @@
 
       // Show Completed by default
       filterProjects('completed');
+    });
+  </script>
+
+  <script>
+    function filterProjects(type, btn) {
+      // Hide all project sections
+      document.querySelectorAll('.project-section').forEach(section => {
+        section.classList.add('d-none');
+      });
+      // Show selected section
+      document.getElementById(type).classList.remove('d-none');
+
+      // Remove active class from all buttons
+      document.querySelectorAll('.btn-project').forEach(b => b.classList.remove('active'));
+      // Add active class to clicked button
+      btn.classList.add('active');
+    }
+
+    // ✅ Remove active state when clicking outside
+    document.addEventListener('click', function (event) {
+      if (!event.target.classList.contains('btn-project')) {
+        document.querySelectorAll('.btn-project').forEach(b => b.classList.remove('active'));
+      }
     });
   </script>
 
@@ -1170,27 +1194,35 @@
     </button>
     <!-- <img src="./images/comment-img.png" height="50%" width="30%"> -->
 
-    <div class="dropdown-menu dropdown-menu-end dropdown-menu-form">
-      <form>
-        <div class="mb-2">
-          <label for="name" class="form-label mb-1">Name</label>
-          <input type="text" class="form-control form-control-sm" id="name" placeholder="John Doe">
-        </div>
-        <div class="mb-2">
-          <label for="email" class="form-label mb-1">Email</label>
-          <input type="email" class="form-control form-control-sm" id="email" placeholder="john@example.com">
-        </div>
-        <div class="mb-2">
-          <label for="phone" class="form-label mb-1">Phone</label>
-          <input type="tel" class="form-control form-control-sm" id="phone" placeholder="+91 98765 43210">
-        </div>
-        <div class="mb-2">
-          <label for="query" class="form-label mb-1">Query</label>
-          <textarea class="form-control form-control-sm" id="query" rows="2" placeholder="Your message"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary btn-sm w-100">Send</button>
+    <div class="dropdown-menu dropdown-menu-end dropdown-menu-form"
+      style="max-width: 250px; border: 5px solid black; border-radius: 25px;background-color: white;z-index: 999999; ">
+      <div>
+        <form>
+
+          <div style="width: 60px; height: 15px; background-color: black; margin: 5px auto; border-radius:10px"></div>
+          <div style="padding: 10px;">
+            <div class="mb-2">
+              <label for="name" class="form-label mb-1">Name</label>
+              <input type="text" class="form-control form-control-sm" id="name" placeholder="John Doe">
+            </div>
+            <div class="mb-2">
+              <label for="email" class="form-label mb-1">Email</label>
+              <input type="email" class="form-control form-control-sm" id="email" placeholder="john@example.com">
+            </div>
+            <div class="mb-2">
+              <label for="phone" class="form-label mb-1">Phone</label>
+              <input type="tel" class="form-control form-control-sm" id="phone" placeholder="+91 98765 43210">
+            </div>
+            <div class="mb-3">
+              <label for="query" class="form-label mb-1">Query</label>
+              <textarea class="form-control form-control-sm" id="query" rows="2" placeholder="Your message"></textarea>
+            </div>
+            <button type="submit" class="py-2 border-0 rounded-2 bg-red-color text-white btn-sm w-100">Send</button>
+          </div>
+      </div>
       </form>
     </div>
+  </div>
   </div>
 
   <footer class="pt-5 bg-body-tertiary">
@@ -1249,7 +1281,7 @@
 
         <!-- Subscribe -->
         <div class="col-lg-3 col-md-6">
-          <h5>Email</h5>
+          <h5></h5>
           <form class="d-flex subscribe-box">
             <input type="email" class="form-control" placeholder="Email">
             <button type="submit" class="btn"><i class="fa fa-paper-plane"></i></button>
@@ -1274,7 +1306,72 @@
   </footer>
 
 
+  <!-- ✅ Unique Popup Modal Form -->
+  <div class="modal fade custom-popup-form" id="uniquePopupForm" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md"> <!-- made smaller -->
+      <div class="modal-content px-1 m-0 shadow-lg rounded-0 ">
 
+        <div class="modal-body">
+          <div class="">
+            <img src="./images/AY logo.jpg" width="80px" class="img-fluid" alt="Logo">
+          </div>
+          <form>
+            <div class="mb-1">
+              <label for="uniqueName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="uniqueName" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-1">
+              <label for="uniqueEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="uniqueEmail" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-1">
+              <label for="uniquePhone" class="form-label">Phone</label>
+              <input type="text" class="form-control" id="uniquePhone" placeholder="Enter your phone" required>
+            </div>
+            <div class="mb-1">
+              <label for="uniqueCity" class="form-label">City</label>
+              <select class="form-select" id="uniqueCity" required>
+                <option value="" selected disabled>Select your city</option>
+                <option value="hyderabad">Hyderabad</option>
+                <option value="vijayawada">Vijayawada</option>
+                <option value="chennai">Chennai</option>
+              </select>
+            </div>
+            <div class="mb-2">
+              <label for="uniqueQuery" class="form-label">Query</label>
+              <textarea class="form-control" id="uniqueQuery" rows="2" placeholder="Your message..."></textarea>
+            </div>
+            <button type="submit" class="py-2 border-0 rounded-2 bg-red-color text-white w-100">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    // Modal instance (unique ID)
+    const popupForm = new bootstrap.Modal(document.getElementById('uniquePopupForm'));
+
+    // Function to show popup
+    function showPopup() {
+      popupForm.show();
+    }
+
+    // Show every 20 seconds (first after 20s, then every 20s)
+    setTimeout(() => {
+      showPopup();
+      setInterval(showPopup, 20000);
+    }, 20000);
+
+    // Close popup when clicking anywhere outside the form
+    document.addEventListener('click', function (event) {
+      const modalElement = document.getElementById('uniquePopupForm');
+      if (modalElement.classList.contains('show') && !modalElement.contains(event.target)) {
+        popupForm.hide();
+      }
+    });
+  </script>
 
 
 </body>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auto Popup Form</title>
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* Hide default backdrop so clicks outside can dismiss */
+    .custom-popup-form .modal-backdrop {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Unique Popup Modal Form -->
+  <div class="modal fade custom-popup-form" id="uniquePopupForm" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3 rounded-3 shadow">
+        <!-- <div class="">
+          <h5 class="modal-title">Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div> -->
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="uniqueName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="uniqueName" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="uniqueEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="uniqueEmail" placeholder="Enter your email" required>
+            </div>
+             <div class="mb-3">
+              <label for="uniquePhone" class="form-label">Phone</label>
+              <input type="text" class="form-control" id="uniquePhone" placeholder="Enter your phone" required>
+            </div>
+            <div class="mb-3">
+              <label for="uniqueQuery" class="form-label">Query</label>
+              <textarea class="form-control" id="uniqueQuery" rows="3" placeholder="Your query..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Modal instance (unique ID)
+    const popupForm = new bootstrap.Modal(document.getElementById('uniquePopupForm'));
+
+    // Function to show popup
+    function showPopup() {
+      popupForm.show();
+    }
+
+    // Show every 40 seconds
+    setTimeout(() => {
+      showPopup();
+      setInterval(showPopup, 10000);
+    }, 10000);
+
+    // Close popup when clicking anywhere outside the form
+    document.addEventListener('click', function (event) {
+      const modalElement = document.getElementById('uniquePopupForm');
+      if (modalElement.classList.contains('show') && !modalElement.contains(event.target)) {
+        popupForm.hide();
+      }
+    });
+  </script>
+</body>
+</html>

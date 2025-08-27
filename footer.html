@@ -1,185 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Customized Package Form</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Media Articles Section</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
   <style>
-    .form-container {
-      background: #fff;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      border-radius: 15px;
-    }
-
-
-    .welcome-section {
-      background: #ff0000;
-      color: #fff;
+    .media-section {
+      min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      padding: 40px 20px;
-      border-top-right-radius: 120px;  
-      border-bottom-right-radius: 120px;
     }
-
-    .welcome-section h2 {
-      font-size: 28px;
-      font-weight: bold;
+    .media-img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
     }
-
-    .form-section {
-      padding: 40px 30px;
+    .carousel-item {
+      padding: 2rem;
     }
-
-    .form-section h3 {
-      font-weight: bold;
-      margin-bottom: 20px;
+    .media-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #d35400;
+      letter-spacing: 1px;
     }
-
-    .form-control,
-    .form-select {
-      margin-bottom: 15px;
-      border-radius: 0px;
+    .media-title i {
+      margin: 0 10px;
+      color: #e67e22;
     }
-
-    .btn-custom {
-      background-color: #ff0000;
-      color: #fff;
-      border-radius: 50px;
-      padding: 10px 30px;
-      border: none;
-    }
-
-    @media (max-width: 768px) {
-      .welcome-section {
-        border-radius: 0; 
-        padding: 20px;
-        text-align: center;
+    @media (max-width: 991px) {
+      .media-section {
+        min-height: auto;
+      }
+      .media-img {
+        height: auto; /* on mobile image shrinks naturally */
       }
     }
   </style>
 </head>
 <body>
 
-<div class="container py-5 mb-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-10 col-md-12">
-      <div class="row form-container">
 
+<section class="media-section">
+  <div class="container-fluid">
+    <div class="row g-0">
 
-        <div class="col-md-5 welcome-section">
-          <div>
-            <h2>Welcome</h2>
-            <p class="mt-3">Plan your dream construction<br>with us in just 30 seconds!</p>
-          </div>
-        </div>
+      <!-- ✅ Left Side Image -->
+      <div class="col-lg-6 d-flex">
+        <img src="./images/brick-img.png" alt="Bricks Image" class="img-fluid media-img">
+      </div>
 
-        <div class="col-md-7 form-section">
-          <h3>Looking for Customized Package?</h3>
-          <form>
-            <div class="row">
-              <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Site Area *">
-              </div>
-              <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Plot Location *">
-              </div>
-              <div class="col-md-6">
-                <select class="form-select">
-                  <option selected>Select Construction Type</option>
-                  <option>Residential construction</option>
-                  <option>Commercial construction</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <select class="form-select">
-                  <option selected>Select Interiors</option>
-                  <option>Construction + Interiors</option>
-                  <option>Only Construction</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <select class="form-select">
-                  <option selected>Select Design</option>
-                  <option>Design & Execution</option>
-                  <option>Only Design</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <select class="form-select">
-                  <option selected>Select House Type</option>
-                  <option>Ground Floor</option>
-                  <option>Duplex House</option>
-                  <option>Rental House</option>
-                  <option>Duplex + Rental House</option>
-                  <option>Modern Villa</option>
-                  <option>Luxury Homes</option>
-                  <option>House for Self Use</option>
-                  <option>House for Renting Out</option>
-                  <option>Budget Independent House</option>
-                  <option>Bungalow</option>
-                  <option>Commercial Building</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <select class="form-select">
-                  <option selected>Select Floors</option>
-                  <option>Only Ground Floor</option>
-                  <option>G+1 Floor</option>
-                  <option>G+2 Floor</option>
-                  <option>G+3 Floor</option>
-                  <option>G+4 Floor</option>
-                  <option>G+5 Floor</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <select class="form-select">
-                  <option selected>BHK</option>
-                  <option>1 BHK</option>
-                  <option>2 BHK</option>
-                  <option>3 BHK</option>
-                  <option>4 BHK</option>
-                  <option>5 BHK</option>
-                  <option>5+ BHK</option>
-                  <option>Office Space</option>
-                  <option>Shop</option>
-                </select>
-              </div>
-              <div class="col-md-6">
-                <input type="text" class="form-control" placeholder="Budget Estimation *">
-              </div>
-              <div class="col-md-6">
-                <select class="form-select">
-                  <option selected>Select Loan</option>
-                  <option>Yes Applied</option>
-                  <option>It’s Approved</option>
-                  <option>Need to Apply</option>
-                  <option>Not Required</option>
-                </select>
-              </div>
-              <div class="col-md-12">
-                <select class="form-select">
-                  <option selected>When are you planning for construction?</option>
-                  <option>Immediate</option>
-                  <option>After One Week</option>
-                  <option>After One Month</option>
-                  <option>After Six Months</option>
-                </select>
-              </div>
+      <!-- ✅ Right Side Carousel -->
+      <div class="col-lg-6 col-12 d-flex align-items-center">
+        <div id="mediaCarousel" class="carousel slide w-100" data-bs-ride="carousel">
+
+          <div class="carousel-inner">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <h2 class="media-title">MEDIA <i class="bi bi-cone-striped"></i> ARTICLES</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam esse optio autem temporibus praesentium animi molestias
+                odit consequuntur porro ratione, eligendi placeat deserunt impedit obcaecati, commodi labore soluta, deleniti natus.
+              </p>
             </div>
 
-            <button type="submit" class="btn btn-custom mt-3">Register</button>
-          </form>
-        </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <h2 class="media-title">LATEST <i class="bi bi-cone-striped"></i> NEWS</h2>
+              <p>
+                Qui accusantium rerum velit sint eum iste error tempore quos ducimus laborum animi hic corrupti repellendus quasi
+                quibusdam, voluptates, consequatur labore quidem?
+              </p>
+            </div>
 
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <h2 class="media-title">FEATURED <i class="bi bi-cone-striped"></i> POSTS</h2>
+              <p>
+                Natus autem optio voluptatem aspernatur deleniti voluptatibus quisquam quam reiciendis provident, praesentium libero
+                corrupti magni debitis ab quis dolore enim maxime.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Controls -->
+          <!-- <button class="carousel-control-prev" type="button" data-bs-target="#mediaCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#mediaCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button> -->
+
+        </div>
       </div>
+
     </div>
   </div>
-</div>
+</section>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

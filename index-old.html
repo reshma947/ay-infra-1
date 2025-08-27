@@ -951,3 +951,62 @@
 
       playLoop();
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ✅ City Selection Modal -->
+  <div class="modal fade" id="cityModal" tabindex="-1" aria-labelledby="cityModalLabel" aria-hidden="true"
+    data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered modal-md">
+      <div class="modal-content p-4">
+        <div class="row g-3">
+          <!-- Left Info -->
+          <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center text-center p-3">
+            <h4 class="fw-bold">Select a City</h4>
+            <p>WE BUILD YOUR 'DREAM HOME'<br>
+              India's <b>NO.1 TECH</b> Powered Construction Company</p>
+          </div>
+
+          <!-- Right Cities -->
+          <div class="col-lg-6 d-flex flex-column justify-content-center">
+            <div class="city-card mb-2" onclick="selectModalCity('Hyderabad')">
+              <img src="https://img.icons8.com/emoji/96/india-emoji.png" alt="Hyderabad">
+              <h6 class="fw-bold">Hyderabad</h6>
+            </div>
+            <div class="city-card mb-2" onclick="selectModalCity('Chennai')">
+              <img src="https://img.icons8.com/color/96/train-station.png" alt="Chennai">
+              <h6 class="fw-bold">Chennai</h6>
+            </div>
+            <div class="city-card" onclick="selectModalCity('Vijayawada')">
+              <img src="https://img.icons8.com/ios/100/buddha.png" alt="Vijayawada">
+              <h6 class="fw-bold">Vijayawada</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Show modal on page load
+    document.addEventListener("DOMContentLoaded", function () {
+      var cityModal = new bootstrap.Modal(document.getElementById('cityModal'));
+      cityModal.show();
+    });
+
+    // Function to select city from modal
+    function selectModalCity(city) {
+      document.getElementById("modalSelectedCity").innerText = city;
+      var cityModal = bootstrap.Modal.getInstance(document.getElementById('cityModal'));
+      cityModal.hide();
+    }
+  </script>
