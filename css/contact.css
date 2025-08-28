@@ -10,6 +10,10 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
+.box-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
 .headline-big{
   font-size: 4rem;
   font-weight: 900;
@@ -23,10 +27,12 @@
 footer {
       color: black;
       font-size: 15px;
+              box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     }
     footer h5 {
       font-weight: 600;
       margin-bottom: 1rem;
+
     }
     footer ul {
       list-style: none;
