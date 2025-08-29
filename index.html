@@ -102,17 +102,20 @@
             </li> -->
 
             <li class="nav-item ps-lg-4">
-              <a class="nav-link fw-semibold" href="./cost-estimator.html">Cost - Estimator</a>
+              <a class="nav-link fw-semibold" href="./cost-estimator.html">Cost Estimator</a>
             </li>
             <li class="nav-item ps-lg-4">
-              <a class="nav-link fw-semibold" href="./contact.html">Contact
-                Us</a>
+              <a class="nav-link fw-semibold" href="./contact.html"><button class="px-3 py-1 border-0 rounded-4 bg-red-color text-white">Contact Us</button></a>
             </li>
+             <div class="ps-lg-4 m-0 d-flex align-items-center">
+            <!-- <span class="fw-semibold">Selected City : </span> -->
+            <span id="modalSelectedCity" class="fw-semibold">Not Selected</span>
+          </div>
           </ul>
 
           <div class="p-0 m-0">
-            <span class="fw-semibold">Selected City : </span>
-            <span id="modalSelectedCity" class="text-danger fw-bold">Not Selected</span>
+            <span class="fw-semibold"><i class="fa-solid fa-phone text-red-color"></i></span>
+            <span class="fw-bold"><a href="Tel: +91 87122 26311" class="text-decoration-none text-black"> +91 87122 26311</a></span>
           </div>
 
         </div>
@@ -141,12 +144,12 @@
               <h6 class="fw-bold">Hyderabad</h6>
             </div>
             <div class="city-card mb-2" onclick="selectModalCity('Chennai')">
-              <img src="https://img.icons8.com/color/96/train-station.png" alt="Chennai">
-              <h6 class="fw-bold">Chennai</h6>
+              <img src="https://img.icons8.com/color/96/train-station.png" alt="Bangalore">
+              <h6 class="fw-bold">Bangalore</h6>
             </div>
             <div class="city-card" onclick="selectModalCity('Vijayawada')">
-              <img src="https://img.icons8.com/ios/100/buddha.png" alt="Vijayawada">
-              <h6 class="fw-bold">Vijayawada</h6>
+              <img src="https://img.icons8.com/ios/100/buddha.png" alt="Andhra Pradesh">
+              <h6 class="fw-bold">Andhra Pradesh</h6>
             </div>
           </div>
         </div>
@@ -409,7 +412,7 @@
     <div class="container py-4">
       <div class="row justify-content-center g-4">
 
-        <div class="col-md-6 col-lg-4">
+        <div class="col-md-6 col-lg-3">
           <div class="pricing-card">
             <div class="plan-title basic-color">Basic</div>
             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -421,27 +424,29 @@
               <li><span></span> Lorem ipsum dolor sit amet</li>
               <li><span></span> Consectetur adipiscing elit</li>
             </ul>
-            <button class="btn-purchase">Purchase</button>
+            <button class="btn-purchase" onclick="btnOnClick()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Purchase</button>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4">
-          <div class="pricing-card bg-red">
-            <div class="plan-title pro-color">Profesional</div>
-            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <div class="plan-price pro-color">
-              <span></span>1049<span class="price-decimal">.99</span>
+
+
+        <div class="col-md-6 col-lg-3">
+          <div class="pricing-card">
+            <div class="plan-title premium-color">Profesional</div>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <div class="plan-price premium-color">
+              <span></span>1499<span class="price-decimal">.99</span>
             </div>
-            <p class="text-white">per month</p>
-            <ul class="feature-list pro-dot list-unstyled">
+            <p class="text-muted">per month</p>
+            <ul class="feature-list premium-dot list-unstyled">
               <li><span></span> Lorem ipsum dolor sit amet</li>
               <li><span></span> Consectetur adipiscing elit</li>
             </ul>
-            <button class="btn-purchase bg-white text-color">Purchase</button>
+            <button class="btn-purchase" onclick="btnOnClick()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Purchase</button>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-4">
+              <div class="col-md-6 col-lg-3">
           <div class="pricing-card">
             <div class="plan-title premium-color">Premium</div>
             <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -453,7 +458,23 @@
               <li><span></span> Lorem ipsum dolor sit amet</li>
               <li><span></span> Consectetur adipiscing elit</li>
             </ul>
-            <button class="btn-purchase">Purchase</button>
+            <button class="btn-purchase" onclick="btnOnClick()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Purchase</button>
+          </div>
+        </div>
+
+                <div class="col-md-6 col-lg-3">
+          <div class="pricing-card bg-red">
+            <div class="plan-title pro-color">Royale</div>
+            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <div class="plan-price pro-color">
+              <span></span>1049<span class="price-decimal">.99</span>
+            </div>
+            <p class="text-white">per month</p>
+            <ul class="feature-list pro-dot list-unstyled">
+              <li><span></span> Lorem ipsum dolor sit amet</li>
+              <li><span></span> Consectetur adipiscing elit</li>
+            </ul>
+            <button class="btn-purchase bg-white text-color" onclick="btnOnClick()" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Purchase</button>
           </div>
         </div>
 
@@ -461,7 +482,7 @@
     </div>
   </section>
 
-  <section class="pricing-header mt-5" data-aos="fade-up">
+  <section class="pricing-header mt-5" data-aos="zoom-in-right">
     <div class="bg-text-outline">OPERATE</div>
     <h2 class="main-title">How It Works</h2>
   </section>
@@ -1192,9 +1213,9 @@
 
   <!-- Fixed "Let's Talk" Button + Dropdown -->
   <div class="fixed-contact dropdown">
-    <button class="px-3 py-2 bg-red-color text-white border-0 dropdown-toggle rounded-5" type="button"
-      data-bs-toggle="dropdown" aria-expanded="false">
-      Let's Talk
+    <button class=" px-2 py-1 bg-red-color text-white border-0 rounded-5" type="button"
+      data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-brands fa-whatsapp fs-1"></i>
+      
     </button>
     <!-- <img src="./images/comment-img.png" height="50%" width="30%"> -->
 
@@ -1229,7 +1250,7 @@
   </div>
   </div>
 
-  <footer class="pt-5 bg-body-tertiary">
+  <footer class="pt-5 bg-body-secondary">
     <div class="container">
       <div class="row gy-4">
         <!-- Brand Section -->
@@ -1268,6 +1289,7 @@
           <h5>Contact Info</h5>
           <p class="mb-1"><i class="fa fa-phone me-2 text-red-color"></i> +123 456 7890</p>
           <p class="mb-1"><i class="fa fa-envelope me-2 text-red-color"></i> info@example.com</p>
+          <h5>Office Address</h5>
           <div class="d-flex">
             <i class="fa fa-map-marker-alt me-2 text-red-color"></i>
             <p>Pillar No-235, Inner Ring Rd, opposite Fish Building,<br>
@@ -1365,8 +1387,8 @@
     // Show every 20 seconds (first after 20s, then every 20s)
     setTimeout(() => {
       showPopup();
-      setInterval(showPopup, 20000);
-    }, 20000);
+      setInterval(showPopup, 50000);
+    }, 50000);
 
     // Close popup when clicking anywhere outside the form
     document.addEventListener('click', function (event) {
