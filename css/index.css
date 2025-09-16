@@ -461,6 +461,7 @@ body {
     url("../images/building-img-1.jpg");
   background-size: cover;
   background-position: center;
+
 }
 
 .right-section {
@@ -880,3 +881,4 @@ footer ul li a:hover {
   color: #fff;
   border-radius: 0;
 }
+
