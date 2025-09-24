@@ -55,26 +55,47 @@
 
 <body>
 
-  <div class="container-fluid p-0 m-0">
-    <nav class="navbar navbar-expand-lg p-0 fixed-top bg-white">
+  <div class="container-fluid p-0 m-0 fixed-top">
+
+    <div class="red-strip p-0 m-0 d-flex">
+      <div class="ps-4 m-0">
+        <span id="modalSelectedCity" class="fw-semibold">Not Selected</span>
+      </div>
+
+      <div class="ms-auto">
+        <div class="d-flex">
+          <a href="#" class="pe-5 text-white text-decoration-none fw-semibold"><i
+              class="bi bi-telephone text-white pe-1 fw-semibold"></i>
+            +91 871 222 6311</a>
+          <a href="#" class="pe-5 text-white text-decoration-none fw-semibold"><i
+              class="bi bi-envelope text-white pe-1 fw-semibold"></i>
+            info@example.com</a>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg p-0 bg-white">
       <div class="container-fluid p-0 m-0">
         <a class="navbar-brand ps-lg-5 p-0 m-0" href="./index.html">
-          <img src="./images/AY logo.jpg" width="80px" class="img-fluid" alt="Logo">
+          <img src="./images/AY logo.jpg" width="72px" class="img-fluid" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-around" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-around p-0 m-0" id="navbarSupportedContent">
           <div class="bg-info"></div>
-          <ul class="navbar-nav">
-            <li class="nav-item">
+          <ul class="navbar-nav m-0 p-0">
+            <li class="nav-item m-0 p-3 nav-active">
               <a class="nav-link fw-semibold" aria-current="page" href="./index.html">Home </a>
             </li>
-            <li class="nav-item ps-lg-4">
+            <li class="nav-item p-3 ms-lg-4">
               <a class="nav-link fw-semibold" href="./about-us.html">About Us</a>
             </li>
-            <li class="nav-item ps-lg-4">
+            <li class="nav-item p-3 ps-lg-4">
               <a class="nav-link fw-semibold" href="./services.html">Services</a>
             </li>
 
@@ -101,23 +122,20 @@
               </ul>
             </li> -->
 
-            <li class="nav-item ps-lg-4">
+            <li class="nav-item p-3 ps-lg-4">
               <a class="nav-link fw-semibold" href="./cost-estimator.html">Cost Estimator</a>
             </li>
-            <li class="nav-item ps-lg-4">
+            <!-- <li class="nav-item ps-lg-4">
               <a class="nav-link fw-semibold" href="./contact.html"><button
-                  class="px-3 py-1 border-0 rounded-4 bg-red-color text-white">Contact Us</button></a>
-            </li>
-            <div class="ps-lg-4 m-0 d-flex align-items-center">
-              <!-- <span class="fw-semibold">Selected City : </span> -->
-              <span id="modalSelectedCity" class="fw-semibold">Not Selected</span>
-            </div>
+                  class="px-3 py-1 border-0 rounded-2 bg-red-color text-white ">Free Site Visit</button></a>
+            </li> -->
+
           </ul>
 
           <div class="p-0 m-0">
-            <span class="fw-semibold"><i class="fa-solid fa-phone text-red-color"></i></span>
-            <span class="fw-bold"><a href="Tel: +91 87122 26311" class="text-decoration-none text-black"> +91 87122
-                26311</a></span>
+            <a class="nav-link fw-semibold" href="./contact.html"><button
+                class="px-3 py-1 border-0 rounded-2 bg-red-color text-white ">Free Site Visit</button></a>
+
           </div>
 
         </div>
@@ -178,7 +196,7 @@
 
 
 
-  <div class="container-fluid position-relative p-0">
+  <div class="container-fluid position-relative p-0 m-0">
     <!-- ✅ Background Image -->
     <div class="position-absolute top-0 start-0 w-100 h-100 bg-img z-n1"></div>
 
@@ -199,20 +217,20 @@
             <div>
               <button class="fw-semibold px-4 py-2 mt-4 bg-red-color text-white border-0 rounded-2"
                 data-aos="fade-right" data-aos-offset="100">
-                Book Appointment
+                Packages Start From
               </button>
             </div>
           </div>
 
           <!-- ✅ Right Column Image (touches bottom & right) -->
           <div class="col-lg-6 position-relative d-none d-lg-block">
-            <img src="./images/banner-img-3.png" alt="Hero Image" data-aos="fade-up" data-aos-duration="3000"
+            <img src="./images/banner-img-1.png" alt="Hero Image" data-aos="fade-up" data-aos-duration="3000"
               class="position-absolute bottom-0 end-0 w-100 h-100 object-fit-cover" />
           </div>
 
           <!-- ✅ Image for mobile view (stacked) -->
           <div class="col-12 d-block d-lg-none px-3 mt-4">
-            <img src="./images/banner-img-3.png" alt="Hero Image" class="img-fluid w-100 rounded" />
+            <img src="./images/banner-img-1.png" alt="Hero Image" class="img-fluid w-100 rounded" />
           </div>
         </div>
       </div>
@@ -221,7 +239,7 @@
   </div>
 
 
-  <section class="pb-5 bg-light">
+  <!-- <section class="pb-5 bg-light">
     <div class="container">
       <div class="mb-5">
         <h2 class="fw-bold section-title" data-aos="fade-right">OUR <span>SERVICES</span></h2>
@@ -229,21 +247,24 @@
       </div>
 
       <div class="row g-4">
-        <!-- Service 1 -->
-        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="100">
+
+        <div class="col-lg-3 col-md-6 position-relative" data-aos="fade-up" data-aos-duration="100">
           <div class="service-card text-center d-flex flex-column">
-            <div class="card-body">
+            <div class="card-body pt-5 mt-5">
               <div class="service-icon">
                 <i class="fa-regular fa-building"></i>
               </div>
               <h5 class="fw-semibold">Residential <br>Construction </h5>
               <p class="px-2">Dream Homes Tailored for Every Family</p>
             </div>
-            <a href="#" class="read-more-btn">Read more →</a>
+            <a href="#" class="read-more-btn text-decoration-none">Read more →</a>
+            <div class="p-5 bg-info position-absolute" style="left:100px; top:-50px">
+              <img src="">
+
+            </div>
           </div>
         </div>
 
-        <!-- Service 2 -->
         <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="200">
           <div class="service-card text-center d-flex flex-column">
             <div class="card-body">
@@ -253,11 +274,10 @@
               <h5 class="fw-semibold">Commercial <br>Construction</h5>
               <p class="px-2">Build Spaces That Drive Success</p>
             </div>
-            <a href="#" class="read-more-btn">Read more →</a>
+            <a href="#" class="read-more-btn text-decoration-none">Read more →</a>
           </div>
         </div>
 
-        <!-- Service 3 -->
         <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-duration="300">
           <div class="service-card text-center d-flex flex-column">
             <div class="card-body">
@@ -267,11 +287,10 @@
               <h5 class="fw-semibold">Interior <br>Design</h5>
               <p class="px-2">Spaces That Inspire & Reflect Your Lifestyle</p>
             </div>
-            <a href="#" class="read-more-btn">Read more →</a>
+            <a href="#" class="read-more-btn text-decoration-none">Read more →</a>
           </div>
         </div>
 
-        <!-- Service 4 -->
         <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-duration="400">
           <div class="service-card text-center d-flex flex-column">
             <div class="card-body">
@@ -281,13 +300,92 @@
               <h5 class="fw-semibold">Renovation <br>Remodelling</h5>
               <p class="px-2">Upgrade Your Space for Today’s Needs</p>
             </div>
-            <a href="#" class="read-more-btn">Read more →</a>
+            <a href="#" class="read-more-btn text-decoration-none">Read more →</a>
           </div>
         </div>
       </div>
 
     </div>
+  </section> -->
+
+
+  <section class="bg-body-tertiary pb-3">
+    <div class="container py-5">
+      <div class="mb-5">
+        <h2 class="fw-bold section-title" data-aos="fade-right">OUR <span>SERVICES</span></h2>
+        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+      </div>
+      <div class="row justify-content-center g-4">
+
+        <!-- Card -->
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="service-card">
+            <div class="service-inner">
+              <div class="boxy">
+                <img src="./images/our-services-img-1.jpg" alt="Healthcare">
+              </div>
+              <div class="text-content">
+                <div class="service-text">RESIDENTIAL CONSTRUCTION</div>
+                <p>Dream Homes Tailored for Every Family</p>
+                <a href="#" class="read-more-btn text-decoration-none">Read more →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card -->
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="service-card">
+            <div class="service-inner">
+              <div class="boxy">
+                <img src="./images/our-services-img-3.jpg" alt="Retail">
+              </div>
+              <div class="text-content">
+                <div class="service-text inter-tight">COMMERCIAL CONSTRUCTION</div>
+                <p>Build Spaces That Drive Success</p>
+                <a href="#" class="read-more-btn text-decoration-none">Read more →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card -->
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="service-card">
+            <div class="service-inner">
+              <div class="boxy">
+                <img src="./images/our-services-img-2.jpg" alt="Manufacturing">
+              </div>
+              <div class="text-content">
+                <div class="service-text inter-tight">INTERIOR <br> DESIGN</div>
+                <p>Spaces That Inspire & Reflect Your Lifestyle</p>
+                <a href="#" class="read-more-btn text-decoration-none">Read more →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card -->
+        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+          <div class="service-card">
+            <div class="service-inner">
+              <div class="boxy">
+                <img src="./images/our-services-img-4.jpg" alt="Education">
+              </div>
+              <div class="text-content">
+                <div class="service-text inter-tight">RENOVATION REMODELLING</div>
+                <p>Upgrade Your Space for Today’s Needs</p>
+                <a href="#" class="read-more-btn text-decoration-none">Read more →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
+
+
 
 
 
@@ -335,86 +433,17 @@
   </section>
 
 
-  <section class="my-5">
-    <div class="container-fluid px-0">
-      <div class="stats-wrapper">
-        <!-- Left Column -->
-        <div class="stats-left">
-          <div class="stat-item">
-            <div class="stat-icon"><i class="fa-solid fa-helmet-safety"></i></div>
-            <div class="stat-value">109</div>
-            <div class="stat-label">Expert Worker</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-icon"><i class="fa-solid fa-building-user"></i></div>
-            <div class="stat-value">485</div>
-            <div class="stat-label">Happy Client</div>
-          </div>
-        </div>
-
-        <!-- Right Column -->
-        <div class="stats-right">
-          <div class="stat-item">
-            <div class="stat-icon"><i class="fa-solid fa-building-columns"></i></div>
-            <div class="stat-value">789</div>
-            <div class="stat-label">Complete Project</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-icon"><i class="fa-solid fa-building-shield"></i></div>
-            <div class="stat-value">890</div>
-            <div class="stat-label">Running Project</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </section>
 
 
-  <section class="my-5 pt-5">
-    <div class="container">
 
-      <div class="row">
-        <div class="col-lg-8">
-          <!-- <h2 class="fw-bold pb-3">WHO <span class="text-red-color">We
-              Are</span></h2> -->
-          <div class="">
-            <img src="./images/who-we-are-img.jpg" height="100%" width="50%" data-aos="flip-up" data-aos-offset="200">
-          </div>
-          <p class="fs-6 pt-4">
-            We are AY Infra, a turnkey construction company dedicated to turning ideas into beautiful, functional, and
-            lasting spaces. Every project is designed to be stress-free and enjoyable, so you can focus on imagining
-            your dream space while we handle the details.
 
-          </p>
-          <p class="fw-bold">How We Work:</p>
-          <ul>
-            <li><strong>We Listen First:</strong> Your needs, lifestyle, and vision guide every decision</li>
-            <li><strong>We Plan Clearly:</strong> Step-by-step timelines and transparent milestones keep you informed.
-            </li>
-            <li><strong>We Build Carefully: </strong>Skilled craftsmanship and trusted materials ensure quality that
-              lasts.</li>
-            <li><strong>We Take Care of Everything:</strong>From designs and approvals to construction, financing, and
-              post-completion support, we manage it all.</li>
-            <li><strong>We Keep You Safe: </strong>Every project follows strict safety and regulatory standards for your
-              peace of mind.</li>
-          </ul>
-          <p>At A Y Infra, we don’t just build spaces — we create experiences where life, work, and memories thrive.</p>
-        </div>
-        <div class="col-lg-4">
-          <div class="video-wrapper video-gradient">
-            <video autoplay muted loop playsinline>
-              <source src="./videos/New Video .mp4" type="video/mp4">
-              Your browser does not support HTML5 video.
-            </video>
-            <div class="left-gradient"></div>
-            <div class="right-gradient"></div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-  </section>
+
+
+
+
+
+
 
   <section class="py-5">
     <section class="pricing-header" data-aos="fade-up">
@@ -516,6 +545,54 @@
     </div>
   </section>
 
+
+  <section class="mt-5">
+    <div class="container box-center gap-2">
+      <div class="key-headline">Key Differences Between</div>
+
+      <div class="content">
+        <div class="box design">
+          <!-- <img src="./images/our-services-img-2.jpg" alt="Web Design"> -->
+          <h2>AY Infra</h2>
+          <ul class="text-start">
+            <li>We handle everything from design to handover stress-free for you.</li>
+            <li>Spaces made to fit your lifestyle and taste.</li>
+            <li>Only branded, high-quality materials.</li>
+            <li>Experienced professionals deliver precise work.</li>
+            <li>Clear milestones and no hidden costs.</li>
+            <li>Projects finished on schedule.</li>
+            <li>Every step is planned and managed so your project flows effortlessly.</li>
+            <li>Approvals, financing, and guidance throughout the project.</li>
+            <!-- <li>Stage-wise payments linked to completed work easy for both you and us.</li>
+          <li>Our quality and workmanship are designed to stand the test of time, giving you confidence in your investment.</li> -->
+
+          </ul>
+        </div>
+
+        <!-- <div class="separator">&</div> -->
+
+        <div class="box development">
+          <!-- <img src="./images/our-services-img-2.jpg" alt="Web Development"> -->
+          <h2>Average Contractor</h2>
+          <ul class="text-start">
+            <li>You manage most of the work yourself.</li>
+            <li>Generic designs with little personalization.</li>
+            <li>Standard or low-quality materials.</li>
+            <li>Workmanship is inconsistent.</li>
+            <li>Confusing quotes, hidden charges possible.</li>
+            <li>Often delayed.</li>
+            <li>Multiple vendors, unclear steps, and mismanagement.</li>
+            <li>Minimal client support.</li>
+            <!-- <li>Full upfront payments or unclear payment <br>schedules.</li>
+          <li>Limited focus on durability; issues</li> -->
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
   <section class="pricing-header mt-5" data-aos="zoom-in-right">
     <div class="bg-text-outline">OPERATE</div>
     <h2 class="main-title">How It Works</h2>
@@ -538,86 +615,77 @@
 
   </div>
 
-  <section class="mt-5">
-    <div class="container-fluid">
-      <div class="row equal-height-row">
-        <!-- Left Column -->
-        <div class="col-lg-6 ps-5 left-section">
-          <div class="d-flex">
-            <div class="content">
-              <!-- <h6 class="fw-bold mb-3">Sustainability</h6>
-            <h2 class="fw-bold mb-4">Committed To Keep<br> People Healthy & Safe</h2>
-            <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button class="btn get-btn">GET IN TOUCH</button> -->
-
-              <p class="fw-bold fs-4">Feature</p>
-              <ol>
-                <li>Turnkey Service</li>
-                <li>Personalized Designs</li>
-                <li>Premium Materials</li>
-                <li>Skilled Team</li>
-                <li>Transparent Pricing</li>
-                <!-- <li>On-Time Delivery</li>
-                <li>Smooth Process</li>
-                <li>End-to-End Support</li>
-                <li>Hassle-Free Payments</li>
-                <li>Built to Last</li> -->
 
 
-              </ol>
-            </div>
-
-            <div class="content">
-
-
-              <p class="fw-bold fs-4">AY Infra</p>
-              <ol>
-                <li>We handle everything from design to handover — stress-free for you.</li>
-                <li class="pb-2">Spaces made to fit your lifestyle and taste.</li>
-                <li class="pb-2">Only branded, high-quality materials.</li>
-                <li class="pb-2">Experienced professionals deliver precise work.</li>
-                <li>Clear milestones and no hidden costs.</li>
-                <!-- <li>Projects finished on schedule.</li>
-                <li>Every step is planned and managed so your project flows effortlessly.</li>
-                <li>Approvals, financing, and guidance throughout the project.</li>
-                <li>Stage-wise payments linked to completed work — easy for both you and us.</li>
-                <li>Our quality and workmanship are designed to stand the test of time, giving you confidence in your
-                  investment.</li> -->
-
-
-              </ol>
-            </div>
-
+  <section class="mt-5 mb-5 bg-body-tertiary box-shadow">
+    <div class="container p-0">
+      <div class="row row-cols-lg-2 p-0 m-0">
+        <div class="d-flex justify-content-center align-items-center p-0 m-0">
+          <div>
+            <p class="fs-1 fw-bold">Refer a friend and get rewarded</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, tempora amet maiores perferendis,
+              placeat illum fugit laudantium numquam dolor aspernatur consectetur quo quisquam, esse itaque hic
+              accusantium optio facere omnis</p>
+            <p><button class="px-3 py-2 border-0 bg-black text-white rounded-5">Submit a referal</button></p>
 
           </div>
 
-
+        </div>
+        <div class="p-0 m-0">
+          <img src="./images/referal-img-1.png" height="100%" width="100%">
         </div>
 
-        <!-- Right Column -->
-        <div class="col-lg-6 ps-5 right-section">
-          <div class="content">
-            <h4 class="fw-bold mb-4">We Follow Best Practices</h4>
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in ipsum id orci porta
-              dapibus.</p>
-            <ul class="list-unstyled icon-list">
-              <li><i class="bi bi-recycle text-white"></i> Sustainability</li>
-              <li><i class="bi bi-clock-history text-white"></i> Project On Time</li>
-              <li><i class="bi bi-display text-white"></i> Modern Technology</li>
-              <!-- <li><i class="bi bi-vector-pen text-white"></i> Latest Designs</li>
-              <li><i class="bi bi-star text-white"></i> Innovation</li>
-              <li><i class="bi bi-graph-up text-white"></i> Efficiency</li> -->
-            </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="my-5 pt-5">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-8">
+          <!-- <h2 class="fw-bold pb-3">WHO <span class="text-red-color">We
+              Are</span></h2> -->
+          <div class="">
+            <img src="./images/who-we-are-img.jpg" height="100%" width="50%" data-aos="flip-up" data-aos-offset="200">
+          </div>
+          <p class="fs-6 pt-4">
+            We are AY Infra, a turnkey construction company dedicated to turning ideas into beautiful, functional, and
+            lasting spaces. Every project is designed to be stress-free and enjoyable, so you can focus on imagining
+            your dream space while we handle the details.
+
+          </p>
+          <p class="fw-bold">How We Work:</p>
+          <ul>
+            <li><strong>We Listen First:</strong> Your needs, lifestyle, and vision guide every decision</li>
+            <li><strong>We Plan Clearly:</strong> Step-by-step timelines and transparent milestones keep you informed.
+            </li>
+            <li><strong>We Build Carefully: </strong>Skilled craftsmanship and trusted materials ensure quality that
+              lasts.</li>
+            <li><strong>We Take Care of Everything:</strong>From designs and approvals to construction, financing, and
+              post-completion support, we manage it all.</li>
+            <li><strong>We Keep You Safe: </strong>Every project follows strict safety and regulatory standards for your
+              peace of mind.</li>
+          </ul>
+          <p>At A Y Infra, we don’t just build spaces — we create experiences where life, work, and memories thrive.</p>
+        </div>
+        <div class="col-lg-4">
+          <div class="video-wrapper video-gradient">
+            <video autoplay muted loop playsinline>
+              <source src="./videos/New Video .mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <div class="left-gradient"></div>
+            <div class="right-gradient"></div>
           </div>
         </div>
       </div>
     </div>
+
   </section>
+
+
 
   <section class="cost-estimator-section">
     <div class="container py-5">
@@ -823,9 +891,13 @@
 
         <div class="col-lg-6 d-flex justify-content-between align-items-center p-0 m-0 flex-wrap gap-5"
           data-aos="zoom-in-left">
-          <button class="btn-project btn-black" onclick="filterProjects('completed', this)">Completed Projects</button>
-          <button class="btn-project btn-black" onclick="filterProjects('ongoing', this)">Ongoing Projects</button>
-          <button class="btn-project btn-black" onclick="filterProjects('upcoming', this)">Upcoming Projects</button>
+          <div class="text-center">
+            <button class="btn-project btn-black" onclick="filterProjects('completed', this)">Our Projects</button>
+
+
+          </div>
+          <!-- <button class="btn-project btn-black" onclick="filterProjects('ongoing', this)">Ongoing Projects</button> -->
+          <!-- <button class="btn-project btn-black" onclick="filterProjects('upcoming', this)">Upcoming Projects</button> -->
         </div>
       </div>
 
@@ -886,7 +958,7 @@
           </div>
 
           <!-- Ongoing Section -->
-          <div class="project-section d-none" id="ongoing">
+          <!-- <div class="project-section d-none" id="ongoing">
             <div class="swiper mySwiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -928,10 +1000,10 @@
 
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!-- Upcoming Section -->
-          <div class="project-section d-none" id="upcoming">
+          <!-- <div class="project-section d-none" id="upcoming">
             <div class="swiper mySwiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -973,7 +1045,7 @@
 
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div> <!-- col-lg-9 -->
       </div> <!-- row -->
@@ -1129,6 +1201,59 @@
   </script>
 
 
+  <section class="pricing-header mt-5" data-aos="zoom-in-right">
+    <div class="bg-text-outline">OFFICE</div>
+    <h2 class="main-title">Explore Spaces</h2>
+  </section>
+
+
+  <div class="container pb-5">
+    <div class="row g-4 justify-content-center">
+
+      <!-- Card 1 -->
+      <div class="col-lg-4 col-sm-6">
+        <div class="custom-card">
+          <img src="./images/office-img-1.jpg" height="100%" alt="Image1">
+          <div class="card-body m-0">
+            <p class="fw-semibold fs-5 p-0 m-0">Cabin</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-lg-4 col-sm-6">
+        <div class="custom-card">
+          <img src="./images/office-img-2.jpg" height="100%" alt="Image2">
+          <div class="card-body m-0">
+            <p class="fw-semibold fs-5 p-0 m-0">Waiting Area</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-lg-4 col-sm-6">
+        <div class="custom-card">
+          <img src="./images/office-img-3.jpg" height="100%" alt="Image3">
+          <div class="card-body m-0">
+            <p class="fw-semibold fs-5 p-0 m-0">Meeting Room</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <!-- <div class="col-lg-3 col-sm-6">
+        <div class="custom-card">
+          <img src="./images/UP-1.jpg" height="100%" alt="Image4">
+          <div class="card-body">
+            <p class="text-center fw-bold fs-5">Rotocel Extractor</p>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+
+
   <section class="py-5">
     <div class="container">
       <h2 class="text-center fw-bold mb-4 text-red-color">FAQs</h2>
@@ -1137,8 +1262,8 @@
         <div class="accordion m-0 p-0" id="faqAccordion">
           <div class="accordion-item">
             <h2 class="accordion-header" id="faqHeadingOne">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne"
-                aria-expanded="true" aria-controls="faqCollapseOne">
+              <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
+                data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">
                 1. How does the turnkey process work?
               </button>
             </h2>
@@ -1153,7 +1278,7 @@
 
           <div class="accordion-item">
             <h2 class="accordion-header" id="faqHeadingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
                 data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
                 2. How do payments work?
               </button>
@@ -1169,7 +1294,7 @@
 
           <div class="accordion-item">
             <h2 class="accordion-header" id="faqHeadingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
                 data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">
                 3. Can I customize my design?
               </button>
@@ -1185,7 +1310,7 @@
 
           <div class="accordion-item">
             <h2 class="accordion-header" id="faqHeadingFour">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
                 data-bs-target="#faqCollapseFour" aria-expanded="false" aria-controls="faqCollapseFour">
                 4. How do you ensure quality?
               </button>
@@ -1204,7 +1329,7 @@
 
           <div class="accordion-item">
             <h2 class="accordion-header" id="faqHeadingFive">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
                 data-bs-target="#faqCollapseFive" aria-expanded="false" aria-controls="faqCollapseFive">
                 5. Do you handle approvals and permits?
               </button>
@@ -1221,7 +1346,7 @@
 
           <div class="accordion-item">
             <h2 class="accordion-header" id="faqHeadingSix">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
                 data-bs-target="#faqCollapseSix" aria-expanded="false" aria-controls="faqCollapseSix">
                 6. How can I track progress?
               </button>
@@ -1238,7 +1363,7 @@
 
           <div class="accordion-item">
             <h2 class="accordion-header" id="faqHeadingSeven">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
                 data-bs-target="#faqCollapseSeven" aria-expanded="false" aria-controls="faqCollapseSeven">
                 7. What if I need financing support?
               </button>
@@ -1255,7 +1380,7 @@
 
           <div class="accordion-item">
             <h2 class="accordion-header" id="faqHeadingEight">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
                 data-bs-target="#faqCollapseEight" aria-expanded="false" aria-controls="faqCollapseEight">
                 8. How long will my project take?
               </button>
@@ -1272,7 +1397,7 @@
 
           <div class="accordion-item">
             <h2 class="accordion-header" id="faqHeadingNine">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
                 data-bs-target="#faqCollapseNine" aria-expanded="false" aria-controls="faqCollapseNine">
                 9. How does A Y Infra handle payments and execution?
               </button>
@@ -1289,7 +1414,7 @@
 
           <div class="accordion-item">
             <h2 class="accordion-header" id="faqHeadingTen">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
                 data-bs-target="#faqCollapseTen" aria-expanded="false" aria-controls="faqCollapseTen">
                 10. Will my investment last?
             </h2>
@@ -1434,6 +1559,157 @@
     </div>
   </div>
   </div>
+
+  <div class="container">
+<div class="row">
+  <div class="d-flex justify-content-between align-items-center">
+     <div>
+      <div>
+        <i class="fa-solid fa-handshake"></i>
+      </div>
+      <p>meeting</p>
+    </div>
+
+    <div>
+      <div>
+        <i class="fa-solid fa-handshake"></i>
+      </div>
+      <p>meeting</p>
+    </div>
+
+    <div>
+      <div>
+        <i class="fa-solid fa-handshake"></i>
+      </div>
+      <p>meeting</p>
+    </div>
+
+    <div>
+      <div>
+        <i class="fa-solid fa-handshake"></i>
+      </div>
+      <p>meeting</p>
+    </div>
+
+  </div>
+
+  <div>line</div>
+
+  <div class="d-flex justify-content-between align-items-center">
+    
+    <div>
+      <div>
+        <i class="fa-solid fa-handshake"></i>
+      </div>
+      <p>meeting</p>
+    </div>
+
+    <div>
+      <div>
+        <i class="fa-solid fa-handshake"></i>
+      </div>
+      <p>meeting</p>
+    </div>
+
+    <div>
+      <div>
+        <i class="fa-solid fa-handshake"></i>
+      </div>
+      <p>meeting</p>
+    </div>
+
+    <div>
+      <div>
+        <i class="fa-solid fa-handshake"></i>
+      </div>
+      <p>meeting</p>
+    </div>
+
+
+
+  </div>
+
+</div>
+
+   
+
+
+  </div>
+
+
+  <!-- <div class="container">
+  <div class="timeline-wrapper">
+
+    <div class="timeline-line"></div>
+
+    <div class="timeline-row">
+
+      <div class="timeline-item top">
+        <div class="content">
+          <i class="bi bi-star"></i>
+          <h6>Headline 1</h6>
+        </div>
+      </div>
+
+
+      <div class="timeline-item bottom">
+        <div class="content">
+          <i class="bi bi-alarm"></i>
+          <h6>Headline 2</h6>
+        </div>
+      </div>
+
+
+      <div class="timeline-item top">
+        <div class="content">
+          <i class="bi bi-lightning"></i>
+          <h6>Headline 3</h6>
+        </div>
+      </div>
+
+
+      <div class="timeline-item bottom">
+        <div class="content">
+          <i class="bi bi-heart"></i>
+          <h6>Headline 4</h6>
+        </div>
+      </div>
+
+ 
+      <div class="timeline-item top">
+        <div class="content">
+          <i class="bi bi-globe"></i>
+          <h6>Headline 5</h6>
+        </div>
+      </div>
+
+
+      <div class="timeline-item bottom">
+        <div class="content">
+          <i class="bi bi-music-note"></i>
+          <h6>Headline 6</h6>
+        </div>
+      </div>
+
+
+      <div class="timeline-item top">
+        <div class="content">
+          <i class="bi bi-gear"></i>
+          <h6>Headline 7</h6>
+        </div>
+      </div>
+
+
+      <div class="timeline-item bottom">
+        <div class="content">
+          <i class="bi bi-check-circle"></i>
+          <h6>Headline 8</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
 
   <footer class="pt-5 bg-body-secondary">
     <div class="container">

@@ -1,13 +1,25 @@
 .text-red-color {
-    color: red;
+  color: red;
 }
 
 .bg-red-color {
-    background-color: red;
+  background-color: red;
+}
+.red-strip{
+  background-color: black;
+  color: #fff;
 }
 
+.nav-active{
+  background-color: red;
+}
+
+.nav-active a{
+  color: white;
+}
 .navbar {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  font-style: Arial, sans-serif;;
 }
 
 .box-shadow {
