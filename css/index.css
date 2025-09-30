@@ -173,12 +173,71 @@ body {
 
 
 /* Css for AY-image-section */
-@media (max-width: 767.98px) {
-  img.position-absolute {
-    display: block !important;
-    max-width: 120px !important;
+/* Left & Right Images */
+.a-image {
+  max-width: 250px;
+  height: auto;
+  object-fit: contain;
+}
+
+.y-image {
+  max-width: 250px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Box Styles */
+.ay-img-box {
+  height: 90px;
+  width: 90px;
+  margin: 0 auto;
+}
+
+.ay-img-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.ay-box {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.ay-box:hover {
+  transform: translateY(-5px);
+}
+
+.ay-box h6 {
+  font-size: 0.95rem;
+}
+
+.ay-box p {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .a-image,
+  .y-image {
+    max-width: 180px;
+    margin-bottom: 1rem;
   }
 }
+
+@media (max-width: 575.98px) {
+  .a-image,
+  .y-image {
+    max-width: 140px;
+  }
+}
+
+
 
 /* ---------------------------------------------- */
 /* css for our patners */
@@ -1077,85 +1136,8 @@ footer ul li a:hover {
   height: 100%;
 }
 
-/* ------------------------------------- */
-.timeline-wrapper {
-  position: relative;
-  margin: 80px 0;
-}
 
 
-.timeline-line {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: #000;
-  z-index: 0;
-}
-
-.timeline-row {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
-}
-
-
-.timeline-item {
-  width: 12%;
-  min-width: 120px;
-  text-align: center;
-
-}
-
-.timeline-item .content {
-  border: 2px solid #000;
-  border-radius: 6px;
-  padding: 12px;
-  background: #fff;
-}
-
-.timeline-item i {
-  font-size: 24px;
-  display: block;
-  margin-bottom: 6px;
-}
-
-
-.timeline-item.top {
-  margin-bottom: 100px;
-}
-
-.timeline-item.bottom {
-  margin-top: 100px;
-}
-
-
-@media (max-width: 992px) {
-  .timeline-item {
-    width: 22%;
-  }
-}
-
-@media (max-width: 768px) {
-  .timeline-item {
-    width: 45%;
-    margin-bottom: 40px;
-  }
-}
-
-@media (max-width: 576px) {
-  .timeline-item {
-    width: 100%;
-    margin-bottom: 40px;
-  }
-
-  .timeline-line {
-    display: none;
-  }
-}
 
 
 /* ------------------------------------- */
@@ -1197,6 +1179,16 @@ footer ul li a:hover {
   margin-bottom: 10px;
   background-color: #fff;
 }
+
+.line-1{
+  height: 1px;
+  width: 100%;
+  padding: 2px;
+  /* border: 1px solid #fff; */
+  margin-top: 10px;
+  background-color: red;
+}
+
 
 /* -------------------------------------- */
 .budget-card {
@@ -1304,14 +1296,46 @@ footer ul li a:hover {
 }
 /* ----------------------------------------- */
 
-   .step-wrapper {
+      .media-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .media-img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    .right-slide-content {
+      padding: 2rem;
+    }
+
+    @media (max-width: 991px) {
+      .media-section {
+        min-height: auto;
+      }
+
+      .media-img {
+        height: auto;
+      }
+    }
+
+    /* ✅ Step Box Styling */
+    .step-wrapper {
       position: relative;
+      margin-top: 2rem;
       margin-bottom: 2rem;
     }
 
-    /* Background Box */
     .step-bg {
-      background: red; /* Bootstrap red */
+      background: red;
       color: #fff;
       font-size: 32px;
       font-weight: 700;
@@ -1321,19 +1345,16 @@ footer ul li a:hover {
       height: 100%;
     }
 
-
-
-    /* Foreground White Box */
     .step-box {
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       padding: 30px;
       position: absolute;
       top: 25%;
-      left: 50px; /* shift right so red box peeks */
+      left: 50px;
       transform: translateY(-50%);
-      width: calc(100% - 10px); /* keep responsive */
+      width: calc(100% - 25px);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -1352,7 +1373,7 @@ footer ul li a:hover {
     }
 
     .step-icon {
-      background: #0d6efd; /* Bootstrap primary */
+      background: #0d6efd;
       color: #fff;
       border-radius: 50%;
       width: 45px;
@@ -1363,3 +1384,9 @@ footer ul li a:hover {
       font-size: 20px;
       flex-shrink: 0;
     }
+    /* ----------------------------------- */
+
+
+    
+
+

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,96 +14,214 @@
       display: flex;
       align-items: center;
     }
+
     .media-img {
       object-fit: cover;
       height: 100%;
       width: 100%;
     }
+
     .carousel-item {
       padding: 2rem;
     }
+
     .media-title {
       font-size: 2rem;
       font-weight: 800;
       color: #d35400;
       letter-spacing: 1px;
     }
+
     .media-title i {
       margin: 0 10px;
       color: #e67e22;
     }
+
     @media (max-width: 991px) {
       .media-section {
         min-height: auto;
       }
+
       .media-img {
-        height: auto; /* on mobile image shrinks naturally */
+        height: auto;
+        /* on mobile image shrinks naturally */
       }
+    }
+
+    .bg-img {
+      background-image: url('../images/banner-bg-img.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.15;
+      /* Optional for overlay effect */
+    }
+
+
+
+    .text-red-color {
+      color: red;
+    }
+
+    .bg-red-color {
+      background-color: red;
+    }
+
+
+    .banner-img-box {
+      height: 700px;
+      /* width: 350px; */
     }
   </style>
 </head>
+
 <body>
 
 
-<section class="media-section">
-  <div class="container-fluid">
-    <div class="row g-0">
 
-      <!-- ✅ Left Side Image -->
-      <div class="col-lg-6 d-flex">
-        <img src="./images/brick-img.png" alt="Bricks Image" class="img-fluid media-img">
-      </div>
+  <div class="container-fluid position-relative p-0 m-0">
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-img z-n1"></div>
 
-      <!-- ✅ Right Side Carousel -->
-      <div class="col-lg-6 col-12 d-flex align-items-center">
-        <div id="mediaCarousel" class="carousel slide w-100" data-bs-ride="carousel">
+    <div class="">
+      <div class="container-fluid p-0 m-0">
+        <div class="row g-0 p-0 m-0">
 
-          <div class="carousel-inner">
-
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
-              <h2 class="media-title">MEDIA <i class="bi bi-cone-striped"></i> ARTICLES</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam esse optio autem temporibus praesentium animi molestias
-                odit consequuntur porro ratione, eligendi placeat deserunt impedit obcaecati, commodi labore soluta, deleniti natus.
-              </p>
+          <div class="col-lg-5 d-flex flex-column justify-content-center px-4">
+            <h1 class="fw-bold text-black">
+              A <span class="text-red-color">HOME</span>
+              THAT MATCHES <br>YOUR <span class="text-red-color">DREAMS</span><br> CRAFTED WITH CARE
+            </h1>
+            <h6 class="fw-semibold text-black pt-3">
+              From your family home to your office or luxury interiors – we deliver turnkey solutions with clarity,
+              trust, and unmatched professionalism.
+            </h6>
+            <div>
+              <button class="fw-semibold px-4 py-2 mt-4 bg-red-color text-white border-0 rounded-2"
+                data-aos="fade-right" data-aos-offset="100">
+                Packages Start From
+              </button>
             </div>
+          </div>
 
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-              <h2 class="media-title">LATEST <i class="bi bi-cone-striped"></i> NEWS</h2>
-              <p>
-                Qui accusantium rerum velit sint eum iste error tempore quos ducimus laborum animi hic corrupti repellendus quasi
-                quibusdam, voluptates, consequatur labore quidem?
-              </p>
-            </div>
+          <div class="col-lg-4 position-relative d-none d-lg-block banner-img-box p-0 m-0">
 
-            <!-- Slide 3 -->
-            <div class="carousel-item">
-              <h2 class="media-title">FEATURED <i class="bi bi-cone-striped"></i> POSTS</h2>
-              <p>
-                Natus autem optio voluptatem aspernatur deleniti voluptatibus quisquam quam reiciendis provident, praesentium libero
-                corrupti magni debitis ab quis dolore enim maxime.
-              </p>
+            <img src="./images/banner-new-1.png" alt="Hero Image" data-aos="fade-up" data-aos-duration="3000"
+              class="position-absolute bottom-0 end-0 w-100 h-100 object-fit-cover" />
+          </div>
+
+          <!-- ✅ Image for mobile view (stacked) -->
+          <!-- <div class="col-12 d-block d-lg-none px-3 mt-4">
+            <img src="./images/banner-new-1.png" alt="Hero Image" class="img-fluid w-100 rounded" />
+          </div> -->
+
+
+          <div class="col-lg-3 p-0 m-0 d-flex align-items-center justify-content-end">
+            <div class="card shadow-lg p-4 border-0">
+              <h3 class="text-center mb-4">Form</h3>
+              <form>
+
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+
+                <div class="mb-3">
+                  <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+
+                <div class="mb-3">
+                  <input type="phone-no" class="form-control" placeholder="Phone Number" required>
+                </div>
+
+                <div class="mb-3">
+                  <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="px-4 py-2 border-0 bg-red-color text-white rounded-3 fw-semibold">Send
+                    Message</button>
+                </div>
+              </form>
             </div>
 
           </div>
 
-          <!-- Controls -->
-          <!-- <button class="carousel-control-prev" type="button" data-bs-target="#mediaCarousel" data-bs-slide="prev">
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="media-section">
+    <div class="container-fluid">
+      <div class="row g-0">
+
+        <!-- ✅ Left Side Image -->
+        <div class="col-lg-6 d-flex">
+          <img src="./images/brick-img.png" alt="Bricks Image" class="img-fluid media-img">
+        </div>
+
+        <!-- ✅ Right Side Carousel -->
+        <div class="col-lg-6 col-12 d-flex align-items-center">
+          <div id="mediaCarousel" class="carousel slide w-100" data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <h2 class="media-title">MEDIA <i class="bi bi-cone-striped"></i> ARTICLES</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam esse optio autem temporibus praesentium
+                  animi molestias
+                  odit consequuntur porro ratione, eligendi placeat deserunt impedit obcaecati, commodi labore soluta,
+                  deleniti natus.
+                </p>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                <h2 class="media-title">LATEST <i class="bi bi-cone-striped"></i> NEWS</h2>
+                <p>
+                  Qui accusantium rerum velit sint eum iste error tempore quos ducimus laborum animi hic corrupti
+                  repellendus quasi
+                  quibusdam, voluptates, consequatur labore quidem?
+                </p>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carousel-item">
+                <h2 class="media-title">FEATURED <i class="bi bi-cone-striped"></i> POSTS</h2>
+                <p>
+                  Natus autem optio voluptatem aspernatur deleniti voluptatibus quisquam quam reiciendis provident,
+                  praesentium libero
+                  corrupti magni debitis ab quis dolore enim maxime.
+                </p>
+              </div>
+
+            </div>
+
+            <!-- Controls -->
+            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#mediaCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
           </button>
           <button class="carousel-control-next" type="button" data-bs-target="#mediaCarousel" data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
           </button> -->
 
+          </div>
         </div>
+
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <div>
+    
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

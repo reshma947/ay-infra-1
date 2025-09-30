@@ -50,6 +50,87 @@
         bottom: 20px;
       }
     }
+
+    /* ---------------------------- */
+
+    /* Horizontal strip */
+        .clip-strip {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+
+        /* Clip boxes */
+        .clip-box {
+            flex: 0 0 auto;
+            width: 7.5%;
+            /* 8 boxes in a row */
+            min-width: 80px;
+            /* good min size on small screens */
+            height: 50px;
+            /* strip height */
+            background-color: #f8f8f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            color: #000;
+        }
+
+        .clip-box:hover {
+            background-color: #d3d2d2;
+        }
+
+        .clip-box.active {
+            background-color: red;
+            color: #fff;
+        }
+
+        /* Shapes */
+        .clip-start {
+            clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
+        }
+
+        .clip-middle {
+            clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+            /* clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%); */
+        }
+
+        .clip-end {
+            /* clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 25% 50%, 0% 0%); */
+            clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+        }
+
+        /* Content sections */
+        .clip-content {
+            display: none;
+            padding-top: 1.5rem;
+        }
+
+        .clip-content.active {
+            display: flex;
+        }
+
+        .clip-content img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Hide horizontal scrollbar */
+        .clip-strip::-webkit-scrollbar {
+            display: none;
+        }
+
+        .clip-strip {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
   </style>
 </head>
 
@@ -206,7 +287,7 @@
           </div>
 
           <div class="col-lg-6 position-relative d-none d-lg-block">
-           
+
             <img src="./images/banner-img-1.png" alt="Hero Image" data-aos="fade-up" data-aos-duration="3000"
               class="position-absolute bottom-0 end-0 w-100 h-100 object-fit-cover" />
           </div>
@@ -215,6 +296,9 @@
           <div class="col-12 d-block d-lg-none px-3 mt-4">
             <img src="./images/banner-img-1.png" alt="Hero Image" class="img-fluid w-100 rounded" />
           </div>
+
+
+
         </div>
       </div>
     </div>
@@ -293,43 +377,155 @@
     </div>
   </section>
 
-  <section class="position-relative overflow-hidden py-5 mt-3">
+<section class="ay-section position-relative overflow-hidden py-5 mt-3">
+  <div class="container-fluid">
+    <div class="row">
 
-    <img src="./images/a-img.png" data-aos="fade-right" data-aos-offset="400" data-aos-easing="ease-in-sine"
-      alt="Top Left" class="position-absolute top-0 start-0 img-fluid d-none d-lg-block"
-      style="max-width: 350px; height: auto; z-index: 0;" />
+      <!-- 🅰 Left Column -->
+      <div class="col-lg-3 col-md-12 mb-lg-0 d-flex justify-content-lg-start align-items-start justify-content-start p-0 m-0">
+        <img src="./images/a-img.png" data-aos="fade-right" data-aos-offset="400" data-aos-easing="ease-in-sine" alt="Top Left" class="img-fluid a-image">
+      </div>
 
-    <img src="./images/y-img.png" data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine"
-      alt="Bottom Right" class="position-absolute bottom-0 end-0 img-fluid d-none d-lg-block"
-      style="max-width: 350px; height: auto; z-index: 0;" />
+      <!-- 📦 Middle Column -->
+      <div class="col-lg-6 col-md-12">
+        <h2 class="text-center mb-4 fw-bold">Why AY INFRA</h2>
+        <div class="row g-3 pb-3">
 
-    <div class="container position-relative z-1">
-      <div class="row justify-content-center text-center">
-        <div class="col-lg-8">
-          <h2 class="fw-bold mb-4" data-aos="zoom-in-up" data-aos-offset="200">Headline of the section <span
-              class="text-red-color">AY-images Section</span></h2>
-          <p class="mb-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eius.
-            Facilis explicabo minus magni provident reiciendis ipsum illo deleniti esse!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eius.
-            Facilis explicabo minus magni provident reiciendis ipsum illo deleniti esse!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eius.
-            Facilis explicabo minus magni provident reiciendis ipsum illo deleniti esse!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eius.
-            Facilis explicabo minus magni provident reiciendis ipsum illo deleniti esse!
-            Facilis explicabo minus magni provident reiciendis ipsum illo deleniti esse!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eius.
-            Facilis explicabo minus magni provident reiciendis ipsum illo deleniti esse!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eius.
-            Facilis explicabo minus magni provident reiciendis ipsum illo deleniti esse!
-            Facilis explicabo minus magni provident reiciendis ipsum illo deleniti esse!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eius.
-          </p>
-          <button class="px-4 py-2 fw-semibold bg-red-color text-white border-0 rounded-2">Explore More</button>
+          <!-- Repeated Boxes -->
+          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="ay-box h-100">
+              <div class="ay-img-box mb-2">
+                <img src="./images/ay-img-sec-img-1.png" alt="">
+              </div>
+              <h6 class="fw-semibold mb-1">100% Risk-Free Transactions</h6>
+              <!-- <p class="mb-0 small">No upfront costs, no pressure. You pay only when the job is done right — giving you complete control over your investment.</p> -->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="ay-box h-100">
+              <div class="ay-img-box mb-2">
+                <img src="./images/ay-img-sec-img-10.png" alt="">
+              </div>
+              <h6 class="fw-semibold mb-1">Safe Milestone Based Payments</h6>
+              <!-- <p class="mb-0 small">Payments are split into stages, linked to completed work. You stay in control and avoid unnecessary upfront risks.</p> -->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="ay-box h-100">
+              <div class="ay-img-box mb-2">
+                <img src="./images/ay-img-sec-img-1.png" alt="">
+              </div>
+              <h6 class="fw-semibold mb-1">Quality You <br>Can Trust</h6>
+              <!-- <p class="mb-0 small">We never compromise on materials or workmanship. Expect the right quality at the right price — always.</p> -->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="ay-box h-100">
+              <div class="ay-img-box mb-2">
+                <img src="./images/ay-img-sec-img-2.png" alt="">
+              </div>
+              <h6 class="fw-semibold mb-1">Branded Materials, Premium Results</h6>
+              <!-- <p class="mb-0 small">We believe quality begins with the right products. That’s why every component in your project is sourced from trusted, high-quality brands.</p> -->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="ay-box h-100">
+              <div class="ay-img-box mb-2">
+                <img src="./images/ay-img-sec-img-3.png" alt="">
+              </div>
+              <h6 class="fw-semibold mb-1">On-Time <br>Delievery</h6>
+              <!-- <p class="mb-0 small">Delays are not an option. We stick to schedules and deliver your project on time — because your plans matter.</p> -->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="ay-box h-100">
+              <div class="ay-img-box mb-2">
+                <img src="./images/ay-img-sec-img-4.png" alt="">
+              </div>
+              <h6 class="fw-semibold mb-1">Zero Cost Overruns – What We Quote, We Deliver</h6>
+              <!-- <p class="mb-0 small">Once we agree on the quote, that’s it. No extra bills, no last-minute hikes — just a promise you can rely on.</p> -->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="ay-box h-100">
+              <div class="ay-img-box mb-2">
+                <img src="./images/ay-img-sec-img-5.png" alt="">
+              </div>
+              <h6 class="fw-semibold mb-1">Reliable & Experienced Team</h6>
+              <!-- <p class="mb-0 small">Our professionals bring years of experience and a client-first approach to ensure quality, efficiency, and peace of mind.</p> -->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="ay-box h-100">
+              <div class="ay-img-box mb-2">
+                <img src="./images/ay-img-sec-img-6.png" alt="">
+              </div>
+              <h6 class="fw-semibold mb-1">Track Progress Anytime, Anywhere Digitally</h6>
+              <!-- <p class="mb-0 small">Stay connected to your project with us . Monitor progress with ease and stay in control at all times.</p> -->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="ay-box h-100">
+              <div class="ay-img-box mb-2">
+                <img src="./images/ay-img-sec-img-7.png" alt="">
+              </div>
+              <h6 class="fw-semibold mb-1">Dedicated Customer Support</h6>
+              <!-- <p class="mb-0 small">Our team is always available to answer your questions, solve issues, and provide guidance — ensuring a smooth, stress-free experience from start to finish.</p> -->
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="ay-box h-100">
+              <div class="ay-img-box mb-2">
+                <img src="./images/ay-img-sec-img-1.png" alt="">
+              </div>
+              <h6 class="fw-semibold mb-1">Customized Pricing Packages</h6>
+              <!-- <p class="mb-0 small">We offer flexible pricing packages tailored to your specific needs and budget. No rigid models, no hidden costs — just options that give you control, transparency, and the best value at every stage.</p> -->
+            </div>
+          </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="ay-box h-100">
+              <div class="ay-img-box mb-2">
+                <img src="./images/ay-img-sec-img-8.png" alt="">
+              </div>
+              <h6 class="fw-semibold mb-1">Permission & Approval Support</h6>
+              <!-- <p class="mb-0 small">We assist you in obtaining all necessary permissions and approvals — making sure your project stays compliant and moves forward smoothly without delays.</p> -->
+            </div>
+          </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="ay-box h-100">
+              <div class="ay-img-box mb-2">
+                <img src="./images/ay-img-sec-img-9.png" alt="">
+              </div>
+              <h6 class="fw-semibold mb-1">Loan <br>Assistance</h6>
+              <!-- <p class="mb-0 small">We guide you through every step of financing, helping you access the right loans with ease — so your project stays on track without unnecessary stress.</p> -->
+            </div>
+          </div>
+
         </div>
       </div>
+
+      <!-- 🅾 Right Column -->
+      <div class="col-lg-3 col-md-12 d-flex justify-content-end align-items-end">
+        <img src="./images/y-img.png" data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" alt="Bottom Right" class="img-fluid y-image">
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+
+
 
 
   <section class="py-5">
@@ -485,14 +681,128 @@
     <h2 class="main-title">How It Works</h2>
   </section>
 
+    <div class="container">
+
+        <!-- Horizontal Clip Path Strip -->
+        <div class="clip-strip mb-4">
+            <div class="clip-box clip-middle" data-index="1">1</div>
+            <div class="clip-box clip-middle" data-index="2">2</div>
+            <div class="clip-box clip-middle" data-index="3">3</div>
+            <div class="clip-box clip-middle" data-index="4">4</div>
+            <div class="clip-box clip-middle" data-index="5">5</div>
+            <div class="clip-box clip-middle" data-index="6">6</div>
+            <div class="clip-box clip-middle" data-index="7">7</div>
+            <div class="clip-box clip-middle" data-index="8">8</div>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="clip-content row g-4" id="content-1">
+            <div class="d-flex justify-content-center align-items-center text-center">
+                <div class="col-md-5">
+                    <img src="./images/how-works-img-1.png" alt="Image 1">
+                    <h4 class="">Meet</h4>
+                    <p>We understand your vision, lifestyle, and requirements.</p>
+                </div>
+
+            </div>
+
+
+            <!-- <div class="col-md-8 d-flex flex-column justify-content-center bg-warning">
+      <h4>Meet</h4>
+      <p> We understand your vision, lifestyle, and requirements.</p>
+    </div> -->
+        </div>
+
+        <div class="clip-content row" id="content-2">
+            <div class="d-flex justify-content-center align-items-center text-center">
+                <div class="col-md-5">
+                    <img src="./images/how-works-img-2.png" alt="Image 2">
+                    <h4 class="mt-3">Share</h4>
+                    <p>You tell us your ideas and preferences; we clarify every detail.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="clip-content row" id="content-3">
+            <div class="d-flex justify-content-center align-items-center text-center">
+                <div class="col-md-5">
+
+                    <img src="./images/how-works-img-3.png" alt="Image 1">
+
+
+                    <h4 class="mt-3">Plan</h4>
+                    <p>Custom designs and project plans combining style and functionality.</p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="clip-content row" id="content-4">
+            <div class="d-flex justify-content-center align-items-center text-center">
+                <div class="col-md-5">
+                    <img src="./images/how-works-img-4.png" alt="Image 1">
+                    <h4 class="mt-3">Quote</h4>
+                    <p>Transparent quotation with milestone approvals — no hidden costs.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="clip-content row" id="content-5">
+            <div class="d-flex justify-content-center align-items-center text-center">
+                <div class="col-md-5">
+                    <img src="./images/how-works-img-5.png" alt="Image 1">
+                    <h4 class="mt-3">Approvals</h4>
+                    <p>We handle permissions, legal requirements, and financing guidance.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="clip-content row" id="content-6">
+            <div class="d-flex justify-content-center align-items-center text-center">
+                <div class="col-md-5">
+                    <img src="./images/how-works-img-6.png" alt="Image 1">
+                    <h4 class="mt-3">Build</h4>
+                    <p>Expert execution with premium materials and skilled craftsmanship.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="clip-content row" id="content-7">
+            <div class="d-flex justify-content-center align-items-center text-center">
+                <div class="col-md-5">
+                    <img src="./images/how-works-img-7.png" alt="Image 1">
+                    <h4 class="mt-3">Track</h4>
+                    <p>Digital updates to keep you informed and confident throughout.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="clip-content row" id="content-8">
+            <div class="d-flex justify-content-center align-items-center text-center">
+                <div class="col-md-5">
+                    <img src="./images/how-works-img-8.png" alt="Image 1">
+                    <h4 class="mt-3">Handover</h4>
+                    <p>Completed project delivered, ready to enjoy, with post-construction support.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+ 
+<!-- 
   <div class="container">
     <div class="row">
-      <!-- <div class="col-lg-3 pt-5">
-        <p>At our firm, we follow a streamlined, end-to-end process to bring your vision to life. It begins with a
-          thorough consultation where we understand your goals, budget, and site specifications. Our team then develops
-          detailed architectural and structural plans, ensuring compliance with all regulations and securing necessary
-          approvals. </p>
-      </div> -->
+
 
       <div class="col-lg-12 m-0">
         <img src="./images/how-it-works-img.png" height="100%" width="100%" data-aos="fade-left" data-aos-offset="300"
@@ -500,7 +810,7 @@
       </div>
     </div>
 
-  </div>
+  </div> -->
 
 
 
@@ -572,109 +882,113 @@
 
 
 
-<div class="container pb-5">
-      <section class="pricing-header mt-5" data-aos="zoom-in-right">
-    <div class="bg-text-outline">Cost</div>
-    <h2 class="main-title">Budget</h2>
-  </section>
+  <div class="container pb-5">
+    <section class="pricing-header mt-5" data-aos="zoom-in-right">
+      <div class="bg-text-outline">Cost</div>
+      <h2 class="main-title">Budget</h2>
+    </section>
 
-  <!-- Budget Section -->
-  <div class="budget-card text-center p-0">
-    <div id="budgetAmount" class="budget-price">₹ 2589</div>
-    <h5 id="planName" class="fw-bold text-orange">Basic</h5>
+    <!-- Budget Section -->
+    <div class="budget-card text-center p-0">
+      <div id="budgetAmount" class="budget-price">₹ 2589</div>
+      <h5 id="planName" class="fw-bold text-orange">Basic</h5>
 
-    <!-- Slider -->
-    <div class="slider-container">
-      <input type="range" min="0" max="3" value="0" step="1" class="custom-slider" id="budgetSlider">
-      
-      <!-- Vertical lines -->
-      <div class="slider-markers">
-        <span style="background:  rgb(255, 196, 0);"></span>
-        <span style="background:rgb(252, 123, 2);"></span>
-        <span style="background: violet;"></span>
-        <span style="background:red;"></span>
+      <!-- Slider -->
+      <div class="slider-container">
+        <input type="range" min="0" max="3" value="0" step="1" class="custom-slider" id="budgetSlider">
+
+        <!-- Vertical lines -->
+        <div class="slider-markers">
+          <span style="background:  rgb(255, 196, 0);"></span>
+          <span style="background:rgb(252, 123, 2);"></span>
+          <span style="background: violet;"></span>
+          <span style="background:red;"></span>
+        </div>
       </div>
-    </div>
 
-    <!-- Labels -->
-    <div class="slider-labels">
-      <span style="color: rgb(255, 196, 0);">Basic</span>
-      <span style="color: rgb(252, 123, 2);">Classic</span>
-      <span style="color: violet;">Premium</span>
-      <span style="color: red;">Royale</span>
-    </div>
+      <!-- Labels -->
+      <div class="slider-labels">
+        <span style="color: rgb(255, 196, 0);">Basic</span>
+        <span style="color: rgb(252, 123, 2);">Classic</span>
+        <span style="color: violet;">Premium</span>
+        <span style="color: red;">Royale</span>
+      </div>
 
       <!-- Plan Boxes -->
-  <div class="row mt-5">
-     <div class="col-md-3 col-sm-6 d-flex">
-      <div class="plan-card text-center h-100 w-100">
-        <h5 class="mt-3">Basic</h5>
-        <p class="fs-5 fw-semibold p-0 m-0">₹ 3111</p>
-        <p class="">Minimum</p>
+      <div class="row mt-5">
+        <div class="col-md-3 col-sm-6 d-flex">
+          <div class="plan-card text-center h-100 w-100">
+            <div class="line-1"></div>
+            <h5 class="mt-3">Basic</h5>
+            <p class="fs-5 fw-semibold p-0 m-0">₹ 3111</p>
+            <p class="">Minimum</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 d-flex">
+          <div class="plan-card text-center h-100 w-100">
+            <div class="line-1"></div>
+            <h5 class="mt-3">Classic</h5>
+            <p class="fs-5 fw-semibold p-0 m-0">₹ 3111</p>
+            <p>Strong Start</p>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 d-flex">
+          <div class="plan-card text-center h-100 w-100">
+            <div class="line-1"></div>
+            <h5 class="mt-3">Premium</h5>
+            <p class="fs-5 fw-semibold p-0 m-0">₹ 3999</p>
+            <p>Most Valued</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 d-flex">
+          <div class="plan-card text-center h-100 w-100">
+            <div class="line-1"></div>
+            <h5 class="mt-3">Royale</h5>
+            <p class="fs-5 fw-semibold p-0 m-0">₹ 4999</p>
+            <p>Perfect</p>
+          </div>
+        </div>
       </div>
     </div>
 
-      <div class="col-md-3 col-sm-6 d-flex">
-      <div class="plan-card text-center h-100 w-100">
-        <h5 class="mt-3">Classic</h5>
-        <p class="fs-5 fw-semibold p-0 m-0">₹ 3111</p>
-        <p>Strong Start</p>
-      </div>
-    </div>
-   
-    <div class="col-md-3 col-sm-6 d-flex">
-      <div class="plan-card text-center h-100 w-100">
-        <h5 class="mt-3">Premium</h5>
-           <p class="fs-5 fw-semibold p-0 m-0">₹ 3999</p>
-        <p>Most Valued</p>
-      </div>
-    </div>
-    <div class="col-md-3 col-sm-6 d-flex">
-      <div class="plan-card text-center h-100 w-100">
-        <h5 class="mt-3">Royale</h5>
-           <p class="fs-5 fw-semibold p-0 m-0">₹ 4999</p>
-        <p>Perfect</p>
-      </div>
-    </div>
-  </div>
-  </div>
 
-
-  <!-- <div class="text-center mt-4">
+    <!-- <div class="text-center mt-4">
        
     <h5 id="planName" class="fw-bold text-orange">Selected Package: Basic</h5>
      <div id="budgetAmount" class="budget-price">₹ 2589</div>
   </div> -->
 
-   <div class="text-center mt-5">
-            <button class="px-3 py-2 border-0 bg-red-color text-white rounded-3 fw-semibold" onclick="btnOnClick()"
-              data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-              Start Your Construction
-            </button>
-          </div>
+    <div class="text-center mt-5">
+      <button class="px-3 py-2 border-0 bg-red-color text-white rounded-3 fw-semibold" onclick="btnOnClick()"
+        data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Start Your Construction
+      </button>
+    </div>
 
 
-</div>
+  </div>
 
-<script>
-  const slider = document.getElementById("budgetSlider");
-  const budgetAmount = document.getElementById("budgetAmount");
-  const planName = document.getElementById("planName");
+  <script>
+    const slider = document.getElementById("budgetSlider");
+    const budgetAmount = document.getElementById("budgetAmount");
+    const planName = document.getElementById("planName");
 
-  const plans = [
-    { name: "Basic", price: "₹ 2589", color: "rgb(255, 196, 0)" },
-    { name: "Classic", price: "₹ 3111", color: "rgb(252, 123, 2)" },
-    { name: "Premium", price: "₹ 3999", color: "violet" },
-    { name: "Royale", price: "₹ 4999", color: "red" }
-  ];
+    const plans = [
+      { name: "Basic", price: "₹ 2589", color: "rgb(255, 196, 0)" },
+      { name: "Classic", price: "₹ 3111", color: "rgb(252, 123, 2)" },
+      { name: "Premium", price: "₹ 3999", color: "violet" },
+      { name: "Royale", price: "₹ 4999", color: "red" }
+    ];
 
-  slider.addEventListener("input", function() {
-    const plan = plans[this.value];
-    budgetAmount.textContent = plan.price;
-    planName.textContent = plan.name;
-    planName.style.color = plan.color;
-  });
-</script>
+    slider.addEventListener("input", function () {
+      const plan = plans[this.value];
+      budgetAmount.textContent = plan.price;
+      planName.textContent = plan.name;
+      planName.style.color = plan.color;
+    });
+  </script>
 
 
 
@@ -745,7 +1059,7 @@
   </div>
 
 
-  <section class="py-5 coming-projects-section">
+  <section class="coming-projects-section">
     <div class="container-fluid bg-body-tertiary py-5 box-shadow">
       <div class="row project-buttons m-0 pb-5">
         <div class="col-lg-6 pricing-project-header" data-aos="fade-up">
@@ -912,8 +1226,8 @@
           </div> -->
 
         </div>
-      </div> 
-    </div> 
+      </div>
+    </div>
   </section>
 
   <script>
@@ -983,37 +1297,113 @@
   </script>
 
 
-  <div class="container-fluid brick-section">
-    <div class="row">
-      <div class="col-lg-5 p-0 m-0">
-        <img src="./images/brick-img.png" height="100%" width="80%" data-aos="fade-right" data-aos-offset="300"
-          data-aos-easing="ease-in-sine">
+ 
+
+
+<section class="media-section m-0 p-0">
+  <div class="container-fluid m-0 p-0">
+    <div class="row g-0">
+
+      <!-- ✅ Left Side Swiper (Images) -->
+      <div class="col-lg-5 d-flex">
+        <div class="swiper left-swiper w-100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <img src="./images/brick-img.png" alt="Left 1" class="media-img">
+            </div>
+
+            <div class="swiper-slide">
+              <img src="./images/brick-img.png" alt="Left 2" class="media-img">
+            </div>
+
+            <div class="swiper-slide">
+              <img src="./images/brick-img.png" alt="Left 3" class="media-img">
+            </div>
+
+          </div>
+        </div>
       </div>
 
-      <div class="col-lg-6">
-        <div>
-          <div class="">
-            <img src="./images/media-articles-img.png" height="100%" width="80%" data-aos="zoom-in-up"
-              data-aos-offset="300">
+      <!-- ✅ Right Side Swiper (Content) -->
+      <div class="col-lg-6 col-12 d-flex align-items-center">
+        <div class="swiper right-swiper w-100">
+          <div class="swiper-wrapper">
+
+            <!-- Right Slide 1 -->
+            <div class="swiper-slide">
+              <div class="right-slide-content">
+                <div class="pb-5">
+<img src="./images/media-articles-img.png" height="100%" width="80%">
+                </div>
+                
+                <div class="step-wrapper mt-5">
+                  <div class="step-bg">1</div>
+                  <div class="step-box">
+                    <div>
+                      <h5>Keyword Research</h5>
+                      <p>Finding the right keywords helps target your audience and improve search engine rankings effectively.</p>
+                    </div>
+                    <div class="step-icon">
+                      <i class="bi bi-search"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Slide 2 -->
+            <div class="swiper-slide">
+              <div class="right-slide-content">
+                <div class="pb-5">
+<img src="./images/media-articles-img.png" height="100%" width="80%">
+                </div>
+                <div class="step-wrapper mt-5">
+                  <div class="step-bg">2</div>
+                  <div class="step-box">
+                    <div>
+                      <h5>Content Strategy</h5>
+                      <p>Building a strong content strategy ensures long-term organic growth and audience engagement.</p>
+                    </div>
+                    <div class="step-icon">
+                      <i class="bi bi-lightbulb"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Slide 3 -->
+            <div class="swiper-slide">
+              <div class="right-slide-content">
+                 <div class="pb-5">
+<img src="./images/media-articles-img.png" height="100%" width="80%">
+                </div>
+                <div class="step-wrapper mt-5">
+                  <div class="step-bg">3</div>
+                  <div class="step-box">
+                    <div>
+                      <h5>Optimization</h5>
+                      <p>Optimizing existing content helps retain visibility and improves overall performance.</p>
+                    </div>
+                    <div class="step-icon">
+                      <i class="bi bi-gear"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
-          <!-- <h3 class="fw-semibold pb-3">Media - Articles on website</h3> -->
-          <p class="pt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam esse optio autem temporibus
-            praesentium animi molestias odit consequuntur porro ratione, eligendi placeat deserunt impedit obcaecati,
-            commodi labore soluta, deleniti natus.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui accusantium rerum velit sint eum iste error
-            tempore quos ducimus laborum animi hic corrupti repellendus quasi quibusdam, voluptates, consequatur labore
-            quidem?
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus autem optio voluptatum aspernatur deleniti
-            voluptatibus quisquam quam reiciendis provident, praesentium libero corrupti magni debitis ab quis dolore
-            enim maxime.
-          </p>
         </div>
       </div>
 
     </div>
   </div>
+</section>
 
-  <section class="partners-section bg-light my-5 box-shadow">
+
+  <section class="partners-section bg-light box-shadow">
     <div class="container p-0">
       <div class="row align-items-center">
 
@@ -1396,179 +1786,106 @@
   </div>
 
 
-<div class="container">
-  <div class="timeline-wrapper">
 
-    <div class="timeline-line"></div>
 
-    <div class="timeline-row">
+  <section class="bg-body-tertiary box-shadow">
+    <div class="container mb-5 pt-4">
+      <div class="row align-items-center justify-content-between p-0 m-0">
 
-      <div class="timeline-item top">
-        <div class="content">
-          <i class="bi bi-star"></i>
-          <h6>Headline 1</h6>
+        <!-- Left side: Phone Image -->
+        <div class="col-lg-4 text-center p-0 m-0">
+          <img src="./images/phone-img-1.png" alt="Phone" class="phone-img">
         </div>
-      </div>
 
+        <!-- Right side: Text + Features -->
+        <div class="col-lg-7 text-section">
+          <h2 class="fw-bold">Instant Updates at Your Fingertips</h2>
+          <p class="mb-4">
+            Get instant alerts and important notifications on WhatsApp.
+            Stay connected anytime, anywhere with real-time updates.
 
-      <div class="timeline-item bottom">
-        <div class="content">
-          <i class="bi bi-alarm"></i>
-          <h6>Headline 2</h6>
-        </div>
-      </div>
+          </p>
 
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="feature-card">
+                <div class="line"></div>
+                <h5>Stay Connected, Anytime!</h5>
+                <p class="p-0 m-0">Instant notifications on your phone.</p>
+                <p class="p-0 m-0">Hassle-free and secure updates.</p>
 
-      <div class="timeline-item top">
-        <div class="content">
-          <i class="bi bi-lightning"></i>
-          <h6>Headline 3</h6>
-        </div>
-      </div>
+                <p class="p-0 m-0">Quick communication, anytime.</p>
 
-
-      <div class="timeline-item bottom">
-        <div class="content">
-          <i class="bi bi-heart"></i>
-          <h6>Headline 4</h6>
-        </div>
-      </div>
-
- 
-      <div class="timeline-item top">
-        <div class="content">
-          <i class="bi bi-globe"></i>
-          <h6>Headline 5</h6>
-        </div>
-      </div>
-
-
-      <div class="timeline-item bottom">
-        <div class="content">
-          <i class="bi bi-music-note"></i>
-          <h6>Headline 6</h6>
-        </div>
-      </div>
-
-
-      <div class="timeline-item top">
-        <div class="content">
-          <i class="bi bi-gear"></i>
-          <h6>Headline 7</h6>
-        </div>
-      </div>
-
-
-      <div class="timeline-item bottom">
-        <div class="content">
-          <i class="bi bi-check-circle"></i>
-          <h6>Headline 8</h6>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<section class="bg-body-tertiary box-shadow">
-   <div class="container mb-5 pt-4">
-    <div class="row align-items-center justify-content-between p-0 m-0">
-      
-      <!-- Left side: Phone Image -->
-      <div class="col-lg-4 text-center p-0 m-0">
-        <img src="./images/phone-img-1.png" alt="Phone" class="phone-img">
-      </div>
-
-      <!-- Right side: Text + Features -->
-      <div class="col-lg-7 text-section">
-        <h2 class="fw-bold">Instant Updates at Your Fingertips</h2>
-        <p class="mb-4">
-        Get instant alerts and important notifications on WhatsApp.
-Stay connected anytime, anywhere with real-time updates.
- 
-        </p>
-
-        <div class="row g-3">
-          <div class="col-md-6">
-            <div class="feature-card">
-              <div class="line"></div>
-              <h5>Stay Connected, Anytime!</h5>
-              <p class="p-0 m-0">Instant notifications on your phone.</p>
-              <p class="p-0 m-0">Hassle-free and secure updates.</p>
-
-              <p class="p-0 m-0">Quick communication, anytime.</p>
-
+              </div>
             </div>
-          </div>
 
             <div class="col-md-6">
-            <div class="feature-card">
-              <div class="line"></div>
-              <h5>Your Security, Just a Click Away</h5>
-              <p class="p-0 m-0">24/7 live monitoring access.</p>
-               <p class="p-0 m-0">Real-time alerts and updates.</p>
+              <div class="feature-card">
+                <div class="line"></div>
+                <h5>Your Security, Just a Click Away</h5>
+                <p class="p-0 m-0">24/7 live monitoring access.</p>
+                <p class="p-0 m-0">Real-time alerts and updates.</p>
                 <p class="p-0 m-0">Secure and reliable streaming.</p>
 
+              </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <!-- <div class="feature-card">
+            <div class="col-md-6">
+              <!-- <div class="feature-card">
               <h5>Remote Team Collaboration</h5>
               <p>Bridge the distance with real-time messaging, shared boards, and centralized updates.</p>
             </div> -->
-          </div>
-        
-          <div class="col-md-6">
-            <!-- <div class="feature-card">
+            </div>
+
+            <div class="col-md-6">
+              <!-- <div class="feature-card">
               <h5>Creative Team Workflow</h5>
               <p>Streamline brainstorming, feedback, and asset sharing to bring ideas to life faster.</p>
             </div> -->
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
 
-</section>
+  </section>
 
-<div class="container py-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-8 col-md-10">
-      
-      <!-- Step 1 -->
-      <div class="step-wrapper">
-        <div class="step-bg">1</div>
-        <div class="step-box">
-          <div>
-            <h5>Keyword Research</h5>
-            <p>Finding the right keywords helps target your audience and improve search engine rankings effectively.</p>
-          </div>
-          <div class="step-icon">
-            <i class="bi bi-search"></i>
+  <!-- <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+
+        <div class="step-wrapper">
+          <div class="step-bg">1</div>
+          <div class="step-box">
+            <div>
+              <h5>Keyword Research</h5>
+              <p>Finding the right keywords helps target your audience and improve search engine rankings effectively.
+              </p>
+            </div>
+            <div class="step-icon">
+              <i class="bi bi-search"></i>
+            </div>
           </div>
         </div>
+
+        <div class="step-wrapper">
+          <div class="step-bg">2</div>
+          <div class="step-box">
+            <div>
+              <h5>Content Strategy</h5>
+              <p>Building a strong content strategy ensures long-term organic growth and audience engagement.</p>
+            </div>
+            <div class="step-icon">
+              <i class="bi bi-journal-text"></i>
+            </div>
+          </div>
+        </div>
+
       </div>
-
-      <!-- Step 2 -->
-     <div class="step-wrapper">
-        <div class="step-bg">2</div>
-        <div class="step-box">
-          <div>
-            <h5>Content Strategy</h5>
-            <p>Building a strong content strategy ensures long-term organic growth and audience engagement.</p>
-          </div>
-          <div class="step-icon">
-            <i class="bi bi-journal-text"></i>
-          </div>
-        </div>
-      </div> 
-
     </div>
-  </div>
-</div>
+  </div> -->
 
-   
+
 
 
 
@@ -1720,6 +2037,67 @@ Stay connected anytime, anywhere with real-time updates.
       }
     });
   </script>
+
+
+  <script>
+  // Left Swiper
+  const leftSwiper = new Swiper('.left-swiper', {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    speed: 800,
+    effect: 'slide',
+  });
+
+  // Right Swiper
+  const rightSwiper = new Swiper('.right-swiper', {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    speed: 800,
+    effect: 'fade',
+    fadeEffect: { crossFade: true },
+  });
+
+  // ✅ Sync both swipers
+  leftSwiper.controller.control = rightSwiper;
+  rightSwiper.controller.control = leftSwiper;
+</script>
+
+
+
+
+
+ <script>
+        const clipBoxes = document.querySelectorAll('.clip-box');
+        const contents = document.querySelectorAll('.clip-content');
+
+        clipBoxes.forEach(box => {
+            box.addEventListener('click', () => {
+                const index = box.dataset.index;
+
+                // Deactivate all boxes
+                clipBoxes.forEach(b => b.classList.remove('active'));
+                box.classList.add('active');
+
+                // Hide all content
+                contents.forEach(c => c.classList.remove('active'));
+
+                // Show selected content
+                const target = document.getElementById(`content-${index}`);
+                if (target) {
+                    target.classList.add('active');
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+
 
 
 
