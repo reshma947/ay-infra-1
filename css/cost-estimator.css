@@ -99,7 +99,166 @@
       }
     }
 
+    /* css for pricing-header-section */
+.pricing-header {
+  position: relative;
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+  overflow: hidden;
+}
 
+.bg-text-outline {
+  font-size: 5rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px #f0f0f0;
+  /* text-stroke: 1px #f0f0f0; */
+  text-transform: uppercase;
+  position: absolute;
+  /* bottom:; */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.main-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  /* color: #001e5a; */
+  color: black;
+  z-index: 1;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .bg-text-outline {
+    font-size: 3.5rem;
+    -webkit-text-stroke: 0.7px #f0f0f0;
+  }
+
+  .main-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bg-text-outline {
+    font-size: 2.5rem;
+  }
+
+  .main-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* -------------------------------------- */
+.budget-card {
+  border-radius: 12px;
+  padding: 25px;
+  background: #fff;
+  max-width: 600px;
+  margin: 0px auto;
+}
+
+.budget-price {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Slider */
+.slider-container {
+  position: relative;
+  /* margin: 20px auto; */
+  width: 100%;
+}
+
+.custom-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 6px;
+  background: linear-gradient(to right, rgb(255, 196, 0), rgb(252, 123, 2), violet, red);
+  /* outline: 4px solid rgb(247, 247, 247); */
+  appearance: none;
+  z-index: 2;
+  position: relative;
+}
+
+/* White thumb */
+.custom-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;  /* White color */
+  border: 1px solid #333;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+}
+
+.custom-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;  /* White color */
+  border: 1px solid #333;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+}
+
+/* Vertical lines */
+.slider-markers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.slider-markers span {
+  display: block;
+  width: 4px;
+  height: 30px;
+  background: #333;
+  margin-top: -1px;
+}
+
+/* Labels */
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* Plan Cards */
+.plan-card {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  /* padding: 20px; */
+  background: #fff;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+/* ----------------------------------- */
 
 
 

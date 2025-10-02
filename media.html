@@ -72,6 +72,28 @@
       height: 700px;
       /* width: 350px; */
     }
+
+     /* ✅ Form Box (Vertical) */
+    .form-box {
+      background-color: #fff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+    .form-box .form-control, 
+    .form-box textarea {
+      border-radius: 6px;
+      margin-bottom: 15px;
+  ;
+    }
+    .form-box button {
+      width: 35%;
+      padding: 5px;
+      font-weight: 600;
+      text-align: center;
+    }
+
   </style>
 </head>
 
@@ -84,7 +106,7 @@
 
     <div class="">
       <div class="container-fluid p-0 m-0">
-        <div class="row g-0 p-0 m-0">
+        <div class="row g-0 p-0 m-0 d-flex justify-content-around">
 
           <div class="col-lg-5 d-flex flex-column justify-content-center px-4">
             <h1 class="fw-bold text-black">
@@ -101,9 +123,36 @@
                 Packages Start From
               </button>
             </div>
+
+               <!-- ✅ Vertical Form Box -->
+            <div class="form-box bg-primary">
+              <form>
+                <div class="d-flex justify-content-between">
+                     <input type="text" class="form-control me-3" placeholder="Your Name" required>
+                <input type="email" class="form-control" placeholder="Your Email" required>
+
+                </div>
+                <div class="d-flex justify-content-between">
+                  <input type="text" class="form-control me-3" placeholder="Phone Number" required>
+                <textarea class="form-control" rows="1" placeholder="Your Message"></textarea>
+
+                </div>
+             
+                <div class="text-center">
+                <button type="submit" class="bg-red-color text-white rounded-2 border-0">Send Message</button>
+                </div>
+               
+              </form>
+            </div>
           </div>
 
-          <div class="col-lg-4 position-relative d-none d-lg-block banner-img-box p-0 m-0">
+          <!-- <div class="col-lg-4 position-relative d-none d-lg-block banner-img-box p-0 m-0">
+
+            <img src="./images/banner-new-1.png" alt="Hero Image" data-aos="fade-up" data-aos-duration="3000"
+              class="position-absolute bottom-0 end-0 w-100 h-100 object-fit-cover" />
+          </div> -->
+
+           <div class="col-lg-4 position-relative d-none d-lg-block banner-img-box p-0 m-0">
 
             <img src="./images/banner-new-1.png" alt="Hero Image" data-aos="fade-up" data-aos-duration="3000"
               class="position-absolute bottom-0 end-0 w-100 h-100 object-fit-cover" />
@@ -115,7 +164,7 @@
           </div> -->
 
 
-          <div class="col-lg-3 p-0 m-0 d-flex align-items-center justify-content-end">
+          <!-- <div class="col-lg-3 p-0 m-0 d-flex align-items-center justify-content-end">
             <div class="card shadow-lg p-4 border-0">
               <h3 class="text-center mb-4">Form</h3>
               <form>
@@ -142,7 +191,7 @@
               </form>
             </div>
 
-          </div>
+          </div> -->
 
 
 

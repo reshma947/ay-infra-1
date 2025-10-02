@@ -24,7 +24,66 @@
 .box-shadow {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
+/* -------------------------------------- */
 
+
+/* css for Who we are  */
+.video-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  /* border: 1px solid; */
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 50%;
+  display: block;
+}
+
+/* Gradient overlays */
+.video-gradient::before,
+.video-gradient::after,
+.video-gradient .left-gradient,
+.video-gradient .right-gradient {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  content: "";
+}
+
+.video-gradient::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 11%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255), transparent);
+}
+
+.video-gradient::after {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 11%;
+  background: linear-gradient(to top, rgba(255, 255, 255), transparent);
+}
+
+.video-gradient .left-gradient {
+  top: 0;
+  left: 0;
+  width: 8%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255), transparent);
+}
+
+.video-gradient .right-gradient {
+  top: 0;
+  right: 0;
+  width: 8%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255), transparent);
+}
+/* ---------------------------------- */
 .about-us-bg-img{
     background-image: url("../images/about-bg-img-1.png");
       background-size: fixed;

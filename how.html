@@ -1,240 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Clip-Path Strip with Dynamic Content</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap 5.3 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Pricing Table</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
-    <style>
-        /* Horizontal strip */
-        .clip-strip {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-        }
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <style>
 
-        /* Clip boxes */
-        .clip-box {
-            flex: 0 0 auto;
-            width: 7.5%;
-            /* 8 boxes in a row */
-            min-width: 80px;
-            /* good min size on small screens */
-            height: 50px;
-            /* strip height */
-            background-color: #f8f8f8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            color: #000;
-        }
+    
 
-        .clip-box:hover {
-            background-color: #d3d2d2;
-        }
 
-        .clip-box.active {
-            background-color: red;
-            color: #fff;
-        }
+    .feature-list .feature-item {
+      cursor: pointer;
+      padding: 12px;
+      border-left: 4px solid transparent;
+      transition: all 0.3s ease;
 
-        /* Shapes */
-        .clip-start {
-            clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
-        }
+    }
+    .feature-list .feature-item.active {
+      background-color: #e9f5ff;
+      /* border-left-color: #0d6efd; */
+      border-left-color: red;
+      font-weight: 600;
+    }
 
-        .clip-middle {
-            clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-            /* clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%); */
-        }
 
-        .clip-end {
-            /* clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 25% 50%, 0% 0%); */
-            clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-        }
+    /* Table Styling */
+    .pricing-table {
+      border-collapse: separate !important;
+      border-spacing: 10px 0; /* column gap */
+      width: 100%;
+    }
 
-        /* Content sections */
-        .clip-content {
-            display: none;
-            padding-top: 1.5rem;
-        }
+    .pricing-table th, .pricing-table td {
+      text-align: center;
+      vertical-align: middle;
+      background-color: #ffffff;
+      border: none;
+      padding: 12px;
+      min-width: 120px;
+    }
 
-        .clip-content.active {
-            display: flex;
-        }
+    .pricing-table tbody tr:nth-child(even) td {
+      background-color: #f7f7f7;
+    }
 
-        .clip-content img {
-            max-width: 100%;
-            border-radius: 8px;
-        }
+    thead th {
+      background-color: #f0f0f0;
+      font-weight: 600;
+    }
 
-        /* Hide horizontal scrollbar */
-        .clip-strip::-webkit-scrollbar {
-            display: none;
-        }
-
-        .clip-strip {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-    </style>
+    @media (max-width: 767px) {
+      .pricing-table th, .pricing-table td {
+        font-size: 13px;
+        padding: 8px;
+      }
+    }
+  </style>
 </head>
+<body class="bg-light py-5">
 
-<body>
+<div class="container">
+  <div class="row g-0">
+    <!-- Left side - Features -->
+    <div class="col-md-2 bg-white shadow-sm">
+      <div class="feature-list list-group">
+        <div class="feature-item active" data-feature="design">Design & Drawings</div>
+        <div class="feature-item" data-feature="structure">Structure</div>
+        <div class="feature-item" data-feature="kitchen">Kitchen</div>
+        <div class="feature-item" data-feature="bathroom">Bathroom</div>
+        <div class="feature-item" data-feature="doors">Doors and Windows</div>
+        <div class="feature-item" data-feature="painting">Painting</div>
+        <div class="feature-item" data-feature="electrical">Electrical</div>
+        <div class="feature-item" data-feature="flooring">Flooring</div>
+        <div class="feature-item" data-feature="inclusive">Other Inclusive</div>
+        <div class="feature-item" data-feature="home">Home Automation</div>
+        <div class="feature-item" data-feature="sustainability">Sustainability</div>
+        <div class="feature-item" data-feature="exclusive">Other Exclusive or Additional Charges</div>
 
-    <div class="container py-5">
-
-        <!-- Horizontal Clip Path Strip -->
-        <div class="clip-strip mb-4">
-            <div class="clip-box clip-middle" data-index="1">1</div>
-            <div class="clip-box clip-middle" data-index="2">2</div>
-            <div class="clip-box clip-middle" data-index="3">3</div>
-            <div class="clip-box clip-middle" data-index="4">4</div>
-            <div class="clip-box clip-middle" data-index="5">5</div>
-            <div class="clip-box clip-middle" data-index="6">6</div>
-            <div class="clip-box clip-middle" data-index="7">7</div>
-            <div class="clip-box clip-middle" data-index="8">8</div>
-        </div>
-
-        <!-- Content Sections -->
-        <div class="clip-content row g-4" id="content-1">
-            <div class="d-flex justify-content-center align-items-center text-center">
-                <div class="col-md-5">
-                    <img src="./images/how-works-img-1.png" alt="Image 1">
-                    <h4 class="">Meet</h4>
-                    <p>We understand your vision, lifestyle, and requirements.</p>
-                </div>
-
-            </div>
-
-
-            <!-- <div class="col-md-8 d-flex flex-column justify-content-center bg-warning">
-      <h4>Meet</h4>
-      <p> We understand your vision, lifestyle, and requirements.</p>
-    </div> -->
-        </div>
-
-        <div class="clip-content row" id="content-2">
-            <div class="d-flex justify-content-center align-items-center text-center">
-                <div class="col-md-5">
-                    <img src="./images/how-works-img-2.png" alt="Image 2">
-                    <h4 class="mt-3">Share</h4>
-                    <p>You tell us your ideas and preferences; we clarify every detail.</p>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="clip-content row" id="content-3">
-            <div class="d-flex justify-content-center align-items-center text-center">
-                <div class="col-md-5">
-
-                    <img src="./images/how-works-img-3.png" alt="Image 1">
-
-
-                    <h4 class="mt-3">Plan</h4>
-                    <p>Custom designs and project plans combining style and functionality.</p>
-                </div>
-
-            </div>
-
-
-        </div>
-
-        <div class="clip-content row" id="content-4">
-            <div class="d-flex justify-content-center align-items-center text-center">
-                <div class="col-md-5">
-                    <img src="./images/how-works-img-4.png" alt="Image 1">
-                    <h4 class="mt-3">Quote</h4>
-                    <p>Transparent quotation with milestone approvals — no hidden costs.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="clip-content row" id="content-5">
-            <div class="d-flex justify-content-center align-items-center text-center">
-                <div class="col-md-5">
-                    <img src="./images/how-works-img-5.png" alt="Image 1">
-                    <h4 class="mt-3">Approvals</h4>
-                    <p>We handle permissions, legal requirements, and financing guidance.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="clip-content row" id="content-6">
-            <div class="d-flex justify-content-center align-items-center text-center">
-                <div class="col-md-5">
-                    <img src="./images/how-works-img-6.png" alt="Image 1">
-                    <h4 class="mt-3">Build</h4>
-                    <p>Expert execution with premium materials and skilled craftsmanship.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="clip-content row" id="content-7">
-            <div class="d-flex justify-content-center align-items-center text-center">
-                <div class="col-md-5">
-                    <img src="./images/how-works-img-7.png" alt="Image 1">
-                    <h4 class="mt-3">Track</h4>
-                    <p>Digital updates to keep you informed and confident throughout.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="clip-content row" id="content-8">
-            <div class="d-flex justify-content-center align-items-center text-center">
-                <div class="col-md-5">
-                    <img src="./images/how-works-img-8.png" alt="Image 1">
-                    <h4 class="mt-3">Handover</h4>
-                    <p>Completed project delivered, ready to enjoy, with post-construction support.</p>
-                </div>
-
-            </div>
-        </div>
-
+      </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const clipBoxes = document.querySelectorAll('.clip-box');
-        const contents = document.querySelectorAll('.clip-content');
+    <!-- Right side - Pricing Table -->
+    <div class="col-md-10 bg-white shadow-sm">
+      <div class="table-responsive p-2">
+        <table class="pricing-table w-100">
+          <thead>
+            <tr>
+              <th>Particulars</th>
+              <th>Basic</th>
+              <th>Premium</th>
+              <th>Professional</th>
+              <th>Royale</th>
+            </tr>
+          </thead>
+          <tbody id="pricingBody">
+            <!-- Dynamic content here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
-        clipBoxes.forEach(box => {
-            box.addEventListener('click', () => {
-                const index = box.dataset.index;
+<script>
+  const pricingData = {
+    design: [
+      ['2D Floor Plan', '✓','8GB','20GB','50GB','Unlimited'],
+      ['Structural Designing', '2GB','5GB','10GB','20GB','Unlimited'],
+      ['Basic Elevation Design', '1GB','3GB','5GB','10GB','Unlimited'],
+      ['Vaastu Consultation', '1GB','2GB','5GB','10GB','Unlimited'],
+      ['3D Elevation', '1GB','2GB','5GB','10GB','Unlimited'],
+      ['Electrical Drawing', '1GB','2GB','5GB','10GB','Unlimited'],
+      ['Plumbing Drawing', '1GB','2GB','5GB','10GB','Unlimited'],
+      ['Furniture Plan', '1GB','2GB','5GB','10GB','Unlimited'],
+      ['360” Walkthrough', '1GB','2GB','5GB','10GB','Unlimited']
+    ],
+    structure: [
+      ['Cement', 'Priya Cement Or Nagarjuna Cement','Bharati Or Birla A-1','Ultra Tech Or Ramco Super Crete','Ultra Tech'],
+      ['Steel', 'Tirupati (Fe 550 D) Or Sugna (Fe 550 D) OrVinayak (Fe 550 D)','Sree Steel (Fe 550 D) Or Jai Raj Steel (Fe 550 D)','Tata Steel (Fe 550 D) Or Vizag Steel (Fe 550 D)','Tata Steel (Fe 550 D) Or Vizag Steel (Fe 550 D)'],
+      ['Aggregrates', '20 MM & 40 MM','20 MM & 40 MM','20 MM & 40 MM','20 MM & 40 MM'],
+      ['Brick Work', 'AAC Blocks 9 Inch for Exterior Wall 4 Inch for Interior River Sand - BrickWork River Sand - Plastering','Red Brick as per Customer Choice 9 Inch for Exterior River Sand - BrickWork River Sand - Plastering','Red Brick (Karimnagar) as per Customer Choice 9 Inch for Exterior River Sand - BrickWork River Sand - Plastering','Red Brick (Karimnagar) as per Customer Choice 9 Inch for Exterior River Sand - BrickWork River Sand - Plastering'],
+      ['RCC Design Mix', 'As per Structural Engineer Recommendations','As per Structural Engineer Recommendations','As per Structural Engineer Recommendations','As per Structural Engineer Recommendations'],
+      ['Water Proofing', 'Dr Fixit / Fosroc','Dr Fixit / Fosroc','Dr Fixit / Fosroc','Dr Fixit / Fosroc'],
+      ['Elevation', 'Included, upto Specific Limit','Included, upto Specific Limit','Included, upto Specific Limit','Included, upto Specific Limit'],
+      ['Ceiling height', '10 Feet','10 Feet','10 Feet','11 Feet']
+    ],
+    kitchen: [
+      ['Ceramic Wall Tiles', '2 Feet above Kitchen Slab - Costing up to Rs.35/Sqft','2 Feet above Kitchen Slab - Costing up to Rs.50/Sqft','2 Feet above Kitchen Slab - Costing up to Rs.70/Sqft','3 Feet above Kitchen Slab - Costing up to Rs.90/Sqft'],
+      ['Main Sink Faucet', 'Up to Rs. 1500/- with ISI Mark','Up to Rs. 2000/- with Parrywareor Hindware Marked','Up to Rs. 3000/- with Parrywareor Hindware Marked','Up to Rs. 4000/-with Jaquar Marked'],
+      ['Kitchen Sink', 'Stainless Steel up to ₹3500/-','Stainless Steel up to ₹5500/-','Stainless Steel up to ₹7500/- (Furtura Or Nirali Or Carysil)','Stainless Steel up to Rs.8000/- (Furtura Or Nirali Or Carysil)'],
+      ['Kitchen Granite Slab', '20 MM thick up to Rs.100/sqft (Up to 30 Sq Feet)','20 MM thick up to Rs.120/sqft (Up to 40 Sq Feet)','20 MM thick up to Rs.180/sqft (Up to 50 Sq Feet)','20 MM thick up to Rs.180/sqft (Up to 50 Sq Feet)']
+    ],
+    bathroom: [
+      ['Ceramic Wall Tiles', '7 Feet height up to Rs.35/sqft','7 Feet height up to Rs.50/sqft','7 Feet height up to Rs.70 sqft','9 Feet height up to Rs.90/sqft'],
+      ['Sanitary Ware Bathroom Accessories', 'Up to Rs.17,500/- for each Washroom. Commode, Health Faucet, Wash Basin with Accessories, 2 in 1 Wall Mixer, Overhead Shower','Up to Rs.22,500/- for each washroom. Commode, Health Faucet, Wash Basin with Accessories ,2 in 1 Wall Mixer, Overhead Shower','Up to Rs.37,500/- for each washroom. Commode, Health Faucet, Wash Basin with Accessories, 2 in 1 Wall Mixer, Overhead Shower',' Up to Rs.50000/- for each washroom. Commode, Health Faucet, Wash Basin with Accessories, Diverter ,shower cubical, Mirror & Soap Dish, Towel Rail'],
+      ['Brand', 'Hindware or Parryware','Cera Or Parryware or Hindware','Jaguar','Jaguar/kohler'],
+      ['CPVC Pipes', 'Sudhakar','Ashirwad','Astral Or Supreme','Astral Or Supreme'],
+      ['Bathroom Doors', 'Water Proof Flush Doors up to Rs.5000/- including, Frame & Door','Water Proof Flush Doors up to Rs.7000/- including Frame & Door','Water Proof Flush Doors up to Rs.9000/- including Frame & Door','Water Proof Flush Doors up to Rs.15000/- including Frame & Door',]
+    ],
+    doors: [
+      ['Social Sharing', 'No','No','Yes','Yes'],
+      ['Bookmark Integrations', '0','2','5','10'],
+      ['Analytics', 'Basic','Basic','Advanced','Advanced'],
+      ['Auto Sync', 'No','No','Yes','Yes']
+    ],
+    painting: [
+      ['Tracking per Month', '50','100','500','1000'],
+      ['Real-time Reports', 'No','No','Yes','Yes'],
+      ['API Access', 'No','No','Yes','Yes'],
+      ['User Segments', '1','3','10','Unlimited']
+    ],
+    electrical: [
+      ['Cloud Storage', '4GB','8GB','20GB','50GB'],
+      ['Daily Backup', 'No','No','Yes','Yes'],
+      ['Recovery', 'Manual','Manual','Auto','Auto'],
+      ['Access Points', '1','3','5','10']
+    ],
+    flooring: [
+      ['Cloud Storage', '4GB','8GB','20GB','50GB'],
+      ['Daily Backup', 'No','No','Yes','Yes'],
+      ['Recovery', 'Manual','Manual','Auto','Auto'],
+      ['Access Points', '1','3','5','10']
+    ],
+    inclusive: [
+      ['Cloud Storage', '4GB','8GB','20GB','50GB'],
+      ['Daily Backup', 'No','No','Yes','Yes'],
+      ['Recovery', 'Manual','Manual','Auto','Auto'],
+      ['Access Points', '1','3','5','10']
+    ],
+    home: [
+      ['Cloud Storage', '4GB','8GB','20GB','50GB'],
+      ['Daily Backup', 'No','No','Yes','Yes'],
+      ['Recovery', 'Manual','Manual','Auto','Auto'],
+      ['Access Points', '1','3','5','10']
+    ],
+    sustainability: [
+      ['Cloud Storage', '4GB','8GB','20GB','50GB'],
+      ['Daily Backup', 'No','No','Yes','Yes'],
+      ['Recovery', 'Manual','Manual','Auto','Auto'],
+      ['Access Points', '1','3','5','10']
+    ],
+    exclusive: [
+      ['Cloud Storage', '4GB','8GB','20GB','50GB'],
+      ['Daily Backup', 'No','No','Yes','Yes'],
+      ['Recovery', 'Manual','Manual','Auto','Auto'],
+      ['Access Points', '1','3','5','10']
+    ]
+  };
 
-                // Deactivate all boxes
-                clipBoxes.forEach(b => b.classList.remove('active'));
-                box.classList.add('active');
+  const pricingBody = document.getElementById('pricingBody');
+  const featureItems = document.querySelectorAll('.feature-item');
 
-                // Hide all content
-                contents.forEach(c => c.classList.remove('active'));
+  function renderRows(feature) {
+    pricingBody.innerHTML = pricingData[feature].map(row => `
+      <tr>
+        ${row.map(cell => `<td>${cell}</td>`).join('')}
+      </tr>
+    `).join('');
+  }
 
-                // Show selected content
-                const target = document.getElementById(`content-${index}`);
-                if (target) {
-                    target.classList.add('active');
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
+  featureItems.forEach(item => {
+    item.addEventListener('click', () => {
+      featureItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+      const feature = item.getAttribute('data-feature');
+      renderRows(feature);
+    });
+  });
+
+  // Initial render
+    renderRows('design');
+</script>
 
 </body>
-
 </html>

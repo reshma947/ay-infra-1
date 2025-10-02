@@ -54,83 +54,82 @@
     /* ---------------------------- */
 
     /* Horizontal strip */
-        .clip-strip {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-        }
+    .clip-strip {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
 
-        /* Clip boxes */
-        .clip-box {
-            flex: 0 0 auto;
-            width: 7.5%;
-            /* 8 boxes in a row */
-            min-width: 80px;
-            /* good min size on small screens */
-            height: 50px;
-            /* strip height */
-            background-color: #f8f8f8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            color: #000;
-        }
+    /* Clip boxes */
+    .clip-box {
+      flex: 0 0 auto;
+      width: 7.5%;
+      /* 8 boxes in a row */
+      min-width: 80px;
+      /* good min size on small screens */
+      height: 50px;
+      /* strip height */
+      background-color: #f8f8f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      color: #000;
+    }
 
-        .clip-box:hover {
-            background-color: #d3d2d2;
-        }
+    .clip-box:hover {
+      background-color: #d3d2d2;
+    }
 
-        .clip-box.active {
-            background-color: red;
-            color: #fff;
-        }
+    .clip-box.active {
+      background-color: red;
+      color: #fff;
+    }
 
-        /* Shapes */
-        .clip-start {
-            clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
-        }
+    /* Shapes */
+    .clip-start {
+      clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
+    }
 
-        .clip-middle {
-            clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-            /* clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%); */
-        }
+    .clip-middle {
+      clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+      /* clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%); */
+    }
 
-        .clip-end {
-            /* clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 25% 50%, 0% 0%); */
-            clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-        }
+    .clip-end {
+      /* clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 25% 50%, 0% 0%); */
+      clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    }
 
-        /* Content sections */
-        .clip-content {
-            display: none;
-            padding-top: 1.5rem;
-        }
+    /* Content sections */
+    .clip-content {
+      display: none;
+      padding-top: 1.5rem;
+    }
 
-        .clip-content.active {
-            display: flex;
-        }
+    .clip-content.active {
+      display: flex;
+    }
 
-        .clip-content img {
-            max-width: 100%;
-            border-radius: 8px;
-        }
+    .clip-content img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
 
-        /* Hide horizontal scrollbar */
-        .clip-strip::-webkit-scrollbar {
-            display: none;
-        }
+    /* Hide horizontal scrollbar */
+    .clip-strip::-webkit-scrollbar {
+      display: none;
+    }
 
-        .clip-strip {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
+    .clip-strip {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
   </style>
 </head>
 
@@ -157,7 +156,7 @@
     <nav class="navbar navbar-expand-lg p-0 bg-white">
       <div class="container-fluid p-0 m-0">
         <a class="navbar-brand ps-lg-5 p-0 m-0" href="./index.html">
-          <img src="./images/AY logo.jpg" width="72px" class="img-fluid" alt="Logo">
+          <img src="./images/ay-main-logo.png" width="200px" class="img-fluid" alt="Logo">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -206,7 +205,7 @@
 
           <div class="p-0 m-0">
             <a class="nav-link fw-semibold" href="./contact.html"><button
-                class="px-3 py-1 border-0 rounded-2 bg-red-color text-white ">Free Site Visit</button>
+                class="px-3 py-1 border-0 rounded-2 bg-red-color text-white fw-semibold">Book Free Site Visit</button>
             </a>
           </div>
         </div>
@@ -262,14 +261,14 @@
   </script>
 
 
-  <div class="container-fluid position-relative p-0 m-0">
+  <div class="container-fluid position-relative pt-5 mt-5">
     <div class="position-absolute top-0 start-0 w-100 h-100 bg-img z-n1"></div>
 
-    <div class="min-vh-100 d-flex align-items-center">
-      <div class="container-fluid">
-        <div class="row g-0">
+    <div class="">
+      <div class="container-fluid p-0 m-0">
+        <div class="row g-0 p-0 m-0 d-flex justify-content-around">
 
-          <div class="col-lg-6 d-flex flex-column justify-content-center text-center text-lg-start px-4 py-5">
+          <div class="col-lg-5 d-flex flex-column justify-content-center px-4">
             <h1 class="fw-bold text-black">
               A <span class="text-red-color">HOME</span>
               THAT MATCHES <br>YOUR <span class="text-red-color">DREAMS</span><br> CRAFTED WITH CARE
@@ -284,18 +283,75 @@
                 Packages Start From
               </button>
             </div>
+
+            <!-- ✅ Vertical Form Box -->
+            <div class="form-box">
+              <form>
+                <div class="d-flex justify-content-between">
+                  <input type="text" class="form-control me-3" placeholder="Your Name" required>
+                  <input type="email" class="form-control" placeholder="Your Email" required>
+
+                </div>
+                <div class="d-flex justify-content-between">
+                  <input type="text" class="form-control me-3" placeholder="Phone Number" required>
+                  <textarea class="form-control" rows="1" placeholder="Your Message"></textarea>
+
+                </div>
+
+                <div class="text-center">
+                  <button type="submit" class="bg-red-color text-white rounded-2 border-0">Send Message</button>
+                </div>
+
+              </form>
+            </div>
           </div>
 
-          <div class="col-lg-6 position-relative d-none d-lg-block">
+          <!-- <div class="col-lg-4 position-relative d-none d-lg-block banner-img-box p-0 m-0">
 
-            <img src="./images/banner-img-1.png" alt="Hero Image" data-aos="fade-up" data-aos-duration="3000"
+            <img src="./images/banner-new-1.png" alt="Hero Image" data-aos="fade-up" data-aos-duration="3000"
+              class="position-absolute bottom-0 end-0 w-100 h-100 object-fit-cover" />
+          </div> -->
+
+          <div class="col-lg-4 position-relative d-none d-lg-block banner-img-box p-0 m-0">
+
+            <img src="./images/banner-man-1.png" alt="Hero Image" data-aos="fade-up" data-aos-duration="3000"
               class="position-absolute bottom-0 end-0 w-100 h-100 object-fit-cover" />
           </div>
 
           <!-- ✅ Image for mobile view (stacked) -->
-          <div class="col-12 d-block d-lg-none px-3 mt-4">
-            <img src="./images/banner-img-1.png" alt="Hero Image" class="img-fluid w-100 rounded" />
-          </div>
+          <!-- <div class="col-12 d-block d-lg-none px-3 mt-4">
+            <img src="./images/banner-new-1.png" alt="Hero Image" class="img-fluid w-100 rounded" />
+          </div> -->
+
+
+          <!-- <div class="col-lg-3 p-0 m-0 d-flex align-items-center justify-content-end">
+            <div class="card shadow-lg p-4 border-0">
+              <h3 class="text-center mb-4">Form</h3>
+              <form>
+
+                <div class="mb-3">
+                  <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+
+                <div class="mb-3">
+                  <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+
+                <div class="mb-3">
+                  <input type="phone-no" class="form-control" placeholder="Phone Number" required>
+                </div>
+
+                <div class="mb-3">
+                  <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="px-4 py-2 border-0 bg-red-color text-white rounded-3 fw-semibold">Send
+                    Message</button>
+                </div>
+              </form>
+            </div>
+
+          </div> -->
 
 
 
@@ -377,152 +433,155 @@
     </div>
   </section>
 
-<section class="ay-section position-relative overflow-hidden py-5 mt-3">
-  <div class="container-fluid">
-    <div class="row">
+  <section class="ay-section position-relative overflow-hidden py-5 mt-3">
+    <div class="container-fluid">
+      <div class="row">
 
-      <!-- 🅰 Left Column -->
-      <div class="col-lg-3 col-md-12 mb-lg-0 d-flex justify-content-lg-start align-items-start justify-content-start p-0 m-0">
-        <img src="./images/a-img.png" data-aos="fade-right" data-aos-offset="400" data-aos-easing="ease-in-sine" alt="Top Left" class="img-fluid a-image">
-      </div>
-
-      <!-- 📦 Middle Column -->
-      <div class="col-lg-6 col-md-12">
-        <h2 class="text-center mb-4 fw-bold">Why AY INFRA</h2>
-        <div class="row g-3 pb-3">
-
-          <!-- Repeated Boxes -->
-          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div class="ay-box h-100">
-              <div class="ay-img-box mb-2">
-                <img src="./images/ay-img-sec-img-12.png" alt="">
-              </div>
-              <h6 class="fw-semibold mb-1">100% Risk-Free Transactions</h6>
-              <!-- <p class="mb-0 small">No upfront costs, no pressure. You pay only when the job is done right — giving you complete control over your investment.</p> -->
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div class="ay-box h-100">
-              <div class="ay-img-box mb-2">
-                <img src="./images/ay-img-sec-img-10.png" alt="">
-              </div>
-              <h6 class="fw-semibold mb-1">Safe Milestone Based Payments</h6>
-              <!-- <p class="mb-0 small">Payments are split into stages, linked to completed work. You stay in control and avoid unnecessary upfront risks.</p> -->
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div class="ay-box h-100">
-              <div class="ay-img-box mb-2">
-                <img src="./images/ay-img-sec-img-1.png" alt="">
-              </div>
-              <h6 class="fw-semibold mb-1">Quality You <br>Can Trust</h6>
-              <!-- <p class="mb-0 small">We never compromise on materials or workmanship. Expect the right quality at the right price — always.</p> -->
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div class="ay-box h-100">
-              <div class="ay-img-box mb-2">
-                <img src="./images/ay-img-sec-img-2.png" alt="">
-              </div>
-              <h6 class="fw-semibold mb-1">Branded Materials, Premium Results</h6>
-              <!-- <p class="mb-0 small">We believe quality begins with the right products. That’s why every component in your project is sourced from trusted, high-quality brands.</p> -->
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div class="ay-box h-100">
-              <div class="ay-img-box mb-2">
-                <img src="./images/ay-img-sec-img-3.png" alt="">
-              </div>
-              <h6 class="fw-semibold mb-1">On-Time <br>Delievery</h6>
-              <!-- <p class="mb-0 small">Delays are not an option. We stick to schedules and deliver your project on time — because your plans matter.</p> -->
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div class="ay-box h-100">
-              <div class="ay-img-box mb-2">
-                <img src="./images/ay-img-sec-img-4.png" alt="">
-              </div>
-              <h6 class="fw-semibold mb-1">Zero Cost Overruns – What We Quote, We Deliver</h6>
-              <!-- <p class="mb-0 small">Once we agree on the quote, that’s it. No extra bills, no last-minute hikes — just a promise you can rely on.</p> -->
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div class="ay-box h-100">
-              <div class="ay-img-box mb-2">
-                <img src="./images/ay-img-sec-img-5.png" alt="">
-              </div>
-              <h6 class="fw-semibold mb-1">Reliable & Experienced Team</h6>
-              <!-- <p class="mb-0 small">Our professionals bring years of experience and a client-first approach to ensure quality, efficiency, and peace of mind.</p> -->
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div class="ay-box h-100">
-              <div class="ay-img-box mb-2">
-                <img src="./images/ay-img-sec-img-6.png" alt="">
-              </div>
-              <h6 class="fw-semibold mb-1">Track Progress Anytime, Anywhere Digitally</h6>
-              <!-- <p class="mb-0 small">Stay connected to your project with us . Monitor progress with ease and stay in control at all times.</p> -->
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div class="ay-box h-100">
-              <div class="ay-img-box mb-2">
-                <img src="./images/ay-img-sec-img-7.png" alt="">
-              </div>
-              <h6 class="fw-semibold mb-1">Dedicated Customer Support</h6>
-              <!-- <p class="mb-0 small">Our team is always available to answer your questions, solve issues, and provide guidance — ensuring a smooth, stress-free experience from start to finish.</p> -->
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div class="ay-box h-100">
-              <div class="ay-img-box mb-2">
-                <img src="./images/ay-img-sec-img-11.png" alt="">
-              </div>
-              <h6 class="fw-semibold mb-1">Customized Pricing Packages</h6>
-              <!-- <p class="mb-0 small">We offer flexible pricing packages tailored to your specific needs and budget. No rigid models, no hidden costs — just options that give you control, transparency, and the best value at every stage.</p> -->
-            </div>
-          </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div class="ay-box h-100">
-              <div class="ay-img-box mb-2">
-                <img src="./images/ay-img-sec-img-8.png" alt="">
-              </div>
-              <h6 class="fw-semibold mb-1">Permission & Approval Support</h6>
-              <!-- <p class="mb-0 small">We assist you in obtaining all necessary permissions and approvals — making sure your project stays compliant and moves forward smoothly without delays.</p> -->
-            </div>
-          </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-            <div class="ay-box h-100">
-              <div class="ay-img-box mb-2">
-                <img src="./images/ay-img-sec-img-9.png" alt="">
-              </div>
-              <h6 class="fw-semibold mb-1">Loan <br>Assistance</h6>
-              <!-- <p class="mb-0 small">We guide you through every step of financing, helping you access the right loans with ease — so your project stays on track without unnecessary stress.</p> -->
-            </div>
-          </div>
-
+        <!-- 🅰 Left Column -->
+        <div
+          class="col-lg-3 col-md-12 mb-lg-0 d-flex justify-content-lg-start align-items-start justify-content-start p-0 m-0">
+          <img src="./images/a-img.png" data-aos="fade-right" data-aos-offset="400" data-aos-easing="ease-in-sine"
+            alt="Top Left" class="img-fluid a-image">
         </div>
-      </div>
 
-      <!-- 🅾 Right Column -->
-      <div class="col-lg-3 col-md-12 d-flex justify-content-end align-items-end">
-        <img src="./images/y-img.png" data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine" alt="Bottom Right" class="img-fluid y-image">
-      </div>
+        <!-- 📦 Middle Column -->
+        <div class="col-lg-6 col-md-12">
+          <h2 class="text-center mb-4 fw-bold">Why AY INFRA</h2>
+          <div class="row g-3 pb-3">
 
+            <!-- Repeated Boxes -->
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+              <div class="ay-box h-100">
+                <div class="ay-img-box mb-2">
+                  <img src="./images/ay-img-sec-img-12.png" alt="">
+                </div>
+                <h6 class="fw-semibold mb-1">100% Risk-Free Transactions</h6>
+                <!-- <p class="mb-0 small">No upfront costs, no pressure. You pay only when the job is done right — giving you complete control over your investment.</p> -->
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+              <div class="ay-box h-100">
+                <div class="ay-img-box mb-2">
+                  <img src="./images/ay-img-sec-img-10.png" alt="">
+                </div>
+                <h6 class="fw-semibold mb-1">Safe Milestone Based Payments</h6>
+                <!-- <p class="mb-0 small">Payments are split into stages, linked to completed work. You stay in control and avoid unnecessary upfront risks.</p> -->
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+              <div class="ay-box h-100">
+                <div class="ay-img-box mb-2">
+                  <img src="./images/ay-img-sec-img-1.png" alt="">
+                </div>
+                <h6 class="fw-semibold mb-1">Quality You <br>Can Trust</h6>
+                <!-- <p class="mb-0 small">We never compromise on materials or workmanship. Expect the right quality at the right price — always.</p> -->
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+              <div class="ay-box h-100">
+                <div class="ay-img-box mb-2">
+                  <img src="./images/ay-img-sec-img-2.png" alt="">
+                </div>
+                <h6 class="fw-semibold mb-1">Branded Materials, Premium Results</h6>
+                <!-- <p class="mb-0 small">We believe quality begins with the right products. That’s why every component in your project is sourced from trusted, high-quality brands.</p> -->
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+              <div class="ay-box h-100">
+                <div class="ay-img-box mb-2">
+                  <img src="./images/ay-img-sec-img-3.png" alt="">
+                </div>
+                <h6 class="fw-semibold mb-1">On-Time <br>Delievery</h6>
+                <!-- <p class="mb-0 small">Delays are not an option. We stick to schedules and deliver your project on time — because your plans matter.</p> -->
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+              <div class="ay-box h-100">
+                <div class="ay-img-box mb-2">
+                  <img src="./images/ay-img-sec-img-4.png" alt="">
+                </div>
+                <h6 class="fw-semibold mb-1">Zero Cost Overruns – What We Quote, We Deliver</h6>
+                <!-- <p class="mb-0 small">Once we agree on the quote, that’s it. No extra bills, no last-minute hikes — just a promise you can rely on.</p> -->
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+              <div class="ay-box h-100">
+                <div class="ay-img-box mb-2">
+                  <img src="./images/ay-img-sec-img-5.png" alt="">
+                </div>
+                <h6 class="fw-semibold mb-1">Reliable & Experienced Team</h6>
+                <!-- <p class="mb-0 small">Our professionals bring years of experience and a client-first approach to ensure quality, efficiency, and peace of mind.</p> -->
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+              <div class="ay-box h-100">
+                <div class="ay-img-box mb-2">
+                  <img src="./images/ay-img-sec-img-6.png" alt="">
+                </div>
+                <h6 class="fw-semibold mb-1">Track Progress Anytime, Anywhere Digitally</h6>
+                <!-- <p class="mb-0 small">Stay connected to your project with us . Monitor progress with ease and stay in control at all times.</p> -->
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+              <div class="ay-box h-100">
+                <div class="ay-img-box mb-2">
+                  <img src="./images/ay-img-sec-img-7.png" alt="">
+                </div>
+                <h6 class="fw-semibold mb-1">Dedicated Customer Support</h6>
+                <!-- <p class="mb-0 small">Our team is always available to answer your questions, solve issues, and provide guidance — ensuring a smooth, stress-free experience from start to finish.</p> -->
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+              <div class="ay-box h-100">
+                <div class="ay-img-box mb-2">
+                  <img src="./images/ay-img-sec-img-11.png" alt="">
+                </div>
+                <h6 class="fw-semibold mb-1">Customized Pricing Packages</h6>
+                <!-- <p class="mb-0 small">We offer flexible pricing packages tailored to your specific needs and budget. No rigid models, no hidden costs — just options that give you control, transparency, and the best value at every stage.</p> -->
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+              <div class="ay-box h-100">
+                <div class="ay-img-box mb-2">
+                  <img src="./images/ay-img-sec-img-8.png" alt="">
+                </div>
+                <h6 class="fw-semibold mb-1">Permission & Approval Support</h6>
+                <!-- <p class="mb-0 small">We assist you in obtaining all necessary permissions and approvals — making sure your project stays compliant and moves forward smoothly without delays.</p> -->
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+              <div class="ay-box h-100">
+                <div class="ay-img-box mb-2">
+                  <img src="./images/ay-img-sec-img-9.png" alt="">
+                </div>
+                <h6 class="fw-semibold mb-1">Loan <br>Assistance</h6>
+                <!-- <p class="mb-0 small">We guide you through every step of financing, helping you access the right loans with ease — so your project stays on track without unnecessary stress.</p> -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 🅾 Right Column -->
+        <div class="col-lg-3 col-md-12 d-flex justify-content-end align-items-end">
+          <img src="./images/y-img.png" data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine"
+            alt="Bottom Right" class="img-fluid y-image">
+        </div>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
 
@@ -539,17 +598,37 @@
         <div class="col-md-6 col-lg-3 pt-4">
           <div class="pricing-card">
             <div class="plan-title basic-color">Basic</div>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <!-- <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
             <div class="plan-price basic-color">
-              <span></span>999<span class="price-decimal">.99</span>
+              <span class="text-red-color">999</span><span class="price-decimal text-red-color">.99</span>
             </div>
-            <p class="text-muted">per month</p>
-            <ul class="feature-list basic-dot list-unstyled">
+            <!-- <p class="text-muted">per month</p> -->
+            <!-- <ul class="feature-list basic-dot list-unstyled">
               <li><span></span> Lorem ipsum dolor sit amet</li>
               <li><span></span> Consectetur adipiscing elit</li>
             </ul>
             <button class="btn-purchase" onclick="btnOnClick()" data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop">Purchase</button>
+              data-bs-target="#staticBackdrop">Purchase</button> -->
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-3 px-1 pb-1 pt-0 bg-red-color" style="border-top-left-radius: 0; border-top-right-radius: 2rem;
+                   border-bottom-left-radius: 2rem; border-bottom-right-radius: 0; transform: scale(1.03);">
+          <h5 class="text-center m-0 p-0 text-white">Most Popular</h5>
+          <div class="pricing-card">
+            <div class="plan-title premium-color">Premium</div>
+            <!-- <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
+            <div class="plan-price premium-color">
+              <span class="text-red-color">2499</span><span class="price-decimal text-red-color">.99</span>
+            </div>
+            <!-- <p class="text-muted">per month</p>
+            <ul class="feature-list premium-dot list-unstyled">
+              <li><span></span> Lorem ipsum dolor sit amet</li>
+              <li><span></span> Consectetur adipiscing elit</li>
+            </ul>
+            <button class="btn-purchase" onclick="btnOnClick()" data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop">Purchase</button> -->
           </div>
         </div>
 
@@ -558,53 +637,36 @@
         <div class="col-md-6 col-lg-3 pt-4">
           <div class="pricing-card">
             <div class="plan-title premium-color">Profesional</div>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <!-- <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
             <div class="plan-price premium-color">
-              <span></span>1499<span class="price-decimal">.99</span>
+              <span class="text-red-color">1499</span><span class="price-decimal text-red-color">.99</span>
             </div>
-            <p class="text-muted">per month</p>
+            <!-- <p class="text-muted">per month</p>
             <ul class="feature-list premium-dot list-unstyled">
               <li><span></span> Lorem ipsum dolor sit amet</li>
               <li><span></span> Consectetur adipiscing elit</li>
             </ul>
             <button class="btn-purchase" onclick="btnOnClick()" data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop">Purchase</button>
+              data-bs-target="#staticBackdrop">Purchase</button> -->
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-3 px-1 pb-1 pt-0 bg-red-color" style="border-top-left-radius: 0; border-top-right-radius: 2rem;
-                   border-bottom-left-radius: 2rem; border-bottom-right-radius: 0; transform: scale(1.03);">
-          <h5 class="text-center m-0 p-0 text-white">Premium</h5>
-          <div class="pricing-card">
-            <div class="plan-title premium-color">Premium</div>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <div class="plan-price premium-color">
-              <span></span>1499<span class="price-decimal">.99</span>
-            </div>
-            <p class="text-muted">per month</p>
-            <ul class="feature-list premium-dot list-unstyled">
-              <li><span></span> Lorem ipsum dolor sit amet</li>
-              <li><span></span> Consectetur adipiscing elit</li>
-            </ul>
-            <button class="btn-purchase" onclick="btnOnClick()" data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop">Purchase</button>
-          </div>
-        </div>
+
 
         <div class="col-md-6 col-lg-3 pt-4">
           <div class="pricing-card">
             <div class="plan-title premium-color">Royale</div>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <!-- <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
             <div class="plan-price premium-color">
-              <span></span>1499<span class="price-decimal">.99</span>
+              <span class="text-red-color">1579</span><span class="price-decimal text-red-color">.99</span>
             </div>
-            <p class="text-muted">per month</p>
+            <!-- <p class="text-muted">per month</p>
             <ul class="feature-list premium-dot list-unstyled">
               <li><span></span> Lorem ipsum dolor sit amet</li>
               <li><span></span> Consectetur adipiscing elit</li>
             </ul>
             <button class="btn-purchase" onclick="btnOnClick()" data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop">Purchase</button>
+              data-bs-target="#staticBackdrop">Purchase</button> -->
           </div>
         </div>
 
@@ -626,7 +688,171 @@
 
       </div>
     </div>
+
+    <div class="text-center mt-5">
+      <a href="./cost-estimator.html"><button class="px-3 py-2 border-0 bg-red-color text-white rounded-3 fw-semibold">
+          Customize Package
+        </button></a>
+    </div>
+
   </section>
+
+  <div class="container py-5">
+    <h2 class="fw-bold text-center mb-4">PACKAGE TABLE</h2>
+    <div class="row g-0" style="box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);">
+      <!-- Left side - Features -->
+      <div class="col-md-2 bg-white shadow-sm">
+        <div class="feature-list list-group">
+          <div class="feature-item"></div>
+          <div class="feature-item"></div>
+          <div class="feature-item active" data-feature="design">Design & Drawings</div>
+          <div class="feature-item" data-feature="structure">Structure</div>
+          <div class="feature-item" data-feature="kitchen">Kitchen</div>
+          <div class="feature-item" data-feature="bathroom">Bathroom</div>
+          <div class="feature-item" data-feature="doors">Doors and Windows</div>
+          <div class="feature-item" data-feature="painting">Painting</div>
+          <div class="feature-item" data-feature="electrical">Electrical</div>
+          <div class="feature-item" data-feature="flooring">Flooring</div>
+          <div class="feature-item" data-feature="inclusive">Other Inclusive</div>
+          <div class="feature-item" data-feature="home">Home Automation</div>
+          <div class="feature-item" data-feature="sustainability">Sustainability</div>
+          <div class="feature-item" data-feature="exclusive">Other Exclusive or Additional Charges</div>
+
+        </div>
+      </div>
+
+      <!-- Right side - Pricing Table -->
+      <div class="col-md-10 bg-white shadow-sm">
+        <div class="table-responsive p-2">
+          <table class="pricing-table w-100">
+            <thead>
+              <tr>
+                <th class="text-white" style="background-color: #000;">Particulars</th>
+                <th class="text-white" style="background-color: #000;">Basic</th>
+                <th class="text-white" style="background-color: #000;">Premium</th>
+                <th class="text-white" style="background-color: #000;">Professional</th>
+                <th class="text-white" style="background-color: #000;">Royale</th>
+              </tr>
+            </thead>
+            <tbody id="pricingBody">
+              <!-- Dynamic content here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const pricingData = {
+      design: [
+        ['2D Floor Plan', '✓', '8GB', '20GB', '50GB'],
+        ['Structural Designing', '2GB', '5GB', '10GB', '20GB'],
+        ['Basic Elevation Design', '1GB', '3GB', '5GB', '10GB'],
+        ['Vaastu Consultation', '1GB', '2GB', '5GB', '10GB'],
+        ['3D Elevation', '1GB', '2GB', '5GB', '10GB'],
+        ['Electrical Drawing', '1GB', '2GB', '5GB', '10GB'],
+        ['Plumbing Drawing', '1GB', '2GB', '5GB', '10GB'],
+        ['Furniture Plan', '1GB', '2GB', '5GB', '10GB'],
+        ['360” Walkthrough', '1GB', '2GB', '5GB', '10GB']
+      ],
+      structure: [
+        ['Cement', 'Priya Cement Or Nagarjuna Cement', 'Bharati Or Birla A-1', 'Ultra Tech Or Ramco Super Crete', 'Ultra Tech'],
+        ['Steel', 'Tirupati (Fe 550 D) Or Sugna (Fe 550 D) OrVinayak (Fe 550 D)', 'Sree Steel (Fe 550 D) Or Jai Raj Steel (Fe 550 D)', 'Tata Steel (Fe 550 D) Or Vizag Steel (Fe 550 D)', 'Tata Steel (Fe 550 D) Or Vizag Steel (Fe 550 D)'],
+        ['Aggregrates', '20 MM & 40 MM', '20 MM & 40 MM', '20 MM & 40 MM', '20 MM & 40 MM'],
+        ['Brick Work', 'AAC Blocks 9 Inch for Exterior Wall 4 Inch for Interior River Sand - BrickWork River Sand - Plastering', 'Red Brick as per Customer Choice 9 Inch for Exterior River Sand - BrickWork River Sand - Plastering', 'Red Brick (Karimnagar) as per Customer Choice 9 Inch for Exterior River Sand - BrickWork River Sand - Plastering', 'Red Brick (Karimnagar) as per Customer Choice 9 Inch for Exterior River Sand - BrickWork River Sand - Plastering'],
+        ['RCC Design Mix', 'As per Structural Engineer Recommendations', 'As per Structural Engineer Recommendations', 'As per Structural Engineer Recommendations', 'As per Structural Engineer Recommendations'],
+        ['Water Proofing', 'Dr Fixit / Fosroc', 'Dr Fixit / Fosroc', 'Dr Fixit / Fosroc', 'Dr Fixit / Fosroc'],
+        ['Elevation', 'Included, upto Specific Limit', 'Included, upto Specific Limit', 'Included, upto Specific Limit', 'Included, upto Specific Limit'],
+        ['Ceiling height', '10 Feet', '10 Feet', '10 Feet', '11 Feet']
+      ],
+      kitchen: [
+        ['Ceramic Wall Tiles', '2 Feet above Kitchen Slab - Costing up to Rs.35/Sqft', '2 Feet above Kitchen Slab - Costing up to Rs.50/Sqft', '2 Feet above Kitchen Slab - Costing up to Rs.70/Sqft', '3 Feet above Kitchen Slab - Costing up to Rs.90/Sqft'],
+        ['Main Sink Faucet', 'Up to Rs. 1500/- with ISI Mark', 'Up to Rs. 2000/- with Parrywareor Hindware Marked', 'Up to Rs. 3000/- with Parrywareor Hindware Marked', 'Up to Rs. 4000/-with Jaquar Marked'],
+        ['Kitchen Sink', 'Stainless Steel up to ₹3500/-', 'Stainless Steel up to ₹5500/-', 'Stainless Steel up to ₹7500/- (Furtura Or Nirali Or Carysil)', 'Stainless Steel up to Rs.8000/- (Furtura Or Nirali Or Carysil)'],
+        ['Kitchen Granite Slab', '20 MM thick up to Rs.100/sqft (Up to 30 Sq Feet)', '20 MM thick up to Rs.120/sqft (Up to 40 Sq Feet)', '20 MM thick up to Rs.180/sqft (Up to 50 Sq Feet)', '20 MM thick up to Rs.180/sqft (Up to 50 Sq Feet)']
+      ],
+      bathroom: [
+        ['Ceramic Wall Tiles', '7 Feet height up to Rs.35/sqft', '7 Feet height up to Rs.50/sqft', '7 Feet height up to Rs.70 sqft', '9 Feet height up to Rs.90/sqft'],
+        ['Sanitary Ware Bathroom Accessories', 'Up to Rs.17,500/- for each Washroom. Commode, Health Faucet, Wash Basin with Accessories, 2 in 1 Wall Mixer, Overhead Shower', 'Up to Rs.22,500/- for each washroom. Commode, Health Faucet, Wash Basin with Accessories ,2 in 1 Wall Mixer, Overhead Shower', 'Up to Rs.37,500/- for each washroom. Commode, Health Faucet, Wash Basin with Accessories, 2 in 1 Wall Mixer, Overhead Shower', ' Up to Rs.50000/- for each washroom. Commode, Health Faucet, Wash Basin with Accessories, Diverter ,shower cubical, Mirror & Soap Dish, Towel Rail'],
+        ['Brand', 'Hindware or Parryware', 'Cera Or Parryware or Hindware', 'Jaguar', 'Jaguar/kohler'],
+        ['CPVC Pipes', 'Sudhakar', 'Ashirwad', 'Astral Or Supreme', 'Astral Or Supreme'],
+        ['Bathroom Doors', 'Water Proof Flush Doors up to Rs.5000/- including, Frame & Door', 'Water Proof Flush Doors up to Rs.7000/- including Frame & Door', 'Water Proof Flush Doors up to Rs.9000/- including Frame & Door', 'Water Proof Flush Doors up to Rs.15000/- including Frame & Door',]
+      ],
+      doors: [
+        ['Social Sharing', 'No', 'No', 'Yes', 'Yes'],
+        ['Bookmark Integrations', '0', '2', '5', '10'],
+        ['Analytics', 'Basic', 'Basic', 'Advanced', 'Advanced'],
+        ['Auto Sync', 'No', 'No', 'Yes', 'Yes']
+      ],
+      painting: [
+        ['Tracking per Month', '50', '100', '500', '1000'],
+        ['Real-time Reports', 'No', 'No', 'Yes', 'Yes'],
+        ['API Access', 'No', 'No', 'Yes', 'Yes'],
+        ['User Segments', '1', '3', '10', 'Unlimited']
+      ],
+      electrical: [
+        ['Cloud Storage', '4GB', '8GB', '20GB', '50GB'],
+        ['Daily Backup', 'No', 'No', 'Yes', 'Yes'],
+        ['Recovery', 'Manual', 'Manual', 'Auto', 'Auto'],
+        ['Access Points', '1', '3', '5', '10']
+      ],
+      flooring: [
+        ['Cloud Storage', '4GB', '8GB', '20GB', '50GB'],
+        ['Daily Backup', 'No', 'No', 'Yes', 'Yes'],
+        ['Recovery', 'Manual', 'Manual', 'Auto', 'Auto'],
+        ['Access Points', '1', '3', '5', '10']
+      ],
+      inclusive: [
+        ['Cloud Storage', '4GB', '8GB', '20GB', '50GB'],
+        ['Daily Backup', 'No', 'No', 'Yes', 'Yes'],
+        ['Recovery', 'Manual', 'Manual', 'Auto', 'Auto'],
+        ['Access Points', '1', '3', '5', '10']
+      ],
+      home: [
+        ['Cloud Storage', '4GB', '8GB', '20GB', '50GB'],
+        ['Daily Backup', 'No', 'No', 'Yes', 'Yes'],
+        ['Recovery', 'Manual', 'Manual', 'Auto', 'Auto'],
+        ['Access Points', '1', '3', '5', '10']
+      ],
+      sustainability: [
+        ['Cloud Storage', '4GB', '8GB', '20GB', '50GB'],
+        ['Daily Backup', 'No', 'No', 'Yes', 'Yes'],
+        ['Recovery', 'Manual', 'Manual', 'Auto', 'Auto'],
+        ['Access Points', '1', '3', '5', '10']
+      ],
+      exclusive: [
+        ['Cloud Storage', '4GB', '8GB', '20GB', '50GB'],
+        ['Daily Backup', 'No', 'No', 'Yes', 'Yes'],
+        ['Recovery', 'Manual', 'Manual', 'Auto', 'Auto'],
+        ['Access Points', '1', '3', '5', '10']
+      ]
+    };
+
+    const pricingBody = document.getElementById('pricingBody');
+    const featureItems = document.querySelectorAll('.feature-item');
+
+    function renderRows(feature) {
+      pricingBody.innerHTML = pricingData[feature].map(row => `
+      <tr>
+        ${row.map(cell => `<td>${cell}</td>`).join('')}
+      </tr>
+    `).join('');
+    }
+
+    featureItems.forEach(item => {
+      item.addEventListener('click', () => {
+        featureItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        const feature = item.getAttribute('data-feature');
+        renderRows(feature);
+      });
+    });
+
+    // Initial render
+    renderRows('design');
+  </script>
+
 
 
   <section class="mt-5">
@@ -634,7 +860,7 @@
       <div class="key-headline">Key Differences Between</div>
 
       <div class="content">
-        <div class="box design">
+        <div class="box design col-lg-5">
           <!-- <img src="./images/our-services-img-2.jpg" alt="Web Design"> -->
           <h2>AY Infra</h2>
           <ul class="text-start">
@@ -654,7 +880,7 @@
 
         <!-- <div class="separator">&</div> -->
 
-        <div class="box development">
+        <div class="box development col-lg-5">
           <!-- <img src="./images/our-services-img-2.jpg" alt="Web Development"> -->
           <h2>Average Contractor</h2>
           <ul class="text-start">
@@ -681,125 +907,125 @@
     <h2 class="main-title">How It Works</h2>
   </section>
 
-    <div class="container">
+  <div class="container">
 
-        <!-- Horizontal Clip Path Strip -->
-        <div class="clip-strip mb-4">
-            <div class="clip-box clip-middle" data-index="1">1</div>
-            <div class="clip-box clip-middle" data-index="2">2</div>
-            <div class="clip-box clip-middle" data-index="3">3</div>
-            <div class="clip-box clip-middle" data-index="4">4</div>
-            <div class="clip-box clip-middle" data-index="5">5</div>
-            <div class="clip-box clip-middle" data-index="6">6</div>
-            <div class="clip-box clip-middle" data-index="7">7</div>
-            <div class="clip-box clip-middle" data-index="8">8</div>
+    <!-- Horizontal Clip Path Strip -->
+    <div class="clip-strip mb-4">
+      <div class="clip-box clip-middle" data-index="1">1</div>
+      <div class="clip-box clip-middle" data-index="2">2</div>
+      <div class="clip-box clip-middle" data-index="3">3</div>
+      <div class="clip-box clip-middle" data-index="4">4</div>
+      <div class="clip-box clip-middle" data-index="5">5</div>
+      <div class="clip-box clip-middle" data-index="6">6</div>
+      <div class="clip-box clip-middle" data-index="7">7</div>
+      <div class="clip-box clip-middle" data-index="8">8</div>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="clip-content row g-4" id="content-1">
+      <div class="d-flex justify-content-center align-items-center text-center">
+        <div class="col-md-5">
+          <img src="./images/how-works-img-1.png" alt="Image 1">
+          <h4 class="">Meet</h4>
+          <p>We understand your vision, lifestyle, and requirements.</p>
         </div>
 
-        <!-- Content Sections -->
-        <div class="clip-content row g-4" id="content-1">
-            <div class="d-flex justify-content-center align-items-center text-center">
-                <div class="col-md-5">
-                    <img src="./images/how-works-img-1.png" alt="Image 1">
-                    <h4 class="">Meet</h4>
-                    <p>We understand your vision, lifestyle, and requirements.</p>
-                </div>
-
-            </div>
+      </div>
 
 
-            <!-- <div class="col-md-8 d-flex flex-column justify-content-center bg-warning">
+      <!-- <div class="col-md-8 d-flex flex-column justify-content-center bg-warning">
       <h4>Meet</h4>
       <p> We understand your vision, lifestyle, and requirements.</p>
     </div> -->
+    </div>
+
+    <div class="clip-content row" id="content-2">
+      <div class="d-flex justify-content-center align-items-center text-center">
+        <div class="col-md-5">
+          <img src="./images/how-works-img-2.png" alt="Image 2">
+          <h4 class="mt-3">Share</h4>
+          <p>You tell us your ideas and preferences; we clarify every detail.</p>
         </div>
 
-        <div class="clip-content row" id="content-2">
-            <div class="d-flex justify-content-center align-items-center text-center">
-                <div class="col-md-5">
-                    <img src="./images/how-works-img-2.png" alt="Image 2">
-                    <h4 class="mt-3">Share</h4>
-                    <p>You tell us your ideas and preferences; we clarify every detail.</p>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="clip-content row" id="content-3">
-            <div class="d-flex justify-content-center align-items-center text-center">
-                <div class="col-md-5">
-
-                    <img src="./images/how-works-img-3.png" alt="Image 1">
-
-
-                    <h4 class="mt-3">Plan</h4>
-                    <p>Custom designs and project plans combining style and functionality.</p>
-                </div>
-
-            </div>
-
-
-        </div>
-
-        <div class="clip-content row" id="content-4">
-            <div class="d-flex justify-content-center align-items-center text-center">
-                <div class="col-md-5">
-                    <img src="./images/how-works-img-4.png" alt="Image 1">
-                    <h4 class="mt-3">Quote</h4>
-                    <p>Transparent quotation with milestone approvals — no hidden costs.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="clip-content row" id="content-5">
-            <div class="d-flex justify-content-center align-items-center text-center">
-                <div class="col-md-5">
-                    <img src="./images/how-works-img-5.png" alt="Image 1">
-                    <h4 class="mt-3">Approvals</h4>
-                    <p>We handle permissions, legal requirements, and financing guidance.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="clip-content row" id="content-6">
-            <div class="d-flex justify-content-center align-items-center text-center">
-                <div class="col-md-5">
-                    <img src="./images/how-works-img-6.png" alt="Image 1">
-                    <h4 class="mt-3">Build</h4>
-                    <p>Expert execution with premium materials and skilled craftsmanship.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="clip-content row" id="content-7">
-            <div class="d-flex justify-content-center align-items-center text-center">
-                <div class="col-md-5">
-                    <img src="./images/how-works-img-7.png" alt="Image 1">
-                    <h4 class="mt-3">Track</h4>
-                    <p>Digital updates to keep you informed and confident throughout.</p>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="clip-content row" id="content-8">
-            <div class="d-flex justify-content-center align-items-center text-center">
-                <div class="col-md-5">
-                    <img src="./images/how-works-img-8.png" alt="Image 1">
-                    <h4 class="mt-3">Handover</h4>
-                    <p>Completed project delivered, ready to enjoy, with post-construction support.</p>
-                </div>
-
-            </div>
-        </div>
+      </div>
 
     </div>
 
- 
-<!-- 
+    <div class="clip-content row" id="content-3">
+      <div class="d-flex justify-content-center align-items-center text-center">
+        <div class="col-md-5">
+
+          <img src="./images/how-works-img-3.png" alt="Image 1">
+
+
+          <h4 class="mt-3">Plan</h4>
+          <p>Custom designs and project plans combining style and functionality.</p>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="clip-content row" id="content-4">
+      <div class="d-flex justify-content-center align-items-center text-center">
+        <div class="col-md-5">
+          <img src="./images/how-works-img-4.png" alt="Image 1">
+          <h4 class="mt-3">Quote</h4>
+          <p>Transparent quotation with milestone approvals — no hidden costs.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="clip-content row" id="content-5">
+      <div class="d-flex justify-content-center align-items-center text-center">
+        <div class="col-md-5">
+          <img src="./images/how-works-img-5.png" alt="Image 1">
+          <h4 class="mt-3">Approvals</h4>
+          <p>We handle permissions, legal requirements, and financing guidance.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="clip-content row" id="content-6">
+      <div class="d-flex justify-content-center align-items-center text-center">
+        <div class="col-md-5">
+          <img src="./images/how-works-img-6.png" alt="Image 1">
+          <h4 class="mt-3">Build</h4>
+          <p>Expert execution with premium materials and skilled craftsmanship.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="clip-content row" id="content-7">
+      <div class="d-flex justify-content-center align-items-center text-center">
+        <div class="col-md-5">
+          <img src="./images/how-works-img-7.png" alt="Image 1">
+          <h4 class="mt-3">Track</h4>
+          <p>Digital updates to keep you informed and confident throughout.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="clip-content row" id="content-8">
+      <div class="d-flex justify-content-center align-items-center text-center">
+        <div class="col-md-5">
+          <img src="./images/how-works-img-8.png" alt="Image 1">
+          <h4 class="mt-3">Handover</h4>
+          <p>Completed project delivered, ready to enjoy, with post-construction support.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- 
   <div class="container">
     <div class="row">
 
@@ -836,68 +1062,23 @@
     </div>
   </section>
 
-  <section class="my-5 pt-5">
-    <div class="container">
-
-      <div class="row">
-        <div class="col-lg-8">
-          <!-- <h2 class="fw-bold pb-3">WHO <span class="text-red-color">We
-              Are</span></h2> -->
-          <div class="">
-            <img src="./images/who-we-are-img.jpg" height="100%" width="50%" data-aos="flip-up" data-aos-offset="200">
-          </div>
-          <p class="fs-6 pt-4">
-            We are AY Infra, a turnkey construction company dedicated to turning ideas into beautiful, functional, and
-            lasting spaces. Every project is designed to be stress-free and enjoyable, so you can focus on imagining
-            your dream space while we handle the details.
-
-          </p>
-          <p class="fw-bold">How We Work:</p>
-          <ul>
-            <li><strong>We Listen First:</strong> Your needs, lifestyle, and vision guide every decision</li>
-            <li><strong>We Plan Clearly:</strong> Step-by-step timelines and transparent milestones keep you informed.
-            </li>
-            <li><strong>We Build Carefully: </strong>Skilled craftsmanship and trusted materials ensure quality that
-              lasts.</li>
-            <li><strong>We Take Care of Everything:</strong>From designs and approvals to construction, financing, and
-              post-completion support, we manage it all.</li>
-            <li><strong>We Keep You Safe: </strong>Every project follows strict safety and regulatory standards for your
-              peace of mind.</li>
-          </ul>
-          <p>At A Y Infra, we don’t just build spaces — we create experiences where life, work, and memories thrive.</p>
-        </div>
-        <div class="col-lg-4">
-          <div class="video-wrapper video-gradient">
-            <video autoplay muted loop playsinline>
-              <source src="./videos/New Video .mp4" type="video/mp4">
-              Your browser does not support HTML5 video.
-            </video>
-            <div class="left-gradient"></div>
-            <div class="right-gradient"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
 
 
-  <div class="container pb-5">
-    <section class="pricing-header mt-5" data-aos="zoom-in-right">
+
+  <!-- <div class="container pb-5"> -->
+  <!-- <section class="pricing-header mt-5" data-aos="zoom-in-right">
       <div class="bg-text-outline">Cost</div>
       <h2 class="main-title">Budget</h2>
     </section>
 
-    <!-- Budget Section -->
     <div class="budget-card text-center p-0">
       <div id="budgetAmount" class="budget-price">₹ 2589</div>
       <h5 id="planName" class="fw-bold text-orange">Basic</h5>
-
-      <!-- Slider -->
+>
       <div class="slider-container">
         <input type="range" min="0" max="3" value="0" step="1" class="custom-slider" id="budgetSlider">
 
-        <!-- Vertical lines -->
         <div class="slider-markers">
           <span style="background:  rgb(255, 196, 0);"></span>
           <span style="background:rgb(252, 123, 2);"></span>
@@ -906,7 +1087,6 @@
         </div>
       </div>
 
-      <!-- Labels -->
       <div class="slider-labels">
         <span style="color: rgb(255, 196, 0);">Basic</span>
         <span style="color: rgb(252, 123, 2);">Classic</span>
@@ -914,7 +1094,6 @@
         <span style="color: red;">Royale</span>
       </div>
 
-      <!-- Plan Boxes -->
       <div class="row mt-5">
         <div class="col-md-3 col-sm-6 d-flex">
           <div class="plan-card text-center h-100 w-100">
@@ -951,24 +1130,24 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
-    <!-- <div class="text-center mt-4">
+  <!-- <div class="text-center mt-4">
        
     <h5 id="planName" class="fw-bold text-orange">Selected Package: Basic</h5>
      <div id="budgetAmount" class="budget-price">₹ 2589</div>
   </div> -->
 
-    <div class="text-center mt-5">
+  <!-- <div class="text-center mt-5">
       <button class="px-3 py-2 border-0 bg-red-color text-white rounded-3 fw-semibold" onclick="btnOnClick()"
         data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Start Your Construction
       </button>
-    </div>
+    </div> -->
 
 
-  </div>
+  <!-- </div> -->
 
   <script>
     const slider = document.getElementById("budgetSlider");
@@ -1297,110 +1476,112 @@
   </script>
 
 
- 
 
 
-<section class="media-section m-0 p-0">
-  <div class="container-fluid m-0 p-0">
-    <div class="row g-0">
 
-      <!-- ✅ Left Side Swiper (Images) -->
-      <div class="col-lg-5 d-flex">
-        <div class="swiper left-swiper w-100">
-          <div class="swiper-wrapper">
+  <section class="media-section m-0 p-0">
+    <div class="container-fluid m-0 p-0">
+      <div class="row g-0">
 
-            <div class="swiper-slide">
-              <img src="./images/brick-img.png" alt="Left 1" class="media-img">
+        <!-- ✅ Left Side Swiper (Images) -->
+        <div class="col-lg-5 d-flex">
+          <div class="swiper left-swiper w-100">
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <img src="./images/brick-img.png" alt="Left 1" class="media-img">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="./images/brick-img.png" alt="Left 2" class="media-img">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="./images/brick-img.png" alt="Left 3" class="media-img">
+              </div>
+
             </div>
-
-            <div class="swiper-slide">
-              <img src="./images/brick-img.png" alt="Left 2" class="media-img">
-            </div>
-
-            <div class="swiper-slide">
-              <img src="./images/brick-img.png" alt="Left 3" class="media-img">
-            </div>
-
           </div>
         </div>
-      </div>
 
-      <!-- ✅ Right Side Swiper (Content) -->
-      <div class="col-lg-6 col-12 d-flex align-items-center">
-        <div class="swiper right-swiper w-100">
-          <div class="swiper-wrapper">
+        <!-- ✅ Right Side Swiper (Content) -->
+        <div class="col-lg-6 col-12 d-flex align-items-center">
+          <div class="swiper right-swiper w-100">
+            <div class="swiper-wrapper">
 
-            <!-- Right Slide 1 -->
-            <div class="swiper-slide">
-              <div class="right-slide-content">
-                <div class="pb-5">
-<img src="./images/media-articles-img.png" height="100%" width="80%">
-                </div>
-                
-                <div class="step-wrapper mt-5">
-                  <div class="step-bg">1</div>
-                  <div class="step-box">
-                    <div>
-                      <h5>Keyword Research</h5>
-                      <p>Finding the right keywords helps target your audience and improve search engine rankings effectively.</p>
-                    </div>
-                    <div class="step-icon">
-                      <i class="bi bi-search"></i>
+              <!-- Right Slide 1 -->
+              <div class="swiper-slide">
+                <div class="right-slide-content">
+                  <div class="pb-5">
+                    <img src="./images/media-articles-img.png" height="100%" width="80%">
+                  </div>
+
+                  <div class="step-wrapper mt-5">
+                    <div class="step-bg">1</div>
+                    <div class="step-box">
+                      <div>
+                        <h5>Keyword Research</h5>
+                        <p>Finding the right keywords helps target your audience and improve search engine rankings
+                          effectively.</p>
+                      </div>
+                      <div class="step-icon">
+                        <i class="bi bi-search"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Right Slide 2 -->
-            <div class="swiper-slide">
-              <div class="right-slide-content">
-                <div class="pb-5">
-<img src="./images/media-articles-img.png" height="100%" width="80%">
-                </div>
-                <div class="step-wrapper mt-5">
-                  <div class="step-bg">2</div>
-                  <div class="step-box">
-                    <div>
-                      <h5>Content Strategy</h5>
-                      <p>Building a strong content strategy ensures long-term organic growth and audience engagement.</p>
-                    </div>
-                    <div class="step-icon">
-                      <i class="bi bi-lightbulb"></i>
+              <!-- Right Slide 2 -->
+              <div class="swiper-slide">
+                <div class="right-slide-content">
+                  <div class="pb-5">
+                    <img src="./images/media-articles-img.png" height="100%" width="80%">
+                  </div>
+                  <div class="step-wrapper mt-5">
+                    <div class="step-bg">2</div>
+                    <div class="step-box">
+                      <div>
+                        <h5>Content Strategy</h5>
+                        <p>Building a strong content strategy ensures long-term organic growth and audience engagement.
+                        </p>
+                      </div>
+                      <div class="step-icon">
+                        <i class="bi bi-lightbulb"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Right Slide 3 -->
-            <div class="swiper-slide">
-              <div class="right-slide-content">
-                 <div class="pb-5">
-<img src="./images/media-articles-img.png" height="100%" width="80%">
-                </div>
-                <div class="step-wrapper mt-5">
-                  <div class="step-bg">3</div>
-                  <div class="step-box">
-                    <div>
-                      <h5>Optimization</h5>
-                      <p>Optimizing existing content helps retain visibility and improves overall performance.</p>
-                    </div>
-                    <div class="step-icon">
-                      <i class="bi bi-gear"></i>
+              <!-- Right Slide 3 -->
+              <div class="swiper-slide">
+                <div class="right-slide-content">
+                  <div class="pb-5">
+                    <img src="./images/media-articles-img.png" height="100%" width="80%">
+                  </div>
+                  <div class="step-wrapper mt-5">
+                    <div class="step-bg">3</div>
+                    <div class="step-box">
+                      <div>
+                        <h5>Optimization</h5>
+                        <p>Optimizing existing content helps retain visibility and improves overall performance.</p>
+                      </div>
+                      <div class="step-icon">
+                        <i class="bi bi-gear"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
   <section class="partners-section bg-light box-shadow">
@@ -1788,67 +1969,72 @@
 
 
 
-  <section class="bg-body-tertiary box-shadow">
-    <div class="container mb-5 pt-4">
-      <div class="row align-items-center justify-content-between p-0 m-0">
+<section class="bg-body-tertiary box-shadow py-5">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
 
-        <!-- Left side: Phone Image -->
-        <div class="col-lg-4 text-center p-0 m-0">
-          <img src="./images/phone-img-1.png" alt="Phone" class="phone-img">
-        </div>
+      <!-- ✅ Left side: Phone & CCTV Images -->
+      <div class="col-lg-4 text-center mb-4 mb-lg-0 position-relative">
+        <img src="./images/phone-img-1.png" alt="Phone" class="phone-img img-fluid active-img" id="phoneImage">
+        <img src="./images/cctv-img-1.png" alt="CCTV" class="phone-img img-fluid d-none" id="cctvImage">
+      </div>
 
-        <!-- Right side: Text + Features -->
-        <div class="col-lg-7 text-section">
-          <h2 class="fw-bold">Instant Updates at Your Fingertips</h2>
-          <p class="mb-4">
-            Get instant alerts and important notifications on WhatsApp.
-            Stay connected anytime, anywhere with real-time updates.
+      <!-- ✅ Right side: Text + Feature Cards -->
+      <div class="col-lg-7 text-section">
+        <h2 class="fw-bold mb-3">Instant Updates at Your Fingertips</h2>
+        <p class="mb-4">
+          Get instant alerts and important notifications on WhatsApp.  
+          Stay connected anytime, anywhere with real-time updates.
+        </p>
 
-          </p>
-
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="feature-card">
-                <div class="line"></div>
-                <h5>Stay Connected, Anytime!</h5>
-                <p class="p-0 m-0">Instant notifications on your phone.</p>
-                <p class="p-0 m-0">Hassle-free and secure updates.</p>
-
-                <p class="p-0 m-0">Quick communication, anytime.</p>
-
-              </div>
+        <div class="row g-3">
+          <!-- Feature Card 1 -->
+          <div class="col-md-6">
+            <div class="feature-card h-100" onclick="showImage('phone')">
+              <div class="line"></div>
+              <h5>Stay Connected, Anytime!</h5>
+              <p class="m-0">Instant notifications on your phone.</p>
+              <p class="m-0">Hassle-free and secure updates.</p>
+              <p class="m-0">Quick communication, anytime.</p>
             </div>
+          </div>
 
-            <div class="col-md-6">
-              <div class="feature-card">
-                <div class="line"></div>
-                <h5>Your Security, Just a Click Away</h5>
-                <p class="p-0 m-0">24/7 live monitoring access.</p>
-                <p class="p-0 m-0">Real-time alerts and updates.</p>
-                <p class="p-0 m-0">Secure and reliable streaming.</p>
-
-              </div>
-            </div>
-            <div class="col-md-6">
-              <!-- <div class="feature-card">
-              <h5>Remote Team Collaboration</h5>
-              <p>Bridge the distance with real-time messaging, shared boards, and centralized updates.</p>
-            </div> -->
-            </div>
-
-            <div class="col-md-6">
-              <!-- <div class="feature-card">
-              <h5>Creative Team Workflow</h5>
-              <p>Streamline brainstorming, feedback, and asset sharing to bring ideas to life faster.</p>
-            </div> -->
+          <!-- Feature Card 2 -->
+          <div class="col-md-6">
+            <div class="feature-card h-100" onclick="showImage('')">
+              <div class="line"></div>
+              <h5>Your Security, Just a Click Away</h5>
+              <p class="m-0">24/7 live monitoring access.</p>
+              <p class="m-0">Real-time alerts and updates.</p>
+              <p class="m-0">Secure and reliable streaming.</p>
             </div>
           </div>
         </div>
       </div>
+
     </div>
+  </div>
+</section>
 
 
-  </section>
+
+  <!-- <script>
+  function showImage(type) {
+    const phoneImg = document.getElementById('phoneImage');
+    const cctvImg = document.getElementById('cctvImage');
+
+    if (type === 'phone') {
+      phoneImg.classList.remove('d-none');
+      phoneImg.classList.add('fade-in');
+      cctvImg.classList.add('d-none');
+    } else {
+      cctvImg.classList.remove('d-none');
+      cctvImg.classList.add('fade-in');
+      phoneImg.classList.add('d-none');
+    }
+  }
+</script> -->
+
 
   <!-- <div class="container py-5">
     <div class="row justify-content-center">
@@ -2040,62 +2226,62 @@
 
 
   <script>
-  // Left Swiper
-  const leftSwiper = new Swiper('.left-swiper', {
-    loop: true,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    speed: 800,
-    effect: 'slide',
-  });
+    // Left Swiper
+    const leftSwiper = new Swiper('.left-swiper', {
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      speed: 800,
+      effect: 'slide',
+    });
 
-  // Right Swiper
-  const rightSwiper = new Swiper('.right-swiper', {
-    loop: true,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    speed: 800,
-    effect: 'fade',
-    fadeEffect: { crossFade: true },
-  });
+    // Right Swiper
+    const rightSwiper = new Swiper('.right-swiper', {
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      speed: 800,
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+    });
 
-  // ✅ Sync both swipers
-  leftSwiper.controller.control = rightSwiper;
-  rightSwiper.controller.control = leftSwiper;
-</script>
-
-
+    // ✅ Sync both swipers
+    leftSwiper.controller.control = rightSwiper;
+    rightSwiper.controller.control = leftSwiper;
+  </script>
 
 
 
- <script>
-        const clipBoxes = document.querySelectorAll('.clip-box');
-        const contents = document.querySelectorAll('.clip-content');
 
-        clipBoxes.forEach(box => {
-            box.addEventListener('click', () => {
-                const index = box.dataset.index;
 
-                // Deactivate all boxes
-                clipBoxes.forEach(b => b.classList.remove('active'));
-                box.classList.add('active');
+  <script>
+    const clipBoxes = document.querySelectorAll('.clip-box');
+    const contents = document.querySelectorAll('.clip-content');
 
-                // Hide all content
-                contents.forEach(c => c.classList.remove('active'));
+    clipBoxes.forEach(box => {
+      box.addEventListener('click', () => {
+        const index = box.dataset.index;
 
-                // Show selected content
-                const target = document.getElementById(`content-${index}`);
-                if (target) {
-                    target.classList.add('active');
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
+        // Deactivate all boxes
+        clipBoxes.forEach(b => b.classList.remove('active'));
+        box.classList.add('active');
+
+        // Hide all content
+        contents.forEach(c => c.classList.remove('active'));
+
+        // Show selected content
+        const target = document.getElementById(`content-${index}`);
+        if (target) {
+          target.classList.add('active');
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 
 
 
