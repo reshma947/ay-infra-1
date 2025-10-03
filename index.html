@@ -22,6 +22,9 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
   <style>
     /* css for lets talk button */
     .fixed-contact {
@@ -53,83 +56,91 @@
 
     /* ---------------------------- */
 
-    /* Horizontal strip */
-    .clip-strip {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-    }
+       /* Circle Steps Strip */
+.steps-strip {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  position: relative;
+  gap: 0;
+}
 
-    /* Clip boxes */
-    .clip-box {
-      flex: 0 0 auto;
-      width: 7.5%;
-      /* 8 boxes in a row */
-      min-width: 80px;
-      /* good min size on small screens */
-      height: 50px;
-      /* strip height */
-      background-color: #f8f8f8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      font-size: 20px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      color: #000;
-    }
+.step-circle {
+  text-align: center;
+  flex: 0 0 auto;
+  min-width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
 
-    .clip-box:hover {
-      background-color: #d3d2d2;
-    }
+.step-circle span {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
 
-    .clip-box.active {
-      background-color: red;
-      color: #fff;
-    }
+.step-circle p {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #333;
+  white-space: nowrap;
+}
 
-    /* Shapes */
-    .clip-start {
-      clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 0 100%, 0% 50%, 0 0);
-    }
+.step-circle.active span {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
 
-    .clip-middle {
-      clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-      /* clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%); */
-    }
+.step-circle:hover span {
+  border-color: #000;
+}
 
-    .clip-end {
-      /* clip-path: polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 25% 50%, 0% 0%); */
-      clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-    }
+/* Dotted line between circles */
+.step-line {
+  flex: 0 0 50px;
+  align-self: center;
+  border-top: 2px dotted #999;
+  margin-top: 20px;
+}
 
-    /* Content sections */
-    .clip-content {
-      display: none;
-      padding-top: 1.5rem;
-    }
+/* Content sections */
+.clip-content {
+  display: none;
+  padding-top: 1.5rem;
+}
 
-    .clip-content.active {
-      display: flex;
-    }
+.clip-content.active {
+  display: flex;
+}
 
-    .clip-content img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
+.clip-content img {
+  max-width: 100%;
+  border-radius: 8px;
+}
 
-    /* Hide horizontal scrollbar */
-    .clip-strip::-webkit-scrollbar {
-      display: none;
-    }
+.steps-strip::-webkit-scrollbar {
+  display: none;
+}
 
-    .clip-strip {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
+.steps-strip {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+   
   </style>
 </head>
 
@@ -138,9 +149,7 @@
   <div class="container-fluid p-0 m-0 fixed-top">
 
     <div class="red-strip p-0 m-0 d-flex">
-      <div class="ps-4 m-0">
-        <span id="modalSelectedCity" class="fw-semibold">Not Selected</span>
-      </div>
+
       <div class="ms-auto">
         <div class="d-flex">
           <a href="#" class="pe-5 text-white text-decoration-none fw-semibold"><i
@@ -158,13 +167,18 @@
         <a class="navbar-brand ps-lg-5 p-0 m-0" href="./index.html">
           <img src="./images/ay-main-logo.png" width="200px" class="img-fluid" alt="Logo">
         </a>
+          <div class="m-0 p-4 ms-lg-2 d-flex align-items-center justify-content-center" style="background-color:#ffefef">
+            <span id="modalSelectedCity" class="fw-semibold" >Not Selected</span>
+          </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse d-lg-flex justify-content-lg-around p-0 m-0" id="navbarSupportedContent">
           <div class="bg-info"></div>
+
           <ul class="navbar-nav m-0 p-0">
+
             <li class="nav-item m-0 p-3 nav-active">
               <a class="nav-link fw-semibold" aria-current="page" href="./index.html">Home </a>
             </li>
@@ -319,9 +333,9 @@
           </div>
 
           <!-- ✅ Image for mobile view (stacked) -->
-          <!-- <div class="col-12 d-block d-lg-none px-3 mt-4">
-            <img src="./images/banner-new-1.png" alt="Hero Image" class="img-fluid w-100 rounded" />
-          </div> -->
+          <div class="col-12 d-block d-lg-none px-3 mt-4">
+            <img src="./images/banner-man-1.png" alt="Hero Image" class="img-fluid w-100 rounded" />
+          </div>
 
 
           <!-- <div class="col-lg-3 p-0 m-0 d-flex align-items-center justify-content-end">
@@ -364,7 +378,7 @@
   <section class="bg-body-tertiary pb-3">
     <div class="container py-5">
       <div class="mb-5">
-        <h2 class="fw-bold section-title" data-aos="fade-right">OUR <span>SERVICES</span></h2>
+        <h2 class="fw-bold" data-aos="fade-right">OUR <span>SERVICES</span></h2>
         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
       </div>
       <div class="row justify-content-center g-4">
@@ -689,11 +703,7 @@
       </div>
     </div>
 
-    <div class="text-center mt-5">
-      <a href="./cost-estimator.html"><button class="px-3 py-2 border-0 bg-red-color text-white rounded-3 fw-semibold">
-          Customize Package
-        </button></a>
-    </div>
+
 
   </section>
 
@@ -740,6 +750,12 @@
           </table>
         </div>
       </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="./cost-estimator.html"><button class="px-3 py-2 border-0 bg-red-color text-white rounded-3 fw-semibold">
+          Customize Package
+        </button></a>
     </div>
   </div>
 
@@ -855,6 +871,249 @@
 
 
 
+  <!-- Toggle Switch -->
+  <div class="container text-center">
+    <h2 class="text-center fw-bold pb-3">COMPARE PACKAGE</h2>
+    <div class="form-check form-switch d-inline-flex align-items-center gap-2 large-switch">
+      <input class="form-check-input custom-switch red" type="checkbox" role="switch" id="toggleComparisonSection">
+      <label class="form-check-label fw-semibold" for="toggleComparisonSection"></label>
+    </div>
+  </div>
+
+  <!-- Comparison Section Wrapper -->
+  <div id="packageComparisonSection" class="d-none"><!-- hidden by default -->
+
+    <!-- Top Dropdowns -->
+    <div class="container pt-5">
+      <div class="row g-3 justify-content-center">
+        <div class="col-md-5">
+          <select id="leftPackageSelect" class="form-select rounded-0 bg-black text-white">
+            <option value="basic">Basic Package</option>
+            <option value="premium">Premium Package</option>
+            <option value="professional">Professional Package</option>
+            <option value="royale">Royale Package</option>
+          </select>
+        </div>
+        <div class="col-md-5">
+          <select id="rightPackageSelect" class="form-select rounded-0 bg-black text-white">
+            <option value="basic">Basic Package</option>
+            <option value="premium">Premium Package</option>
+            <option value="professional">Professional Package</option>
+            <option value="royale">Royale Package</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accordion Comparison Sections -->
+    <div class="container pb-5 d-flex justify-content-center rounded-0">
+      <div class="accordion col-lg-9 rounded-0" id="comparisonAccordion">
+
+        <!-- 1. Design & Drawing -->
+        <div class="accordion-item rounded-0">
+          <h2 class="accordion-header" id="heading1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1"
+              aria-expanded="true">
+              Design & Drawing
+            </button>
+          </h2>
+          <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#comparisonAccordion">
+            <div class="accordion-body p-0">
+              <div class="row g-0">
+                <div class="col-md-6 comparison-col" id="left-design"></div>
+                <div class="col-md-6 comparison-col" id="right-design"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Structure -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse2">
+              Structure
+            </button>
+          </h2>
+          <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#comparisonAccordion">
+            <div class="accordion-body p-0">
+              <div class="row g-0">
+                <div class="col-md-6 comparison-col" id="left-structure"></div>
+                <div class="col-md-6 comparison-col" id="right-structure"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Kitchen -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapse3">
+              Kitchen
+            </button>
+          </h2>
+          <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#comparisonAccordion">
+            <div class="accordion-body p-0">
+              <div class="row g-0">
+                <div class="col-md-6 comparison-col" id="left-kitchen"></div>
+                <div class="col-md-6 comparison-col" id="right-kitchen"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic accordion items -->
+        <div id="extra-accordion-items"></div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Toggle Switch Logic
+    const toggleSwitch = document.getElementById('toggleComparisonSection');
+    const comparisonSection = document.getElementById('packageComparisonSection');
+
+    toggleSwitch.addEventListener('change', function () {
+      if (this.checked) {
+        comparisonSection.classList.remove('d-none');
+      } else {
+        comparisonSection.classList.add('d-none');
+      }
+    });
+
+    // Accordion Sections and Data
+    const sections = [
+      'design', 'structure', 'kitchen', 'bathroom', 'doors', 'painting', 'electrical',
+      'flooring', 'inclusive', 'automation', 'sustainability', 'exclusive'
+    ];
+
+    const sectionTitles = {
+      bathroom: 'Bathroom',
+      doors: 'Doors & Windows',
+      painting: 'Painting',
+      electrical: 'Electrical',
+      flooring: 'Flooring',
+      inclusive: 'Other Inclusive',
+      automation: 'Home Automation',
+      sustainability: 'Sustainability',
+      exclusive: 'Other Exclusive or Additional Charges'
+    };
+
+    const packageData = {
+      basic: {
+        title: "Basic Package",
+        price: "₹1,850/sq.ft",
+        design: ["2D Floor Plan", "2D Furniture Plan", "Basic Structural Design"],
+        structure: ["Brick Walls", "Basic RCC Framing", "Standard Foundation"],
+        kitchen: ["Basic Granite Counter", "1 Sink", "Standard Tiles"],
+        bathroom: ["Standard CP fittings", "Basic Tiles", "1 Wash Basin"],
+        doors: ["Main Door - Teak", "Internal - Flush Doors"],
+        painting: ["Interior - Plastic Emulsion", "Exterior - Cement Paint"],
+        electrical: ["Standard Wiring", "Basic Switches", "1 Fan per Room"],
+        flooring: ["Ceramic Tiles", "Vitrified in Living"],
+        inclusive: ["Site Supervision", "Basic Drawings"],
+        automation: ["Not Included"],
+        sustainability: ["Rainwater Provision"],
+        exclusive: ["Extra for Custom Designs"]
+      },
+      premium: {
+        title: "Premium Package",
+        price: "₹2,250/sq.ft",
+        design: ["2D + 3D Floor Plan", "Furniture Layout", "Structural + Interior Drawings"],
+        structure: ["AAC Blocks", "Premium RCC Framing", "Pile Foundation"],
+        kitchen: ["Granite Counter", "2 Sinks", "Premium Tiles"],
+        bathroom: ["Jaquar CP fittings", "Premium Tiles", "Wash Basin + Vanity"],
+        doors: ["Main Door - Solid Teak", "Internal - Laminated Flush"],
+        painting: ["Interior - Premium Emulsion", "Exterior - Weather Shield"],
+        electrical: ["Premium Wiring", "Modular Switches", "Concealed Lighting"],
+        flooring: ["Vitrified Tiles", "Wooden Flooring in Bedrooms"],
+        inclusive: ["Site Supervision", "Architect Visits", "Detailed Drawings"],
+        automation: ["Basic Home Automation"],
+        sustainability: ["Rainwater + Solar Provision"],
+        exclusive: ["Extra for Luxury Interiors"]
+      },
+      professional: {
+        title: "Professional Package",
+        price: "₹2,750/sq.ft",
+        design: ["3D Floor Plan", "Detailed BOQ", "Vastu Compliance"],
+        structure: ["RCC Walls", "Advanced Framing", "Deep Foundation"],
+        kitchen: ["Quartz Counter", "2 Sinks", "Designer Tiles"],
+        bathroom: ["Premium Fittings", "Anti-skid Tiles", "Luxury Wash Basin"],
+        doors: ["Designer Teak Main Door", "Laminated Premium Doors"],
+        painting: ["Luxury Interior Emulsion", "Exterior Weather Coat"],
+        electrical: ["Smart Wiring", "Designer Switches", "Lighting Automation"],
+        flooring: ["Italian Tiles", "Wooden in Bedrooms"],
+        inclusive: ["Architect + Interior Consultations", "Detailed Schedules"],
+        automation: ["Full Home Automation"],
+        sustainability: ["Solar + Rainwater + Smart Control"],
+        exclusive: ["Luxury Add-ons"]
+      },
+      royale: {
+        title: "Royale Package",
+        price: "₹3,250/sq.ft",
+        design: ["Luxury 3D Plan", "Smart Home Integration", "360° Walkthrough"],
+        structure: ["Shear Walls", "Earthquake Resistant", "Pile Foundation"],
+        kitchen: ["Imported Marble", "3 Sinks", "Designer Interiors"],
+        bathroom: ["Luxury Imported Fittings", "Marble Tiles", "Premium Vanity"],
+        doors: ["Designer Carved Teak Doors", "Premium Laminated Interiors"],
+        painting: ["Luxury Interior Finish", "Silicone Exterior Coating"],
+        electrical: ["Smart System", "Voice Controlled Lighting", "Automation"],
+        flooring: ["Italian Marble", "Wooden + Marble Combo"],
+        inclusive: ["Architect, Interior & Landscape", "Luxury Detailing"],
+        automation: ["Full AI Based Home Automation"],
+        sustainability: ["Net-Zero Ready"],
+        exclusive: ["Ultra Luxury Add-ons"]
+      }
+    };
+
+    const leftSelect = document.getElementById("leftPackageSelect");
+    const rightSelect = document.getElementById("rightPackageSelect");
+
+    function updateSectionContent(side, pkg, section) {
+      const target = document.getElementById(`${side}-${section}`);
+      target.innerHTML = `<ul>${packageData[pkg][section].map(item => `<li>${item}</li>`).join('')}</ul>`;
+    }
+
+    function updateAllSections(side, pkg) {
+      sections.forEach(section => updateSectionContent(side, pkg, section));
+    }
+
+    leftSelect.addEventListener("change", () => updateAllSections("left", leftSelect.value));
+    rightSelect.addEventListener("change", () => updateAllSections("right", rightSelect.value));
+
+    // Generate remaining accordion sections dynamically (after Kitchen)
+    const extraSections = sections.slice(3); // bathroom onwards
+    const container = document.getElementById('extra-accordion-items');
+    let index = 4;
+    extraSections.forEach(sec => {
+      const title = sectionTitles[sec];
+      container.insertAdjacentHTML('beforeend', `
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading${index}">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}">
+            ${title}
+          </button>
+        </h2>
+        <div id="collapse${index}" class="accordion-collapse collapse" data-bs-parent="#comparisonAccordion">
+          <div class="accordion-body p-0">
+            <div class="row g-0">
+              <div class="col-md-6 comparison-col" id="left-${sec}"></div>
+              <div class="col-md-6 comparison-col" id="right-${sec}"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `);
+      index++;
+    });
+
+    // Initialize Data for default selection
+    updateAllSections("left", leftSelect.value);
+    updateAllSections("right", rightSelect.value);
+  </script>
+
   <section class="mt-5">
     <div class="container box-center gap-2">
       <div class="key-headline">Key Differences Between</div>
@@ -907,65 +1166,73 @@
     <h2 class="main-title">How It Works</h2>
   </section>
 
-  <div class="container">
 
-    <!-- Horizontal Clip Path Strip -->
-    <div class="clip-strip mb-4">
-      <div class="clip-box clip-middle" data-index="1">1</div>
-      <div class="clip-box clip-middle" data-index="2">2</div>
-      <div class="clip-box clip-middle" data-index="3">3</div>
-      <div class="clip-box clip-middle" data-index="4">4</div>
-      <div class="clip-box clip-middle" data-index="5">5</div>
-      <div class="clip-box clip-middle" data-index="6">6</div>
-      <div class="clip-box clip-middle" data-index="7">7</div>
-      <div class="clip-box clip-middle" data-index="8">8</div>
+
+    <div class="container py-5">
+
+  <!-- Circle Step Strip -->
+  <div class="steps-strip mb-4">
+    <div class="step-circle active" data-index="1">
+      <span>1</span>
+      <p>Meet</p>
+    </div>
+    <div class="step-line"></div>
+
+    <div class="step-circle" data-index="2">
+      <span>2</span>
+      <p>Share</p>
+    </div>
+    <div class="step-line"></div>
+
+    <div class="step-circle" data-index="3">
+      <span>3</span>
+      <p>Plan</p>
+    </div>
+    <div class="step-line"></div>
+
+    <div class="step-circle" data-index="4">
+      <span>4</span>
+      <p>Quote</p>
+    </div>
+    <div class="step-line"></div>
+
+    <div class="step-circle" data-index="5">
+      <span>5</span>
+      <p>Approvals</p>
     </div>
 
-    <!-- Content Sections -->
-    <div class="clip-content row g-4" id="content-1">
-      <div class="d-flex justify-content-center align-items-center text-center">
-        <div class="col-md-5">
-          <img src="./images/how-works-img-1.png" alt="Image 1">
-          <h4 class="">Meet</h4>
-          <p>We understand your vision, lifestyle, and requirements.</p>
-        </div>
+  </div>
 
+  <!-- Content Sections -->
+  <div class="clip-content row g-4 active" id="content-1">
+    <div class="d-flex justify-content-center align-items-center text-center">
+      <div class="col-md-5">
+        <img src="./images/how-works-img-1.png" alt="Image 1">
+        <h4 class="mt-3">Meet</h4>
+        <p>We understand your vision, lifestyle, and requirements.</p>
       </div>
-
-
-      <!-- <div class="col-md-8 d-flex flex-column justify-content-center bg-warning">
-      <h4>Meet</h4>
-      <p> We understand your vision, lifestyle, and requirements.</p>
-    </div> -->
     </div>
+  </div>
 
-    <div class="clip-content row" id="content-2">
-      <div class="d-flex justify-content-center align-items-center text-center">
-        <div class="col-md-5">
-          <img src="./images/how-works-img-2.png" alt="Image 2">
-          <h4 class="mt-3">Share</h4>
-          <p>You tell us your ideas and preferences; we clarify every detail.</p>
-        </div>
-
+  <div class="clip-content row" id="content-2">
+    <div class="d-flex justify-content-center align-items-center text-center">
+      <div class="col-md-5">
+        <img src="./images/how-works-img-2.png" alt="Image 2">
+        <h4 class="mt-3">Share</h4>
+        <p>You tell us your ideas and preferences; we clarify every detail.</p>
       </div>
-
     </div>
+  </div>
 
-    <div class="clip-content row" id="content-3">
-      <div class="d-flex justify-content-center align-items-center text-center">
-        <div class="col-md-5">
-
-          <img src="./images/how-works-img-3.png" alt="Image 1">
-
-
-          <h4 class="mt-3">Plan</h4>
-          <p>Custom designs and project plans combining style and functionality.</p>
-        </div>
-
+  <div class="clip-content row" id="content-3">
+    <div class="d-flex justify-content-center align-items-center text-center">
+      <div class="col-md-5">
+        <img src="./images/how-works-img-3.png" alt="Image 3">
+        <h4 class="mt-3">Plan</h4>
+        <p>Custom designs and project plans combining style and functionality.</p>
       </div>
-
-
     </div>
+  </div>
 
     <div class="clip-content row" id="content-4">
       <div class="d-flex justify-content-center align-items-center text-center">
@@ -978,7 +1245,7 @@
       </div>
     </div>
 
-    <div class="clip-content row" id="content-5">
+        <div class="clip-content row" id="content-5">
       <div class="d-flex justify-content-center align-items-center text-center">
         <div class="col-md-5">
           <img src="./images/how-works-img-5.png" alt="Image 1">
@@ -989,40 +1256,30 @@
       </div>
     </div>
 
-    <div class="clip-content row" id="content-6">
-      <div class="d-flex justify-content-center align-items-center text-center">
-        <div class="col-md-5">
-          <img src="./images/how-works-img-6.png" alt="Image 1">
-          <h4 class="mt-3">Build</h4>
-          <p>Expert execution with premium materials and skilled craftsmanship.</p>
-        </div>
+  <!-- Repeat for content-4 ... content-8 -->
 
-      </div>
-    </div>
 
-    <div class="clip-content row" id="content-7">
-      <div class="d-flex justify-content-center align-items-center text-center">
-        <div class="col-md-5">
-          <img src="./images/how-works-img-7.png" alt="Image 1">
-          <h4 class="mt-3">Track</h4>
-          <p>Digital updates to keep you informed and confident throughout.</p>
-        </div>
 
-      </div>
-    </div>
+</div>
 
-    <div class="clip-content row" id="content-8">
-      <div class="d-flex justify-content-center align-items-center text-center">
-        <div class="col-md-5">
-          <img src="./images/how-works-img-8.png" alt="Image 1">
-          <h4 class="mt-3">Handover</h4>
-          <p>Completed project delivered, ready to enjoy, with post-construction support.</p>
-        </div>
+  <script>
+  const circles = document.querySelectorAll('.step-circle');
+  const contents = document.querySelectorAll('.clip-content');
 
-      </div>
-    </div>
+  circles.forEach(circle => {
+    circle.addEventListener('click', () => {
+      const index = circle.getAttribute('data-index');
 
-  </div>
+      // active state for circle
+      circles.forEach(c => c.classList.remove('active'));
+      circle.classList.add('active');
+
+      // show corresponding content
+      contents.forEach(content => content.classList.remove('active'));
+      document.getElementById(`content-${index}`).classList.add('active');
+    });
+  });
+</script>
 
 
   <!-- 
@@ -1262,8 +1519,8 @@
       <div class="row">
         <!-- Navigation Buttons -->
         <div class="col-lg-3 d-flex flex-column  align-items-center justify-content-center mb-4">
-          <button class="bg-red-color text-white border-0 px-4 py-2 rounded-2 mb-2" id="nextBtn">Next →</button>
-          <button class="btn bg-black text-white px-4 py-2" id="prevBtn">← Prev</button>
+          <button class="bg-red-color text-white border-0 px-4 py-2 rounded-2 mb-2" id="nextBtn-1">Next →</button>
+          <button class="btn bg-black text-white px-4 py-2" id="prevBtn-1">← Prev</button>
 
         </div>
 
@@ -1437,12 +1694,12 @@
     document.addEventListener("DOMContentLoaded", function () {
       initSwipers();
 
-      document.getElementById('prevBtn').addEventListener('click', () => {
+      document.getElementById('prevBtn-1').addEventListener('click', () => {
         const swiper = document.querySelector('.project-section:not(.d-none) .mySwiper').swiper;
         swiper.slidePrev();
       });
 
-      document.getElementById('nextBtn').addEventListener('click', () => {
+      document.getElementById('nextBtn-1').addEventListener('click', () => {
         const swiper = document.querySelector('.project-section:not(.d-none) .mySwiper').swiper;
         swiper.slideNext();
       });
@@ -1841,90 +2098,116 @@
         </div>
 
         <div class="m-0 p-0">
-          <img src="./images/faq-img.jpg" width="100%" data-aos="zoom-in-left" data-aos-duration="1000">
+          <img src="./images/faq-img-1.jpg" width="100%" height="100%" data-aos="zoom-in-left" data-aos-duration="1000">
         </div>
 
       </div>
     </div>
   </section>
 
+<section class="py-5 bg-light my-5">
+   <h2 class="text-center mb-5 fw-bold" data-aos="fade-up">Our Customer Reviews</h2>
+  <div class="container pt-3">
 
-  <div class="container mb-5 pb-5 pt-5">
-    <h2 class="text-center mb-5 fw-bold" data-aos="fade-up">Our Customer Reviews</h2>
-    <div class="testimonial-card row g-0 bg-white">
+    <div class="testimonial-container" id="testimonialWrapper">
 
-      <div class="col-lg-5 testimonial-img">
-        <img id="main-img" src="./images/test-img-1.png" alt="user">
-        <div class="rating-box">
-          <span id="main-name">Sarah M. - Brooklyn, NY</span> | ⭐ 4.9
+      <!-- Card 1 -->
+      <div class="card testimonial-card left">
+        <div class="image-wrapper">
+          <img src="./images/test-img-1.png" alt="">
+        </div>
+        <div class="card-body">
+          <h5 class="fw-bold">Excellent Work!</h5>
+          <p class="text-muted">“I needed a few small repairs done around the house, and [Your Company Name] was fantastic!”</p>
+          <div class="d-flex align-items-center justify-content-center mt-3">
+            <!-- <img src="https://i.pravatar.cc/40" class="profile-img me-2" alt=""> -->
+            <div>
+              <h6 class="mb-0">John Daver</h6>
+              <div class="text-warning small">★★★★★</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="col-lg-7 p-4 d-flex flex-column justify-content-between">
-        <div>
-          <small class="text-muted">RATED 4.9/5 BY 1200+ HAPPY CLIENTS</small>
-          <h5 class="fw-bold mt-2 fade-up active" id="main-title">
-            The team was quick, professional, and left our home spotless
-          </h5>
-          <p id="main-text" class="fade-up active">
-            They showed up right on time, brought all their own supplies, and cleaned places I didn’t even think of.
-            Highly recommended for busy professionals like me.
-          </p>
-          <h6>Rating: <span class="text-warning">★★★★★</span></h6>
+      <!-- Card 2 -->
+      <div class="card testimonial-card center">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="">
         </div>
-
-        <!-- ✅ Thumbnails -->
-        <div class="d-flex mt-3 thumbs gap-2">
-          <img src="./images/test-img-1.png" class="active" data-name="Sarah M. - Brooklyn, NY"
-            data-title="The team was quick, professional, and left our home spotless"
-            data-text="They showed up right on time, brought all their own supplies, and cleaned places I didn’t even think of. Highly recommended for busy professionals like me."
-            data-img="./images/test-img-1.png">
-
-          <img src="./images/test-img-2.png" data-name="John D. - New York, NY"
-            data-title="Best service I've ever used!"
-            data-text="Super professional and friendly staff. My apartment looks amazing. I’ll definitely hire them again."
-            data-img="./images/test-img-2.png">
-
-          <img src="./images/test-img-3.png" data-name="Emily R. - Los Angeles, CA"
-            data-title="A true lifesaver for busy schedules"
-            data-text="The cleaning team is always on time and super reliable. Perfect for anyone with a hectic work schedule."
-            data-img="./images/test-img-3.png">
+        <div class="card-body">
+          <h5 class="fw-bold">Excellent Work!</h5>
+          <p class="text-muted">“The team was knowledgeable, courteous, and completed the job on time and within budget.”</p>
+          <div class="d-flex align-items-center justify-content-center mt-3">
+            <!-- <img src="https://i.pravatar.cc/41" class="profile-img me-2" alt=""> -->
+            <div>
+              <h6 class="mb-0">John Daver</h6>
+              <div class="text-warning small">★★★★★</div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- Card 3 -->
+      <div class="card testimonial-card right">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=800&q=80" alt="">
+        </div>
+        <div class="card-body">
+          <h5 class="fw-bold">Excellent Work!</h5>
+          <p class="text-muted">“Every time, they've done a fantastic job. It's great to have a handyman I can trust.”</p>
+          <div class="d-flex align-items-center justify-content-center mt-3">
+            <!-- <img src="https://i.pravatar.cc/42" class="profile-img me-2" alt=""> -->
+            <div>
+              <h6 class="mb-0">John Daver</h6>
+              <div class="text-warning small">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+
+    <!-- Controls -->
+    <div class="carousel-controls-wrapper mt-4">
+      <button id="prevBtn" class="btn btn-light rounded-circle shadow"><i class="bi bi-arrow-left"></i></button>
+      <button id="nextBtn" class="btn btn-light rounded-circle shadow"><i class="bi bi-arrow-right"></i></button>
+    </div>
+
   </div>
+</section>
 
-  <script>
-    const thumbs = document.querySelectorAll('.thumbs img');
-    const mainImg = document.getElementById('main-img');
-    const mainName = document.getElementById('main-name');
-    const mainTitle = document.getElementById('main-title');
-    const mainText = document.getElementById('main-text');
+<script>
+  const wrapper = document.getElementById('testimonialWrapper');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
 
-    thumbs.forEach(thumb => {
-      thumb.addEventListener('click', () => {
-        thumbs.forEach(t => t.classList.remove('active'));
-        thumb.classList.add('active');
+  prevBtn.addEventListener('click', () => rotate('left'));
+  nextBtn.addEventListener('click', () => rotate('right'));
 
-        // Add fade-out
-        mainImg.classList.add('fade-out');
-        mainText.classList.remove('active');
-        mainTitle.classList.remove('active');
+  function rotate(direction) {
+    const cards = Array.from(wrapper.children);
+    if (direction === 'left') {
+      const first = cards.shift();
+      wrapper.appendChild(first);
+    } else {
+      const last = cards.pop();
+      wrapper.insertBefore(last, cards[0]);
+    }
+    updateCenterCard();
+  }
 
-        setTimeout(() => {
-          mainImg.src = thumb.dataset.img;
-          mainName.textContent = thumb.dataset.name;
-          mainTitle.textContent = thumb.dataset.title;
-          mainText.textContent = thumb.dataset.text;
-
-          // Fade-in
-          mainImg.classList.remove('fade-out');
-          mainText.classList.add('active');
-          mainTitle.classList.add('active');
-        }, 300);
-      });
-    });
-  </script>
+  function updateCenterCard() {
+    const cards = Array.from(wrapper.children);
+    cards.forEach(card => card.classList.remove('center'));
+    if (cards.length >= 3) {
+      cards[1].classList.add('center');
+    } else if (cards.length === 2) {
+      cards[0].classList.add('center');
+    } else if (cards.length === 1) {
+      cards[0].classList.add('center');
+    }
+  }
+</script>
 
 
   <!-- Fixed "Let's Talk" Button + Dropdown -->
@@ -1969,123 +2252,94 @@
 
 
 
-<section class="bg-body-tertiary box-shadow py-5">
-  <div class="container">
-    <div class="row align-items-center justify-content-between">
+  <section class="bg-body-tertiary box-shadow py-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
 
-      <!-- ✅ Left side: Phone & CCTV Images -->
-      <div class="col-lg-4 text-center mb-4 mb-lg-0 position-relative">
-        <img src="./images/phone-img-1.png" alt="Phone" class="phone-img img-fluid active-img" id="phoneImage">
-        <img src="./images/cctv-img-1.png" alt="CCTV" class="phone-img img-fluid d-none" id="cctvImage">
-      </div>
+        <!-- ✅ Left side: Phone & CCTV Images -->
+        <div class="col-lg-4 text-center mb-4 mb-lg-0 position-relative">
+          <img src="./images/phone-img-1.png" alt="Phone" class="phone-img img-fluid active-img" id="phoneImage">
+          <img src="./images/cctv-img-1.png" alt="CCTV" class="phone-img img-fluid d-none" id="cctvImage">
+        </div>
 
-      <!-- ✅ Right side: Text + Feature Cards -->
-      <div class="col-lg-7 text-section">
-        <h2 class="fw-bold mb-3">Instant Updates at Your Fingertips</h2>
-        <p class="mb-4">
-          Get instant alerts and important notifications on WhatsApp.  
-          Stay connected anytime, anywhere with real-time updates.
-        </p>
+        <!-- ✅ Right side: Text + Feature Cards -->
+        <div class="col-lg-7 text-section">
+          <h2 class="fw-bold mb-3">Instant Updates at Your Fingertips</h2>
+          <p class="mb-4">
+            Get instant alerts and important notifications on WhatsApp.
+            Stay connected anytime, anywhere with real-time updates.
+          </p>
 
-        <div class="row g-3">
-          <!-- Feature Card 1 -->
-          <div class="col-md-6">
-            <div class="feature-card h-100" onclick="showImage('phone')">
-              <div class="line"></div>
-              <h5>Stay Connected, Anytime!</h5>
-              <p class="m-0">Instant notifications on your phone.</p>
-              <p class="m-0">Hassle-free and secure updates.</p>
-              <p class="m-0">Quick communication, anytime.</p>
+          <div class="row g-3">
+            <!-- Feature Card 1 -->
+            <div class="col-md-6">
+              <div class="feature-card h-100" onclick="showImage('phone')">
+                <div class="line"></div>
+                <h5>Stay Connected, Anytime!</h5>
+                <p class="m-0">Instant notifications on your phone.</p>
+                <p class="m-0">Hassle-free and secure updates.</p>
+                <p class="m-0">Quick communication, anytime.</p>
+              </div>
             </div>
-          </div>
 
-          <!-- Feature Card 2 -->
-          <div class="col-md-6">
-            <div class="feature-card h-100" onclick="showImage('')">
-              <div class="line"></div>
-              <h5>Your Security, Just a Click Away</h5>
-              <p class="m-0">24/7 live monitoring access.</p>
-              <p class="m-0">Real-time alerts and updates.</p>
-              <p class="m-0">Secure and reliable streaming.</p>
+            <!-- Feature Card 2 -->
+            <div class="col-md-6">
+              <div class="feature-card h-100" onclick="showImage('cctv')">
+                <div class="line"></div>
+                <h5>Your Security, Just a Click Away</h5>
+                <p class="m-0">24/7 live monitoring access.</p>
+                <p class="m-0">Real-time alerts and updates.</p>
+                <p class="m-0">Secure and reliable streaming.</p>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
 
 
-  <!-- <script>
-  function showImage(type) {
-    const phoneImg = document.getElementById('phoneImage');
-    const cctvImg = document.getElementById('cctvImage');
+  <script>
+    function showImage(type) {
+      const phoneImg = document.getElementById('phoneImage');
+      const cctvImg = document.getElementById('cctvImage');
 
-    if (type === 'phone') {
-      phoneImg.classList.remove('d-none');
-      phoneImg.classList.add('fade-in');
-      cctvImg.classList.add('d-none');
-    } else {
-      cctvImg.classList.remove('d-none');
-      cctvImg.classList.add('fade-in');
-      phoneImg.classList.add('d-none');
+      if (type === 'phone') {
+        phoneImg.classList.remove('d-none');
+        phoneImg.classList.add('fade-in');
+        cctvImg.classList.add('d-none');
+      } else {
+        cctvImg.classList.remove('d-none');
+        cctvImg.classList.add('fade-in');
+        phoneImg.classList.add('d-none');
+      }
     }
-  }
-</script> -->
-
-
-  <!-- <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
-
-        <div class="step-wrapper">
-          <div class="step-bg">1</div>
-          <div class="step-box">
-            <div>
-              <h5>Keyword Research</h5>
-              <p>Finding the right keywords helps target your audience and improve search engine rankings effectively.
-              </p>
-            </div>
-            <div class="step-icon">
-              <i class="bi bi-search"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="step-wrapper">
-          <div class="step-bg">2</div>
-          <div class="step-box">
-            <div>
-              <h5>Content Strategy</h5>
-              <p>Building a strong content strategy ensures long-term organic growth and audience engagement.</p>
-            </div>
-            <div class="step-icon">
-              <i class="bi bi-journal-text"></i>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div> -->
+  </script>
 
 
 
 
-
-
-  <footer class="pt-5 bg-body-secondary">
+  <!-- ✅ Footer -->
+  <footer class="pt-5 bg-body-secondary position-relative overflow-hidden">
     <div class="container">
       <div class="row gy-4">
 
+        <!-- Logo & About -->
         <div class="col-lg-3 col-md-6">
           <h1 class="text-red-color fw-bold lh-1" data-aos="zoom-in-right" data-aos-duration="1000">AY INFRA</h1>
           <p class="lh-1 fw-bold" data-aos="zoom-in-right" data-aos-duration="1000">BUILDERS & DEVELOPERS</p>
-          <p>About Us: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+          <!-- <p>About Us: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p> -->
+          <div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.4371457619586!2d78.41863677382794!3d17.342685604094005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9735c7db0de5%3A0xb616e0dac58b3a20!2sAY%20INFRA%20BUILDERS%20AND%20DEVELOPERS%20-%20construction%20%2C%20real%20estate%20%2C%20interior%20design!5e0!3m2!1sen!2sin!4v1755769734994!5m2!1sen!2sin"
+              width="220" height="150" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
 
+        <!-- Services -->
         <div class="col-lg-2 col-md-6">
           <h5>Services</h5>
           <ul>
@@ -2097,23 +2351,12 @@
           </ul>
         </div>
 
-        <!-- Categories -->
-        <!-- <div class="col-lg-2 col-md-6">
-        <h5>Categories</h5>
-        <ul>
-          <li><a href="#">Business</a></li>
-          <li><a href="#">Travel</a></li>
-          <li><a href="#">Food</a></li>
-          <li><a href="#">Lifestyle</a></li>
-          <li><a href="#">Health</a></li>
-        </ul>
-      </div> -->
-
+        <!-- Contact Info -->
         <div class="col-lg-3 col-md-6">
           <h5>Contact Info</h5>
           <p class="mb-1"><i class="fa fa-phone me-2 text-red-color"></i> +123 456 7890</p>
           <p class="mb-1"><i class="fa fa-envelope me-2 text-red-color"></i> info@example.com</p>
-          <h5>Office Address</h5>
+          <h5 class="mt-3">Office Address</h5>
           <div class="d-flex">
             <i class="fa fa-map-marker-alt me-2 text-red-color"></i>
             <p>Pillar No-235, Inner Ring Rd, opposite Fish Building,<br>
@@ -2121,29 +2364,45 @@
               Telangana, 500052</p>
           </div>
 
-          <div class="social-icons mt-3">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+          <!-- <div class="social-icons mt-3">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div> -->
+        </div>
+
+        <!-- Subscribe & Image with Floating Icons -->
+        <div class="col-lg-3 col-md-6 position-relative">
+          <a href="./about-us.html" class="text-black"><h5 class="ps-4">Join Our Team</h5></a>
+          <!-- <form class="d-flex subscribe-box mb-3">
+            <input type="email" class="form-control" placeholder="Email">
+            <button type="submit" class="btn"><i class="fa fa-paper-plane"></i></button>
+          </form> -->
+
+          <div class="footer-man-wrapper position-relative">
+            <img src="./images/footer-man-img.png" class="w-100 p-0 m-0" data-aos="zoom-in-left" data-aos-duration="1000">
+
+            <!-- ✅ Floating Social Icons -->
+            <div class="footer-floating-icon icon-fb bg-black text-white">
+              <a><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <div class="footer-floating-icon icon-tw bg-black text-white">
+              <a><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-floating-icon icon-li bg-black text-white">
+              <a><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="footer-floating-icon icon-ig bg-black text-white">
+              <a><i class="fab fa-instagram"></i></a>
+            </div>
           </div>
         </div>
 
-        <!-- Subscribe -->
-        <div class="col-lg-3 col-md-6">
-          <h5></h5>
-          <form class="d-flex subscribe-box">
-            <input type="email" class="form-control" placeholder="Email">
-            <button type="submit" class="btn"><i class="fa fa-paper-plane"></i></button>
-          </form>
-          <div>
-            <img src="./images/footer-img.png" height="100%" width="100%" data-aos="zoom-in-left"
-              data-aos-duration="1000">
-          </div>
-        </div>
       </div>
     </div>
 
+    <!-- Bottom -->
     <div class="footer-bottom mt-4">
       <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
         <div>
@@ -2258,30 +2517,7 @@
 
 
 
-  <script>
-    const clipBoxes = document.querySelectorAll('.clip-box');
-    const contents = document.querySelectorAll('.clip-content');
-
-    clipBoxes.forEach(box => {
-      box.addEventListener('click', () => {
-        const index = box.dataset.index;
-
-        // Deactivate all boxes
-        clipBoxes.forEach(b => b.classList.remove('active'));
-        box.classList.add('active');
-
-        // Hide all content
-        contents.forEach(c => c.classList.remove('active'));
-
-        // Show selected content
-        const target = document.getElementById(`content-${index}`);
-        if (target) {
-          target.classList.add('active');
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
-  </script>
+ 
 
 
 

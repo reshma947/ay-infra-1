@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Package Comparison</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <style>
+    .section-title {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-radius: 0px;
+    }
+
+    .package-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 0px;
+    }
+
+    .package-price {
+      color: #ffb400;
+      font-weight: 700;
+      border-radius: 0px;
+    }
+
+    .accordion-button {
+      font-weight: 600;
+      /* background: #f8f9fa; */
+       background: #fcfcfc;
+      border-radius: 0px;
+      height: 40px;
+    }
+
+    .accordion-button:focus {
+      box-shadow: none;
+    }
+
+    .comparison-col {
+      padding: 1rem;
+      background: #f8f9fa;
+      border: 1px solid #eee;
+      min-height: 140px;
+      border-radius: 0px;
+    }
+
+    .comparison-col ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      border-radius: 0px;
+    }
+
+    .comparison-col ul li {
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 767px) {
+      .comparison-col {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Dropdowns -->
+  <div class="container pt-5">
+    <div class="row g-3 justify-content-center">
+      <div class="col-md-5">
+        <select id="leftPackageSelect" class="form-select rounded-0 bg-black text-white">
+          <option value="basic">Basic Package</option>
+          <option value="premium">Premium Package</option>
+          <option value="professional">Professional Package</option>
+          <option value="royale">Royale Package</option>
+        </select>
+      </div>
+      <div class="col-md-5">
+        <select id="rightPackageSelect" class="form-select rounded-0 bg-black text-white">
+          <option value="basic">Basic Package</option>
+          <option value="premium">Premium Package</option>
+          <option value="professional">Professional Package</option>
+          <option value="royale">Royale Package</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Title -->
+  <!-- <div class="section-title">PACKAGE COMPARISON</div> -->
+
+  <!-- Package Header Row -->
+  <!-- <div class="container">
+    <div class="row text-center">
+      <div class="col-md-6 d-flex justify-content-center">
+        <h5 id="leftPackageTitle" class="package-title">Basic Package</h5>
+        <span id="leftPackagePrice" class="package-price">₹1,850/sq.ft</span>
+      </div>
+      <div class="col-md-6 d-flex justify-content-center">
+        <h5 id="rightPackageTitle" class="package-title">Basic Package</h5>
+        <span id="rightPackagePrice" class="package-price">₹1,850/sq.ft</span>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Accordion Comparison Sections -->
+  <div class="container pb-5 d-flex justify-content-center rounded-0">
+    <div class="accordion col-lg-9 rounded-0" id="comparisonAccordion">
+
+      <!-- 1. Design & Drawing -->
+      <div class="accordion-item rounded-0">
+        <h2 class="accordion-header" id="heading1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true">
+            Design & Drawing
+          </button>
+        </h2>
+        <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#comparisonAccordion">
+          <div class="accordion-body p-0">
+            <div class="row g-0">
+              <div class="col-md-6 comparison-col" id="left-design"></div>
+              <div class="col-md-6 comparison-col" id="right-design"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Structure -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+            Structure
+          </button>
+        </h2>
+        <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#comparisonAccordion">
+          <div class="accordion-body p-0">
+            <div class="row g-0">
+              <div class="col-md-6 comparison-col" id="left-structure"></div>
+              <div class="col-md-6 comparison-col" id="right-structure"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Kitchen -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+            Kitchen
+          </button>
+        </h2>
+        <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#comparisonAccordion">
+          <div class="accordion-body p-0">
+            <div class="row g-0">
+              <div class="col-md-6 comparison-col" id="left-kitchen"></div>
+              <div class="col-md-6 comparison-col" id="right-kitchen"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- More Accordion Items (Bathroom, Doors & Windows, Painting, Electrical, Flooring, Other Inclusive, Home Automation, Sustainability, Other Exclusive) -->
+      <!-- Generate in same structure -->
+      <div id="extra-accordion-items"></div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const sections = [
+      'design', 'structure', 'kitchen', 'bathroom', 'doors', 'painting', 'electrical', 
+      'flooring', 'inclusive', 'automation', 'sustainability', 'exclusive'
+    ];
+
+    const sectionTitles = {
+      bathroom: 'Bathroom',
+      doors: 'Doors & Windows',
+      painting: 'Painting',
+      electrical: 'Electrical',
+      flooring: 'Flooring',
+      inclusive: 'Other Inclusive',
+      automation: 'Home Automation',
+      sustainability: 'Sustainability',
+      exclusive: 'Other Exclusive or Additional Charges'
+    };
+
+    // Dummy Package Data
+    const packageData = {
+      basic: {
+        title: "Basic Package",
+        price: "₹1,850/sq.ft",
+        design: ["2D Floor Plan", "2D Furniture Plan", "Basic Structural Design"],
+        structure: ["Brick Walls", "Basic RCC Framing", "Standard Foundation"],
+        kitchen: ["Basic Granite Counter", "1 Sink", "Standard Tiles"],
+        bathroom: ["Standard CP fittings", "Basic Tiles", "1 Wash Basin"],
+        doors: ["Main Door - Teak", "Internal - Flush Doors"],
+        painting: ["Interior - Plastic Emulsion", "Exterior - Cement Paint"],
+        electrical: ["Standard Wiring", "Basic Switches", "1 Fan per Room"],
+        flooring: ["Ceramic Tiles", "Vitrified in Living"],
+        inclusive: ["Site Supervision", "Basic Drawings"],
+        automation: ["Not Included"],
+        sustainability: ["Rainwater Provision"],
+        exclusive: ["Extra for Custom Designs"]
+      },
+      premium: {
+        title: "Premium Package",
+        price: "₹2,250/sq.ft",
+        design: ["2D + 3D Floor Plan", "Furniture Layout", "Structural + Interior Drawings"],
+        structure: ["AAC Blocks", "Premium RCC Framing", "Pile Foundation"],
+        kitchen: ["Granite Counter", "2 Sinks", "Premium Tiles"],
+        bathroom: ["Jaquar CP fittings", "Premium Tiles", "Wash Basin + Vanity"],
+        doors: ["Main Door - Solid Teak", "Internal - Laminated Flush"],
+        painting: ["Interior - Premium Emulsion", "Exterior - Weather Shield"],
+        electrical: ["Premium Wiring", "Modular Switches", "Concealed Lighting"],
+        flooring: ["Vitrified Tiles", "Wooden Flooring in Bedrooms"],
+        inclusive: ["Site Supervision", "Architect Visits", "Detailed Drawings"],
+        automation: ["Basic Home Automation"],
+        sustainability: ["Rainwater + Solar Provision"],
+        exclusive: ["Extra for Luxury Interiors"]
+      },
+      professional: {
+        title: "Professional Package",
+        price: "₹2,750/sq.ft",
+        design: ["3D Floor Plan", "Detailed BOQ", "Vastu Compliance"],
+        structure: ["RCC Walls", "Advanced Framing", "Deep Foundation"],
+        kitchen: ["Quartz Counter", "2 Sinks", "Designer Tiles"],
+        bathroom: ["Premium Fittings", "Anti-skid Tiles", "Luxury Wash Basin"],
+        doors: ["Designer Teak Main Door", "Laminated Premium Doors"],
+        painting: ["Luxury Interior Emulsion", "Exterior Weather Coat"],
+        electrical: ["Smart Wiring", "Designer Switches", "Lighting Automation"],
+        flooring: ["Italian Tiles", "Wooden in Bedrooms"],
+        inclusive: ["Architect + Interior Consultations", "Detailed Schedules"],
+        automation: ["Full Home Automation"],
+        sustainability: ["Solar + Rainwater + Smart Control"],
+        exclusive: ["Luxury Add-ons"]
+      },
+      royale: {
+        title: "Royale Package",
+        price: "₹3,250/sq.ft",
+        design: ["Luxury 3D Plan", "Smart Home Integration", "360° Walkthrough"],
+        structure: ["Shear Walls", "Earthquake Resistant", "Pile Foundation"],
+        kitchen: ["Imported Marble", "3 Sinks", "Designer Interiors"],
+        bathroom: ["Luxury Imported Fittings", "Marble Tiles", "Premium Vanity"],
+        doors: ["Designer Carved Teak Doors", "Premium Laminated Interiors"],
+        painting: ["Luxury Interior Finish", "Silicone Exterior Coating"],
+        electrical: ["Smart System", "Voice Controlled Lighting", "Automation"],
+        flooring: ["Italian Marble", "Wooden + Marble Combo"],
+        inclusive: ["Architect, Interior & Landscape", "Luxury Detailing"],
+        automation: ["Full AI Based Home Automation"],
+        sustainability: ["Net-Zero Ready"],
+        exclusive: ["Ultra Luxury Add-ons"]
+      }
+    };
+
+    const leftSelect = document.getElementById("leftPackageSelect");
+    const rightSelect = document.getElementById("rightPackageSelect");
+
+    function updateSectionContent(side, pkg, section) {
+      const target = document.getElementById(`${side}-${section}`);
+      target.innerHTML = `<ul>${packageData[pkg][section].map(item => `<li>${item}</li>`).join('')}</ul>`;
+    }
+
+    function updateAllSections(side, pkg) {
+      sections.forEach(section => updateSectionContent(side, pkg, section));
+      document.getElementById(`${side}PackageTitle`).textContent = packageData[pkg].title;
+      document.getElementById(`${side}PackagePrice`).textContent = packageData[pkg].price;
+    }
+
+    leftSelect.addEventListener("change", () => updateAllSections("left", leftSelect.value));
+    rightSelect.addEventListener("change", () => updateAllSections("right", rightSelect.value));
+
+    // Generate remaining accordion sections dynamically (after Kitchen)
+    const extraSections = sections.slice(3); // bathroom onwards
+    const container = document.getElementById('extra-accordion-items');
+    let index = 4;
+    extraSections.forEach(sec => {
+      const title = sectionTitles[sec];
+      container.insertAdjacentHTML('beforeend', `
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading${index}">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}">
+              ${title}
+            </button>
+          </h2>
+          <div id="collapse${index}" class="accordion-collapse collapse" data-bs-parent="#comparisonAccordion">
+            <div class="accordion-body p-0">
+              <div class="row g-0">
+                <div class="col-md-6 comparison-col" id="left-${sec}"></div>
+                <div class="col-md-6 comparison-col" id="right-${sec}"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `);
+      index++;
+    });
+
+    // Initialize
+    updateAllSections("left", leftSelect.value);
+    updateAllSections("right", rightSelect.value);
+  </script>
+</body>
+</html>
