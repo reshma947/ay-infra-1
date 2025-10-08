@@ -70,10 +70,10 @@
 .step-circle {
   text-align: center;
   flex: 0 0 auto;
-  min-width: 70px;
+  /* min-width: 70px; */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   cursor: pointer;
 }
 
@@ -92,7 +92,7 @@
 }
 
 .step-circle p {
-  margin-top: 8px;
+  /* margin-top: 8px; */
   font-size: 13px;
   color: #333;
   white-space: nowrap;
@@ -111,15 +111,15 @@
 /* Dotted line between circles */
 .step-line {
   flex: 0 0 50px;
-  align-self: center;
+  /* align-self: center; */
   border-top: 2px dotted #999;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 /* Content sections */
 .clip-content {
   display: none;
-  padding-top: 1.5rem;
+  /* padding-top: 1.5rem; */
 }
 
 .clip-content.active {
@@ -275,104 +275,71 @@
   </script>
 
 
-  <div class="container-fluid position-relative pt-5 mt-5">
-    <div class="position-absolute top-0 start-0 w-100 h-100 bg-img z-n1"></div>
+<div class="container-fluid position-relative pt-5 mt-5 hero-section">
 
-    <div class="">
-      <div class="container-fluid p-0 m-0">
-        <div class="row g-0 p-0 m-0 d-flex justify-content-around">
+  <!-- ✅ Floating Icons -->
+  <div class="floating-icon icon-1"><i class="bi bi-hammer text-red-color"></i></div>
+  <div class="floating-icon icon-2"><i class="bi bi-house-door-fill text-red-color"></i></div>
+  <div class="floating-icon icon-3"><i class="bi bi-star-fill text-red-color"></i></div>
+  <!-- <div class="floating-icon icon-4"><i class="bi bi-brush-fill text-primary"></i></div> -->
+  <div class="floating-icon icon-5"><i class="bi bi-gear-fill text-red-color"></i></div>
 
-          <div class="col-lg-5 d-flex flex-column justify-content-center px-4">
-            <h1 class="fw-bold text-black">
-              A <span class="text-red-color">HOME</span>
-              THAT MATCHES <br>YOUR <span class="text-red-color">DREAMS</span><br> CRAFTED WITH CARE
-            </h1>
-            <h6 class="fw-semibold text-black pt-3">
-              From your family home to your office or luxury interiors – we deliver turnkey solutions with clarity,
-              trust, and unmatched professionalism.
-            </h6>
-            <div>
-              <button class="fw-semibold px-4 py-2 mt-4 bg-red-color text-white border-0 rounded-2"
-                data-aos="fade-right" data-aos-offset="100">
-                Packages Start From
-              </button>
-            </div>
+  <div class="position-absolute top-0 start-0 w-100 h-100 bg-img z-n1"></div>
 
-            <!-- ✅ Vertical Form Box -->
-            <div class="form-box">
-              <form>
-                <div class="d-flex justify-content-between">
-                  <input type="text" class="form-control me-3" placeholder="Your Name" required>
-                  <input type="email" class="form-control" placeholder="Your Email" required>
+  <div class="">
+    <div class="container-fluid p-0 m-0">
+      <div class="row g-0 p-0 m-0 d-flex justify-content-around">
 
-                </div>
-                <div class="d-flex justify-content-between">
-                  <input type="text" class="form-control me-3" placeholder="Phone Number" required>
-                  <textarea class="form-control" rows="1" placeholder="Your Message"></textarea>
-
-                </div>
-
-                <div class="text-center">
-                  <button type="submit" class="bg-red-color text-white rounded-2 border-0">Send Message</button>
-                </div>
-
-              </form>
-            </div>
+        <!-- ✅ Left Content -->
+        <div class="col-lg-5 d-flex flex-column justify-content-center px-4">
+          <h1 class="fw-bold text-black">
+            A <span class="text-red-color">HOME</span>
+            THAT MATCHES <br>YOUR <span class="text-red-color">DREAMS</span><br> CRAFTED WITH CARE
+          </h1>
+          <h6 class="fw-semibold text-black pt-3">
+            From your family home to your office or luxury interiors – we deliver turnkey solutions with clarity,
+            trust, and unmatched professionalism.
+          </h6>
+          <div>
+            <button class="fw-semibold px-4 py-2 mt-4 bg-red-color text-white border-0 rounded-2"
+              data-aos="fade-right" data-aos-offset="100">
+              Packages Start From
+            </button>
           </div>
 
-          <!-- <div class="col-lg-4 position-relative d-none d-lg-block banner-img-box p-0 m-0">
-
-            <img src="./images/banner-new-1.png" alt="Hero Image" data-aos="fade-up" data-aos-duration="3000"
-              class="position-absolute bottom-0 end-0 w-100 h-100 object-fit-cover" />
-          </div> -->
-
-          <div class="col-lg-4 position-relative d-none d-lg-block banner-img-box p-0 m-0">
-
-            <img src="./images/banner-man-1.png" alt="Hero Image" data-aos="fade-up" data-aos-duration="3000"
-              class="position-absolute bottom-0 end-0 w-100 h-100 object-fit-cover" />
+          <!-- ✅ Vertical Form Box -->
+          <div class="form-box">
+            <form>
+              <div class="d-flex justify-content-between">
+                <input type="text" class="form-control me-3" placeholder="Your Name" required>
+                <input type="email" class="form-control" placeholder="Your Email" required>
+              </div>
+              <div class="d-flex justify-content-between">
+                <input type="text" class="form-control me-3" placeholder="Phone Number" required>
+                <textarea class="form-control" rows="1" placeholder="Your Message"></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="bg-red-color text-white rounded-2 border-0">Send Message</button>
+              </div>
+            </form>
           </div>
-
-          <!-- ✅ Image for mobile view (stacked) -->
-          <div class="col-12 d-block d-lg-none px-3 mt-4">
-            <img src="./images/banner-man-1.png" alt="Hero Image" class="img-fluid w-100 rounded" />
-          </div>
-
-
-          <!-- <div class="col-lg-3 p-0 m-0 d-flex align-items-center justify-content-end">
-            <div class="card shadow-lg p-4 border-0">
-              <h3 class="text-center mb-4">Form</h3>
-              <form>
-
-                <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Your Name" required>
-                </div>
-
-                <div class="mb-3">
-                  <input type="email" class="form-control" placeholder="Your Email" required>
-                </div>
-
-                <div class="mb-3">
-                  <input type="phone-no" class="form-control" placeholder="Phone Number" required>
-                </div>
-
-                <div class="mb-3">
-                  <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="px-4 py-2 border-0 bg-red-color text-white rounded-3 fw-semibold">Send
-                    Message</button>
-                </div>
-              </form>
-            </div>
-
-          </div> -->
-
-
-
         </div>
+
+        <!-- ✅ Right Hero Image -->
+        <div class="col-lg-4 position-relative d-none d-lg-block banner-img-box p-0 m-0">
+          <img src="./images/banner-man-1.png" alt="Hero Image" data-aos="fade-up" data-aos-duration="3000"
+            class="position-absolute bottom-0 end-0 w-100 h-100 object-fit-cover" />
+        </div>
+
+        <!-- ✅ Mobile Image -->
+        <div class="col-12 d-block d-lg-none px-3 mt-4">
+          <img src="./images/banner-man-1.png" alt="Hero Image" class="img-fluid w-100 rounded" />
+        </div>
+
       </div>
     </div>
   </div>
+</div>
 
 
   <section class="bg-body-tertiary pb-3">
@@ -392,7 +359,7 @@
               <div class="text-content">
                 <div class="service-text">RESIDENTIAL CONSTRUCTION</div>
                 <p>Dream Homes Tailored for Every Family</p>
-                <a href="#" class="read-more-btn text-decoration-none">Read more →</a>
+                <a href="#" class="read-more-btn text-decoration-none p-2">Read more →</a>
               </div>
             </div>
           </div>
@@ -407,7 +374,7 @@
               <div class="text-content">
                 <div class="service-text inter-tight">COMMERCIAL CONSTRUCTION</div>
                 <p>Build Spaces That Drive Success</p>
-                <a href="#" class="read-more-btn text-decoration-none">Read more →</a>
+                <a href="#" class="read-more-btn text-decoration-none p-2">Read more →</a>
               </div>
             </div>
           </div>
@@ -422,7 +389,7 @@
               <div class="text-content">
                 <div class="service-text inter-tight">INTERIOR <br> DESIGN</div>
                 <p>Spaces That Inspire & Reflect Your Lifestyle</p>
-                <a href="#" class="read-more-btn text-decoration-none">Read more →</a>
+                <a href="#" class="read-more-btn text-decoration-none p-2">Read more →</a>
               </div>
             </div>
           </div>
@@ -437,7 +404,7 @@
               <div class="text-content">
                 <div class="service-text inter-tight">RENOVATION REMODELLING</div>
                 <p>Upgrade Your Space for Today’s Needs</p>
-                <a href="#" class="read-more-btn text-decoration-none">Read more →</a>
+                <a href="#" class="read-more-btn text-decoration-none p-2">Read more →</a>
               </div>
             </div>
           </div>
@@ -875,7 +842,7 @@
   <div class="container text-center">
     <h2 class="text-center fw-bold pb-3">COMPARE PACKAGE</h2>
     <div class="form-check form-switch d-inline-flex align-items-center gap-2 large-switch">
-      <input class="form-check-input custom-switch red" type="checkbox" role="switch" id="toggleComparisonSection">
+      <input class="form-check-input custom-switch red" type="checkbox" role="switch" id="toggleComparisonSection" style="height: 52px;width: 152px;">
       <label class="form-check-label fw-semibold" for="toggleComparisonSection"></label>
     </div>
   </div>
@@ -1168,10 +1135,10 @@
 
 
 
-    <div class="container py-5">
+    <div class="container pb-5">
 
   <!-- Circle Step Strip -->
-  <div class="steps-strip mb-4">
+  <div class="steps-strip">
     <div class="step-circle active" data-index="1">
       <span>1</span>
       <p>Meet</p>
@@ -1208,8 +1175,8 @@
     <div class="d-flex justify-content-center align-items-center text-center">
       <div class="col-md-5">
         <img src="./images/how-works-img-1.png" alt="Image 1">
-        <h4 class="mt-3">Meet</h4>
-        <p>We understand your vision, lifestyle, and requirements.</p>
+        <h4 class="p-0">Meet</h4>
+        <p class="p-0 m-0">We understand your vision, lifestyle, and requirements.</p>
       </div>
     </div>
   </div>
@@ -1218,8 +1185,8 @@
     <div class="d-flex justify-content-center align-items-center text-center">
       <div class="col-md-5">
         <img src="./images/how-works-img-2.png" alt="Image 2">
-        <h4 class="mt-3">Share</h4>
-        <p>You tell us your ideas and preferences; we clarify every detail.</p>
+        <h4 class="p-0">Share</h4>
+        <p class="p-0 m-0">You tell us your ideas and preferences; we clarify every detail.</p>
       </div>
     </div>
   </div>
@@ -1228,8 +1195,8 @@
     <div class="d-flex justify-content-center align-items-center text-center">
       <div class="col-md-5">
         <img src="./images/how-works-img-3.png" alt="Image 3">
-        <h4 class="mt-3">Plan</h4>
-        <p>Custom designs and project plans combining style and functionality.</p>
+        <h4 class="p-0">Plan</h4>
+        <p class="p-0 m-0">Custom designs and project plans combining style and functionality.</p>
       </div>
     </div>
   </div>
@@ -1238,8 +1205,8 @@
       <div class="d-flex justify-content-center align-items-center text-center">
         <div class="col-md-5">
           <img src="./images/how-works-img-4.png" alt="Image 1">
-          <h4 class="mt-3">Quote</h4>
-          <p>Transparent quotation with milestone approvals — no hidden costs.</p>
+          <h4 class="p-0">Quote</h4>
+          <p class="p-0 m-0">Transparent quotation with milestone approvals — no hidden costs.</p>
         </div>
 
       </div>
@@ -1249,8 +1216,8 @@
       <div class="d-flex justify-content-center align-items-center text-center">
         <div class="col-md-5">
           <img src="./images/how-works-img-5.png" alt="Image 1">
-          <h4 class="mt-3">Approvals</h4>
-          <p>We handle permissions, legal requirements, and financing guidance.</p>
+          <h4 class="p-0">Approvals</h4>
+          <p class="p-0 m-0">We handle permissions, legal requirements, and financing guidance.</p>
         </div>
 
       </div>
@@ -1495,242 +1462,112 @@
   </div>
 
 
-  <section class="coming-projects-section">
-    <div class="container-fluid bg-body-tertiary py-5 box-shadow">
-      <div class="row project-buttons m-0 pb-5">
-        <div class="col-lg-6 pricing-project-header" data-aos="fade-up">
+<section class="projects-section py-5 bg-body-tertiary">
+  <div class="container-fluid">
+    <div class="row mb-5">
+      <!-- <div class="col text-center">
+        <h2 class="fw-bold">Projects</h2>
+      </div> -->
+      <div class="pricing-project-header text-center" data-aos="fade-up">
           <div class="bg-project-text-outline">PROJECTS</div>
           <h2 class="main-project-title">PROJECTS</h2>
         </div>
 
-        <div class="col-lg-6 d-flex justify-content-between align-items-center p-0 m-0 flex-wrap gap-5"
-          data-aos="zoom-in-left">
-          <div class="text-center">
-            <button class="btn-project btn-black" onclick="filterProjects('completed', this)">Our Projects</button>
+    </div>
 
-
-          </div>
-          <!-- <button class="btn-project btn-black" onclick="filterProjects('ongoing', this)">Ongoing Projects</button> -->
-          <!-- <button class="btn-project btn-black" onclick="filterProjects('upcoming', this)">Upcoming Projects</button> -->
-        </div>
-      </div>
-
-      <!-- Main Section -->
-      <div class="row">
-        <!-- Navigation Buttons -->
-        <div class="col-lg-3 d-flex flex-column  align-items-center justify-content-center mb-4">
-          <button class="bg-red-color text-white border-0 px-4 py-2 rounded-2 mb-2" id="nextBtn-1">Next →</button>
-          <button class="btn bg-black text-white px-4 py-2" id="prevBtn-1">← Prev</button>
-
-        </div>
-
-        <!-- Projects Display -->
-        <div class="col-lg-9">
-          <!-- Completed Section -->
-          <div class="project-section" id="completed">
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="project-card">
-                    <img src="./images/building-img-1.jpg" class="project-image" alt="Completed 1">
-                    <div class="project-content">
-                      <h5>Completed Project 1</h5>
-                      <p>Designed and delivered in 6 months. Urban residential complex.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="project-card">
-                    <img src="./images/building-img-2.jpg" class="project-image" alt="Completed 2">
-                    <div class="project-content">
-                      <h5>Completed Project 2</h5>
-                      <p>High-end commercial tower in metro city with smart interiors.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="project-card">
-                    <img src="./images/building-img-3.jpg" class="project-image" alt="Completed 3">
-                    <div class="project-content">
-                      <h5>Completed Project 3</h5>
-                      <p>Modern villa project in Bangalore with solar roofing.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="project-card">
-                    <img src="./images/building-img-2.jpg" class="project-image" alt="Completed 2">
-                    <div class="project-content">
-                      <h5>Completed Project 2</h5>
-                      <p>High-end commercial tower in metro city with smart interiors.</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+    <div class="swiper projectSwiper">
+      <div class="swiper-wrapper">
+        <!-- CARD 1 -->
+        <div class="swiper-slide">
+          <div class="project-card">
+            <img src="./images/building-img-1.jpg" alt="Project 1" class="project-img">
+            <div class="project-info">
+              <h6>Urban Residential</h6>
+              <p>Delivered in just 6 months with modern design.</p>
             </div>
           </div>
-
-          <!-- Ongoing Section -->
-          <!-- <div class="project-section d-none" id="ongoing">
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="project-card">
-                    <img src="./images/building-img-4.jpg" class="project-image" alt="Ongoing 1">
-                    <div class="project-content">
-                      <h5>Ongoing Project 1</h5>
-                      <p>Phase 2 nearing completion with premium materials.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="project-card">
-                    <img src="./images/building-img-5.jpg" class="project-image" alt="Ongoing 2">
-                    <div class="project-content">
-                      <h5>Ongoing Project 2</h5>
-                      <p>Office space innovation hub under development.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="project-card">
-                    <img src="./images/building-img-6.jpg" class="project-image" alt="Ongoing 3">
-                    <div class="project-content">
-                      <h5>Ongoing Project 3</h5>
-                      <p>Smart building integration with IoT features.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="project-card">
-                    <img src="./images/building-img-5.jpg" class="project-image" alt="Ongoing 2">
-                    <div class="project-content">
-                      <h5>Ongoing Project 2</h5>
-                      <p>Office space innovation hub under development.</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+        </div>
+        <!-- CARD 2 -->
+        <div class="swiper-slide">
+          <div class="project-card">
+            <img src="./images/building-img-2.jpg" alt="Project 2" class="project-img">
+            <div class="project-info">
+              <h6>Commercial Tower</h6>
+              <p>Smart interiors in metro city skyline.</p>
             </div>
-          </div> -->
-
-          <!-- Upcoming Section -->
-          <!-- <div class="project-section d-none" id="upcoming">
-            <div class="swiper mySwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="project-card">
-                    <img src="./images/building-img-7.jpg" class="project-image" alt="Upcoming 1">
-                    <div class="project-content">
-                      <h5>Upcoming Project 1</h5>
-                      <p>Green housing community starting in Jan 2026.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="project-card">
-                    <img src="./images/building-img-8.jpg" class="project-image" alt="Upcoming 2">
-                    <div class="project-content">
-                      <h5>Upcoming Project 2</h5>
-                      <p>New campus for IT hub in Hyderabad planned.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="project-card">
-                    <img src="./images/building-img-9.jpg" class="project-image" alt="Upcoming 3">
-                    <div class="project-content">
-                      <h5>Upcoming Project 3</h5>
-                      <p>Retail and business plaza with rooftop gardens.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="project-card">
-                    <img src="./images/building-img-8.jpg" class="project-image" alt="Upcoming 2">
-                    <div class="project-content">
-                      <h5>Upcoming Project 2</h5>
-                      <p>New campus for IT hub in Hyderabad planned.</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+          </div>
+        </div>
+        <!-- CARD 3 -->
+        <div class="swiper-slide">
+          <div class="project-card">
+            <img src="./images/building-img-3.jpg" alt="Project 3" class="project-img">
+            <div class="project-info">
+              <h6>Modern Villa</h6>
+              <p>Green roofing and solar integration.</p>
             </div>
-          </div> -->
-
+          </div>
+        </div>
+        <!-- CARD 4 -->
+        <div class="swiper-slide">
+          <div class="project-card">
+            <img src="./images/building-img-4.jpg" alt="Project 4" class="project-img">
+            <div class="project-info">
+              <h6>Innovation Hub</h6>
+              <p>Office space with cutting-edge features.</p>
+            </div>
+          </div>
+        </div>
+        <!-- CARD 5 (duplicate for looping) -->
+        <div class="swiper-slide">
+          <div class="project-card">
+            <img src="./images/building-img-5.jpg" alt="Project 5" class="project-img">
+            <div class="project-info">
+              <h6>Smart Plaza</h6>
+              <p>Retail plaza with rooftop gardens.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <script>
-    let swipers = [];
+  </div>
+</section>
 
-    function initSwipers() {
-      document.querySelectorAll('.mySwiper').forEach((el, index) => {
-        swipers[index] = new Swiper(el, {
-          slidesPerView: 2,
-          spaceBetween: 20,
-          navigation: false,
-          speed: 600,
-          breakpoints: {
-            0: { slidesPerView: 1 },
-            768: { slidesPerView: 2 }
-          }
-        });
-      });
-    }
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const swiper = new Swiper(".projectSwiper", {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    loop: true,
+    speed: 2500,
+    autoplay: {
+      delay: 0,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true, // ✅ stops on hover
+    },
+    freeMode: {
+      enabled: true,
+      momentum: false,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1.2,
+      },
+      576: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 4,
+      },
+    },
+  });
+});
 
-    function filterProjects(type) {
-      document.querySelectorAll('.project-section').forEach(section => {
-        section.classList.add('d-none');
-      });
-      document.getElementById(type).classList.remove('d-none');
-    }
+</script>
 
-    document.addEventListener("DOMContentLoaded", function () {
-      initSwipers();
-
-      document.getElementById('prevBtn-1').addEventListener('click', () => {
-        const swiper = document.querySelector('.project-section:not(.d-none) .mySwiper').swiper;
-        swiper.slidePrev();
-      });
-
-      document.getElementById('nextBtn-1').addEventListener('click', () => {
-        const swiper = document.querySelector('.project-section:not(.d-none) .mySwiper').swiper;
-        swiper.slideNext();
-      });
-
-      // Show Completed by default
-      filterProjects('completed');
-    });
-  </script>
-
-  <script>
-    function filterProjects(type, btn) {
-      // Hide all project sections
-      document.querySelectorAll('.project-section').forEach(section => {
-        section.classList.add('d-none');
-      });
-      // Show selected section
-      document.getElementById(type).classList.remove('d-none');
-
-      // Remove active class from all buttons
-      document.querySelectorAll('.btn-project').forEach(b => b.classList.remove('active'));
-      // Add active class to clicked button
-      btn.classList.add('active');
-    }
-
-    // ✅ Remove active state when clicking outside
-    document.addEventListener('click', function (event) {
-      if (!event.target.classList.contains('btn-project')) {
-        document.querySelectorAll('.btn-project').forEach(b => b.classList.remove('active'));
-      }
-    });
-  </script>
 
 
 

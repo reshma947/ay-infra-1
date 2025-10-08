@@ -6,21 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Important Sections</title>
     <!-- <link rel="stylesheet" href="./css/index.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
     <style>
 
@@ -95,6 +98,173 @@
   border: 2px solid skyblue;
   transform: scale(1.1);
 }
+
+.text-red-color {
+  color: red;
+}
+
+.bg-red-color {
+  background-color: red;
+}
+
+/* ------------------- */
+/* css for coming-projects-section */
+.project-buttons {
+  margin-bottom: 25px;
+}
+
+.swiper {
+  padding-bottom: 40px;
+}
+
+.swiper-wrapper {
+  align-items: stretch !important;
+}
+
+.swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: red;
+  /* background-image: linear-gradient(to bottom right, rgba(255, 0, 0, 0.75), rgba(139, 0, 0, 0.75)); */
+  color: white;
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btn-hover:hover {
+  transform: scale(1.1);
+
+}
+
+
+.pricing-project-header {
+  position: relative;
+  text-align: center;
+  padding: 2rem 1rem;
+  /* background-color: #ffffff; */
+  overflow: hidden;
+  padding-bottom: 0px;
+}
+
+.bg-project-text-outline {
+  font-size: 5rem;
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 2px #f0f0f0;
+  /* text-stroke: 1px #f0f0f0; */
+  text-transform: uppercase;
+  position: absolute;
+  /* bottom:; */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.main-project-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  /* color: #001e5a; */
+  color: black;
+  z-index: 1;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .bg-project-text-outline {
+    font-size: 3.5rem;
+    -webkit-text-stroke: 0.7px #f0f0f0;
+  }
+
+  .main-project-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bg-project-text-outline {
+    font-size: 2.5rem;
+  }
+
+  .main-project-title {
+    font-size: 1.25rem;
+  }
+}
+
+
+
+/* ✅ Base button */
+.btn-project {
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* ✅ Button color variants */
+.btn-black {
+  background: #000;
+  color: #fff;
+}
+
+.btn-red {
+  background: red; 
+  color: #fff;
+}
+
+/* ✅ Active state */
+.btn-project.active {
+  transform: scale(1.1);
+  background: red;
+  background: linear-gradient(45deg, #ff007a, #007bff);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6), 
+              0 0 20px rgba(10, 13, 17, 0.411);
+  color: #fff;
+}
+
+/* ✅ Responsive buttons stack on mobile */
+@media (max-width: 768px) {
+  .btn-project {
+    flex: 100%;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+/* ------------------------------ */
     </style>
 
 </head>
@@ -174,6 +344,244 @@
           mainTitle.classList.add('active');
         }, 300);
       });
+    });
+  </script>
+
+
+  <section class="coming-projects-section">
+    <div class="container-fluid bg-body-tertiary py-5 box-shadow">
+      <div class="row project-buttons m-0 pb-5">
+        <div class="col-lg-6 pricing-project-header" data-aos="fade-up">
+          <div class="bg-project-text-outline">PROJECTS</div>
+          <h2 class="main-project-title">PROJECTS</h2>
+        </div>
+
+        <div class="col-lg-6 d-flex justify-content-between align-items-center p-0 m-0 flex-wrap gap-5"
+          data-aos="zoom-in-left">
+          <!-- <div class="text-center"> -->
+            <button class="btn-project btn-black" onclick="filterProjects('completed', this)">Our Projects</button>
+
+
+          <!-- </div> -->
+          <button class="btn-project btn-black" onclick="filterProjects('ongoing', this)">Ongoing Projects</button>
+          <button class="btn-project btn-black" onclick="filterProjects('upcoming', this)">Upcoming Projects</button>
+        </div>
+      </div>
+
+      <!-- Main Section -->
+      <div class="row">
+        <!-- Navigation Buttons -->
+        <div class="col-lg-3 d-flex flex-column  align-items-center justify-content-center mb-4">
+          <button class="bg-red-color text-white border-0 px-4 py-2 rounded-2 mb-2" id="nextBtn-1">Next →</button>
+          <button class="btn bg-black text-white px-4 py-2" id="prevBtn-1">← Prev</button>
+
+        </div>
+
+        <!-- Projects Display -->
+        <div class="col-lg-9">
+          <!-- Completed Section -->
+          <div class="project-section" id="completed">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="project-card">
+                    <img src="./images/building-img-1.jpg" class="project-image" alt="Completed 1">
+                    <div class="project-content">
+                      <h5>Completed Project 1</h5>
+                      <p>Designed and delivered in 6 months. Urban residential complex.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="project-card">
+                    <img src="./images/building-img-2.jpg" class="project-image" alt="Completed 2">
+                    <div class="project-content">
+                      <h5>Completed Project 2</h5>
+                      <p>High-end commercial tower in metro city with smart interiors.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="project-card">
+                    <img src="./images/building-img-3.jpg" class="project-image" alt="Completed 3">
+                    <div class="project-content">
+                      <h5>Completed Project 3</h5>
+                      <p>Modern villa project in Bangalore with solar roofing.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="project-card">
+                    <img src="./images/building-img-2.jpg" class="project-image" alt="Completed 2">
+                    <div class="project-content">
+                      <h5>Completed Project 2</h5>
+                      <p>High-end commercial tower in metro city with smart interiors.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Ongoing Section -->
+          <div class="project-section d-none" id="ongoing">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="project-card">
+                    <img src="./images/building-img-4.jpg" class="project-image" alt="Ongoing 1">
+                    <div class="project-content">
+                      <h5>Ongoing Project 1</h5>
+                      <p>Phase 2 nearing completion with premium materials.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="project-card">
+                    <img src="./images/building-img-5.jpg" class="project-image" alt="Ongoing 2">
+                    <div class="project-content">
+                      <h5>Ongoing Project 2</h5>
+                      <p>Office space innovation hub under development.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="project-card">
+                    <img src="./images/building-img-6.jpg" class="project-image" alt="Ongoing 3">
+                    <div class="project-content">
+                      <h5>Ongoing Project 3</h5>
+                      <p>Smart building integration with IoT features.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="project-card">
+                    <img src="./images/building-img-5.jpg" class="project-image" alt="Ongoing 2">
+                    <div class="project-content">
+                      <h5>Ongoing Project 2</h5>
+                      <p>Office space innovation hub under development.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Section -->
+          <div class="project-section d-none" id="upcoming">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="project-card">
+                    <img src="./images/building-img-7.jpg" class="project-image" alt="Upcoming 1">
+                    <div class="project-content">
+                      <h5>Upcoming Project 1</h5>
+                      <p>Green housing community starting in Jan 2026.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="project-card">
+                    <img src="./images/building-img-8.jpg" class="project-image" alt="Upcoming 2">
+                    <div class="project-content">
+                      <h5>Upcoming Project 2</h5>
+                      <p>New campus for IT hub in Hyderabad planned.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="project-card">
+                    <img src="./images/building-img-9.jpg" class="project-image" alt="Upcoming 3">
+                    <div class="project-content">
+                      <h5>Upcoming Project 3</h5>
+                      <p>Retail and business plaza with rooftop gardens.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="project-card">
+                    <img src="./images/building-img-8.jpg" class="project-image" alt="Upcoming 2">
+                    <div class="project-content">
+                      <h5>Upcoming Project 2</h5>
+                      <p>New campus for IT hub in Hyderabad planned.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let swipers = [];
+
+    function initSwipers() {
+      document.querySelectorAll('.mySwiper').forEach((el, index) => {
+        swipers[index] = new Swiper(el, {
+          slidesPerView: 2,
+          spaceBetween: 20,
+          navigation: false,
+          speed: 600,
+          breakpoints: {
+            0: { slidesPerView: 1 },
+            768: { slidesPerView: 2 }
+          }
+        });
+      });
+    }
+
+    function filterProjects(type) {
+      document.querySelectorAll('.project-section').forEach(section => {
+        section.classList.add('d-none');
+      });
+      document.getElementById(type).classList.remove('d-none');
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      initSwipers();
+
+      document.getElementById('prevBtn-1').addEventListener('click', () => {
+        const swiper = document.querySelector('.project-section:not(.d-none) .mySwiper').swiper;
+        swiper.slidePrev();
+      });
+
+      document.getElementById('nextBtn-1').addEventListener('click', () => {
+        const swiper = document.querySelector('.project-section:not(.d-none) .mySwiper').swiper;
+        swiper.slideNext();
+      });
+
+      // Show Completed by default
+      filterProjects('completed');
+    });
+  </script>
+
+  <script>
+    function filterProjects(type, btn) {
+      // Hide all project sections
+      document.querySelectorAll('.project-section').forEach(section => {
+        section.classList.add('d-none');
+      });
+      // Show selected section
+      document.getElementById(type).classList.remove('d-none');
+
+      // Remove active class from all buttons
+      document.querySelectorAll('.btn-project').forEach(b => b.classList.remove('active'));
+      // Add active class to clicked button
+      btn.classList.add('active');
+    }
+
+    // ✅ Remove active state when clicking outside
+    document.addEventListener('click', function (event) {
+      if (!event.target.classList.contains('btn-project')) {
+        document.querySelectorAll('.btn-project').forEach(b => b.classList.remove('active'));
+      }
     });
   </script>
 

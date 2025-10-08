@@ -38,7 +38,41 @@ body {
 
 }
 
-/* ✅ Form Box (Vertical) */
+/* ✅ Floating square icons */
+.floating-icon {
+  position: absolute;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: floatUpDown 3s ease-in-out infinite;
+  z-index: 5;
+}
+
+.floating-icon i {
+  font-size: 1.2rem;
+}
+
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Icon Positions */
+/* .icon-1 { top: 10%; left: 8%; animation-delay: 0s; } */
+.icon-1 { top: 30%; right: 35%; animation-delay: 0s; }
+.icon-2 { top: 20%; right: 10%; animation-delay: 0.4s; }
+.icon-3 { top: 60%; right: 40%; animation-delay: 0.8s; }
+/* .icon-3 { top: 50%; left: 6%; animation-delay: 0.8s; } */
+.icon-4 { bottom: 18%; right: 18%; animation-delay: 1.2s; }
+.icon-5 { bottom: 17.5%; right: 7%; animation-delay: 1.6s; }
+/* .icon-5 { bottom: 8%; left: 30%; animation-delay: 1.6s; } */
+
+/* ✅ Form Box */
 .form-box {
   background-color: #fff;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -51,7 +85,6 @@ body {
 .form-box textarea {
   border-radius: 6px;
   margin-bottom: 15px;
-  ;
 }
 
 .form-box button {
@@ -61,16 +94,12 @@ body {
   text-align: center;
 }
 
-/* Hide dark backdrop */
-.custom-popup-form .modal-backdrop {
-  display: none !important;
+/* Responsive */
+@media (max-width: 991.98px) {
+  .floating-icon {
+    display: none;
+  }
 }
-
-/* Force modal smaller & centered */
-.modal-sm {
-  max-width: 400px;
-}
-
 
 /* css for City Selection Modal */
 .city-card {
@@ -663,64 +692,72 @@ body {
   font-weight: bold;
   color: #e74c3c;
 }
-
+/* --------------------------------------------------- */
 /* css for coming-projects-section */
-.project-buttons {
-  margin-bottom: 25px;
-}
-
-.swiper {
-  padding-bottom: 40px;
-}
-
-.swiper-wrapper {
-  align-items: stretch !important;
-}
-
-.swiper-slide {
-  height: auto;
-  display: flex;
-}
-
 .project-card {
+  /* background: #fff; */
+    background-color: red;
+    color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: red;
-  /* background-image: linear-gradient(to bottom right, rgba(255, 0, 0, 0.75), rgba(139, 0, 0, 0.75)); */
-  color: white;
-  padding: 0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
 }
 
-.project-image {
+.project-img {
   width: 100%;
-  height: 280px;
+  height: 150px;
   object-fit: cover;
 }
 
-.project-content {
-  padding: 15px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.project-info {
+  padding: 10px 12px;
+ color: #fff;
 }
 
-.btn-hover:hover {
-  transform: scale(1.1);
-
+.project-info h6 {
+  font-weight: 700;
+  margin-bottom: 5px;
+   color: #fff;
 }
 
+.project-info p {
+  font-size: 0.9rem;
+  /* color: #555; */
+   color: #fff;
+  margin-bottom: 0;
+}
+
+/* Spacing between swiper slides */
+.projectSwiper .swiper-slide {
+  height: auto;
+}
+
+/* Pause autoplay on hover */
+.projectSwiper:hover {
+  cursor: grab;
+}
+
+/* Responsive: make sure cards look good on smaller screens */
+@media (max-width: 768px) {
+  .project-img {
+    height: 130px;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-img {
+    height: 120px;
+  }
+}
+/* ---------------------------------- */
 
 .pricing-project-header {
   position: relative;

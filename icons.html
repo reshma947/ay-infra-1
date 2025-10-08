@@ -16,12 +16,14 @@
       display: flex;
       align-items: center;
       overflow: hidden;
+
     }
     .hero-overlay {
       position: absolute;
       inset: 0;
       background: rgba(0, 0, 0, 0.15);
       z-index: 0;
+              opacity: 0.01;
     }
 
     /* ✅ Content Styling */
@@ -40,7 +42,7 @@
       margin: 0 auto;
       border-radius: 15px;
       overflow: hidden;
-      transform: rotate(-5deg);
+      /* transform: rotate(-5deg); */
       transition: transform 0.4s ease;
     }
     .hero-image-box img {
@@ -124,7 +126,7 @@
         <!-- ✅ Right Image -->
         <div class="col-lg-6 d-flex justify-content-center">
           <div class="hero-image-box">
-            <img src="./images/banner-img-1.png" alt="Hero Image">
+            <img src="./images/banner-man-1.png" alt="Hero Image">
           </div>
         </div>
 
