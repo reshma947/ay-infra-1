@@ -2,6 +2,19 @@
   color: red;
 }
 
+.text-gradient-color{
+
+
+   background: linear-gradient(27deg,rgba(255, 0, 0, 1) 0%, rgba(255, 61, 61, 1) 86%);
+   color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 6s ease infinite;
+  font-weight: 700;
+}
+
+
 .bg-red-color {
   background-color: red;
 }
@@ -1275,10 +1288,19 @@ footer ul li a:hover {
   height: 100%;
   cursor: pointer;
   transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
-.feature-card:hover {
+/* .feature-card:hover {
   transform: translateY(-5px);
+} */
+
+/* 🔥 Active (Clicked) Card Highlight */
+.feature-card.active {
+  background: black;
+  border-color: #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  /* transform: translateY(-8px); */
 }
 
 .feature-card h5 {
@@ -1287,9 +1309,8 @@ footer ul li a:hover {
 }
 
 .line {
-  height: 1px;
+  height: 2px;
   width: 100%;
-  padding: 1px;
   margin-bottom: 10px;
   background-color: #fff;
 }
@@ -1305,19 +1326,23 @@ footer ul li a:hover {
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
+/* ✅ Responsive Improvements */
 @media (max-width: 991px) {
   .text-section {
     margin-top: 30px;
     text-align: center;
+  }
+
+  .feature-card {
+    padding: 15px;
+  }
+
+  .feature-card h5 {
+    font-size: 1.1rem;
   }
 }
 

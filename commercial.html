@@ -5,32 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ay Infra</title>
-    <link rel="stylesheet" href="./css/services.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/renovation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
 </head>
 
 <body>
-   <div class="container-fluid p-0 m-0 fixed-top">
+  <div class="container-fluid p-0 m-0 fixed-top">
 
     <div class="red-strip p-0 m-0 d-flex">
+      <div class="ps-4 m-0">
+        <span id="modalSelectedCity" class="fw-semibold">Not Selected</span>
+      </div>
 
       <div class="ms-auto">
         <div class="d-flex">
@@ -40,31 +37,32 @@
           <a href="#" class="pe-5 text-white text-decoration-none fw-semibold"><i
               class="bi bi-envelope text-white pe-1 fw-semibold"></i>
             info@example.com</a>
+
         </div>
       </div>
+
     </div>
+
 
     <nav class="navbar navbar-expand-lg p-0 bg-white">
       <div class="container-fluid p-0 m-0">
         <a class="navbar-brand ps-lg-5 p-0 m-0" href="./index.html">
-          <img src="./images/ay-main-logo.png" width="200px" class="img-fluid" alt="Logo">
+          <img src="./images/AY logo.jpg" width="72px" class="img-fluid" alt="Logo">
         </a>
-          <div class="m-0 p-4 ms-lg-2 d-flex align-items-center justify-content-center" style="background-color:#ffefef">
-            <span id="modalSelectedCity" class="fw-semibold" >Not Selected</span>
-          </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse d-lg-flex justify-content-lg-around p-0 m-0" id="navbarSupportedContent">
           <div class="bg-info"></div>
-
           <ul class="navbar-nav m-0 p-0">
-
             <li class="nav-item m-0 p-3">
               <a class="nav-link fw-semibold" aria-current="page" href="./index.html">Home </a>
             </li>
-             <li class="nav-item p-3 ps-lg-4 nav-active">
+            <li class="nav-item p-3 ms-lg-4">
+              <a class="nav-link fw-semibold" href="./about-us.html">About Us</a>
+            </li>
+            <li class="nav-item p-3 ps-lg-4 nav-active">
               <a class="nav-link fw-semibold" href="./services.html">Services</a>
             </li>
 
@@ -90,28 +88,28 @@
                                 </li>
               </ul>
             </li> -->
-              <li class="nav-item p-3 ps-lg-4">
+
+            <li class="nav-item p-3 ps-lg-4">
               <a class="nav-link fw-semibold" href="./cost-estimator.html">Cost Estimator</a>
             </li>
+            <!-- <li class="nav-item ps-lg-4">
+              <a class="nav-link fw-semibold" href="./contact.html"><button
+                  class="px-3 py-1 border-0 rounded-2 bg-red-color text-white ">Free Site Visit</button></a>
+            </li> -->
 
-            <li class="nav-item p-3 ms-lg-4">
-              <a class="nav-link fw-semibold" href="./about-us.html">About Us</a>
-            </li>
-           
-
-          
           </ul>
 
           <div class="p-0 m-0">
             <a class="nav-link fw-semibold" href="./contact.html"><button
-                class="px-3 py-1 border-0 rounded-2 bg-red-color text-white fw-semibold">Book Free Site Visit</button>
-            </a>
+                  class="px-3 py-1 border-0 rounded-2 bg-red-color text-white ">Free Site Visit</button></a>
+   
           </div>
+
         </div>
       </div>
+
     </nav>
   </div>
-
 
   <!-- ✅ City Selection Modal -->
   <div class="modal fade" id="cityModal" tabindex="-1" aria-labelledby="cityModalLabel" aria-hidden="true"
@@ -119,13 +117,14 @@
     <div class="modal-dialog modal-dialog-centered modal-md">
       <div class="modal-content p-4">
         <div class="row g-3">
-
+          <!-- Left Info -->
           <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center text-center p-3">
             <h4 class="fw-bold">Select a City</h4>
             <p>WE BUILD YOUR 'DREAM HOME'<br>
               India's <b>NO.1 TECH</b> Powered Construction Company</p>
           </div>
 
+          <!-- Right Cities -->
           <div class="col-lg-6 d-flex flex-column justify-content-center">
             <div class="city-card mb-2" onclick="selectModalCity('Hyderabad')">
               <img src="https://img.icons8.com/emoji/96/india-emoji.png" alt="Hyderabad">
@@ -179,45 +178,10 @@
   <section class="container services ms-0" style="width: max-content;">
     <div class="row">
       <div class="col-12">
-        <h1 class="fw-bold text-danger">INTERIOR DESIGN</h1>
+        <h1 class="fw-bold text-danger">COMMERCIAL</h1>
       </div>
     </div>
   </section>
-
-<!-- <section class="py-5">
-  <div class="container">
-    <div class="row g-4 m-0 p-0">
-      
-      <div class="col-lg-6 m-0 p-0">
-        <p class="text-small-heading mb-2">WHY US</p>
-        <h2 class="section-title mb-3">We are future of<br> manufacturing technology</h2>
-        <p class="mb-4">
-          Discover the future of manufacturing technology with Manufacturing Company. 
-          We utilize the latest advancements and cutting-edge techniques to revolutionize 
-          the industry and deliver unparalleled results for our clients.
-        </p>
-        <img src="./images/services-img-1.png" alt="Factory Image" class="img-fluid">
-      </div>
-
-      <div class="col-lg-6 m-0 p-0">
-        <img src="./images/services-img-2.png" alt="Worker Image" class="img-fluid">
-        <div class="d-flex align-items-center">
-          <span class="highlight-number me-3">25+</span>
-          <h4 class="fw-bold mb-0">Years of Industrial Experience</h4>
-        </div>
-        <p>
-          With over 25 years of unrivaled industrial experience, our Manufacturing Company 
-          has honed its expertise, delivering exceptional quality and unmatched reliability 
-          to clients across various sectors.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section> -->
-
-
-
 
 
 <section class="py-5 m-0">
@@ -227,23 +191,21 @@
     <div class="row g-4 align-items-center m-0 p-0">
       <div class="col-lg-6 order-2 order-lg-1 m-0 p-0">
         <!-- <p class="text-small-heading mb-2">WHY US</p> -->
-        <h2 class="section-title mb-3">Interior Design - <br> Spaces That Make You Smile</h2>
-        <p>At AY Infra, we believe interiors are not just decoration — they are the soul of your home or office. A well-designed space should make you feel happy, comfortable, and proud every time you enter it.
-
-        </p>
+        <h2 class="section-title mb-3">Commercial Construction - <br>Spaces That Work for Your Business</h2>
+        <p>At AY Infra, we build commercial spaces that are more than just buildings — they are environments where businesses grow, employees thrive, and clients are impressed. Every project is carefully planned to reflect your brand, support operations, and make the best use of space.</p>
         <p class="mb-4">
-         We start by understanding you — your lifestyle, your tastes, the way you live, and the feelings you want in each room. Whether it’s a cozy living room, a vibrant office, or a peaceful bedroom, we design every corner to bring joy and balance into your daily life.
-        </p>
+         We begin by understanding your business goals, the type of work you do, and the atmosphere you want for your space. This allows us to design offices, showrooms, retail stores, or co-working spaces that are practical, modern, and tailored to your needs.
+        </p>    
       </div>
       <div class="col-lg-6 order-1 order-lg-2 text-center m-0 p-0">
-        <img src="./images/services-img-2.png" alt="Worker Image" class="img-fluid">
+         <img src="./images/commercial-2.png" alt="Factory Image" class="img-fluid">
       </div>
     </div>
 
     <!-- Row 2: Left Image, Right Content -->
     <div class="row g-4 align-items-center m-0 p-0">
       <div class="col-lg-6 text-center m-0 p-0">
-        <img src="./images/services-img-1.png" alt="Worker Image" class="img-fluid">
+        <img src="/images/commercial-1.png" alt="Worker Image" class="img-fluid">
       </div>
       <div class="col-lg-6 m-0 p-0">
         <!-- <div class="d-flex align-items-center mb-2">
@@ -251,15 +213,13 @@
           <h4 class="fw-bold mb-0">Years of Industrial Experience</h4>
         </div> -->
         <p>
-         Our team carefully selects colors, textures, lighting, and furniture to create a harmonious space. We make sure each room is beautiful, practical, and uplifting, so your home feels like a sanctuary and your office inspires creativity.
-        </p>
-
-        <p>We handle everything from planning to execution, so you can watch your dream space come alive without stress. You’ll see how walls, lights, and furniture work together perfectly, making your space functional, stylish, and emotionally satisfying.
-
+         During construction, we focus on efficiency and quality. From layout optimization and interior flow to lighting, ventilation, and material selection, every decision is made to ensure your commercial space is functional, safe, and professional. Our team manages the entire process, keeping disruptions to a minimum so you can continue your business with peace of mind.
         </p>
         <p>
-          When the project is complete, your space doesn’t just look good — it feels right. Every time you step inside, it welcomes you, relaxes you, and energizes you. That’s the kind of interior we deliver — spaces that are alive, joyful, and uniquely yours.
+          We also emphasize flexibility and future growth. Spaces are designed to be adaptable, so you can expand, reorganize, or upgrade without hassle. Throughout the project, you receive regular progress updates, giving you clarity and confidence that your investment is in safe hands.
         </p>
+
+        <p>When your commercial property is ready, it’s not just a building — it’s a space that works for you, enhances your business image, and supports long-term growth. With AY Infra, you get quality construction, smooth execution, and a space built to impress and perform.</p>
       </div>
     </div>
 
@@ -277,10 +237,14 @@
       <div class="row">
         <div class="col-lg-7 col-md-10 col-12 ms-auto">
           <div class="quality-content shadow">
-            <!-- <h2 class="fw-bold mb-3">Quality of service that <br> no one can match</h2> -->
-            <p class="text-muted">
-             We take pride in offering the best interior design and execution services that blend creativity, functionality, and elegance. Our expert designers and craftsmen work closely with you to transform your space into a reflection of your style and personality. From concept development and 3D visualization to material selection and final installation, we handle every detail with precision and care. Whether it’s a modern home, a luxury office, or a commercial establishment, we create interiors that are not only visually stunning but also practical and comfortable. 
-            </p>
+            <h2 class="fw-bold mb-3">Quick Highlights:</h2>
+            <ul class="text-muted">
+              <li>Tailored to your business type and workflow</li>
+              <li>Functional and professional design for employees and clients</li>
+              <li>Durable, safe, and adaptable for future needs</li>
+              <li>Smooth process with minimal disruption to your business</li>
+              <li>Delivered on schedule, ready to operate</li>        
+            </ul>
           </div>
         </div>
       </div>
@@ -288,12 +252,12 @@
   </section>
 
 
-    <section class="my-5 py-5">
+    <!-- <section class="my-5 py-5">
     <div class="container">
       <h2 class="text-center fw-bold pb-3 text-blue-color">Designs</h2>
       <div class="row g-4 text-center">
 
-        <!-- Column 1 -->
+
         <div class="col-12 col-lg-4">
           <div class="card border-0 shadow-lg h-100">
             
@@ -305,7 +269,6 @@
           </div>
         </div>
 
-        <!-- Column 2 -->
         <div class="col-12 col-lg-4">
           <div class="card border-0 shadow-lg h-100">
             <div class="card-body">
@@ -317,7 +280,7 @@
           </div>
         </div>
 
-        <!-- Column 3 -->
+
         <div class="col-12 col-lg-4">
           <div class="card border-0 shadow-lg h-100">
             <div class="card-body">
@@ -331,7 +294,7 @@
 
       </div>
     </div>
-  </section>
+  </section> -->
 
 
 

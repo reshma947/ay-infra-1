@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Form</title>
-  <link rel="stylesheet" href="./css/contact.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  <title>Ay Infra</title>
+  <link rel="stylesheet" href="./css/residential.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,18 +19,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
 </head>
 
 <body>
   <div class="container-fluid p-0 m-0 fixed-top">
 
     <div class="red-strip p-0 m-0 d-flex">
+      <div class="ps-4 m-0">
+        <span id="modalSelectedCity" class="fw-semibold">Not Selected</span>
+      </div>
 
       <div class="ms-auto">
         <div class="d-flex">
@@ -40,31 +37,32 @@
           <a href="#" class="pe-5 text-white text-decoration-none fw-semibold"><i
               class="bi bi-envelope text-white pe-1 fw-semibold"></i>
             info@example.com</a>
+
         </div>
       </div>
+
     </div>
+
 
     <nav class="navbar navbar-expand-lg p-0 bg-white">
       <div class="container-fluid p-0 m-0">
         <a class="navbar-brand ps-lg-5 p-0 m-0" href="./index.html">
-          <img src="./images/ay-main-logo.png" width="200px" class="img-fluid" alt="Logo">
+          <img src="./images/AY logo.jpg" width="72px" class="img-fluid" alt="Logo">
         </a>
-          <div class="m-0 p-4 ms-lg-2 d-flex align-items-center justify-content-center" style="background-color:#ffefef">
-            <span id="modalSelectedCity" class="fw-semibold" >Not Selected</span>
-          </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse d-lg-flex justify-content-lg-around p-0 m-0" id="navbarSupportedContent">
           <div class="bg-info"></div>
-
           <ul class="navbar-nav m-0 p-0">
-
             <li class="nav-item m-0 p-3">
               <a class="nav-link fw-semibold" aria-current="page" href="./index.html">Home </a>
             </li>
-             <li class="nav-item p-3 ps-lg-4">
+            <li class="nav-item p-3 ms-lg-4">
+              <a class="nav-link fw-semibold" href="./about-us.html">About Us</a>
+            </li>
+            <li class="nav-item p-3 ps-lg-4 nav-active">
               <a class="nav-link fw-semibold" href="./services.html">Services</a>
             </li>
 
@@ -90,28 +88,28 @@
                                 </li>
               </ul>
             </li> -->
-              <li class="nav-item p-3 ps-lg-4">
+
+            <li class="nav-item p-3 ps-lg-4">
               <a class="nav-link fw-semibold" href="./cost-estimator.html">Cost Estimator</a>
             </li>
+            <!-- <li class="nav-item ps-lg-4">
+              <a class="nav-link fw-semibold" href="./contact.html"><button
+                  class="px-3 py-1 border-0 rounded-2 bg-red-color text-white ">Free Site Visit</button></a>
+            </li> -->
 
-            <li class="nav-item p-3 ms-lg-4">
-              <a class="nav-link fw-semibold" href="./about-us.html">About Us</a>
-            </li>
-           
-
-          
           </ul>
 
           <div class="p-0 m-0">
             <a class="nav-link fw-semibold" href="./contact.html"><button
-                class="px-3 py-1 border-0 rounded-2 bg-red-color text-white fw-semibold">Book Free Site Visit</button>
-            </a>
+                class="px-3 py-1 border-0 rounded-2 bg-red-color text-white ">Free Site Visit</button></a>
+
           </div>
+
         </div>
       </div>
+
     </nav>
   </div>
-
 
   <!-- ✅ City Selection Modal -->
   <div class="modal fade" id="cityModal" tabindex="-1" aria-labelledby="cityModalLabel" aria-hidden="true"
@@ -119,13 +117,14 @@
     <div class="modal-dialog modal-dialog-centered modal-md">
       <div class="modal-content p-4">
         <div class="row g-3">
-
+          <!-- Left Info -->
           <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center text-center p-3">
             <h4 class="fw-bold">Select a City</h4>
             <p>WE BUILD YOUR 'DREAM HOME'<br>
               India's <b>NO.1 TECH</b> Powered Construction Company</p>
           </div>
 
+          <!-- Right Cities -->
           <div class="col-lg-6 d-flex flex-column justify-content-center">
             <div class="city-card mb-2" onclick="selectModalCity('Hyderabad')">
               <img src="https://img.icons8.com/emoji/96/india-emoji.png" alt="Hyderabad">
@@ -161,94 +160,153 @@
   </script>
 
 
-  <section class="pt-5">
-    <div class="container my-5 py-5">
 
-      <div class="row justify-content-center mt-0"> <!-- mt-0 makes it touch row 1 -->
-        <div class="col-lg-8 col-md-10 col-12">
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content text-white">
+      <!-- <h1>We are Global Manufacturing Leader</h1>
+      <p>
+        As a leading global manufacturing company, we pride ourselves in setting industry standards 
+        through our commitment to producing high-quality products and providing innovative solutions 
+        to cater to the diverse needs of our customers.
+      </p>
+      <a href="#contact" class="btn">Get in touch</a> -->
+    </div>
+  </section>
 
-          <div class="row align-items-center justify-content-center text-start p-0 m-0">
-            <div class="col-md-6">
-              <h1 class="fw-bold text-red-color headline-big lh-1 ps-4">AY INFRA</h1>
-              <h6 class="fw-semibold headline-small lh-1 ps-4">BUILDERS & DEVELOPERS</h6>
-            </div>
-            <div class="col-md-6">
-              <img src="./images/contact-us-img.png" alt="Contact Us" class="img-fluid d-block"
-                style="max-width:350px;">
-            </div>
-          </div>
+  <!-- SERVICES SECTION -->
+  <section class="container services ms-0" style="width: max-content;">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="fw-bold text-danger">RESIDENTIAL</h1>
+      </div>
+    </div>
+  </section>
 
-          <div class="card shadow-lg p-4 border-0">
-            <h3 class="text-center mb-4">Contact Us</h3>
-            <form>
-              <div class="d-flex justify-content-between">
-                <div class="mb-3">
-                  <input type="text" class="form-control" placeholder="Your Name" required>
-                </div>
-                <div class="mb-3">
-                  <input type="email" class="form-control" placeholder="Your Email" required>
-                </div>
-                <div class="mb-3">
-                  <input type="phone-no" class="form-control" placeholder="Phone Number" required>
-                </div>
-              </div>
+  <section class="py-5 m-0">
+    <div class="container p-0">
+
+      <div class="row g-4 align-items-center m-0 p-0">
+        <div class="col-lg-6 order-2 order-lg-1 m-0 p-0">
+          <!-- <p class="text-small-heading mb-2">WHY US</p> -->
+          <h2 class="section-title mb-3">Residential Construction - <br>Your Dream Home, Our Promise</h2>
+          <p>At AY Infra, we turn your dream home into reality with care, honesty, and attention to every detail. We
+            start by
+            understanding your needs and lifestyle, making sure the design fits your family perfectly. Every room,
+            corner, and
+            space is thoughtfully planned to be comfortable, functional, and beautiful.</p>
+          <p class="mb-4">We use trusted, high-quality materials and ensure careful construction so your home is strong,
+            safe, and
+            long-lasting. You stay involved at every stage with regular updates, while we handle all the work, making
+            the
+            process stress-free and smooth for you.</p>
+
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 text-center m-0 p-0">
+          <img src="./images/residential-2.png" alt="Worker Image" class="img-fluid">
+        </div>
+      </div>
+
+      <div class="row g-4 align-items-center m-0 p-0">
+        <div class="col-lg-6 text-center m-0 p-0">
+          <img src="./images/residential-1.png" alt="Worker Image" class="img-fluid">
+        </div>
+        <div class="col-lg-6 m-0 p-0">
+          <!-- <div class="d-flex align-items-center mb-2">
+          <span class="highlight-number me-3">25+</span>
+          <h4 class="fw-bold mb-0">Years of Industrial Experience</h4>
+        </div> -->
+          <p>
+            Your home is delivered on time, exactly as you imagined, ready for your family to move in and enjoy. Even
+            after
+            handover, we remain available for any guidance, ensuring you feel satisfied, confident, and proud of your
+            investment.
+          </p>
+          <p class="fw-bold">In short:</p>
+          <ul class="text-muted">
+            <li>Personalized design for your lifestyle</li>
+            <li>Safe, strong, and durable construction</li>
+            <li>Transparent and smooth process</li>
+            <li>Timely completion and client satisfaction</li>
+          </ul>
+          <p>At AY Infra, we don’t just build houses — we create homes where families live happily, comfortably, and
+            confidently.</p>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
 
 
-              <div class="mb-3">
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="mb-3">
-                <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
-              </div>
-              <div class="text-center">
-                <button type="submit" class="px-4 py-2 border-0 bg-red-color text-white rounded-3 fw-semibold">Send
-                  Message</button>
-              </div>
-            </form>
+
+
+
+
+
+  <section class="quality-section text-dark my-5">
+    <div class="quality-overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 col-md-10 col-12 ms-auto">
+          <div class="quality-content shadow">
+            <!-- <h2 class="fw-bold mb-3">Quality of service that <br> no one can match</h2> -->
+            <p class="text-muted">
+              We specialize in crafting beautiful and durable homes that reflect your lifestyle and aspirations. From planning and design to construction and finishing, we ensure every detail is handled with precision and care. Our team focuses on delivering functional layouts, premium materials, and exceptional workmanship to create living spaces that are both elegant and comfortable. Whether it’s a modern villa, apartment, or independent home, we turn your vision into reality with quality, transparency, and timely delivery at every stage.
+            </p>
           </div>
         </div>
       </div>
     </div>
-
   </section>
 
-  <div class="container py-5">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, adipisci veniam ducimus earum pariatur facilis
-      harum at eius. Facilis temporibus tempore dicta aliquam ducimus aperiam quis ab odio minima nobis?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sapiente accusantium cum, porro eveniet error
-      suscipit vitae assumenda minus adipisci, at quod exercitationem, ut sint natus! Nisi culpa quia nihil.
-    </p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, adipisci veniam ducimus earum pariatur facilis
-      harum at eius. Facilis temporibus tempore dicta aliquam ducimus aperiam quis ab odio minima nobis?
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sapiente accusantium cum, porro eveniet error
-      suscipit vitae assumenda minus adipisci, at quod exercitationem, ut sint natus! Nisi culpa quia nihil.
-    </p>
 
+  <!-- <section class="my-5 py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold pb-3 text-blue-color">Designs</h2>
+      <div class="row g-4 text-center">
 
+        <div class="col-12 col-lg-4">
+          <div class="card border-0 shadow-lg h-100">
 
-  </div>
+            <div class="card-body">
+              <h5 class="card-title fw-bold pb-3">Comfortable</h5>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati voluptate blanditiis in, sequi quos
+                odio ea enim iusto, ducimus.</p>
+            </div>
+            <img src="./images/sofa.png" class="" width="100%" alt="Image 1" style="max-height: 200px;">
+          </div>
+        </div>
 
+        <div class="col-12 col-lg-4">
+          <div class="card border-0 shadow-lg h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold pb-3">Great Quality</h5>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error amet facere iste deserunt odit quo
+                delectus perferendis quis.</p>
+            </div>
+            <img src="./images/table-1.png" class="" width="100%" alt="Image 2" style="max-height: 200px;">
 
-  <div class="container mb-5">
-    <div class="d-lg-flex">
-      <div>
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.4371457619586!2d78.41863677382794!3d17.342685604094005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9735c7db0de5%3A0xb616e0dac58b3a20!2sAY%20INFRA%20BUILDERS%20AND%20DEVELOPERS%20-%20construction%20%2C%20real%20estate%20%2C%20interior%20design!5e0!3m2!1sen!2sin!4v1755769734994!5m2!1sen!2sin"
-          width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+          </div>
+        </div>
 
-      <div class="ps-4">
-        <h4>Office Address</h4>
-        <p>Pillar no. 235, Inner Ring Rd, opposite Fish Building,<br> near NR convention, Rajendra nagar,<br> Hyderabad,
-          Telangana 500052</p>
-        <p></p>
+        <div class="col-12 col-lg-4">
+          <div class="card border-0 shadow-lg h-100">
+            <div class="card-body">
+              <h5 class="card-title fw-bold pb-3">Premium</h5>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nostrum sapiente aliquid tempora
+                dolore omnis assumenda.</p>
+            </div>
+            <img src="./images/bed.png" class="" width="100%" alt="Image 3" style="max-height: 200px;">
+
+          </div>
+        </div>
 
       </div>
     </div>
+  </section> -->
 
 
-  </div>
 
   <footer class="pt-5 bg-body-secondary">
     <div class="container">
@@ -273,7 +331,7 @@
         </div>
 
         <!-- Contact -->
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-4 col-md-6">
           <h5>Contact Info</h5>
           <p class="mb-1"><i class="fa fa-phone me-2 text-red-color"></i> +123 456 7890</p>
           <p class="mb-1"><i class="fa fa-envelope me-2 text-red-color"></i> info@example.com</p>
@@ -317,7 +375,6 @@
       </div>
     </div>
   </footer>
-
 
 </body>
 

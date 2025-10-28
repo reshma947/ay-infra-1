@@ -22,7 +22,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
   <style>
@@ -54,94 +54,93 @@
       }
     }
 
-/* ---------------------------- */
+    /* ---------------------------- */
 
-/* Circle Steps Strip */
-.steps-strip {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  position: relative;
-  gap: 0;
-}
+    /* Circle Steps Strip */
+    .steps-strip {
+      display: flex;
+      justify-content: center;
+      /* align-items: flex-start; */
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      position: relative;
+      gap: 0;
+    }
 
-.step-circle {
-  text-align: center;
-  flex: 0 0 auto;
-  /* min-width: 70px; */
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-  cursor: pointer;
-}
+    .step-circle {
+      /* text-align: center; */
+      flex: 0 0 auto;
+      /* min-width: 70px; */
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      cursor: pointer;
+    }
 
-.step-circle span {
-  width: 40px;
-  height: 40px;
-  background: #fff;
-  border: 2px solid #ccc;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  font-size: 18px;
-  transition: all 0.3s ease;
-}
+    .step-circle span {
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
 
-.step-circle p {
-  /* margin-top: 8px; */
-  font-size: 13px;
-  color: #333;
-  white-space: nowrap;
-}
+    .step-circle p {
+      /* margin-top: 8px; */
+      font-size: 13px;
+      color: #333;
+      white-space: nowrap;
+      text-align: center;
+    }
 
-.step-circle.active span {
-  background-color: #000;
-  color: #fff;
-  border-color: #000;
-}
+    .step-circle.active span {
+      background-color: #000;
+      color: #fff;
+      border-color: #000;
+    }
 
-.step-circle:hover span {
-  border-color: #000;
-}
+    .step-circle:hover span {
+      border-color: #000;
+    }
 
-/* Dotted line between circles */
-.step-line {
-  flex: 0 0 100px;
-  /* align-self: center; */
-  margin-top: 20px;
-  border-top: 2px dotted #999;
+    /* Dotted line between circles */
+    .step-line {
+      flex: 0 0 145px;
+      /* align-self: center; */
+      margin-top: 20px;
+      border-top: 2px dotted #999;
 
-}
+    }
 
-/* Content sections */
-.clip-content {
-  display: none;
-  /* padding-top: 1.5rem; */
-}
+    /* Content sections */
+    .clip-content {
+      display: none;
+      /* padding-top: 1.5rem; */
+    }
 
-.clip-content.active {
-  display: flex;
-}
+    .clip-content.active {
+      display: flex;
+    }
 
-.clip-content img {
-  max-width: 100%;
-  border-radius: 8px;
-}
+    .clip-content img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
 
-.steps-strip::-webkit-scrollbar {
-  display: none;
-}
+    .steps-strip::-webkit-scrollbar {
+      display: none;
+    }
 
-.steps-strip {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-   
+    .steps-strip {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
   </style>
 </head>
 
@@ -168,9 +167,9 @@
         <a class="navbar-brand ps-lg-5 p-0 m-0" href="./index.html">
           <img src="./images/ay-main-logo.png" width="200px" class="img-fluid" alt="Logo">
         </a>
-          <div class="m-0 p-4 ms-lg-2 d-flex align-items-center justify-content-center" style="background-color:#ffefef">
-            <span id="modalSelectedCity" class="fw-semibold" >Not Selected</span>
-          </div>
+        <div class="m-0 p-4 ms-lg-2 d-flex align-items-center justify-content-center" style="background-color:#ffefef">
+          <span id="modalSelectedCity" class="fw-semibold">Not Selected</span>
+        </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -183,39 +182,38 @@
             <li class="nav-item m-0 p-3 nav-active">
               <a class="nav-link fw-semibold" aria-current="page" href="./index.html">Home </a>
             </li>
-            <li class="nav-item p-3 ms-lg-4">
-              <a class="nav-link fw-semibold" href="./about-us.html">About Us</a>
-            </li>
-            <li class="nav-item p-3 ps-lg-4">
+            <!-- <li class="nav-item p-3 ps-lg-4">
               <a class="nav-link fw-semibold" href="./services.html">Services</a>
-            </li>
+            </li> -->
 
-            <!-- <li class="nav-item dropdown ps-lg-4">
+            <li class="nav-item dropdown ps-lg-4 p-3">
               <a class="nav-link dropdown-toggle fw-semibold" href="#" id="servicesDropdown" role="button"
                 data-bs-toggle="dropdown" aria-expanded="false">
                 Services
               </a>
               <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
                 <li><a class="dropdown-item" id="servicesDropdown-menu"
-                                        href="./data-management.html">Data Management Service</a></li>
+                                        href="./residential.html">Residential Construction</a></li>
                                 <li><a class="dropdown-item" id="servicesDropdown-menu"
-                                        href="./sap-implementation-services.html">SAP Implementation Service</a></li>
+                                        href="./commercial.html">Commercial Construction</a></li>
                                 <li><a class="dropdown-item" id="servicesDropdown-menu"
-                                        href="./application-security-services.html">Application Security Service</a>
+                                        href="./services.html">Interior Design</a>
                                 </li>
                                 <li><a class="dropdown-item" id="servicesDropdown-menu"
-                                        href="./iam-and-security-services.html">IAM and Security Service</a></li>
-                                <li><a class="dropdown-item" id="servicesDropdown-menu" href="./grc-solutions.html">GRC
-                                        Solution by Elevate IT</a></li>
-                                <li><a class="dropdown-item" id="servicesDropdown-menu"
-                                        href="./sap-core-solutions.html">SAP Functional and Technical Consulting</a>
-                                </li>
+                                        href="./renovation.html">Renovation & Remodeling </a></li>
+                              
               </ul>
-            </li> -->
-
+            </li>
             <li class="nav-item p-3 ps-lg-4">
               <a class="nav-link fw-semibold" href="./cost-estimator.html">Cost Estimator</a>
             </li>
+
+            <li class="nav-item p-3 ms-lg-4">
+              <a class="nav-link fw-semibold" href="./about-us.html">About Us</a>
+            </li>
+
+
+
           </ul>
 
           <div class="p-0 m-0">
@@ -276,71 +274,71 @@
   </script>
 
 
-<div class="container-fluid position-relative pt-5 mt-5 hero-section">
+  <div class="container-fluid position-relative pt-5 mt-5 hero-section">
 
-  <!-- ✅ Floating Icons -->
-  <div class="floating-icon icon-1"><i class="bi bi-hammer text-red-color"></i></div>
-  <div class="floating-icon icon-2"><i class="bi bi-house-door-fill text-red-color"></i></div>
-  <div class="floating-icon icon-3"><i class="bi bi-star-fill text-red-color"></i></div>
-  <!-- <div class="floating-icon icon-4"><i class="bi bi-brush-fill text-primary"></i></div> -->
-  <div class="floating-icon icon-5"><i class="bi bi-gear-fill text-red-color"></i></div>
+    <!-- ✅ Floating Icons -->
+    <div class="floating-icon icon-1"><i class="bi bi-hammer text-red-color"></i></div>
+    <div class="floating-icon icon-2"><i class="bi bi-house-door-fill text-red-color"></i></div>
+    <div class="floating-icon icon-3"><i class="bi bi-star-fill text-red-color"></i></div>
+    <!-- <div class="floating-icon icon-4"><i class="bi bi-brush-fill text-primary"></i></div> -->
+    <div class="floating-icon icon-5"><i class="bi bi-gear-fill text-red-color"></i></div>
 
-  <div class="position-absolute top-0 start-0 w-100 h-100 bg-img z-n1"></div>
+    <div class="position-absolute top-0 start-0 w-100 h-100 bg-img z-n1"></div>
 
-  <div class="">
-    <div class="container-fluid p-0 m-0">
-      <div class="row g-0 p-0 m-0 d-flex justify-content-around">
+    <div class="">
+      <div class="container-fluid p-0 m-0">
+        <div class="row g-0 p-0 m-0 d-flex justify-content-around">
 
-        <!-- ✅ Left Content -->
-        <div class="col-lg-5 d-flex flex-column justify-content-center px-4">
-          <h1 class="fw-bold text-black">
-            A <span class="text-red-color">HOME</span>
-            THAT MATCHES <br>YOUR <span class="text-red-color">DREAMS</span><br> CRAFTED WITH CARE
-          </h1>
-          <h6 class="fw-semibold text-black pt-3">
-            From your family home to your office or luxury interiors – we deliver turnkey solutions with clarity,
-            trust, and unmatched professionalism.
-          </h6>
-          <div>
-            <button class="fw-semibold px-4 py-2 mt-4 bg-red-color text-white border-0 rounded-2"
-              data-aos="fade-right" data-aos-offset="100">
-              Packages Start From
-            </button>
+          <!-- ✅ Left Content -->
+          <div class="col-lg-5 d-flex flex-column justify-content-center px-4">
+            <h1 class="fw-bold text-black">
+              A <span class="text-gradient-color">HOME</span>
+              THAT MATCHES <br>YOUR <span class="text-red-color">DREAMS</span><br> CRAFTED WITH CARE
+            </h1>
+            <h6 class="fw-semibold text-black pt-3">
+              From your family home to your office or luxury interiors – we deliver turnkey solutions with clarity,
+              trust, and unmatched professionalism.
+            </h6>
+            <div>
+              <button class="fw-semibold px-4 py-2 mt-4 bg-red-color text-white border-0 rounded-2"
+                data-aos="fade-right" data-aos-offset="100">
+                Packages Start From
+              </button>
+            </div>
+
+            <!-- ✅ Vertical Form Box -->
+            <div class="form-box">
+              <form>
+                <div class="d-flex justify-content-between">
+                  <input type="text" class="form-control me-3" placeholder="Your Name" required>
+                  <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <input type="text" class="form-control me-3" placeholder="Phone Number" required>
+                  <textarea class="form-control" rows="1" placeholder="Your Message"></textarea>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="bg-red-color text-white rounded-2 border-0">Send Message</button>
+                </div>
+              </form>
+            </div>
           </div>
 
-          <!-- ✅ Vertical Form Box -->
-          <div class="form-box">
-            <form>
-              <div class="d-flex justify-content-between">
-                <input type="text" class="form-control me-3" placeholder="Your Name" required>
-                <input type="email" class="form-control" placeholder="Your Email" required>
-              </div>
-              <div class="d-flex justify-content-between">
-                <input type="text" class="form-control me-3" placeholder="Phone Number" required>
-                <textarea class="form-control" rows="1" placeholder="Your Message"></textarea>
-              </div>
-              <div class="text-center">
-                <button type="submit" class="bg-red-color text-white rounded-2 border-0">Send Message</button>
-              </div>
-            </form>
+          <!-- ✅ Right Hero Image -->
+          <div class="col-lg-4 position-relative d-none d-lg-block banner-img-box p-0 m-0">
+            <img src="./images/banner-man-1.png" alt="Hero Image" data-aos="fade-up" data-aos-duration="3000"
+              class="position-absolute bottom-0 end-0 w-100 h-100 object-fit-cover" />
           </div>
-        </div>
 
-        <!-- ✅ Right Hero Image -->
-        <div class="col-lg-4 position-relative d-none d-lg-block banner-img-box p-0 m-0">
-          <img src="./images/banner-man-1.png" alt="Hero Image" data-aos="fade-up" data-aos-duration="3000"
-            class="position-absolute bottom-0 end-0 w-100 h-100 object-fit-cover" />
-        </div>
+          <!-- ✅ Mobile Image -->
+          <div class="col-12 d-block d-lg-none px-3 mt-4">
+            <img src="./images/banner-man-1.png" alt="Hero Image" class="img-fluid w-100 rounded" />
+          </div>
 
-        <!-- ✅ Mobile Image -->
-        <div class="col-12 d-block d-lg-none px-3 mt-4">
-          <img src="./images/banner-man-1.png" alt="Hero Image" class="img-fluid w-100 rounded" />
         </div>
-
       </div>
     </div>
   </div>
-</div>
 
 
   <section class="bg-body-tertiary pb-3">
@@ -678,7 +676,7 @@
   <div class="container py-5">
     <h2 class="fw-bold text-center mb-4">PACKAGE TABLE</h2>
     <div class="row g-0" style="box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);">
-      <!-- Left side - Features -->
+
       <div class="col-md-2 bg-white shadow-sm">
         <div class="feature-list list-group">
           <div class="feature-item"></div>
@@ -699,7 +697,6 @@
         </div>
       </div>
 
-      <!-- Right side - Pricing Table -->
       <div class="col-md-10 bg-white shadow-sm">
         <div class="table-responsive p-2">
           <table class="pricing-table w-100">
@@ -713,7 +710,7 @@
               </tr>
             </thead>
             <tbody id="pricingBody">
-              <!-- Dynamic content here -->
+              
             </tbody>
           </table>
         </div>
@@ -730,15 +727,15 @@
   <script>
     const pricingData = {
       design: [
-        ['2D Floor Plan', '✓', '8GB', '20GB', '50GB'],
-        ['Structural Designing', '2GB', '5GB', '10GB', '20GB'],
-        ['Basic Elevation Design', '1GB', '3GB', '5GB', '10GB'],
-        ['Vaastu Consultation', '1GB', '2GB', '5GB', '10GB'],
-        ['3D Elevation', '1GB', '2GB', '5GB', '10GB'],
-        ['Electrical Drawing', '1GB', '2GB', '5GB', '10GB'],
-        ['Plumbing Drawing', '1GB', '2GB', '5GB', '10GB'],
-        ['Furniture Plan', '1GB', '2GB', '5GB', '10GB'],
-        ['360” Walkthrough', '1GB', '2GB', '5GB', '10GB']
+        ['2D Floor Plan', '✓', '✓', '✓', '✓'],
+        ['Structural Designing', '✓', '✓', '✓', '✓'],
+        ['Basic Elevation Design', '✓', '✓', '✓', '✓'],
+        ['Vaastu Consultation', 'X', '✓', '✓', '✓'],
+        ['3D Elevation', 'X', '✓', '✓', '✓'],
+        ['Electrical Drawing', 'X', 'X', '✓', '✓'],
+        ['Plumbing Drawing', 'X', 'X', '✓', '✓'],
+        ['Furniture Plan', 'X', 'X', '✓', '✓'],
+        ['360” Walkthrough', 'X', 'X', 'X', '✓']
       ],
       structure: [
         ['Cement', 'Priya Cement Or Nagarjuna Cement', 'Bharati Or Birla A-1', 'Ultra Tech Or Ramco Super Crete', 'Ultra Tech'],
@@ -764,52 +761,48 @@
         ['Bathroom Doors', 'Water Proof Flush Doors up to Rs.5000/- including, Frame & Door', 'Water Proof Flush Doors up to Rs.7000/- including Frame & Door', 'Water Proof Flush Doors up to Rs.9000/- including Frame & Door', 'Water Proof Flush Doors up to Rs.15000/- including Frame & Door',]
       ],
       doors: [
-        ['Social Sharing', 'No', 'No', 'Yes', 'Yes'],
-        ['Bookmark Integrations', '0', '2', '5', '10'],
-        ['Analytics', 'Basic', 'Basic', 'Advanced', 'Advanced'],
-        ['Auto Sync', 'No', 'No', 'Yes', 'Yes']
+        ['Main Door', 'African Teak Frame of dimension 7’x3’6”,38mm thickness Flushdoor worth Rs.20000/- with fixtures', 'African Teak Frame of dimension 7’x3’6”,38mm thickness worth Rs.25000/- with fixtures', 'African Teak Frame of dimension 7’x3’6”,38mm thickness worth Rs.30000/- with fixtures', 'IndianTeak Frame of dimension 7’x4’,38mm thickness worth Rs.65000/- with fixtures'],
+        ['Internal Door', 'Flush Door with Laminates along with Sal Wood frame of 4inch by 3inch Worth Rs.7000/- with fixtures.', 'Flush Door with Laminates along with Sal Wood frame of 4inch by 3inch Worth Rs.9000/- with fixtures.', 'Flush Door with Laminates along with Sal Wood frame of 5inch by 4inch Worth Rs.11000/- with fixtures.', 'Veneer Flush Door with Laminates along with Sal Wood frame of 5inch by 4inch Worth Rs.25000/- with fixtures.'],
+        ['Pooja Room Door', 'NIL', 'African Teak Doors with African Teak Frame of 4 Inch by 3 Inch Worth Rs.12000/- withfixtures.', 'Indian Teak Doors with Indian Teak Frame of 4 Inch by 3 Inch Worth Rs.15,000/- with fixtures.', 'Indian Teak Doors with Indian Teak Frame of 4 Inch by 3 Inch Worth Rs.25,000/- with fixtures.'],
+        ['Windows', 'UPVC 2 Track up to Rs.30/Sqft', 'UPVC 3 Track up to Rs.400/Sqft (Glass& Mesh)', 'UPVC 3 Track up to Rs.500/Sqft (Glass, Grills & Mesh)', 'UPVC 3 Track up to Rs.600/Sqft (Glass, Grills & Mesh)'],
+        ['Bathroom Doors', 'Standard Flush Doors – Stylish, Strong & Elegant', 'Standard Flush Doors – Stylish, Strong & Elegant', 'Standard Flush Doors – Stylish, Strong & Elegant', 'Standard Flush Doors – Stylish, Strong & Elegant']
       ],
       painting: [
-        ['Tracking per Month', '50', '100', '500', '1000'],
-        ['Real-time Reports', 'No', 'No', 'Yes', 'Yes'],
-        ['API Access', 'No', 'No', 'Yes', 'Yes'],
-        ['User Segments', '1', '3', '10', 'Unlimited']
+        ['Interior', 'JK Wall Putty with tractor Emulsion', 'Birla Putty with Asian Premium Emulsion', 'Birla Putty with Asian Royal Emulsion', 'Birla Putty with Asian Royal Emulsion'],
+        ['Exterior', 'Asian Premier with Ace Emulsion', 'Asian Premier with weather Proof Paint', 'Apex Ultima Weather Proof Paint', 'Asian Apex advanced dust proof']
       ],
       electrical: [
-        ['Cloud Storage', '4GB', '8GB', '20GB', '50GB'],
-        ['Daily Backup', 'No', 'No', 'Yes', 'Yes'],
-        ['Recovery', 'Manual', 'Manual', 'Auto', 'Auto'],
-        ['Access Points', '1', '3', '5', '10']
+        ['Switches & Sockets', 'Finecab or Polycab', 'Finolex or Polycab', 'Havells', 'Havells'],
+        ['Switches', 'Anchor Penta', 'Gold Metal Or Anchor Roma', 'Legrand or Philips Or Havells', 'Legrand or Philips Or Havells']
       ],
       flooring: [
-        ['Cloud Storage', '4GB', '8GB', '20GB', '50GB'],
-        ['Daily Backup', 'No', 'No', 'Yes', 'Yes'],
-        ['Recovery', 'Manual', 'Manual', 'Auto', 'Auto'],
-        ['Access Points', '1', '3', '5', '10']
+        ['Living Dinning Flooring', 'Tiles up to Rs.40/sqft', 'Tiles up to Rs.85/sqft', 'Tiles up to Rs.120/sqft (Granite / Indian Marble Floor Opt.)', 'Italian Marble Floor up to Rs.300/-'],
+        ['Rooms Kitchen Flooring', 'Tiles up to Rs.40/sqft', 'Tiles up to Rs.85/sqft', 'Tiles up to Rs.120/sqft (Granite / Indian Marble Floor Opt.)', 'Italian Marble Floor up to Rs.300/-'],
+        ['Balcony Open Area Flooring', 'Tiles up to Rs.40/sqft', 'Tiles up to Rs.85/sqft', 'Tiles up to Rs.80/sqft', 'Granite up to Rs.120/sqft'],
+        ['Staircase Flooring', 'Sadarahalli up to Rs.70/sqft', 'Sadarahalli up to Rs.90/sqft', 'Granite or Marble up to Rs.110/sqft', 'Granite up to Rs.130/sqft'],
+        ['Parking Tiles', 'Anti-Skid tiles up to Rs.35/sqft', 'Anti-Skid tiles up to Rs.45/sqft', 'Anti-Skid tiles up to Rs.55/sqft', 'Anti-Skid tiles up to Rs.65/sqft'],
+        ['Ceramic Wall Tiles Height', '4 feet', '5 feet', '6 feet', '7 feet']
       ],
       inclusive: [
-        ['Cloud Storage', '4GB', '8GB', '20GB', '50GB'],
-        ['Daily Backup', 'No', 'No', 'Yes', 'Yes'],
-        ['Recovery', 'Manual', 'Manual', 'Auto', 'Auto'],
-        ['Access Points', '1', '3', '5', '10']
+        ['Overhead Tank', '1000 Ltr Sintex (2 Num)', '1500 Ltr Sintex (2 Num)', '2000 Ltr Sintex (2 Num)', '2000 Ltr Sintex (2 Num)'],
+        ['Under Ground Sump', '6000 Ltr (RCC)', '7500 Ltr (RCC)', '10000 Ltr (RCC)', '10000 Ltr (RCC)'],
+        ['Staircase', 'SS Railing', 'SS Railing', 'SS Railing with Glass', 'SS Railing with Glass'],
+        ['Parapet Wall', '3.6 High', '3.6 High', '3.6 High', '3.6 High'],
+        ['False Ceiling', 'X', 'X', 'Standard in Living, Dining & 2 Bedrooms', 'Parking, Living, hall Dining& Bedrooms']
       ],
       home: [
-        ['Cloud Storage', '4GB', '8GB', '20GB', '50GB'],
-        ['Daily Backup', 'No', 'No', 'Yes', 'Yes'],
-        ['Recovery', 'Manual', 'Manual', 'Auto', 'Auto'],
-        ['Access Points', '1', '3', '5', '10']
+        ['Touch sensor boards', 'NIL', 'NIL', 'NIL', '5For Living and bedrooms Total No. of Points: XXX'],
+        ['Camera', 'NIL', 'NIL', 'CCTV Outdoor (4 Cameras)', 'CCTV Outdoor (4 Cameras)']
+
       ],
       sustainability: [
-        ['Cloud Storage', '4GB', '8GB', '20GB', '50GB'],
-        ['Daily Backup', 'No', 'No', 'Yes', 'Yes'],
-        ['Recovery', 'Manual', 'Manual', 'Auto', 'Auto'],
-        ['Access Points', '1', '3', '5', '10']
+        ['Rainwater Harvesting Pit', '✓', '✓', '✓', '✓']
+
       ],
       exclusive: [
-        ['Cloud Storage', '4GB', '8GB', '20GB', '50GB'],
-        ['Daily Backup', 'No', 'No', 'Yes', 'Yes'],
-        ['Recovery', 'Manual', 'Manual', 'Auto', 'Auto'],
-        ['Access Points', '1', '3', '5', '10']
+        ['Compound Wall with MS Gate', 'Extra, as per Plot Size', 'Extra, as per Plot Size', 'Extra, as per Plot Size', 'Extra, as per Plot Size'],
+        ['Municipal Plan, Electricity Board Connections & Water Connection Charges', 'Applicable at Actuals', 'Applicable at Actuals', 'Applicable at Actuals', 'Applicable at Actuals'],
+        ['Extra Sump Capacity', 'As per Market Rates/sqft', 'As per Market Rates/sqft', 'As per Market Rates/sqft', 'As per Market Rates/sqft']
       ]
     };
 
@@ -843,7 +836,8 @@
   <div class="container text-center">
     <h2 class="text-center fw-bold pb-3">COMPARE PACKAGE</h2>
     <div class="form-check form-switch d-inline-flex align-items-center gap-2 large-switch">
-      <input class="form-check-input custom-switch red" type="checkbox" role="switch" id="toggleComparisonSection" style="height: 52px;width: 152px;">
+      <input class="form-check-input custom-switch red" type="checkbox" role="switch" id="toggleComparisonSection"
+        style="height: 52px;width: 152px;">
       <label class="form-check-label fw-semibold" for="toggleComparisonSection"></label>
     </div>
   </div>
@@ -1136,118 +1130,156 @@
 
 
 
-    <div class="container pb-5">
+  <div class="container pb-5">
 
-  <!-- Circle Step Strip -->
-  <div class="steps-strip">
-    <div class="step-circle active" data-index="1">
-      <span>1</span>
-      <p>Meet</p>
+    <!-- Circle Step Strip -->
+    <div class="steps-strip">
+      <!-- <div> -->
+        <div class="step-circle active" data-index="1">
+          <span>1</span>
+            <!-- <p>Free <br>Consultation</p> -->
+        </div>
+      
+      <!-- </div> -->
+      <div class="step-line"></div>
+
+      <!-- <div> -->
+        <div class="step-circle" data-index="2">
+          <span>2</span>
+           <!-- <p>Expert<br>Guidance</p> -->
+        </div>
+       
+      <!-- </div> -->
+
+
+      <div class="step-line"></div>
+
+      <div class="step-circle" data-index="3">
+        <span>3</span>
+        <!-- <p>Approve <br>Design & Quotation</p> -->
+      </div>
+      <div class="step-line"></div>
+
+      <div class="step-circle" data-index="4">
+        <span>4</span>
+        <!-- <p>We <br>Execute It</p> -->
+      </div>
+      <div class="step-line"></div>
+
+      <div class="step-circle" data-index="5">
+        <span>5</span>
+        <!-- <p>Track <br>Your Progress</p> -->
+      </div>
+
+      <div class="step-line"></div>
+
+      <div class="step-circle" data-index="6">
+        <span>6</span>
+        <!-- <p>Handover <br>& Move-In</p> -->
+      </div>
+
     </div>
-    <div class="step-line"></div>
 
-    <div class="step-circle" data-index="2">
-      <span>2</span>
-      <p>Share</p>
-    </div>
-    <div class="step-line"></div>
-
-    <div class="step-circle" data-index="3">
-      <span>3</span>
-      <p>Plan</p>
-    </div>
-    <div class="step-line"></div>
-
-    <div class="step-circle" data-index="4">
-      <span>4</span>
-      <p>Quote</p>
-    </div>
-    <div class="step-line"></div>
-
-    <div class="step-circle" data-index="5">
-      <span>5</span>
-      <p>Approvals</p>
+    <div class="d-flex justify-content-around align-items-center mt-3">
+      <p>Free Consultation</p>
+      <p>Expert Guidance</p>
+      <p>Approve Design & <br>Quotation</p>
+      <p>We Execute It</p>
+      <p>Track Your Progress</p>
+      <p>Handover & <br>Move-In</p>
     </div>
 
-  </div>
-
-  <!-- Content Sections -->
-  <div class="clip-content row g-4 active" id="content-1">
-    <div class="d-flex justify-content-center align-items-center text-center">
-      <div class="col-md-5">
-        <img src="./images/how-works-img-1.png" alt="Image 1">
-        <h4 class="p-0">Meet</h4>
-        <p class="p-0 m-0">We understand your vision, lifestyle, and requirements.</p>
+    <!-- Content Sections -->
+    <div class="clip-content row g-4 active" id="content-1">
+      <div class="d-flex justify-content-center align-items-center text-center">
+        <div class="col-md-5">
+          <img src="./images/how-works-img-1.png" alt="Image 1">
+          <h4 class="p-0">Free Consultation</h4>
+          <p class="p-0 m-0">We study your site, space needs, and budget to create a clear project roadmap.</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="clip-content row" id="content-2">
-    <div class="d-flex justify-content-center align-items-center text-center">
-      <div class="col-md-5">
-        <img src="./images/how-works-img-2.png" alt="Image 2">
-        <h4 class="p-0">Share</h4>
-        <p class="p-0 m-0">You tell us your ideas and preferences; we clarify every detail.</p>
+    <div class="clip-content row" id="content-2">
+      <div class="d-flex justify-content-center align-items-center text-center">
+        <div class="col-md-5">
+          <img src="./images/how-works-img-2.png" alt="Image 2">
+          <h4 class="p-0">Expert Guidance</h4>
+          <p class="p-0 m-0">Our architects and engineers guide you on design, structure, materials, and cost
+            efficiency.</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="clip-content row" id="content-3">
-    <div class="d-flex justify-content-center align-items-center text-center">
-      <div class="col-md-5">
-        <img src="./images/how-works-img-3.png" alt="Image 3">
-        <h4 class="p-0">Plan</h4>
-        <p class="p-0 m-0">Custom designs and project plans combining style and functionality.</p>
+    <div class="clip-content row" id="content-3">
+      <div class="d-flex justify-content-center align-items-center text-center">
+        <div class="col-md-5">
+          <img src="./images/how-works-img-3.png" alt="Image 3">
+          <h4 class="p-0">Approve Design & Quotation</h4>
+          <p class="p-0 m-0">You approve the 2D/3D design and get a fixed transparent quote — no hidden costs, no
+            surprises.</p>
+        </div>
       </div>
     </div>
-  </div>
 
     <div class="clip-content row" id="content-4">
       <div class="d-flex justify-content-center align-items-center text-center">
         <div class="col-md-5">
           <img src="./images/how-works-img-4.png" alt="Image 1">
-          <h4 class="p-0">Quote</h4>
-          <p class="p-0 m-0">Transparent quotation with milestone approvals — no hidden costs.</p>
+          <h4 class="p-0">We Execute It</h4>
+          <p class="p-0 m-0">From excavation to finishing, our team manages construction, quality control, and
+            supervision.</p>
         </div>
 
       </div>
     </div>
 
-        <div class="clip-content row" id="content-5">
+    <div class="clip-content row" id="content-5">
       <div class="d-flex justify-content-center align-items-center text-center">
         <div class="col-md-5">
           <img src="./images/how-works-img-5.png" alt="Image 1">
-          <h4 class="p-0">Approvals</h4>
-          <p class="p-0 m-0">We handle permissions, legal requirements, and financing guidance.</p>
+          <h4 class="p-0">Track Your Progress</h4>
+          <p class="p-0 m-0">Monitor real-time site updates, stage reports, and photos through digital tracking.</p>
         </div>
 
       </div>
     </div>
 
-  <!-- Repeat for content-4 ... content-8 -->
+    <div class="clip-content row" id="content-6">
+      <div class="d-flex justify-content-center align-items-center text-center">
+        <div class="col-md-5">
+          <img src="./images/how-works-img-5.png" alt="Image 1">
+          <h4 class="p-0">Handover & Move-In</h4>
+          <p class="p-0 m-0">Your dream project is ready — beautifully built and finished to perfection on time.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Repeat for content-4 ... content-8 -->
 
 
 
-</div>
+  </div>
 
   <script>
-  const circles = document.querySelectorAll('.step-circle');
-  const contents = document.querySelectorAll('.clip-content');
+    const circles = document.querySelectorAll('.step-circle');
+    const contents = document.querySelectorAll('.clip-content');
 
-  circles.forEach(circle => {
-    circle.addEventListener('click', () => {
-      const index = circle.getAttribute('data-index');
+    circles.forEach(circle => {
+      circle.addEventListener('click', () => {
+        const index = circle.getAttribute('data-index');
 
-      // active state for circle
-      circles.forEach(c => c.classList.remove('active'));
-      circle.classList.add('active');
+        // active state for circle
+        circles.forEach(c => c.classList.remove('active'));
+        circle.classList.add('active');
 
-      // show corresponding content
-      contents.forEach(content => content.classList.remove('active'));
-      document.getElementById(`content-${index}`).classList.add('active');
+        // show corresponding content
+        contents.forEach(content => content.classList.remove('active'));
+        document.getElementById(`content-${index}`).classList.add('active');
+      });
     });
-  });
-</script>
+  </script>
 
 
   <!-- 
@@ -1463,111 +1495,111 @@
   </div>
 
 
-<section class="projects-section py-5 bg-body-tertiary">
-  <div class="container-fluid">
-    <div class="row mb-5">
-      <!-- <div class="col text-center">
+  <section class="projects-section py-5 bg-body-tertiary">
+    <div class="container-fluid">
+      <div class="row mb-5">
+        <!-- <div class="col text-center">
         <h2 class="fw-bold">Projects</h2>
       </div> -->
-      <div class="pricing-project-header text-center" data-aos="fade-up">
+        <div class="pricing-project-header text-center" data-aos="fade-up">
           <div class="bg-project-text-outline">PROJECTS</div>
           <h2 class="main-project-title">PROJECTS</h2>
         </div>
 
-    </div>
+      </div>
 
-    <div class="swiper projectSwiper">
-      <div class="swiper-wrapper">
-        <!-- CARD 1 -->
-        <div class="swiper-slide">
-          <div class="project-card">
-            <img src="./images/building-img-1.jpg" alt="Project 1" class="project-img">
-            <div class="project-info">
-              <h6>Urban Residential</h6>
-              <p>Delivered in just 6 months with modern design.</p>
+      <div class="swiper projectSwiper">
+        <div class="swiper-wrapper">
+          <!-- CARD 1 -->
+          <div class="swiper-slide">
+            <div class="project-card">
+              <img src="./images/building-img-1.jpg" alt="Project 1" class="project-img">
+              <div class="project-info">
+                <h6>Urban Residential</h6>
+                <p>Delivered in just 6 months with modern design.</p>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- CARD 2 -->
-        <div class="swiper-slide">
-          <div class="project-card">
-            <img src="./images/building-img-2.jpg" alt="Project 2" class="project-img">
-            <div class="project-info">
-              <h6>Commercial Tower</h6>
-              <p>Smart interiors in metro city skyline.</p>
+          <!-- CARD 2 -->
+          <div class="swiper-slide">
+            <div class="project-card">
+              <img src="./images/building-img-2.jpg" alt="Project 2" class="project-img">
+              <div class="project-info">
+                <h6>Commercial Tower</h6>
+                <p>Smart interiors in metro city skyline.</p>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- CARD 3 -->
-        <div class="swiper-slide">
-          <div class="project-card">
-            <img src="./images/building-img-3.jpg" alt="Project 3" class="project-img">
-            <div class="project-info">
-              <h6>Modern Villa</h6>
-              <p>Green roofing and solar integration.</p>
+          <!-- CARD 3 -->
+          <div class="swiper-slide">
+            <div class="project-card">
+              <img src="./images/building-img-3.jpg" alt="Project 3" class="project-img">
+              <div class="project-info">
+                <h6>Modern Villa</h6>
+                <p>Green roofing and solar integration.</p>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- CARD 4 -->
-        <div class="swiper-slide">
-          <div class="project-card">
-            <img src="./images/building-img-4.jpg" alt="Project 4" class="project-img">
-            <div class="project-info">
-              <h6>Innovation Hub</h6>
-              <p>Office space with cutting-edge features.</p>
+          <!-- CARD 4 -->
+          <div class="swiper-slide">
+            <div class="project-card">
+              <img src="./images/building-img-4.jpg" alt="Project 4" class="project-img">
+              <div class="project-info">
+                <h6>Innovation Hub</h6>
+                <p>Office space with cutting-edge features.</p>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- CARD 5 (duplicate for looping) -->
-        <div class="swiper-slide">
-          <div class="project-card">
-            <img src="./images/building-img-5.jpg" alt="Project 5" class="project-img">
-            <div class="project-info">
-              <h6>Smart Plaza</h6>
-              <p>Retail plaza with rooftop gardens.</p>
+          <!-- CARD 5 (duplicate for looping) -->
+          <div class="swiper-slide">
+            <div class="project-card">
+              <img src="./images/building-img-5.jpg" alt="Project 5" class="project-img">
+              <div class="project-info">
+                <h6>Smart Plaza</h6>
+                <p>Retail plaza with rooftop gardens.</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-  const swiper = new Swiper(".projectSwiper", {
-    slidesPerView: 4,
-    spaceBetween: 20,
-    loop: true,
-    speed: 2500,
-    autoplay: {
-      delay: 0,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true, // ✅ stops on hover
-    },
-    freeMode: {
-      enabled: true,
-      momentum: false,
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1.2,
-      },
-      576: {
-        slidesPerView: 2,
-      },
-      768: {
-        slidesPerView: 3,
-      },
-      992: {
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const swiper = new Swiper(".projectSwiper", {
         slidesPerView: 4,
-      },
-    },
-  });
-});
+        spaceBetween: 20,
+        loop: true,
+        speed: 2500,
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true, // ✅ stops on hover
+        },
+        freeMode: {
+          enabled: true,
+          momentum: false,
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1.2,
+          },
+          576: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          992: {
+            slidesPerView: 4,
+          },
+        },
+      });
+    });
 
-</script>
+  </script>
 
 
 
@@ -1943,109 +1975,113 @@
     </div>
   </section>
 
-<section class="py-5 bg-light my-5">
-   <h2 class="text-center mb-5 fw-bold" data-aos="fade-up">Our Customer Reviews</h2>
-  <div class="container pt-3">
+  <section class="py-5 bg-light my-5">
+    <h2 class="text-center mb-5 fw-bold" data-aos="fade-up">Our Customer Reviews</h2>
+    <div class="container pt-3">
 
-    <div class="testimonial-container" id="testimonialWrapper">
+      <div class="testimonial-container" id="testimonialWrapper">
 
-      <!-- Card 1 -->
-      <div class="card testimonial-card left">
-        <div class="image-wrapper">
-          <img src="./images/test-img-1.png" alt="">
-        </div>
-        <div class="card-body">
-          <h5 class="fw-bold">Excellent Work!</h5>
-          <p class="text-muted">“I needed a few small repairs done around the house, and [Your Company Name] was fantastic!”</p>
-          <div class="d-flex align-items-center justify-content-center mt-3">
-            <!-- <img src="https://i.pravatar.cc/40" class="profile-img me-2" alt=""> -->
-            <div>
-              <h6 class="mb-0">John Daver</h6>
-              <div class="text-warning small">★★★★★</div>
+        <!-- Card 1 -->
+        <div class="card testimonial-card left">
+          <div class="image-wrapper">
+            <img src="./images/test-img-1.png" alt="">
+          </div>
+          <div class="card-body">
+            <h5 class="fw-bold">Excellent Work!</h5>
+            <p class="text-muted">“I needed a few small repairs done around the house, and [Your Company Name] was
+              fantastic!”</p>
+            <div class="d-flex align-items-center justify-content-center mt-3">
+              <!-- <img src="https://i.pravatar.cc/40" class="profile-img me-2" alt=""> -->
+              <div>
+                <h6 class="mb-0">John Daver</h6>
+                <div class="text-warning small">★★★★★</div>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Card 2 -->
+        <div class="card testimonial-card center">
+          <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="">
+          </div>
+          <div class="card-body">
+            <h5 class="fw-bold">Excellent Work!</h5>
+            <p class="text-muted">“The team was knowledgeable, courteous, and completed the job on time and within
+              budget.”</p>
+            <div class="d-flex align-items-center justify-content-center mt-3">
+              <!-- <img src="https://i.pravatar.cc/41" class="profile-img me-2" alt=""> -->
+              <div>
+                <h6 class="mb-0">John Daver</h6>
+                <div class="text-warning small">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card testimonial-card right">
+          <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=800&q=80"
+              alt="">
+          </div>
+          <div class="card-body">
+            <h5 class="fw-bold">Excellent Work!</h5>
+            <p class="text-muted">“Every time, they've done a fantastic job. It's great to have a handyman I can trust.”
+            </p>
+            <div class="d-flex align-items-center justify-content-center mt-3">
+              <!-- <img src="https://i.pravatar.cc/42" class="profile-img me-2" alt=""> -->
+              <div>
+                <h6 class="mb-0">John Daver</h6>
+                <div class="text-warning small">★★★★★</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Card 2 -->
-      <div class="card testimonial-card center">
-        <div class="image-wrapper">
-          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="">
-        </div>
-        <div class="card-body">
-          <h5 class="fw-bold">Excellent Work!</h5>
-          <p class="text-muted">“The team was knowledgeable, courteous, and completed the job on time and within budget.”</p>
-          <div class="d-flex align-items-center justify-content-center mt-3">
-            <!-- <img src="https://i.pravatar.cc/41" class="profile-img me-2" alt=""> -->
-            <div>
-              <h6 class="mb-0">John Daver</h6>
-              <div class="text-warning small">★★★★★</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="card testimonial-card right">
-        <div class="image-wrapper">
-          <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=800&q=80" alt="">
-        </div>
-        <div class="card-body">
-          <h5 class="fw-bold">Excellent Work!</h5>
-          <p class="text-muted">“Every time, they've done a fantastic job. It's great to have a handyman I can trust.”</p>
-          <div class="d-flex align-items-center justify-content-center mt-3">
-            <!-- <img src="https://i.pravatar.cc/42" class="profile-img me-2" alt=""> -->
-            <div>
-              <h6 class="mb-0">John Daver</h6>
-              <div class="text-warning small">★★★★★</div>
-            </div>
-          </div>
-        </div>
+      <!-- Controls -->
+      <div class="carousel-controls-wrapper mt-4">
+        <button id="prevBtn" class="btn btn-light rounded-circle shadow"><i class="bi bi-arrow-left"></i></button>
+        <button id="nextBtn" class="btn btn-light rounded-circle shadow"><i class="bi bi-arrow-right"></i></button>
       </div>
 
     </div>
+  </section>
 
-    <!-- Controls -->
-    <div class="carousel-controls-wrapper mt-4">
-      <button id="prevBtn" class="btn btn-light rounded-circle shadow"><i class="bi bi-arrow-left"></i></button>
-      <button id="nextBtn" class="btn btn-light rounded-circle shadow"><i class="bi bi-arrow-right"></i></button>
-    </div>
+  <script>
+    const wrapper = document.getElementById('testimonialWrapper');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
 
-  </div>
-</section>
+    prevBtn.addEventListener('click', () => rotate('left'));
+    nextBtn.addEventListener('click', () => rotate('right'));
 
-<script>
-  const wrapper = document.getElementById('testimonialWrapper');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-
-  prevBtn.addEventListener('click', () => rotate('left'));
-  nextBtn.addEventListener('click', () => rotate('right'));
-
-  function rotate(direction) {
-    const cards = Array.from(wrapper.children);
-    if (direction === 'left') {
-      const first = cards.shift();
-      wrapper.appendChild(first);
-    } else {
-      const last = cards.pop();
-      wrapper.insertBefore(last, cards[0]);
+    function rotate(direction) {
+      const cards = Array.from(wrapper.children);
+      if (direction === 'left') {
+        const first = cards.shift();
+        wrapper.appendChild(first);
+      } else {
+        const last = cards.pop();
+        wrapper.insertBefore(last, cards[0]);
+      }
+      updateCenterCard();
     }
-    updateCenterCard();
-  }
 
-  function updateCenterCard() {
-    const cards = Array.from(wrapper.children);
-    cards.forEach(card => card.classList.remove('center'));
-    if (cards.length >= 3) {
-      cards[1].classList.add('center');
-    } else if (cards.length === 2) {
-      cards[0].classList.add('center');
-    } else if (cards.length === 1) {
-      cards[0].classList.add('center');
+    function updateCenterCard() {
+      const cards = Array.from(wrapper.children);
+      cards.forEach(card => card.classList.remove('center'));
+      if (cards.length >= 3) {
+        cards[1].classList.add('center');
+      } else if (cards.length === 2) {
+        cards[0].classList.add('center');
+      } else if (cards.length === 1) {
+        cards[0].classList.add('center');
+      }
     }
-  }
-</script>
+  </script>
 
 
   <!-- Fixed "Let's Talk" Button + Dropdown -->
@@ -2111,7 +2147,7 @@
           <div class="row g-3">
             <!-- Feature Card 1 -->
             <div class="col-md-6">
-              <div class="feature-card h-100" onclick="showImage('phone')">
+              <div class="feature-card h-100" onclick="showImage('phone', this)">
                 <div class="line"></div>
                 <h5>Stay Connected, Anytime!</h5>
                 <p class="m-0">Instant notifications on your phone.</p>
@@ -2122,7 +2158,7 @@
 
             <!-- Feature Card 2 -->
             <div class="col-md-6">
-              <div class="feature-card h-100" onclick="showImage('cctv')">
+              <div class="feature-card h-100" onclick="showImage('cctv', this)">
                 <div class="line"></div>
                 <h5>Your Security, Just a Click Away</h5>
                 <p class="m-0">24/7 live monitoring access.</p>
@@ -2137,13 +2173,19 @@
     </div>
   </section>
 
-
-
   <script>
-    function showImage(type) {
+    function showImage(type, element) {
       const phoneImg = document.getElementById('phoneImage');
       const cctvImg = document.getElementById('cctvImage');
+      const cards = document.querySelectorAll('.feature-card');
 
+      // Reset all cards
+      cards.forEach(card => card.classList.remove('active'));
+
+      // Highlight clicked card
+      element.classList.add('active');
+
+      // Switch images
       if (type === 'phone') {
         phoneImg.classList.remove('d-none');
         phoneImg.classList.add('fade-in');
@@ -2182,9 +2224,10 @@
           <h5>Services</h5>
           <ul>
             <li><a href="./index.html">Home</a></li>
-            <li><a href="./about-us.html">About Us</a></li>
             <li><a href="./services.html">Services</a></li>
             <li><a href="./cost-estimator.html">Cost Estimator</a></li>
+            <li><a href="./about-us.html">About Us</a></li>
+            <li><a href="./blog.html">Blog</a></li>
             <li><a href="./contact.html">Contact Us</a></li>
           </ul>
         </div>
@@ -2212,14 +2255,17 @@
 
         <!-- Subscribe & Image with Floating Icons -->
         <div class="col-lg-3 col-md-6 position-relative">
-          <a href="./about-us.html" class="text-black"><h5 class="ps-4">Join Our Team</h5></a>
+          <a href="./about-us.html" class="text-black">
+            <h5 class="ps-4">Join Our Team</h5>
+          </a>
           <!-- <form class="d-flex subscribe-box mb-3">
             <input type="email" class="form-control" placeholder="Email">
             <button type="submit" class="btn"><i class="fa fa-paper-plane"></i></button>
           </form> -->
 
           <div class="footer-man-wrapper position-relative">
-            <img src="./images/footer-man-img.png" class="w-100 p-0 m-0" data-aos="zoom-in-left" data-aos-duration="1000">
+            <img src="./images/footer-man-img.png" class="w-100 p-0 m-0" data-aos="zoom-in-left"
+              data-aos-duration="1000">
 
             <!-- ✅ Floating Social Icons -->
             <div class="footer-floating-icon icon-fb bg-black text-white">
@@ -2355,7 +2401,7 @@
 
 
 
- 
+
 
 
 

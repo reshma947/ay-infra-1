@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cost-Estimator</title>
   <link rel="stylesheet" href="./css/cost-estimator.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,6 +19,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
   <style>
    
   </style>
@@ -28,9 +34,6 @@
   <div class="container-fluid p-0 m-0 fixed-top">
 
     <div class="red-strip p-0 m-0 d-flex">
-      <div class="ps-4 m-0">
-        <span id="modalSelectedCity" class="fw-semibold">Not Selected</span>
-      </div>
 
       <div class="ms-auto">
         <div class="d-flex">
@@ -40,32 +43,31 @@
           <a href="#" class="pe-5 text-white text-decoration-none fw-semibold"><i
               class="bi bi-envelope text-white pe-1 fw-semibold"></i>
             info@example.com</a>
-
         </div>
       </div>
-
     </div>
-
 
     <nav class="navbar navbar-expand-lg p-0 bg-white">
       <div class="container-fluid p-0 m-0">
         <a class="navbar-brand ps-lg-5 p-0 m-0" href="./index.html">
-          <img src="./images/AY logo.jpg" width="72px" class="img-fluid" alt="Logo">
+          <img src="./images/ay-main-logo.png" width="200px" class="img-fluid" alt="Logo">
         </a>
+          <div class="m-0 p-4 ms-lg-2 d-flex align-items-center justify-content-center" style="background-color:#ffefef">
+            <span id="modalSelectedCity" class="fw-semibold" >Not Selected</span>
+          </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse d-lg-flex justify-content-lg-around p-0 m-0" id="navbarSupportedContent">
           <div class="bg-info"></div>
+
           <ul class="navbar-nav m-0 p-0">
+
             <li class="nav-item m-0 p-3">
               <a class="nav-link fw-semibold" aria-current="page" href="./index.html">Home </a>
             </li>
-            <li class="nav-item p-3 ms-lg-4">
-              <a class="nav-link fw-semibold" href="./about-us.html">About Us</a>
-            </li>
-            <li class="nav-item p-3 ps-lg-4">
+             <li class="nav-item p-3 ps-lg-4">
               <a class="nav-link fw-semibold" href="./services.html">Services</a>
             </li>
 
@@ -91,28 +93,28 @@
                                 </li>
               </ul>
             </li> -->
-
-            <li class="nav-item p-3 ps-lg-4 nav-active">
+              <li class="nav-item p-3 ps-lg-4 nav-active">
               <a class="nav-link fw-semibold" href="./cost-estimator.html">Cost Estimator</a>
             </li>
-            <!-- <li class="nav-item ps-lg-4">
-              <a class="nav-link fw-semibold" href="./contact.html"><button
-                  class="px-3 py-1 border-0 rounded-2 bg-red-color text-white ">Free Site Visit</button></a>
-            </li> -->
 
+            <li class="nav-item p-3 ms-lg-4">
+              <a class="nav-link fw-semibold" href="./about-us.html">About Us</a>
+            </li>
+           
+
+          
           </ul>
 
           <div class="p-0 m-0">
             <a class="nav-link fw-semibold" href="./contact.html"><button
-                  class="px-3 py-1 border-0 rounded-2 bg-red-color text-white ">Free Site Visit</button></a>
-   
+                class="px-3 py-1 border-0 rounded-2 bg-red-color text-white fw-semibold">Book Free Site Visit</button>
+            </a>
           </div>
-
         </div>
       </div>
-
     </nav>
   </div>
+
 
   <!-- ✅ City Selection Modal -->
   <div class="modal fade" id="cityModal" tabindex="-1" aria-labelledby="cityModalLabel" aria-hidden="true"
@@ -120,14 +122,13 @@
     <div class="modal-dialog modal-dialog-centered modal-md">
       <div class="modal-content p-4">
         <div class="row g-3">
-          <!-- Left Info -->
+
           <div class="col-lg-6 d-flex flex-column justify-content-center align-items-center text-center p-3">
             <h4 class="fw-bold">Select a City</h4>
             <p>WE BUILD YOUR 'DREAM HOME'<br>
               India's <b>NO.1 TECH</b> Powered Construction Company</p>
           </div>
 
-          <!-- Right Cities -->
           <div class="col-lg-6 d-flex flex-column justify-content-center">
             <div class="city-card mb-2" onclick="selectModalCity('Hyderabad')">
               <img src="https://img.icons8.com/emoji/96/india-emoji.png" alt="Hyderabad">
@@ -238,8 +239,8 @@
     </script> -->
 
 
-  <section class="cost-estimator-section py-5 mt-5">
-    <div class="container py-5">
+  <section class="cost-estimator-section pt-5 mt-5">
+    <div class="container pt-5">
       <div class="row justify-content-center">
         <div class="col-lg-6 col-md-8 col-sm-10">
 
@@ -249,7 +250,7 @@
           </div>
 
           <!-- City Selection -->
-          <div class="text-center mb-4">
+          <div class="text-center">
             <span class="me-2"><i class="bi bi-geo-alt-fill text-danger"></i></span>
             <span class="city-label" id="packageSelectedCity">Chennai</span>
             <select id="packageCitySelect" class="form-select d-inline-block w-auto ms-2">
@@ -262,7 +263,7 @@
           </div>
 
           <!-- Package Selection with Radio Buttons -->
-          <div class="fw-semibold mb-3">Choose Package:</div>
+        <!-- <div class="fw-semibold mb-3">Choose Package:</div>
           <div class="list-group">
             <label class="list-group-item d-flex justify-content-between align-items-center">
               <div>
@@ -295,21 +296,21 @@
               </div>
               <span id="royaleRate" class="fw-bold">₹ 3010 /sqft</span>
             </label>
-          </div>
+          </div> -->
 
           <!-- Selected Package & Rate -->
-          <div class="text-center mt-4">
+          <!-- <div class="text-center mt-4">
             <h5 class="fw-bold">Selected Package: <span id="selectedPackage">Basic</span></h5>
             <p id="selectedRate" class="fw-semibold text-danger">₹ 2250 /sqft (Incl. GST)</p>
-          </div>
+          </div> -->
 
           <!-- CTA -->
-          <div class="text-center mt-4">
+          <!-- <div class="text-center mt-4">
             <button class="px-3 py-2 border-0 bg-red-color text-white rounded-3 fw-semibold" onclick="btnOnClick()"
               data-bs-toggle="modal" data-bs-target="#staticBackdrop">
               Start Your Construction
             </button>
-          </div>
+          </div> -->
 
         </div>
       </div>
@@ -431,7 +432,7 @@
   </div>
 
   <div class="container pb-5">
-    <section class="pricing-header mt-5" data-aos="zoom-in-right">
+    <section class="pricing-header" data-aos="zoom-in-right">
       <div class="bg-text-outline">Cost</div>
       <h2 class="main-title">Budget</h2>
     </section>
