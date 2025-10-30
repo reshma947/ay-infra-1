@@ -167,14 +167,28 @@
         <a class="navbar-brand ps-lg-5 p-0 m-0" href="./index.html">
           <img src="./images/ay-main-logo.png" width="200px" class="img-fluid" alt="Logo">
         </a>
-        <div class="m-0 p-4 ms-lg-2 d-flex align-items-center justify-content-center" style="background-color:#ffefef">
-          <span id="modalSelectedCity" class="fw-semibold">Not Selected</span>
+
+             <!-- 🟡 City Dropdown in Navbar -->
+        <div class="dropdown city-dropdown ms-lg-3">
+          <button class="btn dropdown-toggle" type="button" id="navbarCityDropdown" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <span id="navbarSelectedCity">Not Selected</span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="navbarCityDropdown">
+            <li><a class="dropdown-item" href="#" onclick="selectNavbarCity('Hyderabad')">Hyderabad</a></li>
+            <li><a class="dropdown-item" href="#" onclick="selectNavbarCity('Bangalore')">Bangalore</a></li>
+            <li><a class="dropdown-item" href="#" onclick="selectNavbarCity('Andhra Pradesh')">Andhra Pradesh</a></li>
+          </ul>
         </div>
+
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-around p-0 m-0" id="navbarSupportedContent">
+
+        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-around p-0 m-0" 
+        id="navbarSupportedContent">
           <div class="bg-info"></div>
 
           <ul class="navbar-nav m-0 p-0">
@@ -192,16 +206,15 @@
                 Services
               </a>
               <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-                <li><a class="dropdown-item" id="servicesDropdown-menu"
-                                        href="./residential.html">Residential Construction</a></li>
-                                <li><a class="dropdown-item" id="servicesDropdown-menu"
-                                        href="./commercial.html">Commercial Construction</a></li>
-                                <li><a class="dropdown-item" id="servicesDropdown-menu"
-                                        href="./services.html">Interior Design</a>
-                                </li>
-                                <li><a class="dropdown-item" id="servicesDropdown-menu"
-                                        href="./renovation.html">Renovation & Remodeling </a></li>
-                              
+                <li><a class="dropdown-item" id="servicesDropdown-menu" href="./residential.html">Residential
+                    Construction</a></li>
+                <li><a class="dropdown-item" id="servicesDropdown-menu" href="./commercial.html">Commercial
+                    Construction</a></li>
+                <li><a class="dropdown-item" id="servicesDropdown-menu" href="./services.html">Interior Design</a>
+                </li>
+                <li><a class="dropdown-item" id="servicesDropdown-menu" href="./renovation.html">Renovation & Remodeling
+                  </a></li>
+
               </ul>
             </li>
             <li class="nav-item p-3 ps-lg-4">
@@ -221,6 +234,7 @@
                 class="px-3 py-1 border-0 rounded-2 bg-red-color text-white fw-semibold">Book Free Site Visit</button>
             </a>
           </div>
+
         </div>
       </div>
     </nav>
@@ -244,11 +258,11 @@
               <img src="https://img.icons8.com/emoji/96/india-emoji.png" alt="Hyderabad">
               <h6 class="fw-bold">Hyderabad</h6>
             </div>
-            <div class="city-card mb-2" onclick="selectModalCity('Chennai')">
+            <div class="city-card mb-2" onclick="selectModalCity('Bangalore')">
               <img src="https://img.icons8.com/color/96/train-station.png" alt="Bangalore">
               <h6 class="fw-bold">Bangalore</h6>
             </div>
-            <div class="city-card" onclick="selectModalCity('Vijayawada')">
+            <div class="city-card" onclick="selectModalCity('Andhra Pradesh')">
               <img src="https://img.icons8.com/ios/100/buddha.png" alt="Andhra Pradesh">
               <h6 class="fw-bold">Andhra Pradesh</h6>
             </div>
@@ -261,15 +275,20 @@
   <script>
     // Show modal on page load
     document.addEventListener("DOMContentLoaded", function () {
-      var cityModal = new bootstrap.Modal(document.getElementById('cityModal'));
+      const cityModal = new bootstrap.Modal(document.getElementById('cityModal'));
       cityModal.show();
     });
 
-    // Function to select city from modal
+    // Select city from modal
     function selectModalCity(city) {
-      document.getElementById("modalSelectedCity").innerText = city;
-      var cityModal = bootstrap.Modal.getInstance(document.getElementById('cityModal'));
+      document.getElementById("navbarSelectedCity").innerText = city;
+      const cityModal = bootstrap.Modal.getInstance(document.getElementById('cityModal'));
       cityModal.hide();
+    }
+
+    // Select city from navbar dropdown
+    function selectNavbarCity(city) {
+      document.getElementById("navbarSelectedCity").innerText = city;
     }
   </script>
 
@@ -564,9 +583,6 @@
   </section>
 
 
-
-
-
   <section class="py-5">
     <section class="pricing-header" data-aos="fade-up">
       <div class="bg-text-outline">FLEXIBLE</div>
@@ -578,20 +594,11 @@
         <div class="col-md-6 col-lg-3 pt-4">
           <div class="pricing-card">
             <div class="plan-title basic-color">Basic</div>
-            <!-- <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
             <div class="plan-price basic-color">
               <span class="text-red-color">999</span><span class="price-decimal text-red-color">.99</span>
             </div>
-            <!-- <p class="text-muted">per month</p> -->
-            <!-- <ul class="feature-list basic-dot list-unstyled">
-              <li><span></span> Lorem ipsum dolor sit amet</li>
-              <li><span></span> Consectetur adipiscing elit</li>
-            </ul>
-            <button class="btn-purchase" onclick="btnOnClick()" data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop">Purchase</button> -->
           </div>
         </div>
-
 
         <div class="col-md-6 col-lg-3 px-1 pb-1 pt-0 bg-red-color" style="border-top-left-radius: 0; border-top-right-radius: 2rem;
                    border-bottom-left-radius: 2rem; border-bottom-right-radius: 0; transform: scale(1.03);">
@@ -612,41 +619,21 @@
           </div>
         </div>
 
-
-
         <div class="col-md-6 col-lg-3 pt-4">
           <div class="pricing-card">
             <div class="plan-title premium-color">Profesional</div>
-            <!-- <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
             <div class="plan-price premium-color">
               <span class="text-red-color">1499</span><span class="price-decimal text-red-color">.99</span>
             </div>
-            <!-- <p class="text-muted">per month</p>
-            <ul class="feature-list premium-dot list-unstyled">
-              <li><span></span> Lorem ipsum dolor sit amet</li>
-              <li><span></span> Consectetur adipiscing elit</li>
-            </ul>
-            <button class="btn-purchase" onclick="btnOnClick()" data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop">Purchase</button> -->
           </div>
         </div>
-
-
 
         <div class="col-md-6 col-lg-3 pt-4">
           <div class="pricing-card">
             <div class="plan-title premium-color">Royale</div>
-            <!-- <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> -->
             <div class="plan-price premium-color">
               <span class="text-red-color">1579</span><span class="price-decimal text-red-color">.99</span>
             </div>
-            <!-- <p class="text-muted">per month</p>
-            <ul class="feature-list premium-dot list-unstyled">
-              <li><span></span> Lorem ipsum dolor sit amet</li>
-              <li><span></span> Consectetur adipiscing elit</li>
-            </ul>
-            <button class="btn-purchase" onclick="btnOnClick()" data-bs-toggle="modal"
-              data-bs-target="#staticBackdrop">Purchase</button> -->
           </div>
         </div>
 
@@ -710,7 +697,7 @@
               </tr>
             </thead>
             <tbody id="pricingBody">
-              
+
             </tbody>
           </table>
         </div>
@@ -857,7 +844,7 @@
           </select>
         </div>
         <div class="col-md-5">
-          <select id="rightPackageSelect" class="form-select rounded-0 bg-black">
+          <select id="rightPackageSelect" class="form-select rounded-0 bg-black text-white">
             <option value="basic">Basic Package</option>
             <option value="premium">Premium Package</option>
             <option value="professional">Professional Package</option>
@@ -1076,7 +1063,7 @@
     updateAllSections("right", rightSelect.value);
   </script>
 
-  <section class="mt-5">
+  <section class="mt-5 pb-5">
     <div class="container box-center gap-2">
       <div class="key-headline">Key Differences Between</div>
 
@@ -1123,32 +1110,103 @@
 
   </section>
 
+
+   <section class="bg-body-tertiary box-shadow pt-5 mt-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+
+        <!-- ✅ Left side: Phone & CCTV Images -->
+        <div class="col-lg-4 text-center mb-4 mb-lg-0 position-relative">
+          <img src="./images/phone-img-1.png" alt="Phone" class="phone-img img-fluid active-img" id="phoneImage">
+          <img src="./images/cctv-img-1.png" alt="CCTV" class="phone-img img-fluid d-none" id="cctvImage">
+        </div>
+
+        <!-- ✅ Right side: Text + Feature Cards -->
+        <div class="col-lg-7 text-section">
+          <h2 class="fw-bold mb-3">Instant Updates at Your Fingertips</h2>
+          <p class="mb-4">
+            Get instant alerts and important notifications on WhatsApp.
+            Stay connected anytime, anywhere with real-time updates.
+          </p>
+
+          <div class="row g-3">
+            <!-- Feature Card 1 -->
+            <div class="col-md-6">
+              <div class="feature-card h-100" onclick="showImage('phone', this)">
+                <div class="line"></div>
+                <h5>Stay Connected, Anytime!</h5>
+                <p class="m-0">Instant notifications on your phone.</p>
+                <p class="m-0">Hassle-free and secure updates.</p>
+                <p class="m-0">Quick communication, anytime.</p>
+              </div>
+            </div>
+
+            <!-- Feature Card 2 -->
+            <div class="col-md-6">
+              <div class="feature-card h-100" onclick="showImage('cctv', this)">
+                <div class="line"></div>
+                <h5>Your Security, Just a Click Away</h5>
+                <p class="m-0">24/7 live monitoring access.</p>
+                <p class="m-0">Real-time alerts and updates.</p>
+                <p class="m-0">Secure and reliable streaming.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function showImage(type, element) {
+      const phoneImg = document.getElementById('phoneImage');
+      const cctvImg = document.getElementById('cctvImage');
+      const cards = document.querySelectorAll('.feature-card');
+
+      // Reset all cards
+      cards.forEach(card => card.classList.remove('active'));
+
+      // Highlight clicked card
+      element.classList.add('active');
+
+      // Switch images
+      if (type === 'phone') {
+        phoneImg.classList.remove('d-none');
+        phoneImg.classList.add('fade-in');
+        cctvImg.classList.add('d-none');
+      } else {
+        cctvImg.classList.remove('d-none');
+        cctvImg.classList.add('fade-in');
+        phoneImg.classList.add('d-none');
+      }
+    }
+  </script>
+
   <section class="pricing-header mt-5" data-aos="zoom-in-right">
     <div class="bg-text-outline">OPERATE</div>
     <h2 class="main-title">How It Works</h2>
   </section>
-
-
 
   <div class="container pb-5">
 
     <!-- Circle Step Strip -->
     <div class="steps-strip">
       <!-- <div> -->
-        <div class="step-circle active" data-index="1">
-          <span>1</span>
-            <!-- <p>Free <br>Consultation</p> -->
-        </div>
-      
+      <div class="step-circle active" data-index="1">
+        <span>1</span>
+        <!-- <p>Free <br>Consultation</p> -->
+      </div>
+
       <!-- </div> -->
       <div class="step-line"></div>
 
       <!-- <div> -->
-        <div class="step-circle" data-index="2">
-          <span>2</span>
-           <!-- <p>Expert<br>Guidance</p> -->
-        </div>
-       
+      <div class="step-circle" data-index="2">
+        <span>2</span>
+        <!-- <p>Expert<br>Guidance</p> -->
+      </div>
+
       <!-- </div> -->
 
 
@@ -1237,7 +1295,7 @@
     <div class="clip-content row" id="content-5">
       <div class="d-flex justify-content-center align-items-center text-center">
         <div class="col-md-5">
-          <img src="./images/how-works-img-5.png" alt="Image 1">
+          <img src="./images/how-it-works-img-5.png" alt="Image 1">
           <h4 class="p-0">Track Your Progress</h4>
           <p class="p-0 m-0">Monitor real-time site updates, stage reports, and photos through digital tracking.</p>
         </div>
@@ -1248,7 +1306,7 @@
     <div class="clip-content row" id="content-6">
       <div class="d-flex justify-content-center align-items-center text-center">
         <div class="col-md-5">
-          <img src="./images/how-works-img-5.png" alt="Image 1">
+          <img src="./images/how-works-img-6.png" alt="Image 1">
           <h4 class="p-0">Handover & Move-In</h4>
           <p class="p-0 m-0">Your dream project is ready — beautifully built and finished to perfection on time.</p>
         </div>
@@ -1600,10 +1658,6 @@
     });
 
   </script>
-
-
-
-
 
 
   <section class="media-section m-0 p-0">
@@ -2087,8 +2141,8 @@
   <!-- Fixed "Let's Talk" Button + Dropdown -->
   <div class="fixed-contact dropdown">
     <button class=" px-2 py-1 bg-red-color text-white border-0 rounded-5" type="button" data-bs-toggle="dropdown"
-      aria-expanded="false"><i class="fa-brands fa-whatsapp fs-1"></i>
-
+      aria-expanded="false">
+      <i class="fa-brands fa-whatsapp fs-1"></i>
     </button>
     <!-- <img src="./images/comment-img.png" height="50%" width="30%"> -->
 
@@ -2097,106 +2151,47 @@
       <div>
         <form>
 
-          <div style="width: 60px; height: 15px; background-color: black; margin: 5px auto; border-radius:10px"></div>
+          <div style="width: 60px; height: 15px; background-color: black; margin: 5px auto; border-radius:10px">
+          </div>
+
           <div style="padding: 10px;">
+
             <div class="mb-2">
               <label for="name" class="form-label mb-1">Name</label>
               <input type="text" class="form-control form-control-sm" id="name" placeholder="John Doe">
             </div>
+
             <div class="mb-2">
               <label for="email" class="form-label mb-1">Email</label>
               <input type="email" class="form-control form-control-sm" id="email" placeholder="john@example.com">
             </div>
+
             <div class="mb-2">
               <label for="phone" class="form-label mb-1">Phone</label>
               <input type="tel" class="form-control form-control-sm" id="phone" placeholder="+91 98765 43210">
             </div>
+
             <div class="mb-3">
               <label for="query" class="form-label mb-1">Query</label>
               <textarea class="form-control form-control-sm" id="query" rows="2" placeholder="Your message"></textarea>
             </div>
+
             <button type="submit" class="py-2 border-0 rounded-2 bg-red-color text-white btn-sm w-100">Send</button>
+
           </div>
+
+        </form>
       </div>
-      </form>
+
     </div>
+
   </div>
-  </div>
 
 
 
 
-  <section class="bg-body-tertiary box-shadow py-5">
-    <div class="container">
-      <div class="row align-items-center justify-content-between">
 
-        <!-- ✅ Left side: Phone & CCTV Images -->
-        <div class="col-lg-4 text-center mb-4 mb-lg-0 position-relative">
-          <img src="./images/phone-img-1.png" alt="Phone" class="phone-img img-fluid active-img" id="phoneImage">
-          <img src="./images/cctv-img-1.png" alt="CCTV" class="phone-img img-fluid d-none" id="cctvImage">
-        </div>
-
-        <!-- ✅ Right side: Text + Feature Cards -->
-        <div class="col-lg-7 text-section">
-          <h2 class="fw-bold mb-3">Instant Updates at Your Fingertips</h2>
-          <p class="mb-4">
-            Get instant alerts and important notifications on WhatsApp.
-            Stay connected anytime, anywhere with real-time updates.
-          </p>
-
-          <div class="row g-3">
-            <!-- Feature Card 1 -->
-            <div class="col-md-6">
-              <div class="feature-card h-100" onclick="showImage('phone', this)">
-                <div class="line"></div>
-                <h5>Stay Connected, Anytime!</h5>
-                <p class="m-0">Instant notifications on your phone.</p>
-                <p class="m-0">Hassle-free and secure updates.</p>
-                <p class="m-0">Quick communication, anytime.</p>
-              </div>
-            </div>
-
-            <!-- Feature Card 2 -->
-            <div class="col-md-6">
-              <div class="feature-card h-100" onclick="showImage('cctv', this)">
-                <div class="line"></div>
-                <h5>Your Security, Just a Click Away</h5>
-                <p class="m-0">24/7 live monitoring access.</p>
-                <p class="m-0">Real-time alerts and updates.</p>
-                <p class="m-0">Secure and reliable streaming.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <script>
-    function showImage(type, element) {
-      const phoneImg = document.getElementById('phoneImage');
-      const cctvImg = document.getElementById('cctvImage');
-      const cards = document.querySelectorAll('.feature-card');
-
-      // Reset all cards
-      cards.forEach(card => card.classList.remove('active'));
-
-      // Highlight clicked card
-      element.classList.add('active');
-
-      // Switch images
-      if (type === 'phone') {
-        phoneImg.classList.remove('d-none');
-        phoneImg.classList.add('fade-in');
-        cctvImg.classList.add('d-none');
-      } else {
-        cctvImg.classList.remove('d-none');
-        cctvImg.classList.add('fade-in');
-        phoneImg.classList.add('d-none');
-      }
-    }
-  </script>
+ 
 
 
 

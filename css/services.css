@@ -164,60 +164,128 @@
   }
 
 
-  /* css for footer-section */
+ /* --------------------------------------- */
+/* css for footer-section */
 footer {
-      color: black;
-      font-size: 15px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    }
-    footer h5 {
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    footer ul {
-      list-style: none;
-      padding: 0;
-    }
-    footer ul li {
-      margin-bottom: 0.5rem;
-    }
-    footer ul li a {
-      text-decoration: none;
-      color: black;
-      transition: 0.3s;
-    }
-    footer ul li a:hover {
-      color: red;
-    }
-    .footer-bottom {
-      background: red;
-      color: #ccc;
-      padding: 20px 0;
-      font-size: 14px;
-    }
-    .social-icons a {
-      display: inline-block;
-      width: 35px;
-      height: 35px;
-      line-height: 35px;
-      text-align: center;
-      border-radius: 50%;
-      background: #f1f1f1;
-      color: black;
-      margin-right: 8px;
-      transition: 0.3s;
-    }
-    .social-icons a:hover {
-      background: red;
-      color: #fff;
-    }
-    .subscribe-box input {
-      border: 1px solid #ddd;
-      border-radius: 0;
-    }
-    .subscribe-box button {
-      background:red;
-      border: none;
-      color: #fff;
-      border-radius: 0;
-    }
+  color: black;
+  font-size: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+footer h5 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
+
+footer ul li a:hover {
+  color: red;
+}
+
+.footer-bottom {
+  background: red;
+  color: #ccc;
+  padding: 20px 0;
+  font-size: 14px;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  background: #f1f1f1;
+  color: black;
+  margin-right: 8px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: red;
+  color: #fff;
+}
+
+.subscribe-box input {
+  border: 1px solid #ddd;
+  border-radius: 0;
+}
+
+.subscribe-box button {
+  background: red;
+  border: none;
+  color: #fff;
+  border-radius: 0;
+}
+
+/* ✅ Floating Social Icons Around Footer Man */
+.footer-floating-icon {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 16px;
+  /* animation: bounce 2s infinite ease-in-out; */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Random placements */
+.icon-fb {
+  top: 30%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.icon-tw {
+  top: 30%;
+  right: 35%;
+  animation-delay: 0.4s;
+}
+
+.icon-li {
+  bottom: 15%;
+  left: 20%;
+  animation-delay: 0.8s;
+}
+
+.icon-ig {
+  bottom: 15%;
+  right: 35%;
+  animation-delay: 1.2s;
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 991.98px) {
+  .footer-floating-icon {
+    display: none;
+  }
+}
