@@ -3,17 +3,14 @@
 }
 
 .text-gradient-color{
-
-
-   background: linear-gradient(27deg,rgba(255, 0, 0, 1) 0%, rgba(255, 61, 61, 1) 86%);
-   color: transparent;
+  background: linear-gradient(27deg,rgba(255, 0, 0, 1) 0%, rgba(255, 61, 61, 1) 86%);
+  color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientMove 6s ease infinite;
   font-weight: 700;
 }
-
 
 .bg-red-color {
   background-color: red;
@@ -35,17 +32,15 @@
 .navbar {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   font-style: Arial, sans-serif;
-
 }
 
-
  .city-dropdown .dropdown-toggle {
-      background-color: #ffefef;
-      border: none;
-      font-weight: 600;
-      padding: 24px 16px;
-      border-radius: 4px;
-    }
+  background-color: #ffefef;
+  border: none;
+  font-weight: 600;
+  padding: 24px 16px;
+  border-radius: 4px;
+}
 
             /* .city-dropdown .dropdown-toggle:hover {
       background-color: #ffefef;

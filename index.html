@@ -55,92 +55,163 @@
     }
 
     /* ---------------------------- */
+ /* Circle Steps Strip */
+  .steps-strip {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    position: relative;
+    gap: 0;
+  }
 
-    /* Circle Steps Strip */
-    .steps-strip {
-      display: flex;
-      justify-content: center;
-      /* align-items: flex-start; */
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      position: relative;
-      gap: 0;
-    }
+  .step-circle {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
 
-    .step-circle {
-      /* text-align: center; */
-      flex: 0 0 auto;
-      /* min-width: 70px; */
-      display: flex;
-      flex-direction: column;
-      align-items: end;
-      cursor: pointer;
+  .step-circle span {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.3s ease;
+  }
+
+  .step-circle p {
+    font-size: 13px;
+    color: #333;
+    white-space: nowrap;
+    text-align: center;
+  }
+
+  .step-circle.active span {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+  }
+
+  .step-circle:hover span {
+    border-color: #000;
+  }
+
+  /* Dotted line between circles */
+  .step-line {
+    flex: 0 0 145px;
+    align-self: center;
+    border-top: 2px dotted #999;
+  }
+
+  /* Content sections */
+  .clip-content {
+    display: none;
+  }
+
+  .clip-content.active {
+    display: flex;
+  }
+
+  .clip-content img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  /* Hide scrollbar */
+  .steps-strip::-webkit-scrollbar {
+    display: none;
+  }
+
+  .steps-strip {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* === RESPONSIVENESS === */
+  @media (max-width: 992px) {
+    .step-line {
+      flex: 0 0 90px;
     }
 
     .step-circle span {
-      width: 40px;
-      height: 40px;
-      background: #fff;
-      border: 2px solid #ccc;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 600;
-      font-size: 18px;
-      transition: all 0.3s ease;
+      width: 36px;
+      height: 36px;
+      font-size: 16px;
     }
 
-    .step-circle p {
-      /* margin-top: 8px; */
-      font-size: 13px;
-      color: #333;
-      white-space: nowrap;
+    .d-flex.justify-content-around p {
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .steps-strip {
+      justify-content: flex-start;
+      padding: 0 10px;
+    }
+
+    .step-line {
+      flex: 0 0 60px;
+    }
+
+    .step-circle span {
+      width: 34px;
+      height: 34px;
+      font-size: 15px;
+    }
+
+    .d-flex.justify-content-around {
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center !important;
       text-align: center;
     }
 
-    .step-circle.active span {
-      background-color: #000;
-      color: #fff;
-      border-color: #000;
-    }
-
-    .step-circle:hover span {
-      border-color: #000;
-    }
-
-    /* Dotted line between circles */
-    .step-line {
-      flex: 0 0 145px;
-      /* align-self: center; */
-      margin-top: 20px;
-      border-top: 2px dotted #999;
-
-    }
-
-    /* Content sections */
-    .clip-content {
-      display: none;
-      /* padding-top: 1.5rem; */
+    .d-flex.justify-content-around p {
+      font-size: 12px;
+      width: 45%;
+      margin-bottom: 0.3rem;
     }
 
     .clip-content.active {
-      display: flex;
+      flex-direction: column;
+      text-align: center;
     }
 
     .clip-content img {
-      max-width: 100%;
-      border-radius: 8px;
+      width: 80%;
+      margin: 0 auto 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .step-line {
+      flex: 0 0 32px;
     }
 
-    .steps-strip::-webkit-scrollbar {
-      display: none;
+    .step-circle span {
+      width: 30px;
+      height: 30px;
+      font-size: 14px;
     }
 
-    .steps-strip {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+    .d-flex.justify-content-around p {
+      font-size: 11px;
+      width: 100%;
     }
+
+    .clip-content img {
+      width: 90%;
+    }
+  }
   </style>
 </head>
 
@@ -255,15 +326,15 @@
 
           <div class="col-lg-6 d-flex flex-column justify-content-center">
             <div class="city-card mb-2" onclick="selectModalCity('Hyderabad')">
-              <img src="https://img.icons8.com/emoji/96/india-emoji.png" alt="Hyderabad">
+              <img src="./images/charminar.png" alt="Hyderabad">
               <h6 class="fw-bold">Hyderabad</h6>
             </div>
             <div class="city-card mb-2" onclick="selectModalCity('Bangalore')">
-              <img src="https://img.icons8.com/color/96/train-station.png" alt="Bangalore">
+              <img src="./images/bangalore.png" alt="Bangalore">
               <h6 class="fw-bold">Bangalore</h6>
             </div>
             <div class="city-card" onclick="selectModalCity('Andhra Pradesh')">
-              <img src="https://img.icons8.com/ios/100/buddha.png" alt="Andhra Pradesh">
+              <img src="./images/buddha.png" alt="Andhra Pradesh">
               <h6 class="fw-bold">Andhra Pradesh</h6>
             </div>
           </div>
@@ -377,6 +448,9 @@
               <div class="text-content">
                 <div class="service-text">RESIDENTIAL CONSTRUCTION</div>
                 <p>Dream Homes Tailored for Every Family</p>
+                
+              </div>
+              <div>
                 <a href="#" class="read-more-btn text-decoration-none p-2">Read more →</a>
               </div>
             </div>
@@ -392,6 +466,8 @@
               <div class="text-content">
                 <div class="service-text inter-tight">COMMERCIAL CONSTRUCTION</div>
                 <p>Build Spaces That Drive Success</p>
+              </div>
+               <div>
                 <a href="#" class="read-more-btn text-decoration-none p-2">Read more →</a>
               </div>
             </div>
@@ -407,6 +483,8 @@
               <div class="text-content">
                 <div class="service-text inter-tight">INTERIOR <br> DESIGN</div>
                 <p>Spaces That Inspire & Reflect Your Lifestyle</p>
+              </div>
+               <div>
                 <a href="#" class="read-more-btn text-decoration-none p-2">Read more →</a>
               </div>
             </div>
@@ -422,6 +500,8 @@
               <div class="text-content">
                 <div class="service-text inter-tight">RENOVATION REMODELLING</div>
                 <p>Upgrade Your Space for Today’s Needs</p>
+              </div>
+               <div>
                 <a href="#" class="read-more-btn text-decoration-none p-2">Read more →</a>
               </div>
             </div>
@@ -1188,157 +1268,108 @@
     <h2 class="main-title">How It Works</h2>
   </section>
 
-  <div class="container pb-5">
-
-    <!-- Circle Step Strip -->
-    <div class="steps-strip">
-      <!-- <div> -->
-      <div class="step-circle active" data-index="1">
-        <span>1</span>
-        <!-- <p>Free <br>Consultation</p> -->
-      </div>
-
-      <!-- </div> -->
-      <div class="step-line"></div>
-
-      <!-- <div> -->
-      <div class="step-circle" data-index="2">
-        <span>2</span>
-        <!-- <p>Expert<br>Guidance</p> -->
-      </div>
-
-      <!-- </div> -->
-
-
-      <div class="step-line"></div>
-
-      <div class="step-circle" data-index="3">
-        <span>3</span>
-        <!-- <p>Approve <br>Design & Quotation</p> -->
-      </div>
-      <div class="step-line"></div>
-
-      <div class="step-circle" data-index="4">
-        <span>4</span>
-        <!-- <p>We <br>Execute It</p> -->
-      </div>
-      <div class="step-line"></div>
-
-      <div class="step-circle" data-index="5">
-        <span>5</span>
-        <!-- <p>Track <br>Your Progress</p> -->
-      </div>
-
-      <div class="step-line"></div>
-
-      <div class="step-circle" data-index="6">
-        <span>6</span>
-        <!-- <p>Handover <br>& Move-In</p> -->
-      </div>
-
-    </div>
-
-    <div class="d-flex justify-content-around align-items-center mt-3">
-      <p>Free Consultation</p>
-      <p>Expert Guidance</p>
-      <p>Approve Design & <br>Quotation</p>
-      <p>We Execute It</p>
-      <p>Track Your Progress</p>
-      <p>Handover & <br>Move-In</p>
-    </div>
-
-    <!-- Content Sections -->
-    <div class="clip-content row g-4 active" id="content-1">
-      <div class="d-flex justify-content-center align-items-center text-center">
-        <div class="col-md-5">
-          <img src="./images/how-works-img-1.png" alt="Image 1">
-          <h4 class="p-0">Free Consultation</h4>
-          <p class="p-0 m-0">We study your site, space needs, and budget to create a clear project roadmap.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="clip-content row" id="content-2">
-      <div class="d-flex justify-content-center align-items-center text-center">
-        <div class="col-md-5">
-          <img src="./images/how-works-img-2.png" alt="Image 2">
-          <h4 class="p-0">Expert Guidance</h4>
-          <p class="p-0 m-0">Our architects and engineers guide you on design, structure, materials, and cost
-            efficiency.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="clip-content row" id="content-3">
-      <div class="d-flex justify-content-center align-items-center text-center">
-        <div class="col-md-5">
-          <img src="./images/how-works-img-3.png" alt="Image 3">
-          <h4 class="p-0">Approve Design & Quotation</h4>
-          <p class="p-0 m-0">You approve the 2D/3D design and get a fixed transparent quote — no hidden costs, no
-            surprises.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="clip-content row" id="content-4">
-      <div class="d-flex justify-content-center align-items-center text-center">
-        <div class="col-md-5">
-          <img src="./images/how-works-img-4.png" alt="Image 1">
-          <h4 class="p-0">We Execute It</h4>
-          <p class="p-0 m-0">From excavation to finishing, our team manages construction, quality control, and
-            supervision.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="clip-content row" id="content-5">
-      <div class="d-flex justify-content-center align-items-center text-center">
-        <div class="col-md-5">
-          <img src="./images/how-it-works-img-5.png" alt="Image 1">
-          <h4 class="p-0">Track Your Progress</h4>
-          <p class="p-0 m-0">Monitor real-time site updates, stage reports, and photos through digital tracking.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="clip-content row" id="content-6">
-      <div class="d-flex justify-content-center align-items-center text-center">
-        <div class="col-md-5">
-          <img src="./images/how-works-img-6.png" alt="Image 1">
-          <h4 class="p-0">Handover & Move-In</h4>
-          <p class="p-0 m-0">Your dream project is ready — beautifully built and finished to perfection on time.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Repeat for content-4 ... content-8 -->
-
-
-
+<div class="container pb-5">
+  <!-- Circle Step Strip -->
+  <div class="steps-strip mb-2">
+    <div class="step-circle active" data-index="1"><span>1</span></div>
+    <div class="step-line"></div>
+    <div class="step-circle" data-index="2"><span>2</span></div>
+    <div class="step-line"></div>
+    <div class="step-circle" data-index="3"><span>3</span></div>
+    <div class="step-line"></div>
+    <div class="step-circle" data-index="4"><span>4</span></div>
+    <div class="step-line"></div>
+    <div class="step-circle" data-index="5"><span>5</span></div>
+    <div class="step-line"></div>
+    <div class="step-circle" data-index="6"><span>6</span></div>
   </div>
 
-  <script>
-    const circles = document.querySelectorAll('.step-circle');
-    const contents = document.querySelectorAll('.clip-content');
+  <!-- Step Titles -->
+  <div class="d-flex justify-content-around align-items-center flex-wrap mt-3 text-center">
+    <p>Free Consultation</p>
+    <p>Expert Guidance</p>
+    <p>Approve Design & <br>Quotation</p>
+    <p>We Execute It</p>
+    <p>Track Your Progress</p>
+    <p>Handover & <br>Move-In</p>
+  </div>
 
-    circles.forEach(circle => {
-      circle.addEventListener('click', () => {
-        const index = circle.getAttribute('data-index');
+  <!-- Content Sections -->
+  <div class="clip-content row g-4 active" id="content-1">
+    <div class="d-flex justify-content-center align-items-center text-center flex-column">
+      <div class="col-md-5">
+        <img src="./images/how-works-img-1.png" alt="Image 1">
+        <h4 class="p-0">Free Consultation</h4>
+        <p class="p-0 m-0">We study your site, space needs, and budget to create a clear project roadmap.</p>
+      </div>
+    </div>
+  </div>
 
-        // active state for circle
-        circles.forEach(c => c.classList.remove('active'));
-        circle.classList.add('active');
+  <div class="clip-content row" id="content-2">
+    <div class="d-flex justify-content-center align-items-center text-center flex-column">
+      <div class="col-md-5">
+        <img src="./images/how-works-img-2.png" alt="Image 2">
+        <h4 class="p-0">Expert Guidance</h4>
+        <p class="p-0 m-0">Our architects and engineers guide you on design, structure, materials, and cost efficiency.</p>
+      </div>
+    </div>
+  </div>
 
-        // show corresponding content
-        contents.forEach(content => content.classList.remove('active'));
-        document.getElementById(`content-${index}`).classList.add('active');
-      });
+  <div class="clip-content row" id="content-3">
+    <div class="d-flex justify-content-center align-items-center text-center flex-column">
+      <div class="col-md-5">
+        <img src="./images/how-works-img-3.png" alt="Image 3">
+        <h4 class="p-0">Approve Design & Quotation</h4>
+        <p class="p-0 m-0">You approve the 2D/3D design and get a fixed transparent quote — no hidden costs, no surprises.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="clip-content row" id="content-4">
+    <div class="d-flex justify-content-center align-items-center text-center flex-column">
+      <div class="col-md-5">
+        <img src="./images/how-works-img-4.png" alt="Image 4">
+        <h4 class="p-0">We Execute It</h4>
+        <p class="p-0 m-0">From excavation to finishing, our team manages construction, quality control, and supervision.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="clip-content row" id="content-5">
+    <div class="d-flex justify-content-center align-items-center text-center flex-column">
+      <div class="col-md-5">
+        <img src="./images/how-it-works-img-5.png" alt="Image 5">
+        <h4 class="p-0">Track Your Progress</h4>
+        <p class="p-0 m-0">Monitor real-time site updates, stage reports, and photos through digital tracking.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="clip-content row" id="content-6">
+    <div class="d-flex justify-content-center align-items-center text-center flex-column">
+      <div class="col-md-5">
+        <img src="./images/how-works-img-6.png" alt="Image 6">
+        <h4 class="p-0">Handover & Move-In</h4>
+        <p class="p-0 m-0">Your dream project is ready — beautifully built and finished to perfection on time.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const circles = document.querySelectorAll('.step-circle');
+  const contents = document.querySelectorAll('.clip-content');
+
+  circles.forEach(circle => {
+    circle.addEventListener('click', () => {
+      const index = circle.getAttribute('data-index');
+      circles.forEach(c => c.classList.remove('active'));
+      circle.classList.add('active');
+      contents.forEach(content => content.classList.remove('active'));
+      document.getElementById(`content-${index}`).classList.add('active');
     });
-  </script>
-
+  });
+</script>
 
   <!-- 
   <div class="container">
@@ -2140,8 +2171,8 @@
 
   <!-- Fixed "Let's Talk" Button + Dropdown -->
   <div class="fixed-contact dropdown">
-    <button class=" px-2 py-1 bg-red-color text-white border-0 rounded-5" type="button" data-bs-toggle="dropdown"
-      aria-expanded="false">
+    <button class="px-2 py-1 text-white border-0 rounded-5" type="button" data-bs-toggle="dropdown"
+      aria-expanded="false" style="background-color: #54cf62;">
       <i class="fa-brands fa-whatsapp fs-1"></i>
     </button>
     <!-- <img src="./images/comment-img.png" height="50%" width="30%"> -->
