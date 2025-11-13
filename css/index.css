@@ -194,7 +194,7 @@ body {
 
 .boxy {
   width: 100%;
-  max-width: 160px;
+  max-width: 200px;
   height: auto;
   aspect-ratio: 1/1;
   /* Keeps it square */
@@ -203,7 +203,7 @@ body {
   border-radius: 15px;
   background-color: #ebebeb;
   position: relative;
-  top: -40px;
+  top: -60px;
 }
 
 .boxy img {
