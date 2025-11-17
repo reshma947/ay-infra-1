@@ -56,163 +56,163 @@
     }
 
     /* ---------------------------- */
- /* Circle Steps Strip */
-  .steps-strip {
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    position: relative;
-    gap: 0;
-  }
-
-  .step-circle {
-    flex: 0 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  .step-circle span {
-    width: 40px;
-    height: 40px;
-    background: #fff;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 18px;
-    transition: all 0.3s ease;
-  }
-
-  .step-circle p {
-    font-size: 13px;
-    color: #333;
-    white-space: nowrap;
-    text-align: center;
-  }
-
-  .step-circle.active span {
-    background-color: #000;
-    color: #fff;
-    border-color: #000;
-  }
-
-  .step-circle:hover span {
-    border-color: #000;
-  }
-
-  /* Dotted line between circles */
-  .step-line {
-    flex: 0 0 145px;
-    align-self: center;
-    border-top: 2px dotted #999;
-  }
-
-  /* Content sections */
-  .clip-content {
-    display: none;
-  }
-
-  .clip-content.active {
-    display: flex;
-  }
-
-  .clip-content img {
-    max-width: 100%;
-    border-radius: 8px;
-  }
-
-  /* Hide scrollbar */
-  .steps-strip::-webkit-scrollbar {
-    display: none;
-  }
-
-  .steps-strip {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  /* === RESPONSIVENESS === */
-  @media (max-width: 992px) {
-    .step-line {
-      flex: 0 0 90px;
-    }
-
-    .step-circle span {
-      width: 36px;
-      height: 36px;
-      font-size: 16px;
-    }
-
-    .d-flex.justify-content-around p {
-      font-size: 12px;
-    }
-  }
-
-  @media (max-width: 768px) {
+    /* Circle Steps Strip */
     .steps-strip {
-      justify-content: flex-start;
-      padding: 0 10px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      position: relative;
+      gap: 0;
     }
 
-    .step-line {
-      flex: 0 0 60px;
+    .step-circle {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
     }
 
     .step-circle span {
-      width: 34px;
-      height: 34px;
-      font-size: 15px;
+      width: 40px;
+      height: 40px;
+      background: #fff;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 18px;
+      transition: all 0.3s ease;
     }
 
-    .d-flex.justify-content-around {
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center !important;
+    .step-circle p {
+      font-size: 13px;
+      color: #333;
+      white-space: nowrap;
       text-align: center;
     }
 
-    .d-flex.justify-content-around p {
-      font-size: 12px;
-      width: 45%;
-      margin-bottom: 0.3rem;
+    .step-circle.active span {
+      background-color: #000;
+      color: #fff;
+      border-color: #000;
+    }
+
+    .step-circle:hover span {
+      border-color: #000;
+    }
+
+    /* Dotted line between circles */
+    .step-line {
+      flex: 0 0 145px;
+      align-self: center;
+      border-top: 2px dotted #999;
+    }
+
+    /* Content sections */
+    .clip-content {
+      display: none;
     }
 
     .clip-content.active {
-      flex-direction: column;
-      text-align: center;
+      display: flex;
     }
 
     .clip-content img {
-      width: 80%;
-      margin: 0 auto 1rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .step-line {
-      flex: 0 0 32px;
+      max-width: 100%;
+      border-radius: 8px;
     }
 
-    .step-circle span {
-      width: 30px;
-      height: 30px;
-      font-size: 14px;
+    /* Hide scrollbar */
+    .steps-strip::-webkit-scrollbar {
+      display: none;
     }
 
-    .d-flex.justify-content-around p {
-      font-size: 11px;
-      width: 100%;
+    .steps-strip {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
 
-    .clip-content img {
-      width: 90%;
+    /* === RESPONSIVENESS === */
+    @media (max-width: 992px) {
+      .step-line {
+        flex: 0 0 90px;
+      }
+
+      .step-circle span {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+      }
+
+      .d-flex.justify-content-around p {
+        font-size: 12px;
+      }
     }
-  }
+
+    @media (max-width: 768px) {
+      .steps-strip {
+        justify-content: flex-start;
+        padding: 0 10px;
+      }
+
+      .step-line {
+        flex: 0 0 60px;
+      }
+
+      .step-circle span {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+      }
+
+      .d-flex.justify-content-around {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center !important;
+        text-align: center;
+      }
+
+      .d-flex.justify-content-around p {
+        font-size: 12px;
+        width: 45%;
+        margin-bottom: 0.3rem;
+      }
+
+      .clip-content.active {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .clip-content img {
+        width: 80%;
+        margin: 0 auto 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .step-line {
+        flex: 0 0 32px;
+      }
+
+      .step-circle span {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+      }
+
+      .d-flex.justify-content-around p {
+        font-size: 11px;
+        width: 100%;
+      }
+
+      .clip-content img {
+        width: 90%;
+      }
+    }
   </style>
 </head>
 
@@ -240,7 +240,7 @@
           <img src="./images/ay-main-logo.png" width="200px" class="img-fluid" alt="Logo">
         </a>
 
-             <!-- 🟡 City Dropdown in Navbar -->
+        <!-- 🟡 City Dropdown in Navbar -->
         <div class="dropdown city-dropdown ms-lg-3">
           <button class="btn dropdown-toggle" type="button" id="navbarCityDropdown" data-bs-toggle="dropdown"
             aria-expanded="false">
@@ -259,8 +259,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-around p-0 m-0" 
-        id="navbarSupportedContent">
+        <div class="collapse navbar-collapse d-lg-flex justify-content-lg-around p-0 m-0" id="navbarSupportedContent">
           <div class="bg-info"></div>
 
           <ul class="navbar-nav m-0 p-0">
@@ -453,7 +452,7 @@
               <div class="text-content">
                 <div class="service-text">RESIDENTIAL CONSTRUCTION</div>
                 <p>Dream Homes Tailored for Every Family</p>
-                
+
               </div>
               <div>
                 <a href="#" class="read-more-btn text-decoration-none p-2">Read more →</a>
@@ -472,7 +471,7 @@
                 <div class="service-text inter-tight">COMMERCIAL CONSTRUCTION</div>
                 <p>Build Spaces That Drive Success</p>
               </div>
-               <div>
+              <div>
                 <a href="#" class="read-more-btn text-decoration-none p-2">Read more →</a>
               </div>
             </div>
@@ -489,7 +488,7 @@
                 <div class="service-text inter-tight">INTERIOR <br> DESIGN</div>
                 <p>Spaces That Inspire & Reflect Your Lifestyle</p>
               </div>
-               <div>
+              <div>
                 <a href="#" class="read-more-btn text-decoration-none p-2">Read more →</a>
               </div>
             </div>
@@ -506,7 +505,7 @@
                 <div class="service-text inter-tight">RENOVATION REMODELLING</div>
                 <p>Upgrade Your Space for Today’s Needs</p>
               </div>
-               <div>
+              <div>
                 <a href="#" class="read-more-btn text-decoration-none p-2">Read more →</a>
               </div>
             </div>
@@ -1196,7 +1195,7 @@
   </section>
 
 
-   <section class="bg-body-tertiary box-shadow pt-5 mt-5">
+  <section class="bg-body-tertiary box-shadow pt-5 mt-5">
     <div class="container">
       <div class="row align-items-center justify-content-between">
 
@@ -1273,108 +1272,111 @@
     <h2 class="main-title">How It Works</h2>
   </section>
 
-<div class="container pb-5">
-  <!-- Circle Step Strip -->
-  <div class="steps-strip mb-2">
-    <div class="step-circle active" data-index="1"><span>1</span></div>
-    <div class="step-line"></div>
-    <div class="step-circle" data-index="2"><span>2</span></div>
-    <div class="step-line"></div>
-    <div class="step-circle" data-index="3"><span>3</span></div>
-    <div class="step-line"></div>
-    <div class="step-circle" data-index="4"><span>4</span></div>
-    <div class="step-line"></div>
-    <div class="step-circle" data-index="5"><span>5</span></div>
-    <div class="step-line"></div>
-    <div class="step-circle" data-index="6"><span>6</span></div>
-  </div>
+  <div class="container pb-5">
+    <!-- Circle Step Strip -->
+    <div class="steps-strip mb-2">
+      <div class="step-circle active" data-index="1"><span>1</span></div>
+      <div class="step-line"></div>
+      <div class="step-circle" data-index="2"><span>2</span></div>
+      <div class="step-line"></div>
+      <div class="step-circle" data-index="3"><span>3</span></div>
+      <div class="step-line"></div>
+      <div class="step-circle" data-index="4"><span>4</span></div>
+      <div class="step-line"></div>
+      <div class="step-circle" data-index="5"><span>5</span></div>
+      <div class="step-line"></div>
+      <div class="step-circle" data-index="6"><span>6</span></div>
+    </div>
 
-  <!-- Step Titles -->
-  <div class="d-flex justify-content-around align-items-center flex-wrap mt-3 text-center">
-    <p>Free Consultation</p>
-    <p>Expert Guidance</p>
-    <p>Approve Design & <br>Quotation</p>
-    <p>We Execute It</p>
-    <p>Track Your Progress</p>
-    <p>Handover & <br>Move-In</p>
-  </div>
+    <!-- Step Titles -->
+    <div class="d-flex justify-content-around align-items-center flex-wrap mt-3 text-center">
+      <p>Free Consultation</p>
+      <p>Expert Guidance</p>
+      <p>Approve Design & <br>Quotation</p>
+      <p>We Execute It</p>
+      <p>Track Your Progress</p>
+      <p>Handover & <br>Move-In</p>
+    </div>
 
-  <!-- Content Sections -->
-  <div class="clip-content row g-4 active" id="content-1">
-    <div class="d-flex justify-content-center align-items-center text-center flex-column">
-      <div class="col-md-5">
-        <img src="./images/Free-Consultation.png" alt="Image 1">
-        <h4 class="pt-2">Free Consultation</h4>
-        <p class="p-0 m-0">We study your site, space needs, and budget to create a clear project roadmap.</p>
+    <!-- Content Sections -->
+    <div class="clip-content row g-4 active" id="content-1">
+      <div class="d-flex justify-content-center align-items-center text-center flex-column">
+        <div class="col-md-5">
+          <img src="./images/Free-Consultation.png" alt="Image 1">
+          <h4 class="pt-2">Free Consultation</h4>
+          <p class="p-0 m-0">We study your site, space needs, and budget to create a clear project roadmap.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="clip-content row" id="content-2">
+      <div class="d-flex justify-content-center align-items-center text-center flex-column">
+        <div class="col-md-5">
+          <img src="./images/Expert-Guidence.png" alt="Image 2">
+          <h4 class="pt-2">Expert Guidance</h4>
+          <p class="p-0 m-0">Our architects and engineers guide you on design, structure, materials, and cost
+            efficiency.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="clip-content row" id="content-3">
+      <div class="d-flex justify-content-center align-items-center text-center flex-column">
+        <div class="col-md-5">
+          <img src="./images/Approve-Design-&-Quotation.png" alt="Image 3">
+          <h4 class="pt-2">Approve Design & Quotation</h4>
+          <p class="p-0 m-0">You approve the 2D/3D design and get a fixed transparent quote — no hidden costs, no
+            surprises.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="clip-content row" id="content-4">
+      <div class="d-flex justify-content-center align-items-center text-center flex-column">
+        <div class="col-md-5">
+          <img src="./images/Execute-it.png" alt="Image 4">
+          <h4 class="pt-2">We Execute It</h4>
+          <p class="p-0 m-0">From excavation to finishing, our team manages construction, quality control, and
+            supervision.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="clip-content row" id="content-5">
+      <div class="d-flex justify-content-center align-items-center text-center flex-column">
+        <div class="col-md-5">
+          <img src="./images/Track-your-progress.png" alt="Image 5">
+          <h4 class="pt-2">Track Your Progress</h4>
+          <p class="p-0 m-0">Monitor real-time site updates, stage reports, and photos through digital tracking.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="clip-content row" id="content-6">
+      <div class="d-flex justify-content-center align-items-center text-center flex-column">
+        <div class="col-md-5">
+          <img src="./images/how-works-img-6.png" alt="Image 6">
+          <h4 class="pt-2">Handover & Move-In</h4>
+          <p class="p-0 m-0">Your dream project is ready — beautifully built and finished to perfection on time.</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="clip-content row" id="content-2">
-    <div class="d-flex justify-content-center align-items-center text-center flex-column">
-      <div class="col-md-5">
-        <img src="./images/Expert-Guidence.png" alt="Image 2">
-        <h4 class="pt-2">Expert Guidance</h4>
-        <p class="p-0 m-0">Our architects and engineers guide you on design, structure, materials, and cost efficiency.</p>
-      </div>
-    </div>
-  </div>
+  <script>
+    const circles = document.querySelectorAll('.step-circle');
+    const contents = document.querySelectorAll('.clip-content');
 
-  <div class="clip-content row" id="content-3">
-    <div class="d-flex justify-content-center align-items-center text-center flex-column">
-      <div class="col-md-5">
-        <img src="./images/Approve-Design-&-Quotation.png" alt="Image 3">
-        <h4 class="pt-2">Approve Design & Quotation</h4>
-        <p class="p-0 m-0">You approve the 2D/3D design and get a fixed transparent quote — no hidden costs, no surprises.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="clip-content row" id="content-4">
-    <div class="d-flex justify-content-center align-items-center text-center flex-column">
-      <div class="col-md-5">
-        <img src="./images/Execute-it.png" alt="Image 4">
-        <h4 class="pt-2">We Execute It</h4>
-        <p class="p-0 m-0">From excavation to finishing, our team manages construction, quality control, and supervision.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="clip-content row" id="content-5">
-    <div class="d-flex justify-content-center align-items-center text-center flex-column">
-      <div class="col-md-5">
-        <img src="./images/Track-your-progress.png" alt="Image 5">
-        <h4 class="pt-2">Track Your Progress</h4>
-        <p class="p-0 m-0">Monitor real-time site updates, stage reports, and photos through digital tracking.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="clip-content row" id="content-6">
-    <div class="d-flex justify-content-center align-items-center text-center flex-column">
-      <div class="col-md-5">
-        <img src="./images/how-works-img-6.png" alt="Image 6">
-        <h4 class="pt-2">Handover & Move-In</h4>
-        <p class="p-0 m-0">Your dream project is ready — beautifully built and finished to perfection on time.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-  const circles = document.querySelectorAll('.step-circle');
-  const contents = document.querySelectorAll('.clip-content');
-
-  circles.forEach(circle => {
-    circle.addEventListener('click', () => {
-      const index = circle.getAttribute('data-index');
-      circles.forEach(c => c.classList.remove('active'));
-      circle.classList.add('active');
-      contents.forEach(content => content.classList.remove('active'));
-      document.getElementById(`content-${index}`).classList.add('active');
+    circles.forEach(circle => {
+      circle.addEventListener('click', () => {
+        const index = circle.getAttribute('data-index');
+        circles.forEach(c => c.classList.remove('active'));
+        circle.classList.add('active');
+        contents.forEach(content => content.classList.remove('active'));
+        document.getElementById(`content-${index}`).classList.add('active');
+      });
     });
-  });
-</script>
+  </script>
 
   <!-- 
   <div class="container">
@@ -2224,74 +2226,84 @@
   </div>
 
 
-
-  <div class="container bg-body-tertiary my-5 py-5">
+<section class="bg-body-tertiary">
+    <div class="container bg-body-tertiary my-5 py-5">
     <div class="row g-4">
 
-        <!-- LEFT SIDE -->
-        <div class="col-lg-6">
-            <div class="left-box">
+      <!-- LEFT SIDE -->
+      <div class="col-lg-6">
+        <div class="left-box">
 
-                <!-- Swiper Slider -->
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="https://picsum.photos/600/300?1">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://picsum.photos/600/300?2">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://picsum.photos/600/300?3">
-                        </div>
-                    </div>
+          <!-- Swiper Slider -->
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./images/land-development-process.png">
+              </div>
+              <div class="swiper-slide">
+                <img src="./images/sustainable-land.png">
+              </div>
 
-                    <!-- Pagination -->
-                    <div class="swiper-pagination"></div>
-
-                    <!-- Navigation Buttons -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
-
-                <!-- Headline Under Slider -->
-                <div class="headline-box">
-                    ✨ Modern Headline Goes Here
-                </div>
             </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- Navigation Buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+
+          <!-- Headline Under Slider -->
+          <div class="headline-box">
+            ✨ Modern Headline Goes Here
+          </div>
         </div>
+      </div>
 
-        <!-- RIGHT SIDE -->
-        <div class="col-lg-6">
-            <div class="right-box">
-                <div class="right-heading">Right Side Fixed Content</div>
+      <!-- RIGHT SIDE -->
+      <div class="col-lg-6">
+        <div class="right-box">
+          <div class="right-heading">Land Development Services</div>
 
-                <p class="right-text">
-                    This section remains fixed and does not scroll with the slider.  
-                    You can place:
-                </p>
-
+          <p class="right-text">
+            Transforming Raw Land Into Ready-to-Build Spaces
+          </p>
+          <!-- 
                 <ul class="right-text">
                     <li>Product description</li>
                     <li>Features list</li>
                     <li>Pricing details</li>
                     <li>Contact information</li>
-                </ul>
+                </ul> -->
 
-                <p class="right-text">
-                    Adjust the content as you like.  
-                    The design is clean and modern, matching your requested UI.
-                </p>
-                <button class="btn bg-red-color text-white border-0 px-4 py-2 btn-md">Explore</button>
+          <p class="right-text">
+            Developing land is the foundation of every successful construction project. Our Land Development Services
+            ensure your property is fully prepared, structurally sound, and compliant with all regulatory requirements
+            before construction begins.
+          </p>
+          <p class="right-text">
+            We handle every stage of the process—from initial site assessment and planning to ground preparation and
+            infrastructure development. Our team evaluates soil conditions, topography, utilities, environmental
+            factors, and legal compliances to create a seamless plan for transforming your land into a
+            construction-ready asset.
+            <div class="text-end">
+              <button class="btn bg-red-color text-white border-0 px-4 py-2 btn-md">Explore</button>
             </div>
+
+            
         </div>
+      </div>
 
     </div>
-</div>
+  </div>
+
+</section>
 
 
 
- 
+
+
 
 
 
@@ -2303,9 +2315,10 @@
 
         <!-- Logo & About -->
         <div class="col-lg-3 col-md-6">
-           <a class="navbar-brandp-0 m-0" href="./index.html">
-          <img src="./images/ay-main-logo.png" width="200px" class="img-fluid" alt="Logo" data-aos="zoom-in-right" data-aos-duration="1000">
-        </a>
+          <a class="navbar-brandp-0 m-0" href="./index.html">
+            <img src="./images/ay-main-logo.png" width="200px" class="img-fluid" alt="Logo" data-aos="zoom-in-right"
+              data-aos-duration="1000">
+          </a>
           <div>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.4371457619586!2d78.41863677382794!3d17.342685604094005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9735c7db0de5%3A0xb616e0dac58b3a20!2sAY%20INFRA%20BUILDERS%20AND%20DEVELOPERS%20-%20construction%20%2C%20real%20estate%20%2C%20interior%20design!5e0!3m2!1sen!2sin!4v1755769734994!5m2!1sen!2sin"
@@ -2497,21 +2510,21 @@
   <script>
     AOS.init();
   </script>
-<script>
+  <script>
     new Swiper(".mySwiper", {
-        loop: true,
-        autoplay: {
-            delay: 2500,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        }
+      loop: true,
+      autoplay: {
+        delay: 2500,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      }
     });
-</script>
+  </script>
 
 </body>
 
