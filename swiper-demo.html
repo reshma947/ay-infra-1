@@ -11,94 +11,384 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="./css/swiper.css">
-</head>
+<!-- ================= FULL PAGE WITH ALL 4 SWIPERS ================= -->
+
+<!-- Swiper CSS CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<style>
+
+/* ========================= PROJECT SECTION ========================= */
+
+.projects-swiper .swiper-slide { height: auto; }
+
+.project-card {
+    background-color: red;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.project-info { padding: 10px 8px; color: #fff; }
+
+.project-info h6 { font-weight: 700; margin-bottom: 5px; }
+
+.project-info p { font-size: .9rem; margin-bottom: 0; }
+
+@media (max-width: 768px) { .project-img { height: 130px; } }
+@media (max-width: 576px) { .project-img { height: 120px; } }
+
+
+/* ========================= MEDIA SECTION ========================= */
+
+.media-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.right-slide-content { padding: 2rem; }
+
+.step-wrapper { display: flex; align-items: center; margin-top: 10px; }
+
+.step-bg {
+    background: red;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.step-box {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    flex: 1;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.step-icon i { font-size: 24px; color: red; }
+
+@media (max-width: 991px) { .media-img { height: auto; } }
+
+
+/* ========================= PARTNERS SECTION ========================= */
+
+.partners-swiper { width: 100%; padding: 20px 0; }
+
+.partners-swiper .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.partners-swiper .swiper-slide img {
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* ========================= LAND SECTION ========================= */
+
+.land-swiper {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.land-swiper .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    background: rgba(255,255,255,0.95);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 18px;
+}
+
+.headline-box {
+    padding: 18px;
+    background: red;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-size: 21px;
+}
+
+.bg-red-color { background-color: red; }
+
+</style>
+
 <body>
 
-<div class="container bg-white my-5 py-5">
-    <div class="row g-4">
+<!-- =============================================================== -->
+<!-- ===================== SECTION 1 — PROJECTS ==================== -->
+<!-- =============================================================== -->
 
-        <!-- LEFT SIDE -->
-        <div class="col-lg-6">
-            <div class="left-box">
+<section class="projects-section py-5 bg-body-tertiary">
+    <div class="container-fluid">
 
-                <!-- Swiper Slider -->
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="https://picsum.photos/600/300?1">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://picsum.photos/600/300?2">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="https://picsum.photos/600/300?3">
-                        </div>
+        <div class="swiper projects-swiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <img src="./images/building-img-1.jpg" class="project-img">
+                        <div class="project-info"><h6>Urban Residential</h6><p>Delivered in 6 months.</p></div>
                     </div>
-
-                    <!-- Pagination -->
-                    <div class="swiper-pagination"></div>
-
-                    <!-- Navigation Buttons -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
                 </div>
 
-                <!-- Headline Under Slider -->
-                <div class="headline-box">
-                    ✨ Modern Headline Goes Here
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <img src="./images/building-img-2.jpg" class="project-img">
+                        <div class="project-info"><h6>Commercial Tower</h6><p>Smart interiors.</p></div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- RIGHT SIDE -->
-        <div class="col-lg-6">
-            <div class="right-box">
-                <div class="right-heading">Right Side Fixed Content</div>
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <img src="./images/building-img-3.jpg" class="project-img">
+                        <div class="project-info"><h6>Modern Villa</h6><p>Green roofing.</p></div>
+                    </div>
+                </div>
 
-                <p class="right-text">
-                    This section remains fixed and does not scroll with the slider.  
-                    You can place:
-                </p>
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <img src="./images/building-img-4.jpg" class="project-img">
+                        <div class="project-info"><h6>Innovation Hub</h6><p>Cutting-edge features.</p></div>
+                    </div>
+                </div>
 
-                <ul class="right-text">
-                    <li>Product description</li>
-                    <li>Features list</li>
-                    <li>Pricing details</li>
-                    <li>Contact information</li>
-                </ul>
+                <div class="swiper-slide">
+                    <div class="project-card">
+                        <img src="./images/building-img-5.jpg" class="project-img">
+                        <div class="project-info"><h6>Smart Plaza</h6><p>Rooftop gardens.</p></div>
+                    </div>
+                </div>
 
-                <p class="right-text">
-                    Adjust the content as you like.  
-                    The design is clean and modern, matching your requested UI.
-                </p>
-                <button class="btn btn-info btn-md">Explore</button>
             </div>
         </div>
 
     </div>
-</div>
+</section>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Swiper JS -->
+<!-- =============================================================== -->
+<!-- ====================== SECTION 2 — MEDIA ======================= -->
+<!-- =============================================================== -->
+
+<section class="media-section m-0 py-5">
+    <div class="container-fluid m-0 p-0">
+        <div class="row g-0">
+
+            <div class="col-lg-5 d-flex">
+                <div class="swiper media-left-swiper w-100">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/brick-img.png" class="media-img"></div>
+                        <div class="swiper-slide"><img src="./images/brick-img.png" class="media-img"></div>
+                        <div class="swiper-slide"><img src="./images/brick-img.png" class="media-img"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-12">
+                <div class="swiper media-right-swiper w-100">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide">
+                            <div class="right-slide-content">
+                                <img src="./images/media-articles-img.png" width="80%">
+                                <div class="step-wrapper">
+                                    <div class="step-bg">1</div>
+                                    <div class="step-box"><div><h5>Keyword Research</h5><p>Target your audience.</p></div><div class="step-icon"><i class="bi bi-search"></i></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="right-slide-content">
+                                <img src="./images/media-articles-img.png" width="80%">
+                                <div class="step-wrapper">
+                                    <div class="step-bg">2</div>
+                                    <div class="step-box"><div><h5>Content Strategy</h5><p>Grow organically.</p></div><div class="step-icon"><i class="bi bi-lightbulb"></i></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="right-slide-content">
+                                <img src="./images/media-articles-img.png" width="80%">
+                                <div class="step-wrapper">
+                                    <div class="step-bg">3</div>
+                                    <div class="step-box"><div><h5>Optimization</h5><p>Improve performance.</p></div><div class="step-icon"><i class="bi bi-gear"></i></div></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- =============================================================== -->
+<!-- ===================== SECTION 3 — PARTNERS ===================== -->
+<!-- =============================================================== -->
+
+<section class="partners-section py-5 m-0">
+    <div class="swiper partners-swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="./images/j-Picsart-AiImageEnhancer.png"></div>
+            <div class="swiper-slide"><img src="./images/k-Picsart-AiImageEnhancer.png"></div>
+            <div class="swiper-slide"><img src="./images/l-Picsart-AiImageEnhancer.png"></div>
+            <div class="swiper-slide"><img src="./images/m-Picsart-AiImageEnhancer.png"></div>
+            <div class="swiper-slide"><img src="./images/k-Picsart-AiImageEnhancer.png"></div>
+            <div class="swiper-slide"><img src="./images/m-Picsart-AiImageEnhancer.png"></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =============================================================== -->
+<!-- =================== SECTION 4 — LAND SERVICES ================== -->
+<!-- =============================================================== -->
+
+<section class="bg-body-tertiary">
+    <div class="container bg-body-tertiary my-5 py-5">
+        <div class="row g-4">
+
+            <div class="col-lg-6">
+                <div class="left-box">
+                    <div class="swiper land-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="./images/land-development-process.png"></div>
+                            <div class="swiper-slide"><img src="./images/sustainable-land.png"></div>
+                        </div>
+
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+
+                    <div class="headline-box">✨ Modern Headline Goes Here</div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="right-box">
+                    <div class="right-heading">Land Development Services</div>
+                    <p class="right-text">Transforming Raw Land Into Ready-to-Build Spaces</p>
+                    <ul class="right-text">
+                        <li>Product description</li>
+                        <li>Features list</li>
+                        <li>Pricing details</li>
+                        <li>Contact information</li>
+                    </ul>
+                    <p class="right-text">We handle every stage of land development…</p>
+
+                    <div class="text-end">
+                        <button class="btn bg-red-color text-white px-4 py-2">Explore</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Swiper JS CDN -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-    new Swiper(".mySwiper", {
-        loop: true,
-        autoplay: {
-            delay: 2500,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        }
-    });
+
+/* ================== PROJECT SWIPER ================== */
+new Swiper(".projects-swiper", {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    loop: true,
+    speed: 2500,
+    autoplay: { delay: 0, disableOnInteraction: false },
+    freeMode: { enabled: true, momentum: false },
+    breakpoints: {
+        0: { slidesPerView: 1.2 },
+        576: { slidesPerView: 2 },
+        768: { slidesPerView: 3 },
+        992: { slidesPerView: 4 }
+    }
+});
+
+
+/* ================== MEDIA LEFT SWIPER ================== */
+let mediaLeft = new Swiper(".media-left-swiper", {
+    loop: true,
+    autoplay: { delay: 4000, disableOnInteraction: false },
+    speed: 800
+});
+
+/* ================== MEDIA RIGHT SWIPER ================== */
+let mediaRight = new Swiper(".media-right-swiper", {
+    loop: true,
+    autoplay: { delay: 4000, disableOnInteraction: false },
+    speed: 800,
+    effect: "fade",
+    fadeEffect: { crossFade: true }
+});
+
+mediaLeft.controller.control = mediaRight;
+mediaRight.controller.control = mediaLeft;
+
+
+/* ================== PARTNERS SWIPER ================== */
+new Swiper(".partners-swiper", {
+    slidesPerView: 5,
+    spaceBetween: 20,
+    loop: true,
+    speed: 4000,
+    autoplay: { delay: 0, disableOnInteraction: false },
+    allowTouchMove: false
+});
+
+
+/* ================== LAND SWIPER ================== */
+new Swiper(".land-swiper", {
+    loop: true,
+    autoplay: { delay: 2500 },
+    pagination: { el: ".swiper-pagination" },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
+});
+
 </script>
+
+</body>
+
 
 </body>
 </html>
