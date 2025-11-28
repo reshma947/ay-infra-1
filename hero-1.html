@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,8 +9,13 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <style>
-    .text-red-color { color: #e63946; }
-    .bg-red-color { background-color: #e63946; }
+    .text-red-color {
+      color: #e63946;
+    }
+
+    .bg-red-color {
+      background-color: #e63946;
+    }
 
     /* ✅ Background Layer */
     .bg-layer {
@@ -35,13 +41,35 @@
       animation: bounce 2s infinite ease-in-out;
       z-index: 2;
     }
-    .icon-top-left { top: -10px; left: -10px; }
-    .icon-left-middle { top: 50%; left: -20px; transform: translateY(-50%); animation-delay: 0.4s; }
-    .icon-right-bottom { bottom: -10px; right: 60px; animation-delay: 0.8s; }
+
+    .icon-top-left {
+      top: -10px;
+      left: -10px;
+    }
+
+    .icon-left-middle {
+      top: 50%;
+      left: -20px;
+      transform: translateY(-50%);
+      animation-delay: 0.4s;
+    }
+
+    .icon-right-bottom {
+      bottom: -10px;
+      right: 60px;
+      animation-delay: 0.8s;
+    }
 
     @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     /* ✅ Image Box */
@@ -57,11 +85,15 @@
       /* height: 500px;
       width: 500px; */
     }
+
     .image-box img {
       width: 100%;
       display: block;
     }
-    .image-box:hover { transform: rotate(-3deg); }
+
+    .image-box:hover {
+      transform: rotate(-3deg);
+    }
 
     /* ✅ Award Badge */
     .award-badge {
@@ -78,11 +110,21 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       z-index: 4;
     }
-    .award-badge .number { font-size: 1.4rem; font-weight: 700; line-height: 1.1; }
-    .award-badge .text { font-size: 0.7rem; font-weight: 500; line-height: 1.1; }
+
+    .award-badge .number {
+      font-size: 1.4rem;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    .award-badge .text {
+      font-size: 0.7rem;
+      font-weight: 500;
+      line-height: 1.1;
+    }
 
     /* ✅ Form Box (Vertical) */
     .form-box {
@@ -92,12 +134,14 @@
       padding: 20px;
       margin-top: 30px;
     }
-    .form-box .form-control, 
+
+    .form-box .form-control,
     .form-box textarea {
       border-radius: 6px;
       margin-bottom: 15px;
-  ;
+      ;
     }
+
     .form-box button {
       width: 35%;
       padding: 5px;
@@ -107,29 +151,44 @@
 
     /* ✅ Responsive */
     @media (max-width: 991.98px) {
-      .bg-layer, .bg-icon { display: none; }
-      .image-box { transform: none; }
+
+      .bg-layer,
+      .bg-icon {
+        display: none;
+      }
+
+      .image-box {
+        transform: none;
+      }
+
       .award-badge {
         width: 65px;
         height: 65px;
         bottom: 10px;
         left: 10px;
       }
-      .award-badge .number { font-size: 1rem; }
-      .award-badge .text { font-size: 0.6rem; }
+
+      .award-badge .number {
+        font-size: 1rem;
+      }
+
+      .award-badge .text {
+        font-size: 0.6rem;
+      }
     }
 
     .bg-img {
-  background-image: url('./images/banner-bg-img.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* opacity: 0.8; */
-  /* Optional for overlay effect */
-  /* z-index:999999; */
-}
+      background-image: url('./images/banner-bg-img.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      /* opacity: 0.8; */
+      /* Optional for overlay effect */
+      /* z-index:999999; */
+    }
   </style>
 </head>
+
 <body>
 
   <div class="container-fluid position-relative p-0 m-0 bg-img">
@@ -156,20 +215,20 @@
             <div class="form-box">
               <form>
                 <div class="d-flex justify-content-between">
-                     <input type="text" class="form-control me-3" placeholder="Your Name" required>
-                <input type="email" class="form-control" placeholder="Your Email" required>
+                  <input type="text" class="form-control me-3" placeholder="Your Name" required>
+                  <input type="email" class="form-control" placeholder="Your Email" required>
 
                 </div>
                 <div class="d-flex justify-content-between">
                   <input type="text" class="form-control me-3" placeholder="Phone Number" required>
-                <textarea class="form-control" rows="1" placeholder="Your Message"></textarea>
+                  <textarea class="form-control" rows="1" placeholder="Your Message"></textarea>
 
                 </div>
-             
+
                 <div class="text-center">
- <button type="submit" class="btn bg-red-color text-white rounded-2">Send Message</button>
+                  <button type="submit" class="btn bg-red-color text-white rounded-2">Send Message</button>
                 </div>
-               
+
               </form>
             </div>
           </div>
@@ -210,4 +269,5 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

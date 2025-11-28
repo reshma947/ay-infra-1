@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hero Banner with Swiper & Form</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: #f5f5f5;
+      padding: 50px 0;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 450px;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-form {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 992px) {
+      .swiper {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero-section">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+
+        <!-- Swiper Left -->
+        <div class="col-lg-7">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="https://picsum.photos/900/700?1"></div>
+              <div class="swiper-slide"><img src="https://picsum.photos/900/700?2"></div>
+              <div class="swiper-slide"><img src="https://picsum.photos/900/700?3"></div>
+              <div class="swiper-slide"><img src="https://picsum.photos/900/700?4"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Right -->
+        <div class="col-lg-5">
+          <div class="hero-form">
+            <h3 class="mb-3">Get in Touch</h3>
+            <form>
+              <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" placeholder="Enter your name">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" placeholder="Enter your email">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Phone</label>
+                <input type="text" class="form-control" placeholder="Enter phone number">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Message</label>
+                <textarea class="form-control" rows="3" placeholder="Write your message"></textarea>
+              </div>
+
+              <button class="btn btn-primary w-100">Submit</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      speed: 900,
+      effect: "slide",
+    });
+  </script>
+
+</body>
+
+</html>
