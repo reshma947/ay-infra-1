@@ -1775,3 +1775,69 @@ footer ul li a:hover {
   height: auto;
   object-fit: contain;
 }
+
+/* ------------------------------------------------------------------- */
+
+ .popup-box{
+        /* background: blue; */
+        /* border-radius: 12px; */
+        padding-top: 40px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 0px;
+        /* max-width: 950px; */
+        /* margin: 50px auto; */
+        /* box-shadow: 0 10px 30px rgba(0,0,0,0.15); */
+        position: relative;
+    }
+    .popup-close{
+        position: absolute;
+        right: 25px;
+        top: 20px;
+        font-size: 22px;
+        cursor: pointer;
+        color: #444;
+    }
+
+    /* LEFT SIDE BG IMAGE */
+    .left-box-modal{
+        background: url("../images/crane\ .png") no-repeat bottom center;
+        background-size: contain;
+        padding-bottom: 150px;
+    }
+
+    .right-box-modal{
+        background: #ffefef;
+        border-radius: 8px;
+        padding: 30px;
+        /* margin-bottom: 25px; */
+    }
+    .btn-yellow{
+        background: #ffb500;
+        border: none;
+        padding: 12px;
+        width: 100%;
+        font-weight: 600;
+    }
+    .btn-yellow:hover{
+        background: #ffa100;
+    }
+    .form-control, .form-select{
+        border-radius: 6px;
+        border-color: #ffb500;
+    }
+    .error{
+        font-size: 14px;
+        color: red;
+        margin-top: -5px;
+    }
+
+    @media(max-width:768px){
+        .left-box-modal{
+            padding-bottom: 100px;
+            background-size: cover;
+        }
+        .popup-box{
+            padding: 30px 20px;
+        }
+    }
