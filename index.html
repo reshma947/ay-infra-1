@@ -229,6 +229,75 @@
     }
 
     /* ------------------------ */
+
+     .banner-img-box {
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    /* Ensure full image visible without crop */
+    .hero-slide-img {
+      width: 100%;
+      height: auto;
+      object-fit: contain; /* No cropping */
+    }
+
+    /* Floating Icons */
+    .floating-icon {
+      position: absolute;
+      background-color: #fff;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      animation: floatUpDown 3s ease-in-out infinite;
+      z-index: 5;
+    }
+
+    .floating-icon i {
+      font-size: 1.2rem;
+    }
+
+    @keyframes floatUpDown {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .icon-1 { top: 30%; right: 35%; }
+    .icon-2 { top: 20%; right: 10%; }
+    .icon-3 { top: 60%; right: 40%; }
+    .icon-5 { bottom: 17.5%; right: 7%; }
+
+    .form-box {
+      background-color: #fff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    /* Responsive */
+    @media (max-width: 991.98px) {
+      .floating-icon {
+        display: none;
+      }
+
+      .banner-img-box {
+        height: auto;
+      }
+    }
+
+    .text-red-color { color: red; }
+    .bg-red-color { background-color: red; }
+    /* .text-gradient-color {
+      background: linear-gradient(45deg, #cf0012, #ff5661);
+      -webkit-background-clip: text;
+      color: transparent;
+    } */
   </style>
 </head>
 
@@ -382,65 +451,88 @@
 
   <div class="container-fluid position-relative pt-5 mt-5 hero-section">
 
+    <!-- Floating Icons -->
     <div class="floating-icon icon-1"><i class="bi bi-hammer text-red-color"></i></div>
     <div class="floating-icon icon-2"><i class="bi bi-house-door-fill text-red-color"></i></div>
     <div class="floating-icon icon-3"><i class="bi bi-star-fill text-red-color"></i></div>
-    <!-- <div class="floating-icon icon-4"><i class="bi bi-brush-fill text-primary"></i></div> -->
     <div class="floating-icon icon-5"><i class="bi bi-gear-fill text-red-color"></i></div>
 
-    <div class="position-absolute top-0 start-0 w-100 h-100 bg-img z-n1"></div>
+ <div class="position-absolute top-0 start-0 w-100 h-100 bg-img z-n1"></div>
 
-    <div class="">
-      <div class="container-fluid p-0 m-0">
-        <div class="row g-0 p-0 m-0 d-flex justify-content-around">
+    <div class="container-fluid pt-4 m-0">
+      <div class="row g-0 d-flex justify-content-around align-items-end">
 
-          <div class="col-lg-5 d-flex flex-column justify-content-center px-4">
-            <h1 class="fw-bold text-black">
-              A <span class="text-gradient-color">HOME</span>
-              THAT MATCHES <br>YOUR <span class="text-red-color">DREAMS</span><br> CRAFTED WITH CARE
-            </h1>
-            <h6 class="fw-semibold text-black pt-3">
-              From your family home to your office or luxury interiors – we deliver turnkey solutions with clarity,
-              trust, and unmatched professionalism.
-            </h6>
-            <div>
-              <button class="fw-semibold px-4 py-2 mt-4 bg-red-color text-white border-0 rounded-2"
-                data-aos="fade-right" data-aos-offset="100">
-                Packages Start From
-              </button>
-            </div>
+        <!-- LEFT SIDE CONTENT -->
+        <div class="col-lg-5 d-flex flex-column justify-content-center px-4">
+          <h1 class="fw-bold text-black">
+            A <span class="text-gradient-color">HOME</span>
+            THAT MATCHES <br>YOUR <span class="text-red-color">DREAMS</span><br> CRAFTED WITH CARE
+          </h1>
+          <h6 class="fw-semibold text-black pt-3">
+            From your family home to your office or luxury interiors – we deliver turnkey solutions with clarity,
+            trust, and unmatched professionalism.
+          </h6>
+          <button class="fw-semibold px-4 py-2 mt-4 bg-red-color text-white border-0 rounded-2"
+          data-aos="fade-right" data-aos-offset="100">
+            Packages Start From
+          </button>
 
-            <div class="form-box">
-              <form>
-                <div class="d-flex justify-content-between">
-                  <input type="text" class="form-control me-3" placeholder="Your Name" required>
-                  <input type="email" class="form-control" placeholder="Your Email" required>
-                </div>
-                <div class="d-flex justify-content-between">
-                  <input type="text" class="form-control me-3" placeholder="Phone Number" required>
-                  <textarea class="form-control" rows="1" placeholder="Your Message"></textarea>
-                </div>
-                <div class="text-center">
-                  <button type="submit" class="bg-red-color text-white rounded-2 border-0">Send Message</button>
-                </div>
-              </form>
-            </div>
+          <div class="form-box mb-5">
+            <form>
+              <div class="d-flex justify-content-between">
+                <input type="text" class="form-control me-3" placeholder="Your Name" required>
+                <input type="email" class="form-control" placeholder="Your Email" required>
+              </div>
+              <div class="d-flex justify-content-between">
+                <input type="text" class="form-control me-3" placeholder="Phone Number" required>
+                <textarea class="form-control" rows="1" placeholder="Your Message"></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="bg-red-color text-white rounded-2 border-0">Send Message</button>
+              </div>
+            </form>
           </div>
-
-          <div class="col-lg-4 position-relative d-none d-lg-block banner-img-box p-0 m-0">
-            <img src="./images/banner-man-1.png" alt="Hero Image" data-aos="fade-up" data-aos-duration="3000"
-              class="position-absolute bottom-0 end-0 w-100 h-100 object-fit-cover" />
-          </div>
-
-          <!-- ✅ Mobile Image -->
-          <div class="col-12 d-block d-lg-none px-3 mt-4">
-            <img src="./images/banner-man-1.png" alt="Hero Image" class="img-fluid w-100 rounded" />
-          </div>
-
         </div>
+
+        <!-- RIGHT SIDE SWIPER (fixed ✔ full image visible now) -->
+        <div class="col-lg-4 position-relative d-none d-lg-flex banner-img-box p-0 m-0">
+          <div class="swiper heroBannerSwiper w-100">
+            <div class="swiper-wrapper bg-white">
+
+              <div class="swiper-slide text-center">
+                <img src="./images/banner-test-2.png" class="hero-slide-img">
+              </div>
+              <div class="swiper-slide text-center">
+                <img src="./images/banner-test.png" class="hero-slide-img">
+              </div>
+              <div class="swiper-slide text-center">
+                <img src="./images/banner-test-2.png" class="hero-slide-img">
+              </div>
+              <div class="swiper-slide text-center">
+                <img src="./images/banner-test.png" class="hero-slide-img">
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile image unchanged -->
+        <div class="col-12 d-block d-lg-none px-3 mt-4">
+          <img src="https://via.placeholder.com/600x700?text=Mobile+Image" class="img-fluid w-100 rounded" />
+        </div>
+
       </div>
     </div>
   </div>
+
+    <script>
+    var heroBannerSwiper = new Swiper(".heroBannerSwiper", {
+      loop: true,
+      autoplay: { delay: 1800, disableOnInteraction: false },
+      speed: 700,
+      effect: "slide",
+    });
+  </script>
 
   <!-- ------------------------------------------------------------------------------------- -->
 
@@ -885,9 +977,22 @@
   </script>
   <!-- ---------------------------------------------------------------------------------------- -->
 
+  <!-- <div class="pricing-toggle-container mb-5" data-aos="zoom-in" data-aos-delay="150">
+          <div class="pricing-toggle d-inline-flex align-items-center gap-3 px-3 py-2 rounded-pill">
+            <span class="monthly active">Monthly</span>
+            <label class="switch m-0">
+              <input type="checkbox" aria-label="Toggle pricing">
+              <span class="slider"></span>
+            </label>
+            <span class="yearly">Yearly</span>
+          </div>
+          <p class="hint mt-3 mb-0 small">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor.</p>
+        </div> -->
+
+
   <div class="container text-center">
     <h2 class="text-center fw-bold pb-3">COMPARE PACKAGE</h2>
-    <div class="form-check form-switch d-inline-flex align-items-center gap-2 large-switch">
+    <div class="form-check form-switch d-inline-flex align-items-center gap-2 Medium-switch">
       <input class="form-check-input custom-switch red" type="checkbox" role="switch" id="toggleComparisonSection"
         style="height: 52px;width: 152px;">
       <label class="form-check-label fw-semibold" for="toggleComparisonSection"></label>
@@ -1952,7 +2057,13 @@
           <div class="swiper-slide"><img src="./images/brand-3.png"></div>
           <div class="swiper-slide"><img src="./images/brand-4.png"></div>
           <div class="swiper-slide"><img src="./images/brand-5.png"></div>
-          <div class="swiper-slide"><img src="./images/brand-4.png"></div>
+          <div class="swiper-slide"><img src="./images/brand-6.png"></div>
+          <div class="swiper-slide"><img src="./images/brand-7.png"></div>
+          <div class="swiper-slide"><img src="./images/brand-8.png"></div>
+          <div class="swiper-slide"><img src="./images/brand-9.png"></div>
+          <div class="swiper-slide"><img src="./images/brand-10.png"></div>
+          <div class="swiper-slide"><img src="./images/brand-11.png"></div>
+          <div class="swiper-slide"><img src="./images/brand-12.png"></div>
         </div>
       </div>
   </section>
@@ -2503,13 +2614,14 @@
 
 
   <!-- ✅ Unique Popup Modal Form -->
-  <div class="modal fade custom-popup-form" id="uniquePopupForm" tabindex="-1" aria-hidden="true">
+  <div class="modal fade custom-popup-form" id="uniquePopupForm" tabindex="-1" aria-hidden="true" data-bs-dismiss="modal">
     <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- made smaller -->
       <div class="modal-content px-1 m-0 shadow-lg rounded-0 ">
 
         <div class="modal-body p-0 m-0">
           <div class="container">
-            <div class="popup-close">&times;</div>
+            <div class="popup-close" data-bs-dismiss="modal">&times;</div>
+            <!-- <div class="popup-close">&times;</div> -->
             <div class="popup-box">
 
 
@@ -2520,13 +2632,14 @@
 
                   <h2 class="fw-bold">Ready to Start Your Project?</h2>
                   <p class="mt-3">
-                   Our team is here to bring your vision to life with expert planning and quality workmanship.
-Whether it’s residential, commercial, or renovation work, we provide reliable solutions tailored to your needs.
+                    Our team is here to bring your vision to life with expert planning and quality workmanship.
+                    Whether it’s residential, commercial, or renovation work, we provide reliable solutions tailored to
+                    your needs.
 
                   </p>
 
                   <p class="mt-4 pb-3">
-                   Let’s build something exceptional together — contact us today!
+                    Let’s build something exceptional together — contact us today!
                   </p>
 
                   <!-- <div class="mt-4">
@@ -2544,7 +2657,7 @@ Whether it’s residential, commercial, or renovation work, we provide reliable 
                   <div class="right-box-modal">
 
                     <h4 class="fw-bold mb-4">
-                     Contact Us Form
+                      Contact Us Form
                     </h4>
 
                     <form>
@@ -2596,30 +2709,28 @@ Whether it’s residential, commercial, or renovation work, we provide reliable 
 
 
 
-  <script>
-    // Modal instance (unique ID)
-    const popupForm = new bootstrap.Modal(document.getElementById('uniquePopupForm'));
+<script>
+  // Bootstrap modal instance
+  const popupForm = new bootstrap.Modal(document.getElementById('uniquePopupForm'));
 
-    // Function to show popup
-    function showPopup() {
-      popupForm.show();
+  // Show popup every 50 seconds (initial delay 50s)
+  setTimeout(() => {
+    popupForm.show();
+    setInterval(() => popupForm.show(), 50000);
+  }, 50000);
+
+  // Close when clicking CLOSE button
+  document.querySelector('.popup-close').addEventListener('click', () => {
+    popupForm.hide();
+  });
+
+  // Close when clicking outside modal content
+  document.getElementById('uniquePopupForm').addEventListener('click', function (event) {
+    if (event.target.classList.contains('modal')) {
+      popupForm.hide();
     }
-
-    // Show every 20 seconds (first after 20s, then every 20s)
-    setTimeout(() => {
-      showPopup();
-      setInterval(showPopup, 50000);
-    }, 50000);
-
-    // Close popup when clicking anywhere outside the form
-    document.addEventListener('click', function (event) {
-      const modalElement = document.getElementById('uniquePopupForm');
-      if (modalElement.classList.contains('show') && !modalElement.contains(event.target)) {
-        popupForm.hide();
-      }
-    });
-  </script>
-
+  });
+</script>
 
 
 

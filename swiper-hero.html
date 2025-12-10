@@ -1,155 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Popup Form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Banner Swiper</title>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
-rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<style>
-    body{
-        background: #ffe9b8;
-        font-family: 'Inter', sans-serif;
-    }
-    .popup-box{
-        background: #fff;
-        border-radius: 12px;
-        padding: 50px;
-        max-width: 950px;
-        margin: 50px auto;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        position: relative;
-    }
-    .popup-close{
-        position: absolute;
-        right: 25px;
-        top: 20px;
-        font-size: 22px;
-        cursor: pointer;
-        color: #444;
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    body {
+      overflow-x: hidden;
     }
 
-    /* LEFT SIDE BG IMAGE */
-    .left-box{
-        background: url("./images/crane\ .png") no-repeat bottom center;
-        background-size: contain;
-        padding-bottom: 150px;
+    /* ❌ Removed fixed height 
+       ✔ Auto height and bottom aligned properly */
+    .banner-img-box {
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
     }
 
-    .right-box{
-        background: #fff6d9;
-        border-radius: 8px;
-        padding: 30px;
-    }
-    .btn-yellow{
-        background: #ffb500;
-        border: none;
-        padding: 12px;
-        width: 100%;
-        font-weight: 600;
-    }
-    .btn-yellow:hover{
-        background: #ffa100;
-    }
-    .form-control, .form-select{
-        border-radius: 6px;
-        border-color: #ffb500;
-    }
-    .error{
-        font-size: 14px;
-        color: red;
-        margin-top: -5px;
+    /* Ensure full image visible without crop */
+    .hero-slide-img {
+      width: 100%;
+      height: auto;
+      object-fit: contain; /* No cropping */
     }
 
-    @media(max-width:768px){
-        .left-box{
-            padding-bottom: 100px;
-            background-size: cover;
-        }
-        .popup-box{
-            padding: 30px 20px;
-        }
+    /* Floating Icons */
+    .floating-icon {
+      position: absolute;
+      background-color: #fff;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      animation: floatUpDown 3s ease-in-out infinite;
+      z-index: 5;
     }
-    
-</style>
+
+    .floating-icon i {
+      font-size: 1.2rem;
+    }
+
+    @keyframes floatUpDown {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .icon-1 { top: 30%; right: 35%; }
+    .icon-2 { top: 20%; right: 10%; }
+    .icon-3 { top: 60%; right: 40%; }
+    .icon-5 { bottom: 17.5%; right: 7%; }
+
+    .form-box {
+      background-color: #fff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 30px;
+    }
+
+    /* Responsive */
+    @media (max-width: 991.98px) {
+      .floating-icon {
+        display: none;
+      }
+
+      .banner-img-box {
+        height: auto;
+      }
+    }
+
+    .text-red-color { color: #cf0012; }
+    .bg-red-color { background-color: #cf0012; }
+    .text-gradient-color {
+      background: linear-gradient(45deg, #cf0012, #ff5661);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="container">
+  <div class="container-fluid position-relative pt-5 mt-5 hero-section">
 
-    <div class="popup-box">
-        <div class="popup-close">&times;</div>
+    <!-- Floating Icons -->
+    <div class="floating-icon icon-1"><i class="bi bi-hammer text-red-color"></i></div>
+    <div class="floating-icon icon-2"><i class="bi bi-house-door-fill text-red-color"></i></div>
+    <div class="floating-icon icon-3"><i class="bi bi-star-fill text-red-color"></i></div>
+    <div class="floating-icon icon-5"><i class="bi bi-gear-fill text-red-color"></i></div>
 
-        <div class="row g-4">
+    <div class="container-fluid p-0 m-0">
+      <div class="row g-0 d-flex justify-content-around align-items-end">
 
-            <!-- LEFT SIDE -->
-            <div class="col-lg-6 left-box">
+        <!-- LEFT SIDE CONTENT -->
+        <div class="col-lg-5 d-flex flex-column justify-content-center px-4">
+          <h1 class="fw-bold text-black">
+            A <span class="text-gradient-color">HOME</span>
+            THAT MATCHES <br>YOUR <span class="text-red-color">DREAMS</span><br> CRAFTED WITH CARE
+          </h1>
+          <h6 class="fw-semibold text-black pt-3">
+            From your family home to your office or luxury interiors – we deliver turnkey solutions with clarity,
+            trust, and unmatched professionalism.
+          </h6>
+          <button class="fw-semibold px-4 py-2 mt-4 bg-red-color text-white border-0 rounded-2">
+            Packages Start From
+          </button>
 
-                <h2 class="fw-bold">Get your free copy</h2>
-                <p class="mt-3">
-                    Sign up to read the first edition of the Journal of digital commerce.
-                    After you’ve submitted the form, we will send you a link to download the Journal
-                    of digital commerce for e-book and much more.
-                </p>
-
-                <p class="mt-4">
-                    The Journal of digital commerce is available in PDF format.
-                </p>
-
-                <div class="mt-4">
-                    <h6 class="fw-semibold">Want to talk with us?</h6>
-                    <p class="mt-2 mb-3">
-                        If you're working on something interesting, we’d love to hear from you.
-                    </p>
-                    <button class="btn btn-outline-dark">CONTACT US</button>
-                </div>
-
-            </div>
-
-            <!-- RIGHT SIDE -->
-            <div class="col-lg-6">
-                <div class="right-box">
-
-                    <h6 class="fw-bold mb-4">
-                        Fill the form to download your copy of the Journal. It’s 100% free!
-                    </h6>
-
-                    <form>
-                        <input type="text" class="form-control mb-3" placeholder="Full Name">
-
-                        <input type="email" class="form-control mb-3" placeholder="Email">
-
-                        <select class="form-select mb-3">
-                            <option>Head of Department</option>
-                            <option>Manager</option>
-                            <option>Student</option>
-                        </select>
-
-                        <input type="text" class="form-control mb-2"
-                        placeholder="Company name">
-
-                        <div class="error mb-3">
-                            Email must be a functional company email.
-                        </div>
-
-                        <button type="button" class="btn btn-yellow">
-                            GET MY COPY
-                        </button>
-
-                        <p class="small text-muted mt-2">
-                            We don’t spam or share personal information.
-                        </p>
-                    </form>
-
-                </div>
-            </div>
-
+          <div class="form-box mb-5">
+            <form>
+              <div class="d-flex justify-content-between">
+                <input type="text" class="form-control me-3" placeholder="Your Name" required>
+                <input type="email" class="form-control" placeholder="Your Email" required>
+              </div>
+              <div class="d-flex justify-content-between">
+                <input type="text" class="form-control me-3" placeholder="Phone Number" required>
+                <textarea class="form-control" rows="1" placeholder="Your Message"></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="bg-red-color text-white rounded-2 border-0">Send Message</button>
+              </div>
+            </form>
+          </div>
         </div>
-    </div>
 
-</div>
+        <!-- RIGHT SIDE SWIPER (fixed ✔ full image visible now) -->
+        <div class="col-lg-4 position-relative d-none d-lg-flex banner-img-box p-0 m-0">
+          <div class="swiper heroBannerSwiper w-100">
+            <div class="swiper-wrapper bg-white">
+
+              <div class="swiper-slide text-center">
+                <img src="./images/banner-test-2.png" class="hero-slide-img">
+              </div>
+              <div class="swiper-slide text-center">
+                <img src="./images/banner-test.png" class="hero-slide-img">
+              </div>
+              <div class="swiper-slide text-center">
+                <img src="./images/banner-test-2.png" class="hero-slide-img">
+              </div>
+              <div class="swiper-slide text-center">
+                <img src="./images/banner-test.png" class="hero-slide-img">
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile image unchanged -->
+        <div class="col-12 d-block d-lg-none px-3 mt-4">
+          <img src="https://via.placeholder.com/600x700?text=Mobile+Image" class="img-fluid w-100 rounded" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    var heroBannerSwiper = new Swiper(".heroBannerSwiper", {
+      loop: true,
+      autoplay: { delay: 1800, disableOnInteraction: false },
+      speed: 700,
+      effect: "slide",
+    });
+  </script>
 
 </body>
 </html>
+
+
+
